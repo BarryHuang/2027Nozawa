@@ -400,5 +400,117 @@
     <p>2027 Nozawa Onsen Ski Trip Planning</p>
 </footer>
 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // 找到住宿名稱所在的表格
+    const tables = document.querySelectorAll('table');
+    let hotelTable = null;
+    tables.forEach(table => {
+        const headers = table.querySelectorAll('th');
+        if (headers.length > 0 && headers[0].innerText.includes('住宿名稱')) {
+            hotelTable = table;
+        }
+    });
+
+    if (!hotelTable) return;
+
+    // 1. 在表頭加入新欄位
+    const theadTr = hotelTable.querySelector('thead tr');
+    if (theadTr) {
+        const th = document.createElement('th');
+        th.className = 'py-4 px-5 text-center font-semibold min-w-[280px] text-blue-800 bg-blue-100/50 border-l border-blue-200';
+        th.innerHTML = '📝 個人筆記與評估';
+        theadTr.appendChild(th);
+    }
+
+    // 2. 在每一行加入互動元件
+    const tbodyTrs = hotelTable.querySelectorAll('tbody tr');
+    tbodyTrs.forEach((tr, index) => {
+        const nameTd = tr.querySelector('td');
+        if (!nameTd) return;
+        
+        // 以飯店名稱為 Key
+        const hotelName = nameTd.innerText.trim();
+        const storageKey = 'nozawa_review_' + encodeURIComponent(hotelName);
+        
+        let savedData = { status: 'none', comment: '' };
+        try {
+            const raw = localStorage.getItem(storageKey);
+            if (raw) savedData = JSON.parse(raw);
+        } catch(e) {}
+
+        const td = document.createElement('td');
+        td.className = 'py-2 px-4 border-l border-slate-200 bg-slate-50 border-b border-b-slate-100';
+        
+        td.innerHTML = `
+            <div class="flex flex-col gap-2 relative">
+                <div class="flex border border-slate-300 rounded-lg overflow-hidden shadow-sm bg-white shrink-0 h-9">
+                    <button class="status-btn flex-1 text-xs font-bold transition-all duration-200" data-val="none">未評估</button>
+                    <button class="status-btn flex-1 text-xs font-bold transition-all duration-200 border-l border-slate-300" data-val="yes">👍 保留</button>
+                    <button class="status-btn flex-1 text-xs font-bold transition-all duration-200 border-l border-slate-300" data-val="no">❌ 剃除</button>
+                </div>
+                <input type="text" class="comment-input text-sm px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition shadow-sm w-full bg-white" placeholder="輸入私人考慮筆記..." value="${savedData.comment.replace(/"/g, '&quot;')}">
+            </div>
+        `;
+
+        const buttons = td.querySelectorAll('.status-btn');
+        const input = td.querySelector('.comment-input');
+
+        const saveData = () => {
+            localStorage.setItem(storageKey, JSON.stringify(savedData));
+        };
+
+        const updateButtonsUI = () => {
+            buttons.forEach(btn => {
+                const val = btn.getAttribute('data-val');
+                let isActive = (val === savedData.status);
+                
+                // Reset classes except base
+                btn.className = 'status-btn flex-1 text-xs font-bold transition-all duration-200 border-slate-300 ' + (val !== 'none' ? 'border-l ' : '');
+
+                if (isActive) {
+                    if (val === 'none') btn.classList.add('bg-slate-200', 'text-slate-700');
+                    if (val === 'yes') btn.classList.add('bg-emerald-500', 'text-white', 'hover:bg-emerald-600');
+                    if (val === 'no') btn.classList.add('bg-rose-500', 'text-white', 'hover:bg-rose-600');
+                } else {
+                    btn.classList.add('bg-white', 'hover:bg-slate-100');
+                    if (val === 'none') btn.classList.add('text-slate-400');
+                    if (val === 'yes') btn.classList.add('text-emerald-600');
+                    if (val === 'no') btn.classList.add('text-rose-500');
+                }
+            });
+            
+            // 行的視覺反饋
+            if (savedData.status === 'no') {
+                tr.style.opacity = '0.4';
+                tr.style.backgroundColor = '#f8fafc';
+            } else if (savedData.status === 'yes') {
+                tr.style.opacity = '1';
+                tr.style.backgroundColor = '#ecfdf5'; // 淺綠色
+            } else {
+                tr.style.opacity = '1';
+                tr.style.backgroundColor = '';
+            }
+        };
+
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                savedData.status = btn.getAttribute('data-val');
+                saveData();
+                updateButtonsUI();
+            });
+        });
+
+        input.addEventListener('input', (e) => {
+            savedData.comment = e.target.value;
+            saveData();
+        });
+
+        // 初始渲染
+        updateButtonsUI();
+        tr.appendChild(td);
+    });
+});
+</script>
 </body>
 </html>

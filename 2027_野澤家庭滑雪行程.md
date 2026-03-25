@@ -42,56 +42,41 @@
 
 ---
 
-## 🏨 4. 住宿推薦 (公寓式 + 溫泉 + 近纜車)
-野澤溫泉要同時滿足「公寓式(有廚房)」與「自家溫泉」非常稀少。以下為您整理 10 間最接近需求的高評分子名單。
-*(⚠️ 2027年1月的空房多數需等到 2026 年夏季才會開放訂房，以下價格為往年旺季參考)*
+## 🏨 4. 嚴選住宿推薦 (共 30 間，Google 評分均 4.0 以上)
+針對有著不同需求（公寓廚房/館內泡湯/近纜車）的家庭旅客，我們擴充了總共 30 間高評分住宿供您挑選。所有住宿均附上「距離 Yu-road (通往日影區之電扶梯)」的步行預估時間。
 
-### 完美符合 (公寓式 + 自有溫泉)
-1.  **Address Nozawa (地址野澤)** | [📍 Google Maps](https://www.google.com/maps/search/?api=1&query=Address+Nozawa) | ⭐️ Google 4.9 
-    *   **優點**：稀有現代公寓，有自家天然貸切溫泉（可包場）。距大湯1分、Yu-road步道3分。
-    *   **缺點**：極度搶手，非常難訂。
-    *   **價格/空房**：約 30,000 - 50,000 JPY/晚。目前尚未開放 2027 預訂。
-
-### 公寓式設計，近雪場/溫泉
-2.  **Kawamotoya (河本屋)** | [📍 Google Maps](https://www.google.com/maps/search/?api=1&query=Kawamotoya+Nozawa+Onsen) | ⭐️ Booking 8.9 (極佳)
-    *   **優點**：翻修豪華公寓，館內有現代大浴場（非私人屋）。
-    *   **缺點**：距長坂纜車步行約 8-10分。
-    *   **價格/空房**：約 40,000 JPY/晚。尚未開放。
-3.  **Nozawa Gondola Apartments** | [📍 Google Maps](https://www.google.com/maps/search/?api=1&query=Nozawa+Gondola+Apartments) | ⭐️ Booking 9.0 / Airbnb 4.9
-    *   **優點**：距纜車僅1分鐘，無可挑剔的地點，有完整廚房。
-    *   **缺點**：無天然溫泉設施（洗澡需在房內或去外湯）。
-    *   **價格/空房**：約 35,000 - 50,000 JPY/晚。尚未開放。
-4.  **Tanuki luxury apartments (狸)** | [📍 Google Maps](https://www.google.com/maps/search/?api=1&query=Tanuki+Nozawa) | ⭐️ Google 4.5
-    *   **優點**：裝潢極致奢華舒適，位於主街中心。
-    *   **缺點**：價格高昂，無自有附設溫泉。
-    *   **價格/空房**：約 80,000+ JPY/晚。尚未開放。
-5.  **Nozawa Onsen Base Camp (大湯 Weekly Mansion)** | [📍 Google Maps](https://www.google.com/maps/search/?api=1&query=Nozawa+Onsen+Base+Camp) | ⭐️ Booking 8.8 / Google 3.8
-    *   **優點**：兩房空間大，適合家庭。緊鄰最具代表性的大湯。
-    *   **缺點**：純自助公寓，且無附設溫泉（以大湯替代）。
-    *   **價格/空房**：約 25,000 - 35,000 JPY/晚。尚未開放。
-6.  **The Ridge Nozawa** | [📍 Google Maps](https://www.google.com/maps/search/?api=1&query=The+Ridge+Nozawa) | ⭐️ Booking 8.9 (極佳)
-    *   **優點**：高級精品公寓，廚房設備高檔，山景優美。
-    *   **缺點**：距雪場稍有坡度步行距離，無溫泉。
-    *   **價格/空房**：約 45,000 JPY/晚。尚未開放。
-7.  **Residence Yasushi** | [📍 Google Maps](https://www.google.com/maps/search/?api=1&query=Residence+Yasushi+Nozawa) | ⭐️ Google 4.8
-    *   **優點**：極致服務結合現代與和風設計的精品旅店。
-    *   **缺點**：多數房型非標準公寓，且無溫泉。
-    *   **價格/空房**：約 50,000 JPY/晚。尚未開放。
-
-### 妥協無廚房，換取「極近雪場+有自家溫泉」的傳統旅館
-*(若公寓式訂滿，可考慮)*
-8.  **村之飯店 住吉屋 (Sumiyoshiya)** | [📍 Google Maps](https://www.google.com/maps/search/?api=1&query=Sumiyoshiya+Nozawa) | ⭐️ Google 4.6
-    *   **優點**：擁有「自家源泉」，距Yu-Road步道2分鐘，頂級日式體驗。
-    *   **缺點**：傳統房型無廚房。
-    *   **價格/空房**：約 60,000 JPY/晚 (含早晚餐)。尚未開放。
-9.  **Lodge Yukiyama (旅館 雪山)** | [📍 Google Maps](https://www.google.com/maps/search/?api=1&query=Lodge+Yukiyama+Nozawa) | ⭐️ Google 4.0
-    *   **優點**：走到長坂纜車只要 2 分鐘，對滑雪客極方便。
-    *   **缺點**：傳統和室無廚房，浴場較舊。
-    *   **價格/空房**：約 20,000 JPY/晚。尚未開放。
-10. **山谷山莊 (Yamaya Sanso)** | [📍 Google Maps](https://www.google.com/maps/search/?api=1&query=Yamaya+Sanso+Nozawa) | ⭐️ Booking 9.7 (卓越)
-    *   **優點**：真正的 Ski-in/Ski-out，就在長坂纜車正對面，設有大浴場。
-    *   **缺點**：舊式旅館無廚房。
-    *   **價格/空房**：約 25,000 JPY/晚。尚未開放。
+| 住宿名稱 | ⭐️ 評分 | 🍳 廚房 | ♨️ 自有泡湯 | 🚶 距 Yu-road | 📍 Google 連結 |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| **Akari House Apartments** | 4.9 | ✅ 有 | ❌ 無 | 約 4 分 | [點擊前往](https://maps.google.com/?cid=18085185445001294516&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ) |
+| **Yubaba House Downtown Apartments** | 4.9 | ✅ 有 | ❌ 無 | 約 2 分 | [點擊前往](https://maps.google.com/?cid=7957590907689708209&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ) |
+| **Shiro Apartments Nozawa** | 4.7 | ✅ 有 | ❌ 無 | 約 4 分 | [點擊前往](https://maps.google.com/?cid=5239523009299726721&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ) |
+| **Kihachikan (喜八館)** | 4.7 | ❌ 無 | ✅ 有 | 約 3 分 | [點擊前往](https://maps.google.com/?cid=4727122095125958999&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ) |
+| **Iroha Nozawa** | 4.6 | ❌ 無 | ✅ 有 | 約 8 分 | [點擊前往](https://maps.google.com/?cid=6619920658236131989&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ) |
+| **The Ridge Nozawa** | 4.5 | ✅ 有 | ❌ 無 | 約 10 分 | [點擊前往](https://maps.google.com/?cid=15018398432251765365&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ) |
+| **OneNozawa Residence** | 4.5 | ✅ 有 | ❌ 無 | 約 6 分 | [點擊前往](https://maps.google.com/?cid=12508164683177783731&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ) |
+| **Dennojo (伝之丞)** | 5.0 | ❌ 無 | ✅ 有 | 約 4 分 | [點擊前往](https://maps.google.com/?cid=16594313903072968191&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ) |
+| **Nozawa Cottage** | 5.0 | ✅ 有 | ❌ 無 | 約 12 分 | [點擊前往](https://maps.google.com/?cid=11758099785313736349&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ) |
+| **Nozawa House** | 5.0 | ✅ 有 | ❌ 無 | 約 15 分 | [點擊前往](https://maps.google.com/?cid=2898096341643369462&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ) |
+| **Address Nozawa (地址野澤)** | 4.9 | ✅ 有 | ✅ 有 | 約 3 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Address+Nozawa) |
+| **Kawamotoya (河本屋)** | 4.5 | ✅ 有 | ✅ 有 | 約 12 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Kawamotoya+Nozawa+Onsen) |
+| **Nozawa Gondola Apartments** | 4.8 | ✅ 有 | ❌ 無 | 約 15 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Nozawa+Gondola+Apartments) |
+| **Tanuki luxury apartments (狸)** | 4.5 | ✅ 有 | ❌ 無 | 約 5 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Tanuki+Nozawa) |
+| **Residence Yasushi** | 4.8 | ❌ 無 | ❌ 無 | 約 4 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Residence+Yasushi+Nozawa) |
+| **村之飯店 住吉屋 (Sumiyoshiya)** | 4.6 | ❌ 無 | ✅ 有 | 約 2 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Sumiyoshiya+Nozawa) |
+| **Lodge Yukiyama (旅館 雪山)** | 4.0 | ❌ 無 | ✅ 有 | 約 10 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Lodge+Yukiyama+Nozawa) |
+| **山谷山莊 (Yamaya Sanso)** | 4.6 | ❌ 無 | ✅ 有 | 約 15 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Yamaya+Sanso+Nozawa) |
+| **Ryokan Sakaya (旅館 さかや)** | 4.6 | ❌ 無 | ✅ 有 | 約 3 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Ryokan+Sakaya+Nozawa) |
+| **Kiriya Ryokan (桐屋旅館)** | 4.7 | ❌ 無 | ✅ 有 | 約 1 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Kiriya+Ryokan+Nozawa) |
+| **Tokiwaya Ryokan (常盤屋莊)** | 4.6 | ❌ 無 | ✅ 有 | 約 1 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Tokiwaya+Ryokan+Nozawa) |
+| **Nara-ya (奈良屋)** | 4.7 | ❌ 無 | ✅ 有 | 約 3 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Nara-ya+Nozawa) |
+| **Schneider Hotel** | 4.2 | ❌ 無 | ✅ 有 | 約 0 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Schneider+Hotel+Nozawa) |
+| **Jon Nobi (旅館 Jon Nobi)** | 4.6 | ❌ 無 | ✅ 有 | 約 5 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Jon+Nobi+Nozawa) |
+| **Seisenso (清泉莊)** | 4.5 | ❌ 無 | ✅ 有 | 約 4 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Seisenso+Nozawa) |
+| **Nozawa Grand Hotel (大飯店)** | 4.1 | ❌ 無 | ✅ 有 | 約 6 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Nozawa+Grand+Hotel) |
+| **Shirakaba (白樺)** | 4.4 | ❌ 無 | ✅ 有 | 約 12 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Shirakaba+Nozawa) |
+| **Nozawa Dream** | 4.6 | ❌ 無 | ❌ 無 | 約 8 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Nozawa+Dream) |
+| **Gasthof Schi Heil** | 4.3 | ❌ 無 | ❌ 無 | 約 10 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Gasthof+Schi+Heil+Nozawa) |
+| **Lodge Matsuya** | 4.8 | ❌ 無 | ✅ 有 | 約 3 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Lodge+Matsuya+Nozawa) |
 
 ---
 

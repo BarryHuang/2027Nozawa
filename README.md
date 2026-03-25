@@ -43,7 +43,7 @@
 ---
 
 ## 🏨 4. 嚴選住宿推薦 (共 60 間，Google 評分均 4.0 以上)
-針對有著不同需求（公寓廚房/館內泡湯/近纜車）的家庭旅客，我們擴充了高達 60 間高評分住宿供您挑選。所有住宿均附上「距離 Yu-road (通往日影區之電扶梯)」的步行預估時間。
+針對有著不同需求（**必定有**公寓廚房 或 館內泡湯）的家庭旅客，我們為您過濾掉無廚房且無大浴場的普通青年旅館/民宿，最終整理出 60 間高評分精選住宿。所有住宿均附上「距離 Yu-road (通往日影區之電扶梯)」的步行預估時間。
 
 | 住宿名稱 | ⭐️ 評分 | 🍳 廚房 | ♨️ 自有泡湯 | 🚶 距 Yu-road | 📍 Google 連結 |
 | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -61,7 +61,6 @@
 | **Kawamotoya (河本屋)** | 4.5 | ✅ 有 | ✅ 有 | 約 12 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Kawamotoya+Nozawa+Onsen) |
 | **Nozawa Gondola Apartments** | 4.8 | ✅ 有 | ❌ 無 | 約 15 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Nozawa+Gondola+Apartments) |
 | **Tanuki luxury apartments (狸)** | 4.5 | ✅ 有 | ❌ 無 | 約 5 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Tanuki+Nozawa) |
-| **Residence Yasushi** | 4.8 | ❌ 無 | ❌ 無 | 約 4 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Residence+Yasushi+Nozawa) |
 | **村之飯店 住吉屋 (Sumiyoshiya)** | 4.6 | ❌ 無 | ✅ 有 | 約 2 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Sumiyoshiya+Nozawa) |
 | **Lodge Yukiyama (旅館 雪山)** | 4.0 | ❌ 無 | ✅ 有 | 約 10 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Lodge+Yukiyama+Nozawa) |
 | **山谷山莊 (Yamaya Sanso)** | 4.6 | ❌ 無 | ✅ 有 | 約 15 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Yamaya+Sanso+Nozawa) |
@@ -74,39 +73,40 @@
 | **Seisenso (清泉莊)** | 4.5 | ❌ 無 | ✅ 有 | 約 4 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Seisenso+Nozawa) |
 | **Nozawa Grand Hotel (大飯店)** | 4.1 | ❌ 無 | ✅ 有 | 約 6 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Nozawa+Grand+Hotel) |
 | **Shirakaba (白樺)** | 4.4 | ❌ 無 | ✅ 有 | 約 12 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Shirakaba+Nozawa) |
-| **Nozawa Dream** | 4.6 | ❌ 無 | ❌ 無 | 約 8 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Nozawa+Dream) |
-| **Gasthof Schi Heil** | 4.3 | ❌ 無 | ❌ 無 | 約 10 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Gasthof+Schi+Heil+Nozawa) |
 | **Lodge Matsuya** | 4.8 | ❌ 無 | ✅ 有 | 約 3 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Lodge+Matsuya+Nozawa) |
 | **Kawaichiya Ryokan (河一屋)** | 4.3 | ❌ 無 | ✅ 有 | 約 4 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Kawaichiya+Ryokan+Nozawa) |
 | **Nakajima-ya Ryokan (中島屋)** | 4.5 | ❌ 無 | ✅ 有 | 約 2 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Nakajimaya+Ryokan+Nozawa) |
 | **Asahiya Ryokan (朝日屋旅館)** | 4.5 | ❌ 無 | ✅ 有 | 約 2 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Asahiya+Ryokan+Nozawa) |
 | **Lodge Denbey** | 4.5 | ❌ 無 | ✅ 有 | 約 0 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Lodge+Denbey+Nozawa) |
-| **Wafu Pension Miura (みうら)** | 4.6 | ❌ 無 | ❌ 無 | 約 7 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Wafu+Pension+Miura+Nozawa) |
 | **Address Nagasaka (地址長坂)** | 4.8 | ✅ 有 | ❌ 無 | 約 12 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Address+Nagasaka+Nozawa) |
-| **Oyado Ueno (御宿 上野)** | 4.7 | ❌ 無 | ❌ 無 | 約 5 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Oyado+Ueno+Nozawa) |
 | **Ryokan Urano (浦野旅館)** | 4.6 | ❌ 無 | ✅ 有 | 約 4 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Ryokan+Urano+Nozawa) |
-| **Villa Nozawa** | 4.8 | ❌ 無 | ❌ 無 | 約 8 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Villa+Nozawa) |
 | **Haus St. Anton** | 4.5 | ❌ 無 | ✅ 有 | 約 3 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Haus+St+Anton+Nozawa) |
 | **Nozawa Onsen Hostel** | 4.5 | ✅ 有 | ❌ 無 | 約 6 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Nozawa+Onsen+Hostel) |
-| **Kamoshika Ski Lodge** | 4.7 | ❌ 無 | ❌ 無 | 約 15 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Kamoshika+Ski+Lodge+Nozawa) |
 | **Alpine Villa Nozawa** | 4.4 | ❌ 無 | ✅ 有 | 約 10 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Alpine+Villa+Nozawa) |
 | **Stay Nozawa** | 4.8 | ✅ 有 | ❌ 無 | 約 8 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Stay+Nozawa) |
 | **Shichiemon (七右エ門)** | 4.3 | ❌ 無 | ✅ 有 | 約 4 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Shichiemon+Nozawa) |
 | **Ryokan Seifukan (清風館)** | 4.2 | ❌ 無 | ✅ 有 | 約 5 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Ryokan+Seifukan+Nozawa) |
-| **Lodge Nagano** | 4.9 | ❌ 無 | ❌ 無 | 約 6 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Lodge+Nagano+Nozawa) |
-| **Kenbishi (劍菱)** | 4.4 | ❌ 無 | ❌ 無 | 約 5 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Kenbishi+Nozawa) |
 | **Nozawan** | 4.5 | ✅ 有 | ❌ 無 | 約 8 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Nozawan+Nozawa) |
-| **Ryokan Riki (旅館 力)** | 4.3 | ❌ 無 | ❌ 無 | 約 3 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Ryokan+Riki+Nozawa) |
-| **Lodge Haven** | 4.6 | ❌ 無 | ❌ 無 | 約 10 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Lodge+Haven+Nozawa) |
-| **Kawahiro (川広)** | 4.4 | ❌ 無 | ❌ 無 | 約 13 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Kawahiro+Nozawa) |
 | **Ryokan Marumasu (丸益旅館)** | 4.4 | ❌ 無 | ✅ 有 | 約 6 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Ryokan+Marumasu+Nozawa) |
-| **Ryokan Ume-ya (梅屋)** | 4.3 | ❌ 無 | ❌ 無 | 約 5 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Ryokan+Umeya+Nozawa) |
 | **Nozawa Peak** | 4.9 | ✅ 有 | ❌ 無 | 約 7 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Nozawa+Peak) |
-| **Wafu Pension Miyazawa (宮沢)** | 4.3 | ❌ 無 | ❌ 無 | 約 10 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Wafu+Pension+Miyazawa+Nozawa) |
 | **Oyado Tamakyoya (たまきや)** | 4.5 | ❌ 無 | ✅ 有 | 約 3 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Oyado+Tamakyoya+Nozawa) |
-| **Lodge Ueno Ski** | 4.2 | ❌ 無 | ❌ 無 | 約 15 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Lodge+Ueno+Ski+Nozawa) |
-| **Ryokan Iwataya (岩多屋)** | 4.4 | ❌ 無 | ❌ 無 | 約 4 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Ryokan+Iwataya+Nozawa) |
-| **Resort Inn Toemu** | 4.1 | ❌ 無 | ❌ 無 | 約 12 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Resort+Inn+Toemu+Nozawa) |
+| **Hatoguruma Kawabata (鳩車かわばた)** | 4.4 | ❌ 無 | ✅ 有 | 約 3 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Hatoguruma+Kawabata+Nozawa) |
+| **Yoshidaya Ryokan (吉田屋旅館)** | 4.5 | ❌ 無 | ✅ 有 | 約 4 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Yoshidaya+Ryokan+Nozawa) |
+| **Kadowaki (門脇)** | 4.4 | ❌ 無 | ✅ 有 | 約 5 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Kadowaki+Nozawa) |
+| **Ryokan Nakadaya (中田屋)** | 4.6 | ❌ 無 | ✅ 有 | 約 6 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Ryokan+Nakadaya+Nozawa) |
+| **Ryokan Matsubaya (松葉屋)** | 4.4 | ❌ 無 | ✅ 有 | 約 2 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Ryokan+Matsubaya+Nozawa) |
+| **Fujiyoshi Ryokan (藤吉旅館)** | 4.3 | ❌ 無 | ✅ 有 | 約 10 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Fujiyoshi+Ryokan+Nozawa) |
+| **Miyamaso (みやま荘)** | 4.2 | ❌ 無 | ✅ 有 | 約 8 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Miyamaso+Nozawa) |
+| **Daimon (大門)** | 4.5 | ❌ 無 | ✅ 有 | 約 5 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Daimon+Nozawa) |
+| **Nozawa View Hotel Shimataya (嶋田屋)** | 4.2 | ❌ 無 | ✅ 有 | 約 7 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Nozawa+View+Hotel+Shimataya) |
+| **Chiyoe Ryokan (千代衛)** | 4.7 | ❌ 無 | ✅ 有 | 約 5 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Chiyoe+Ryokan+Nozawa) |
+| **Chitose Kan (千歳館)** | 4.3 | ❌ 無 | ✅ 有 | 約 3 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Chitose+Kan+Nozawa) |
+| **Lodge Yutaka (豊)** | 4.6 | ❌ 無 | ✅ 有 | 約 12 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Lodge+Yutaka+Nozawa) |
+| **Kogakutei (高岳亭)** | 4.1 | ❌ 無 | ✅ 有 | 約 6 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Kogakutei+Nozawa) |
+| **Nozawa Central Apartments** | 4.8 | ✅ 有 | ❌ 無 | 約 5 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Nozawa+Central+Apartments) |
+| **Nozawa Springs** | 4.7 | ✅ 有 | ❌ 無 | 約 6 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Nozawa+Springs) |
+| **Paradiso Nozawa** | 4.9 | ✅ 有 | ❌ 無 | 約 10 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Paradiso+Nozawa) |
+| **Schuss Apartments** | 4.8 | ✅ 有 | ❌ 無 | 約 8 分 | [點擊前往](https://www.google.com/maps/search/?api=1&query=Schuss+Apartments+Nozawa) |
 
 ---
 

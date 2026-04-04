@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2027 白馬 (Hakuba) 住宿決策面板</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --indigo-50: #eef2ff; --indigo-100: #e0e7ff; --indigo-200: #c7d2fe;
+            --indigo-500: #6366f1; --indigo-600: #4f46e5; --indigo-700: #4338ca; --indigo-800: #3730a3; --indigo-900: #312e81;
+            --emerald-50: #ecfdf5; --emerald-100: #d1fae5; --emerald-500: #10b981; --emerald-700: #047857;
+            --rose-50: #fff1f2; --rose-500: #f43f5e;
+            --amber-500: #f59e0b;
+            --slate-50: #f8fafc; --slate-100: #f1f5f9; --slate-200: #e2e8f0; --slate-300: #cbd5e1;
+            --slate-400: #94a3b8; --slate-500: #64748b; --slate-600: #475569; --slate-700: #334155; --slate-800: #1e293b;
+            --blue-50: #eff6ff; --blue-100: #dbeafe; --blue-500: #3b82f6; --blue-700: #1d4ed8; --blue-800: #1e40af;
+            --purple-100: #f3e8ff; --purple-800: #6b21a8;
+            --green-100: #dcfce7; --green-800: #166534;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Noto Sans TC', -apple-system, sans-serif; background: var(--slate-50); color: var(--slate-800); }
+
+        /* Nav */
+        nav { background: var(--indigo-900); color: white; padding: 12px 24px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+        nav .brand { font-weight: 700; font-size: 18px; letter-spacing: 1px; }
+        nav .links { display: flex; gap: 12px; }
+        nav .links a { color: rgba(255,255,255,0.7); text-decoration: none; padding: 6px 14px; border-radius: 8px; font-size: 14px; transition: all 0.2s; background: var(--indigo-800); }
+        nav .links a:hover { background: var(--indigo-700); color: white; }
+        nav .links a.active { background: var(--indigo-600); color: white; font-weight: 700; box-shadow: inset 0 1px 4px rgba(0,0,0,0.2); }
+
+        /* Header */
+        header { background: linear-gradient(135deg, var(--indigo-100), var(--blue-50)); padding: 60px 24px; text-align: center; border-bottom: 1px solid var(--indigo-200); position: relative; overflow: hidden; }
+        header::before { content: '❄️'; position: absolute; top: 16px; right: 32px; font-size: 56px; opacity: 0.15; }
+        header::after { content: '🏂'; position: absolute; bottom: 16px; left: 40px; font-size: 48px; opacity: 0.15; }
+        header h1 { font-size: 2.8rem; font-weight: 700; background: linear-gradient(135deg, var(--indigo-700), var(--blue-500)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 12px; }
+        header p { font-size: 1.2rem; color: var(--slate-600); }
+
+        /* Main */
+        main { max-width: 1600px; margin: 40px auto; padding: 0 16px; }
+
+        /* Cards */
+        .card { background: white; border-radius: 16px; padding: 32px; margin-bottom: 24px; border: 1px solid var(--slate-100); box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+        .card h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+        .card h2 .icon { background: var(--indigo-100); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+
+        /* Resort Grid */
+        .resort-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 16px; }
+        .resort-item { padding: 16px; border-radius: 12px; border-left: 4px solid; }
+        .resort-item.blue { background: var(--blue-50); border-color: var(--blue-500); }
+        .resort-item.emerald { background: var(--emerald-50); border-color: var(--emerald-500); }
+        .resort-item.indigo { background: var(--indigo-50); border-color: var(--indigo-500); }
+        .resort-item h3 { font-weight: 700; font-size: 1rem; margin-bottom: 4px; }
+        .resort-item p { font-size: 0.85rem; color: var(--slate-600); line-height: 1.5; }
+
+        /* Progress */
+        .progress-bar { background: var(--emerald-50); border-left: 4px solid var(--emerald-500); padding: 10px 16px; border-radius: 0 8px 8px 0; font-size: 0.85rem; color: var(--slate-700); margin-bottom: 20px; }
+
+        /* Table */
+        .table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid var(--slate-200); }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; white-space: nowrap; }
+        thead { background: var(--indigo-50); }
+        th { padding: 14px 12px; font-weight: 700; color: var(--indigo-900); text-align: center; border-bottom: 2px solid var(--indigo-200); }
+        th:first-child { text-align: left; padding-left: 16px; }
+        td { padding: 10px 12px; text-align: center; border-bottom: 1px solid var(--slate-100); }
+        td:first-child { text-align: left; font-weight: 700; color: var(--slate-800); padding-left: 16px; }
+        tr:hover { background: var(--slate-50); }
+        tr { transition: all 0.15s; }
+
+        /* Status badges */
+        .badge { display: inline-block; padding: 3px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; }
+        .badge-blue { background: var(--blue-100); color: var(--blue-800); }
+        .badge-purple { background: var(--purple-100); color: var(--purple-800); }
+        .badge-green { background: var(--green-100); color: var(--green-800); }
+        .badge-amber { background: #fef3c7; color: #92400e; }
+
+        .text-emerald { color: var(--emerald-700); font-weight: 700; }
+        .text-muted { color: var(--slate-400); }
+        .rating { color: var(--amber-500); font-weight: 700; }
+        a.map-link { color: var(--indigo-500); font-weight: 700; text-decoration: none; }
+        a.map-link:hover { color: var(--indigo-700); text-decoration: underline; }
+
+        /* Note column */
+        .note-col { background: var(--slate-50); border-left: 1px solid var(--slate-200); padding: 6px 10px !important; min-width: 280px; }
+        .note-col .btn-group { display: flex; border: 1px solid var(--slate-300); border-radius: 8px; overflow: hidden; height: 28px; }
+        .note-col .btn-group button { flex: 1; font-size: 0.7rem; font-weight: 700; border: none; cursor: pointer; transition: all 0.15s; background: white; color: var(--slate-400); }
+        .note-col .btn-group button:not(:last-child) { border-right: 1px solid var(--slate-300); }
+        .note-col .btn-group button:hover { background: var(--slate-100); }
+        .note-col .btn-group button.active-yes { background: var(--indigo-500); color: white; }
+        .note-col .btn-group button.active-no { background: var(--rose-500); color: white; }
+        .note-col .btn-group button.active-none { background: var(--slate-200); color: var(--slate-600); }
+        .note-col input { width: 100%; margin-top: 6px; padding: 5px 10px; border: 1px solid var(--slate-300); border-radius: 6px; font-size: 0.8rem; outline: none; transition: border 0.2s; }
+        .note-col input:focus { border-color: var(--indigo-500); box-shadow: 0 0 0 3px rgba(99,102,241,0.1); }
+
+        .row-eliminated { opacity: 0.35; }
+        .row-kept { background: var(--indigo-50) !important; }
+
+        footer { text-align: center; padding: 40px; color: var(--slate-400); font-size: 0.8rem; }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.8rem; }
+            .card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="brand">😎 2027 家族滑雪決策面板</div>
+    <div class="links">
+        <a href="index.html">♨️ 方案A: 野澤溫泉</a>
+        <a href="hakuba.html" class="active">🏔️ 方案B: 白馬 Valley</a>
+    </div>
+</nav>
+
+<header>
+    <h1>2027 白馬 (Hakuba) 家庭滑雪之旅</h1>
+    <p>1月22日 - 1月30日 • 8晚 • 日本長野縣白馬村</p>
+</header>
+
+<main>
+    <!-- Resort Overview -->
+    <div class="card">
+        <h2><span class="icon">🏔️</span> 推薦滑雪區域</h2>
+        <div class="resort-grid">
+            <div class="resort-item blue">
+                <h3>八方尾根 (Happo-One)</h3>
+                <p>白馬規模最大，周邊 Wadano 區充滿漂亮歐式木屋，住宿最密集、機能最好。適合中高級或喜愛熱鬧的家庭。</p>
+            </div>
+            <div class="resort-item emerald">
+                <h3>栂池高原 (Tsugaike) ⭐️ 小孩首選</h3>
+                <p>擁有超寬廣平緩的「鐘鳴之丘」綠線，極度適合帶小朋友學滑雪！本次新增 8 間 Ski-in/out 旅館。</p>
+            </div>
+            <div class="resort-item indigo">
+                <h3>岩岳 (Iwatake)</h3>
+                <p>擁有北阿爾卑斯山絕美全景 (Hakuba Mountain Harbor)，地形豐富寬廣，適合享受風景與中級滑行。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Accommodation Table -->
+    <div class="card">
+        <h2><span class="icon">🏨</span> 白馬精選住宿清單 (68間)</h2>
+        <div class="progress-bar">
+            📊 已發送 31 封聯繫信 → 收到 9 封回覆（含報價）→ 1 間已預先保留 (Morino Lodge)
+        </div>
+        <div class="table-wrap">
+            <table id="hotelTable">
+                <thead>
+                    <tr>
+                        <th style="text-align:left">住宿名稱</th>
+                        <th>評分</th>
+                        <th>區域</th>
+                        <th>🍳 廚房</th>
+                        <th>♨️ 泡湯</th>
+                        <th>距雪場</th>
+                        <th>信件狀態</th>
+                        <th>地圖</th>
+                        <th class="note-col" style="min-width:280px">📝 筆記與評估</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+
+<footer>2027 Hakuba Valley Family Ski Trip Planning Dashboard</footer>
+
+<script>
+const hotels = [
+  {n:"Mountain Side Hakuba",r:"4.9",a:"Wadano",k:1,o:0,d:"0 分 (Ski-in/out)",s:"⏳ 4/1 開放訂房 (僅有3房型)",u:"https://www.google.com/maps/search/?api=1&query=Mountain+Side+Hakuba"},
+  {n:"Hakuba Tokyu Hotel (東急)",r:"4.4",a:"Wadano",k:0,o:1,d:"5 分 (接駁)",s:"✅ (Email公開)",u:"https://www.google.com/maps/search/?api=1&query=Hakuba+Tokyu+Hotel"},
+  {n:"Hakuba Mominoki Hotel",r:"4.3",a:"Wadano",k:0,o:1,d:"3 分 (八方)",s:"✅ (Email公開)",u:"https://www.google.com/maps/search/?api=1&query=Hakuba+Mominoki+Hotel"},
+  {n:"Koharu Resort Hotel",r:"4.5",a:"Wadano",k:1,o:0,d:"2 分 (八方 Sakka)",s:"⚠️ (僅官網表單: koharuresort.com)",u:"https://www.google.com/maps/search/?api=1&query=Koharu+Resort+Hakuba"},
+  {n:"Phoenix Chalets",r:"4.8",a:"Wadano",k:1,o:0,d:"5 分 (八方)",s:"📨 有空房 (2房木屋)",u:"https://www.google.com/maps/search/?api=1&query=Phoenix+Chalets+Hakuba"},
+  {n:"Ryokan Shirouma-So (白馬莊)",r:"4.6",a:"Happo",k:0,o:1,d:"5 分 (八方)",s:"⚠️ (僅官網表單: shiroumaso.com)",u:"https://www.google.com/maps/search/?api=1&query=Ryokan+Shirouma-So"},
+  {n:"Hakuba Panorama Hotel",r:"4.5",a:"Happo",k:0,o:1,d:"5 分 (八方)",s:"📨 有空房 (¥75-80萬/8晚)",u:"https://www.google.com/maps/search/?api=1&query=Hakuba+Panorama+Hotel"},
+  {n:"Hotel Goryukan (五龍館)",r:"4.3",a:"Happo",k:0,o:1,d:"5 分 (八方)",s:"⚠️ (僅官網表單)",u:"https://www.google.com/maps/search/?api=1&query=Hotel+Goryukan+Hakuba"},
+  {n:"Hakuba Yamano Hotel",r:"4.6",a:"Happo",k:0,o:1,d:"2 分 (八方 跳台)",s:"🟢 已標示寄信",u:"https://www.google.com/maps/search/?api=1&query=Hakuba+Yamano+Hotel"},
+  {n:"Black Bear Apartments",r:"4.9",a:"Happo",k:1,o:0,d:"10 分 (八方)",s:"🟢 已寄 (inquiries@blackbearproperties.com)",u:"https://www.google.com/maps/search/?api=1&query=Black+Bear+Apartments+Hakuba"},
+  {n:"The Ridge Hakuba",r:"4.5",a:"Wadano",k:1,o:0,d:"5 分 (八方)",s:"🟢 已標示寄信",u:"https://www.google.com/maps/search/?api=1&query=The+Ridge+Hakuba"},
+  {n:"Courtyard by Marriott Hakuba",r:"4.3",a:"Echoland",k:0,o:1,d:"10 分 (接駁)",s:"✅ (Email公開)",u:"https://www.google.com/maps/search/?api=1&query=Courtyard+by+Marriott+Hakuba"},
+  {n:"Roka Apartments",r:"4.8",a:"Echoland",k:1,o:0,d:"10 分 (接駁)",s:"📨 有空房 (2房公寓)",u:"https://www.google.com/maps/search/?api=1&query=Roka+Hakuba"},
+  {n:"Hakuba Highland Hotel",r:"4.2",a:"車站區",k:0,o:1,d:"10 分 (接駁)",s:"⚠️ (僅官網表單)",u:"https://www.google.com/maps/search/?api=1&query=Hakuba+Highland+Hotel"},
+  {n:"Hotel Green Plaza Hakuba",r:"4.0",a:"Cortina",k:0,o:1,d:"0 分 (Ski-in/out)",s:"⚠️ (需官網系統)",u:"https://www.google.com/maps/search/?api=1&query=Hotel+Green+Plaza+Hakuba"},
+  {n:"Tsugaike Kogen Hotel",r:"4.1",a:"栂池",k:0,o:1,d:"0 分 (Ski-in/out)",s:"✅ (Email公開)",u:"https://www.google.com/maps/search/?api=1&query=Tsugaike+Kogen+Hotel"},
+  {n:"Slopeside Chalets",r:"4.8",a:"Wadano",k:1,o:0,d:"1 分 (Sakka)",s:"🟢 已寄 (slopesidelodgehakuba@gmail.com)",u:"https://www.google.com/maps/search/?api=1&query=Slopeside+Chalets+Hakuba"},
+  {n:"Hakuba Onsen Ryokan Ougiya",r:"4.3",a:"Happo",k:0,o:1,d:"5 分 (八方)",s:"⚠️ (僅官網表單)",u:"https://www.google.com/maps/search/?api=1&query=Hakuba+Onsen+Ryokan+Ougiya"},
+  {n:"Wadano Gateway Suites",r:"4.7",a:"Wadano",k:1,o:0,d:"8 分 (八方)",s:"🟢 已寄 (wadanogateway@gmail.com)",u:"https://www.google.com/maps/search/?api=1&query=Wadano+Gateway+Suites"},
+  {n:"Happo View Chalet",r:"4.8",a:"Happo",k:1,o:0,d:"10 分 (八方)",s:"⚠️ (僅官網表單: happoviewchalet.com)",u:"https://www.google.com/maps/search/?api=1&query=Happo+View+Chalet"},
+  {n:"Ski-in/Ski-out Goryu Hotel",r:"4.2",a:"Goryu",k:0,o:1,d:"0 分 (五龍)",s:"✅ (Email公開)",u:"https://www.google.com/maps/search/?api=1&query=Escal+Plaza+Goryu"},
+  {n:"Hakuba Powder Cottage",r:"4.9",a:"Wadano",k:1,o:0,d:"5 分 (八方)",s:"🟢 已寄 (bookings@hakubapowderlodging.com)",u:"https://www.google.com/maps/search/?api=1&query=Hakuba+Powder+Cottage"},
+  {n:"Hotel Sierra Resort Hakuba",r:"4.7",a:"岩岳/栂池",k:0,o:1,d:"10 分 (接駁)",s:"🟢 已寄 (hakuba@sierra.ne.jp)",u:"https://www.google.com/maps/search/?api=1&query=Hotel+Sierra+Resort+Hakuba"},
+  {n:"Shakespeare Hotel",r:"4.1",a:"Echoland",k:0,o:1,d:"10 分 (接駁)",s:"✅ (Email公開)",u:"https://www.google.com/maps/search/?api=1&query=Shakespeare+Hotel+Hakuba"},
+  {n:"Oak Forest Hotel",r:"4.2",a:"Echoland",k:0,o:1,d:"10 分 (接駁)",s:"⚠️ (僅官網表單)",u:"https://www.google.com/maps/search/?api=1&query=Oak+Forest+Hotel+Hakuba"},
+  {n:"Luna Hotel",r:"4.4",a:"Wadano",k:0,o:1,d:"5 分 (八方)",s:"✅ (Email公開)",u:"https://www.google.com/maps/search/?api=1&query=Hakuba+Luna+Hotel"},
+  {n:"Penke Panke Lodge",r:"4.6",a:"Wadano",k:1,o:0,d:"3 分 (八方)",s:"🟢 已寄 (penkepankelodge@gmail.com)",u:"https://www.google.com/maps/search/?api=1&query=Penke+Panke+Lodge"},
+  {n:"Hakuba Gondola Hotel",r:"4.1",a:"Happo",k:0,o:0,d:"0 分 (八方)",s:"✅ (Email公開)",u:"https://www.google.com/maps/search/?api=1&query=Hakuba+Gondola+Hotel"},
+  {n:"Ryokan Biyu no Yado",r:"4.5",a:"車站區",k:0,o:1,d:"10 分 (接駁)",s:"🟢 已寄 (biyunoyado@yudanakaview.co.jp)",u:"https://www.google.com/maps/search/?api=1&query=Biyu+no+Yado+Hakuba"},
+  {n:"Aria Hotel Hakuba",r:"4.6",a:"Happo",k:0,o:1,d:"5 分 (八方)",s:"⚠️ (官網已關閉)",u:"https://www.google.com/maps/search/?api=1&query=Aria+Hotel+Hakuba"},
+  {n:"Hakuba Hifumi",r:"4.8",a:"Happo",k:0,o:1,d:"3 分 (八方)",s:"⚠️ (僅官網表單)",u:"https://www.google.com/maps/search/?api=1&query=Hakuba+Hifumi"},
+  {n:"Shirouma Village",r:"4.4",a:"Happo",k:0,o:1,d:"5 分 (八方)",s:"✅ (Email公開)",u:"https://www.google.com/maps/search/?api=1&query=Shirouma+Village+Hakuba"},
+  {n:"Grace Hakuba",r:"4.2",a:"栂池",k:0,o:1,d:"2 分 (栂池)",s:"✅ (Email公開)",u:"https://www.google.com/maps/search/?api=1&query=Grace+Hakuba"},
+  {n:"Sunplaza Hakuba",r:"4.1",a:"Goryu",k:0,o:1,d:"3 分 (五龍)",s:"⚠️ (僅官網表單)",u:"https://www.google.com/maps/search/?api=1&query=Sunplaza+Hakuba"},
+  {n:"Echo Hotel",r:"4.2",a:"Echoland",k:0,o:0,d:"10 分 (接駁)",s:"✅ (Email公開)",u:"https://www.google.com/maps/search/?api=1&query=Echo+Hotel+Hakuba"},
+  {n:"Villa Hakuba",r:"4.7",a:"Happo",k:1,o:0,d:"1 分 (八方)",s:"📨 有空房 (¥15.7萬/晚起)",u:"https://www.google.com/maps/search/?api=1&query=Villa+Hakuba"},
+  {n:"Aura Chalets",r:"4.8",a:"Wadano",k:1,o:0,d:"5 分 (八方)",s:"🟢 已標示寄信",u:"https://www.google.com/maps/search/?api=1&query=Aura+Chalets+Hakuba"},
+  {n:"Powder Suites",r:"4.7",a:"Echoland",k:1,o:0,d:"10 分 (接駁)",s:"⚠️ (僅官網表單: thehakubacollection.com)",u:"https://www.google.com/maps/search/?api=1&query=Powder+Suites+Hakuba"},
+  {n:"Mizunoo",r:"4.5",a:"Wadano",k:1,o:0,d:"3 分 (八方)",s:"🟢 已標示寄信",u:"https://www.google.com/maps/search/?api=1&query=Mizunoo+Hakuba"},
+  {n:"Gakuto Villas",r:"4.6",a:"Wadano",k:1,o:0,d:"8 分 (八方)",s:"🟢 已標示寄信",u:"https://www.google.com/maps/search/?api=1&query=Gakuto+Villas+Hakuba"},
+  {n:"The Guest House Hakuba",r:"4.3",a:"Echoland",k:1,o:0,d:"10 分 (接駁)",s:"✅ (Email公開)",u:"https://www.google.com/maps/search/?api=1&query=The+Guest+House+Hakuba"},
+  {n:"Abest Happo Aldea",r:"4.1",a:"Happo",k:0,o:1,d:"8 分 (八方)",s:"⚠️ (僅官網表單)",u:"https://www.google.com/maps/search/?api=1&query=Hotel+Abest+Happo"},
+  {n:"Kamon",r:"4.4",a:"Echoland",k:1,o:0,d:"10 分 (接駁)",s:"✅ (Email公開)",u:"https://www.google.com/maps/search/?api=1&query=Kamon+Hakuba"},
+  {n:"Wadano Woods",r:"4.9",a:"Wadano",k:1,o:0,d:"5 分 (八方)",s:"📨 有空房 (3-4房公寓)",u:"https://www.google.com/maps/search/?api=1&query=Wadano+Woods+Hakuba"},
+  {n:"Echoland Apartments",r:"4.7",a:"Echoland",k:1,o:0,d:"10 分 (接駁)",s:"⚠️ (僅官網表單: hakubasnowapartments.com)",u:"https://www.google.com/maps/search/?api=1&query=Echoland+Apartments"},
+  {n:"Goryu 館 (館別2)",r:"4.2",a:"Goryu",k:0,o:1,d:"5 分 (五龍)",s:"⚠️ (僅官網表單)",u:"https://www.google.com/maps/search/?api=1&query=Goryu+Kan+Hakuba"},
+  {n:"Hakuba Alps Hotel",r:"4.1",a:"乘鞍",k:0,o:1,d:"0 分 (Ski-in/out)",s:"✅ (Email公開)",u:"https://www.google.com/maps/search/?api=1&query=Hakuba+Alps+Hotel"},
+  {n:"Sundance Resort",r:"4.0",a:"岩岳",k:1,o:1,d:"5 分 (岩岳)",s:"⚠️ (僅官網表單)",u:"https://www.google.com/maps/search/?api=1&query=Sundance+Resort+Hakuba"},
+  {n:"Iwatake Apartments",r:"4.6",a:"岩岳",k:1,o:0,d:"3 分 (岩岳)",s:"🟢 已寄 (daniel@hakubaholiday.com)",u:"https://www.google.com/maps/search/?api=1&query=Iwatake+Apartments+Hakuba"},
+  {n:"Morino Lodge",r:"4.9",a:"Wadano",k:1,o:0,d:"5 分 (八方)",s:"👑 收到預先保留 (待付訂金)",u:"https://www.google.com/maps/search/?api=1&query=Morino+Lodge+Hakuba"},
+  {n:"Hakuba Station Guest",r:"4.4",a:"車站區",k:1,o:0,d:"15 分 (接駁)",s:"✅ (Email公開)",u:"https://www.google.com/maps/search/?api=1&query=Hakuba+Station+Guest"},
+  {n:"Hakuba Braze Club",r:"4.3",a:"Happo",k:0,o:1,d:"5 分 (八方)",s:"⚠️ (僅官網表單)",u:"https://www.google.com/maps/search/?api=1&query=Hakuba+Braze+Club"},
+  {n:"Log Cottage Epoch",r:"4.5",a:"Echoland",k:1,o:0,d:"10 分 (接駁)",s:"🟢 已寄 (info@epoch-hakuba.com)",u:"https://www.google.com/maps/search/?api=1&query=Log+Cottage+Epoch+Hakuba"},
+  {n:"Chalet Happy Bell",r:"4.4",a:"Wadano",k:1,o:0,d:"8 分 (八方)",s:"✅ (Email公開)",u:"https://www.google.com/maps/search/?api=1&query=Chalet+Happy+Bell"},
+  {n:"Hakuba Glorious",r:"4.2",a:"栂池",k:0,o:1,d:"3 分 (栂池)",s:"⚠️ (需官網系統)",u:"https://www.google.com/maps/search/?api=1&query=Hakuba+Glorious"},
+  {n:"Tsugaike Hilltop",r:"4.4",a:"栂池",k:0,o:1,d:"0 分 (Ski-in/out)",s:"✅ (Email公開)",u:"https://www.google.com/maps/search/?api=1&query=Tsugaike+Hilltop"},
+  {n:"Iwatake Chalet",r:"4.7",a:"岩岳",k:1,o:0,d:"5 分 (岩岳)",s:"⚠️ (聯絡失敗/需查官網)",u:"https://www.google.com/maps/search/?api=1&query=Iwatake+Chalet+Hakuba"},
+  {n:"Mominoki Apartments",r:"4.8",a:"Wadano",k:1,o:0,d:"3 分 (八方)",s:"⏳ 等待 5 月初開放",u:"https://www.google.com/maps/search/?api=1&query=Mominoki+Apartments"},
+  {n:"Wadano Hill Chalet",r:"4.9",a:"Wadano",k:1,o:0,d:"4 分 (八方)",s:"📨 有空房 (¥21.9萬/晚起)",u:"https://www.google.com/maps/search/?api=1&query=Wadano+Hill+Chalet"},
+  {n:"The Bohemians",r:"4.6",a:"Echoland",k:1,o:0,d:"10 分 (接駁)",s:"🟢 已標示寄信",u:"https://www.google.com/maps/search/?api=1&query=The+Bohemians+Hakuba"},
+  {n:"Hotel Hakuba Berghaus",r:"4.3",a:"栂池",k:0,o:1,d:"0 分 (Ski-in/out)",s:"⚠️ (僅官網表單)",u:"https://www.google.com/maps/search/?api=1&query=Hotel+Hakuba+Berghaus"},
+  {n:"Resort Inn Marion Shinano",r:"4.2",a:"栂池",k:0,o:1,d:"0 分 (Ski-in/out)",s:"✅ (Email公開)",u:"https://www.google.com/maps/search/?api=1&query=Resort+Inn+Marion+Shinano"},
+  {n:"Hotel New Bernina",r:"4.0",a:"栂池",k:0,o:1,d:"0 分 (Ski-in/out)",s:"✅ (Email公開)",u:"https://www.google.com/maps/search/?api=1&query=Hotel+New+Bernina"},
+  {n:"Espoir Misawa",r:"4.3",a:"栂池",k:0,o:1,d:"0 分 (Ski-in/out)",s:"⚠️ (僅官網表單)",u:"https://www.google.com/maps/search/?api=1&query=Espoir+Misawa"},
+  {n:"Ski Inn Hakuba",r:"4.9",a:"栂池",k:0,o:0,d:"0 分 (Ski-in/out)",s:"✅ (Email公開)",u:"https://www.google.com/maps/search/?api=1&query=Ski+Inn+Hakuba"},
+  {n:"Slopeside Chalet Hakuba",r:"4.8",a:"栂池",k:1,o:0,d:"0 分 (Ski-in/out)",s:"✅ (Email公開)",u:"https://www.google.com/maps/search/?api=1&query=Slopeside+Chalet+Hakuba"},
+  {n:"Hotel Sunplaza Tsugaike",r:"4.2",a:"栂池",k:0,o:1,d:"1 分 (栂池)",s:"✅ (Email公開)",u:"https://www.google.com/maps/search/?api=1&query=Hotel+Sunplaza+Tsugaike"},
+  {n:"Lodge Tsubaki",r:"4.5",a:"栂池",k:0,o:1,d:"0 分 (Ski-in/out)",s:"✅ (Email公開)",u:"https://www.google.com/maps/search/?api=1&query=Lodge+Tsubaki"},
+];
+
+function badgeClass(s) {
+    if (s.includes('📨') || s.includes('👑')) return 'badge-blue';
+    if (s.includes('⏳')) return 'badge-purple';
+    if (s.includes('🟢')) return 'badge-green';
+    return 'badge-amber';
+}
+
+const tbody = document.querySelector('#hotelTable tbody');
+hotels.forEach(h => {
+    const key = 'hakuba_v3_' + encodeURIComponent(h.n);
+    let data = { stat: 'none', txt: '' };
+    try { const raw = localStorage.getItem(key); if (raw) data = JSON.parse(raw); } catch(e) {}
+
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+        <td>${h.n}</td>
+        <td class="rating">${h.r}</td>
+        <td>${h.a}</td>
+        <td class="${h.k ? 'text-emerald' : 'text-muted'}">${h.k ? '✅ 有' : '❌ 無'}</td>
+        <td class="${h.o ? 'text-emerald' : 'text-muted'}">${h.o ? '✅ 有' : '❌ 無'}</td>
+        <td>${h.d}</td>
+        <td><span class="badge ${badgeClass(h.s)}">${h.s}</span></td>
+        <td><a href="${h.u}" target="_blank" class="map-link">📍 前往</a></td>
+        <td class="note-col">
+            <div class="btn-group">
+                <button data-v="none">未決</button>
+                <button data-v="yes">👍 保留</button>
+                <button data-v="no">❌ 剃除</button>
+            </div>
+            <input type="text" placeholder="私人筆記..." value="${data.txt.replace(/"/g, '&quot;')}">
+        </td>
+    `;
+
+    const save = () => localStorage.setItem(key, JSON.stringify(data));
+
+    const updateUI = () => {
+        tr.querySelectorAll('.btn-group button').forEach(btn => {
+            btn.className = '';
+            if (btn.dataset.v === data.stat) {
+                if (data.stat === 'yes') btn.className = 'active-yes';
+                else if (data.stat === 'no') btn.className = 'active-no';
+                else btn.className = 'active-none';
+            }
+        });
+        tr.classList.remove('row-eliminated', 'row-kept');
+        if (data.stat === 'no') tr.classList.add('row-eliminated');
+        else if (data.stat === 'yes') tr.classList.add('row-kept');
+    };
+
+    tr.querySelectorAll('.btn-group button').forEach(btn => {
+        btn.addEventListener('click', () => {
+            data.stat = btn.dataset.v;
+            save();
+            updateUI();
+        });
+    });
+
+    tr.querySelector('.note-col input').addEventListener('input', e => {
+        data.txt = e.target.value;
+        save();
+    });
+
+    updateUI();
+    tbody.appendChild(tr);
+});
+</script>
+</body>
+</html>

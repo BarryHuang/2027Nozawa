@@ -28,21 +28,20 @@
     /* SPOT CARD */
     .spot{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.08);margin-bottom:32px;}
     .spot-hero{padding:36px 28px;color:#fff;position:relative;overflow:hidden;}
-    .spot-hero::before{content:"";position:absolute;inset:0;background:inherit;filter:brightness(.7);z-index:0;}
     .spot-hero>*{position:relative;z-index:1;}
     .spot-emoji{font-size:56px;margin-bottom:8px;display:block;}
     .spot-day{font-size:.8em;font-weight:700;opacity:.8;letter-spacing:1px;text-transform:uppercase;}
     .spot-hero h2{font-size:1.6em;font-weight:900;margin-top:4px;}
     .spot-hero .sub{font-size:.92em;opacity:.85;margin-top:6px;}
 
-    .s1 .spot-hero{background:linear-gradient(135deg,#7b2ff7,#4a148c);}
-    .s2 .spot-hero{background:linear-gradient(135deg,#43a047,#1b5e20);}
-    .s3 .spot-hero{background:linear-gradient(135deg,#e65100,#bf360c);}
-    .s4 .spot-hero{background:linear-gradient(135deg,#0277bd,#01579b);}
-    .s5 .spot-hero{background:linear-gradient(135deg,#c62828,#b71c1c);}
-    .s6 .spot-hero{background:linear-gradient(135deg,#5d4037,#3e2723);}
-    .s7 .spot-hero{background:linear-gradient(135deg,#00838f,#006064);}
-    .s8 .spot-hero{background:linear-gradient(135deg,#558b2f,#33691e);}
+    .s1 .spot-hero{background:linear-gradient(rgba(0,0,50,0.4),rgba(0,0,50,0.7)), url('https://images.unsplash.com/photo-1558285549-2a06eeacabce?auto=format&fit=crop&q=80&w=1000') center/cover no-repeat;}
+    .s2 .spot-hero{background:linear-gradient(rgba(10,50,10,0.4),rgba(10,50,10,0.7)), url('https://images.unsplash.com/photo-1496060169243-453fde45943b?auto=format&fit=crop&q=80&w=1000') center/cover no-repeat;}
+    .s3 .spot-hero{background:linear-gradient(rgba(50,20,0,0.4),rgba(50,20,0,0.7)), url('https://images.unsplash.com/photo-1518357019504-8111bbfa4b53?auto=format&fit=crop&q=80&w=1000') center/cover no-repeat;}
+    .s4 .spot-hero{background:linear-gradient(rgba(0,30,60,0.4),rgba(0,30,60,0.7)), url('https://images.unsplash.com/photo-1542640244-7e672d627b0b?auto=format&fit=crop&q=80&w=1000') center/cover no-repeat;}
+    .s5 .spot-hero{background:linear-gradient(rgba(40,10,10,0.4),rgba(40,10,10,0.7)), url('https://images.unsplash.com/photo-1600862075591-64dce4937bd8?auto=format&fit=crop&q=80&w=1000') center/cover no-repeat;}
+    .s6 .spot-hero{background:linear-gradient(rgba(30,20,10,0.4),rgba(30,20,10,0.7)), url('https://images.unsplash.com/photo-1627917812984-5a7c29be1be3?auto=format&fit=crop&q=80&w=1000') center/cover no-repeat;}
+    .s7 .spot-hero{background:linear-gradient(rgba(0,40,50,0.4),rgba(0,40,50,0.7)), url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&q=80&w=1000') center/cover no-repeat;}
+    .s8 .spot-hero{background:linear-gradient(rgba(20,40,10,0.4),rgba(20,40,10,0.7)), url('https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&q=80&w=1000') center/cover no-repeat;}
 
     .spot-body{padding:24px 28px 28px;}
 
@@ -51,11 +50,13 @@
     .sec-title:first-child{margin-top:0;}
 
     /* FEATURE GRID */
-    .feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:12px 0;}
-    .feat{background:#f8f4ef;border-radius:12px;padding:14px;text-align:center;}
-    .feat-icon{font-size:2em;margin-bottom:4px;}
-    .feat-name{font-size:.9em;font-weight:700;color:#333;}
-    .feat-desc{font-size:.82em;color:#666;margin-top:2px;}
+    .feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:12px 0;}
+    .feat{background:#fff;border-radius:12px;padding:0;overflow:hidden;box-shadow:0 3px 12px rgba(0,0,0,.06);text-align:center;display:flex;flex-direction:column;transition:transform .2s;}
+    .feat:hover{transform:translateY(-3px);}
+    .feat-img{width:100%;height:130px;object-fit:cover;display:block;}
+    .feat-text{padding:14px 12px;flex:1;display:flex;flex-direction:column;justify-content:center;}
+    .feat-name{font-size:.95em;font-weight:800;color:#333;}
+    .feat-desc{font-size:.82em;color:#666;margin-top:4px;}
 
     /* HIGHLIGHT */
     .hl{border-radius:12px;padding:14px 16px;margin:12px 0;font-size:.9em;line-height:1.7;}
@@ -146,24 +147,32 @@
     <div class="sec-title">🌺 園內四大紫藤必看</div>
     <div class="feat-grid">
       <div class="feat">
-        <div class="feat-icon">💗</div>
-        <div class="feat-name">淡紅藤</div>
-        <div class="feat-desc">最早開花，淡粉紅色<br>4月中旬～下旬</div>
+        <img class="feat-img" src="https://cdn.4travel.jp/img/tcs/t/pict/src/72/94/34/src_72943412.jpg?1650258543" alt="淡紅藤">
+        <div class="feat-text">
+          <div class="feat-name">淡紅藤</div>
+          <div class="feat-desc">最早開花，淡粉紅色<br>4月中旬～下旬</div>
+        </div>
       </div>
       <div class="feat">
-        <div class="feat-icon">💜</div>
-        <div class="feat-name">大藤（主角！）</div>
-        <div class="feat-desc">經典紫色，花穗長 1.5～2m<br>4月下旬～5月上旬</div>
+        <img class="feat-img" src="https://www.ashikaga.co.jp/fujinohana_special2022/jp/images/img04_220201_.jpg" alt="大藤（主角！）">
+        <div class="feat-text">
+          <div class="feat-name">大藤（主角！）</div>
+          <div class="feat-desc">經典紫色，花穗長 1.5～2m<br>4月下旬～5月上旬</div>
+        </div>
       </div>
       <div class="feat">
-        <div class="feat-icon">🤍</div>
-        <div class="feat-name">白藤隧道</div>
-        <div class="feat-desc">80 公尺純白花隧道<br>5月上旬</div>
+        <img class="feat-img" src="https://preview.aflo.com/pnHb7cYYZLpz/aflo_58120974.jpg" alt="白藤隧道">
+        <div class="feat-text">
+          <div class="feat-name">白藤隧道</div>
+          <div class="feat-desc">80 公尺純白花隧道<br>5月上旬</div>
+        </div>
       </div>
       <div class="feat">
-        <div class="feat-icon">💛</div>
-        <div class="feat-name">黃花藤</div>
-        <div class="feat-desc">金黃色，日本罕見<br>5月上旬～中旬</div>
+        <img class="feat-img" src="https://s3-ap-northeast-1.amazonaws.com/thegate/2021/02/26/18/54/29/kibanahuji.jpg" alt="黃花藤">
+        <div class="feat-text">
+          <div class="feat-name">黃花藤</div>
+          <div class="feat-desc">金黃色，日本罕見<br>5月上旬～中旬</div>
+        </div>
       </div>
     </div>
 
@@ -225,38 +234,50 @@
     <div class="sec-title">🌸 春季三花攻略</div>
     <div class="feat-grid">
       <div class="feat">
-        <div class="feat-icon">💜</div>
-        <div class="feat-name">粉蝶花 ネモフィラ</div>
-        <div class="feat-desc">藍紫色花海，夢幻至極<br>4月中旬～5月上旬<br>📍 西口ひろば</div>
+        <img class="feat-img" src="https://t.pimg.jp/088/928/059/1/88928059.jpg" alt="粉蝶花 ネモフィラ">
+        <div class="feat-text">
+          <div class="feat-name">粉蝶花 ネモフィラ</div>
+          <div class="feat-desc">藍紫色花海，夢幻至極<br>4月中旬～5月上旬<br>📍 西口ひろば</div>
+        </div>
       </div>
       <div class="feat">
-        <div class="feat-icon">🌺</div>
-        <div class="feat-name">罌粟花 ポピー</div>
-        <div class="feat-desc">30萬株紅粉色花海<br>5月中旬～6月<br>📍 運動広場</div>
+        <img class="feat-img" src="https://image.news.livedoor.com/newsimage/stf/c/9/c979e_1842_f200db5fd329f06a5a58a78fe75e784b.jpg" alt="罌粟花 ポピー">
+        <div class="feat-text">
+          <div class="feat-name">罌粟花 ポピー</div>
+          <div class="feat-desc">30萬株紅粉色花海<br>5月中旬～6月<br>📍 運動広場</div>
+        </div>
       </div>
       <div class="feat">
-        <div class="feat-icon">🌼</div>
-        <div class="feat-name">魯冰花 ルピナス</div>
-        <div class="feat-desc">彩色塔狀花序<br>5月上旬～下旬<br>📍 木漏日花畑</div>
+        <img class="feat-img" src="https://prcdn.freetls.fastly.net/release_image/34888/349/34888-349-b2e26f35bfea89b9af09999b31543e09-2064x1548.jpg?format=jpeg&auto=webp&quality=85,65&width=1950&height=1350&fit=bounds" alt="魯冰花 ルピナス">
+        <div class="feat-text">
+          <div class="feat-name">魯冰花 ルピナス</div>
+          <div class="feat-desc">彩色塔狀花序<br>5月上旬～下旬<br>📍 木漏日花畑</div>
+        </div>
       </div>
     </div>
 
     <div class="sec-title">🎪 孩子的天堂</div>
     <div class="feat-grid">
       <div class="feat">
-        <div class="feat-icon">🤍</div>
-        <div class="feat-name">ぽんぽこマウンテン</div>
-        <div class="feat-desc"><strong>日本最大</strong>白色空氣彈跳床！<br>免費！需穿襪子<br>小朋友可以跳到忘記時間</div>
+        <img class="feat-img" src="https://www.go2park.net/tools/shinrin/shinrin_mountain02.jpg" alt="ぽんぽこマウンテン">
+        <div class="feat-text">
+          <div class="feat-name">ぽんぽこマウンテン</div>
+          <div class="feat-desc"><strong>日本最大</strong>白色空氣彈跳床！<br>免費！需穿襪子<br>小朋友可以跳到忘記時間</div>
+        </div>
       </div>
       <div class="feat">
-        <div class="feat-icon">🏰</div>
-        <div class="feat-name">むさしキッズドーム</div>
-        <div class="feat-desc">多層攀爬架、溜滑梯<br>繩索網、隧道探險<br>適合 3～12 歲</div>
+        <img class="feat-img" src="https://www.go2park.net/tools/shinrin/shinrin_kidsdome01.jpg" alt="むさしキッズドーム">
+        <div class="feat-text">
+          <div class="feat-name">むさしキッズドーム</div>
+          <div class="feat-desc">多層攀爬架、溜滑梯<br>繩索網、隧道探險<br>適合 3～12 歲</div>
+        </div>
       </div>
       <div class="feat">
-        <div class="feat-icon">🚴</div>
-        <div class="feat-name">自行車道 17km</div>
-        <div class="feat-desc">穿過森林與花田<br>可租電動輔助車<br>親子共騎超舒服</div>
+        <img class="feat-img" src="https://www.sbaa-bicycle.com/sbaa_sp/img_new/course/images/saitamashinrin/01.jpg" alt="自行車道 17km">
+        <div class="feat-text">
+          <div class="feat-name">自行車道 17km</div>
+          <div class="feat-desc">穿過森林與花田<br>可租電動輔助車<br>親子共騎超舒服</div>
+        </div>
       </div>
     </div>
 
@@ -296,24 +317,32 @@
     <div class="sec-title">🔥 必看亮點</div>
     <div class="feat-grid">
       <div class="feat">
-        <div class="feat-icon">🦖</div>
-        <div class="feat-name">會動的暴龍！</div>
-        <div class="feat-desc">等比例 T-Rex 機械模型<br>會吼叫、頭會轉、嘴會張<br>小朋友又怕又愛！</div>
+        <img class="feat-img" src="https://holoholo-dinosaurtrip.com/wp-content/uploads/2025/04/IMG_0832-2048x1366.jpg" alt="會動的暴龍！">
+        <div class="feat-text">
+          <div class="feat-name">會動的暴龍！</div>
+          <div class="feat-desc">等比例 T-Rex 機械模型<br>會吼叫、頭會轉、嘴會張<br>小朋友又怕又愛！</div>
+        </div>
       </div>
       <div class="feat">
-        <div class="feat-icon">🦴</div>
-        <div class="feat-name">恐龍骨架</div>
-        <div class="feat-desc">巨大骨骼標本<br>猛瑪象復原模型<br>翼龍等多種恐龍</div>
+        <img class="feat-img" src="https://s3-ap-northeast-1.amazonaws.com/repos.kids.rurubu.jp/uploads/2022/06/06104616/96669_21R_kyoryu-1024x724.jpg" alt="恐龍骨架">
+        <div class="feat-text">
+          <div class="feat-name">恐龍骨架</div>
+          <div class="feat-desc">巨大骨骼標本<br>猛瑪象復原模型<br>翼龍等多種恐龍</div>
+        </div>
       </div>
       <div class="feat">
-        <div class="feat-icon">🎪</div>
-        <div class="feat-name">戶外彈跳床</div>
-        <div class="feat-desc">嵌入地面的白色充氣床<br>免費使用！<br>孩子玩到不肯離開</div>
+        <img class="feat-img" src="https://media.runo.jp/20230803221803/IMG_6283-2048x1536.jpg" alt="戶外彈跳床">
+        <div class="feat-text">
+          <div class="feat-name">戶外彈跳床</div>
+          <div class="feat-desc">嵌入地面的白色充氣床<br>免費使用！<br>孩子玩到不肯離開</div>
+        </div>
       </div>
       <div class="feat">
-        <div class="feat-icon">🌿</div>
-        <div class="feat-name">自然公園</div>
-        <div class="feat-desc">散步步道、池塘溪流<br>戶外恐龍雕塑合影<br>廣大草坪適合野餐</div>
+        <img class="feat-img" src="https://kyoiku.pref.ibaraki.jp/wp-content/uploads/2023/03/9412de451cec109229ca1c5bdfe8c11f.jpg" alt="自然公園">
+        <div class="feat-text">
+          <div class="feat-name">自然公園</div>
+          <div class="feat-desc">散步步道、池塘溪流<br>戶外恐龍雕塑合影<br>廣大草坪適合野餐</div>
+        </div>
       </div>
     </div>
 
@@ -355,24 +384,32 @@
 
     <div class="feat-grid">
       <div class="feat">
-        <div class="feat-icon">🏔️</div>
-        <div class="feat-name">露天風呂</div>
-        <div class="feat-desc">仰望星空泡湯</div>
+        <img class="feat-img" src="https://yurabu-kiryu.com/wp-content/uploads/2024/02/S__93880339_0-1140x855.png" alt="露天風呂">
+        <div class="feat-text">
+          <div class="feat-name">露天風呂</div>
+          <div class="feat-desc">仰望星空泡湯</div>
+        </div>
       </div>
       <div class="feat">
-        <div class="feat-icon">🫧</div>
-        <div class="feat-name">碳酸泉</div>
-        <div class="feat-desc">細小氣泡包覆全身</div>
+        <img class="feat-img" src="https://yurabu-kiryu.com/wp-content/uploads/2023/11/c496ac5833a33c4cb279e4f36318cbb1-edited-1-1536x960.jpg" alt="碳酸泉">
+        <div class="feat-text">
+          <div class="feat-name">碳酸泉</div>
+          <div class="feat-desc">細小氣泡包覆全身</div>
+        </div>
       </div>
       <div class="feat">
-        <div class="feat-icon">🏺</div>
-        <div class="feat-name">壺湯</div>
-        <div class="feat-desc">陶器個人浴池</div>
+        <img class="feat-img" src="https://yurabu-kiryu.com/wp-content/uploads/2023/11/c496ac5833a33c4cb279e4f36318cbb1-edited-1-scaled.jpg" alt="壺湯">
+        <div class="feat-text">
+          <div class="feat-name">壺湯</div>
+          <div class="feat-desc">陶器個人浴池</div>
+        </div>
       </div>
       <div class="feat">
-        <div class="feat-icon">🪨</div>
-        <div class="feat-name">岩盤浴</div>
-        <div class="feat-desc">多種礦石（另加費）</div>
+        <img class="feat-img" src="https://yurabu-kiryu.com/wp-content/uploads/2023/11/c496ac5833a33c4cb279e4f36318cbb1-edited-1-1536x960.jpg" alt="岩盤浴">
+        <div class="feat-text">
+          <div class="feat-name">岩盤浴</div>
+          <div class="feat-desc">多種礦石（另加費）</div>
+        </div>
       </div>
     </div>
 
@@ -406,24 +443,32 @@
 
     <div class="feat-grid">
       <div class="feat">
-        <div class="feat-icon">💧</div>
-        <div class="feat-name">源泉掛流</div>
-        <div class="feat-desc">100% 天然不循環<br>溫泉水最新鮮！</div>
+        <img class="feat-img" src="https://enjoy-tsukuba-life.com/wp-content/uploads/2025/09/IMG_1496-scaled.jpeg" alt="源泉掛流">
+        <div class="feat-text">
+          <div class="feat-name">源泉掛流</div>
+          <div class="feat-desc">100% 天然不循環<br>溫泉水最新鮮！</div>
+        </div>
       </div>
       <div class="feat">
-        <div class="feat-icon">🍱</div>
-        <div class="feat-name">米のはな 餐廳</div>
-        <div class="feat-desc">高品質和食料理<br>常陸牛、刺身定食</div>
+        <img class="feat-img" src="https://www.kinunoyu.com/cms/wp-content/themes/hmr_kinunoyu/assets/images/komenohana@2x.png" alt="米のはな 餐廳">
+        <div class="feat-text">
+          <div class="feat-name">米のはな 餐廳</div>
+          <div class="feat-desc">高品質和食料理<br>常陸牛、刺身定食</div>
+        </div>
       </div>
       <div class="feat">
-        <div class="feat-icon">🔌</div>
-        <div class="feat-name">USB 充電躺椅</div>
-        <div class="feat-desc">2F 休息區 30 個<br>泡完湯邊充電邊放鬆</div>
+        <img class="feat-img" src="https://www.kinunoyu.com/cms/wp-content/themes/hmr_kinunoyu/assets/images/restingPlace@2x.png" alt="USB 充電躺椅">
+        <div class="feat-text">
+          <div class="feat-name">USB 充電躺椅</div>
+          <div class="feat-desc">2F 休息區 30 個<br>泡完湯邊充電邊放鬆</div>
+        </div>
       </div>
       <div class="feat">
-        <div class="feat-icon">🧖</div>
-        <div class="feat-name">多種浴池</div>
-        <div class="feat-desc">露天、碳酸泉<br>寢湯、壺湯、桑拿</div>
+        <img class="feat-img" src="https://www.kinunoyu.com/cms/wp-content/themes/hmr_kinunoyu/assets/images/inishiheno@2x.png" alt="多種浴池">
+        <div class="feat-text">
+          <div class="feat-name">多種浴池</div>
+          <div class="feat-desc">露天、碳酸泉<br>寢湯、壺湯、桑拿</div>
+        </div>
       </div>
     </div>
 
@@ -492,24 +537,32 @@
 
     <div class="feat-grid">
       <div class="feat">
-        <div class="feat-icon">📖</div>
-        <div class="feat-name">書籍</div>
-        <div class="feat-desc">藏書量遠超一般書店<br>繪本區超級豐富！</div>
+        <img class="feat-img" src="https://www.coachandfour-tsukuba.jp/imgs/info/books_img1.jpg" alt="書籍">
+        <div class="feat-text">
+          <div class="feat-name">書籍</div>
+          <div class="feat-desc">藏書量遠超一般書店<br>繪本區超級豐富！</div>
+        </div>
       </div>
       <div class="feat">
-        <div class="feat-icon">✏️</div>
-        <div class="feat-name">文具</div>
-        <div class="feat-desc">從日常到高級書寫工具<br>品項堪比專業文具店</div>
+        <img class="feat-img" src="https://www.coachandfour.ne.jp/cfwp/wp-content/uploads/2024/02/6a24b729fabb4460a10444b33376a74d.jpeg" alt="文具">
+        <div class="feat-text">
+          <div class="feat-name">文具</div>
+          <div class="feat-desc">從日常到高級書寫工具<br>品項堪比專業文具店</div>
+        </div>
       </div>
       <div class="feat">
-        <div class="feat-icon">🎁</div>
-        <div class="feat-name">雜貨</div>
-        <div class="feat-desc">精緻可愛小物<br>伴手禮挖寶好地方</div>
+        <img class="feat-img" src="https://stat.ameba.jp/user_images/20221030/12/shuki25/0f/49/j/o1080177415195556503.jpg" alt="雜貨">
+        <div class="feat-text">
+          <div class="feat-name">雜貨</div>
+          <div class="feat-desc">精緻可愛小物<br>伴手禮挖寶好地方</div>
+        </div>
       </div>
       <div class="feat">
-        <div class="feat-icon">☕</div>
-        <div class="feat-name">咖啡廳</div>
-        <div class="feat-desc">店內附設<br>邊喝咖啡邊看書</div>
+        <img class="feat-img" src="https://www.tasru-media.com/wp-content/uploads/2024/10/ドトールコーヒーショップ-コーチャンフォーつくば店.jpeg" alt="咖啡廳">
+        <div class="feat-text">
+          <div class="feat-name">咖啡廳</div>
+          <div class="feat-desc">店內附設<br>邊喝咖啡邊看書</div>
+        </div>
       </div>
     </div>
 
@@ -539,24 +592,32 @@
     <div class="sec-title">⭐ 必買明星商品</div>
     <div class="feat-grid">
       <div class="feat" style="background:#fce4ec;">
-        <div class="feat-icon">🍎</div>
-        <div class="feat-name">蘋果奶油果醬</div>
-        <div class="feat-desc"><strong>第一名必買！</strong><br>長野縣產蘋果 × 奶油<br>塗吐司美味到升天<br>經常被搶購一空</div>
+        <img class="feat-img" src="https://item-shopping.c.yimg.jp/i/n/sasakishoten_ringo-butter-1" alt="蘋果奶油果醬">
+        <div class="feat-text">
+          <div class="feat-name">蘋果奶油果醬</div>
+          <div class="feat-desc"><strong>第一名必買！</strong><br>長野縣產蘋果 × 奶油<br>塗吐司美味到升天<br>經常被搶購一空</div>
+        </div>
       </div>
       <div class="feat">
-        <div class="feat-icon">🫐</div>
-        <div class="feat-name">各種果醬系列</div>
-        <div class="feat-desc">藍莓、草莓、杏桃<br>全用信州水果製作</div>
+        <img class="feat-img" src="https://www.mapple.net/cms/wp-content/uploads/2023/03/7a83c2e16fcdd8fa031da88bb30773f3-1.png" alt="各種果醬系列">
+        <div class="feat-text">
+          <div class="feat-name">各種果醬系列</div>
+          <div class="feat-desc">藍莓、草莓、杏桃<br>全用信州水果製作</div>
+        </div>
       </div>
       <div class="feat">
-        <div class="feat-icon">🍞</div>
-        <div class="feat-name">現烤麵包</div>
-        <div class="feat-desc">店內烘焙坊<br>出爐就搶光</div>
+        <img class="feat-img" src="https://yonasato.com/cms/img/columns/karuizawa/tsuruya2025/ベーカリー全体.jpg" alt="現烤麵包">
+        <div class="feat-text">
+          <div class="feat-name">現烤麵包</div>
+          <div class="feat-desc">店內烘焙坊<br>出爐就搶光</div>
+        </div>
       </div>
       <div class="feat">
-        <div class="feat-icon">🥬</div>
-        <div class="feat-name">生鮮食品</div>
-        <div class="feat-desc">長野農家直送蔬果<br>品質超高</div>
+        <img class="feat-img" src="https://www.tsuruya-corp.co.jp/web/wp-content/themes/tsuruya_web/img/aboutus/kodawari1-1.jpg" alt="生鮮食品">
+        <div class="feat-text">
+          <div class="feat-name">生鮮食品</div>
+          <div class="feat-desc">長野農家直送蔬果<br>品質超高</div>
+        </div>
       </div>
     </div>
 

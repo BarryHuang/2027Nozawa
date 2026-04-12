@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>🗼 2026 東京黃金週 — 行前景點導覽</title>
+  <style>
+    :root{--red:#e63946;--dkred:#c1121f;--blue:#2196F3;--purple:#9C27B0;--green:#4CAF50;--orange:#FF9800;--fire:#FF5722;--radius:18px;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:"Helvetica Neue","PingFang TC","Microsoft JhengHei",sans-serif;background:#faf7f2;color:#333;line-height:1.8;}
+
+    /* NAV */
+    .nav{position:sticky;top:0;z-index:100;background:rgba(26,26,46,.95);backdrop-filter:blur(8px);display:flex;justify-content:center;flex-wrap:wrap;gap:5px;padding:8px 10px;box-shadow:0 2px 12px rgba(0,0,0,.25);}
+    .nav a{color:#fff;text-decoration:none;font-size:.78em;font-weight:700;padding:5px 12px;border-radius:20px;border:1.5px solid rgba(255,255,255,.2);transition:.2s;}
+    .nav a:hover{background:var(--red);border-color:var(--red);}
+
+    /* HERO */
+    .hero{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);color:#fff;text-align:center;padding:56px 20px 48px;}
+    .hero-emoji{font-size:64px;margin-bottom:12px;animation:bounce 2s ease-in-out infinite;}
+    @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+    .hero h1{font-size:2.2em;font-weight:900;letter-spacing:1px;}
+    .hero p{font-size:1.05em;opacity:.85;margin-top:8px;}
+
+    /* WRAPPER */
+    .wrap{max-width:960px;margin:0 auto;padding:0 16px;}
+
+    /* SPOT CARD */
+    .spot{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.08);margin-bottom:32px;}
+    .spot-hero{padding:36px 28px;color:#fff;position:relative;overflow:hidden;}
+    .spot-hero::before{content:"";position:absolute;inset:0;background:inherit;filter:brightness(.7);z-index:0;}
+    .spot-hero>*{position:relative;z-index:1;}
+    .spot-emoji{font-size:56px;margin-bottom:8px;display:block;}
+    .spot-day{font-size:.8em;font-weight:700;opacity:.8;letter-spacing:1px;text-transform:uppercase;}
+    .spot-hero h2{font-size:1.6em;font-weight:900;margin-top:4px;}
+    .spot-hero .sub{font-size:.92em;opacity:.85;margin-top:6px;}
+
+    .s1 .spot-hero{background:linear-gradient(135deg,#7b2ff7,#4a148c);}
+    .s2 .spot-hero{background:linear-gradient(135deg,#43a047,#1b5e20);}
+    .s3 .spot-hero{background:linear-gradient(135deg,#e65100,#bf360c);}
+    .s4 .spot-hero{background:linear-gradient(135deg,#0277bd,#01579b);}
+    .s5 .spot-hero{background:linear-gradient(135deg,#c62828,#b71c1c);}
+    .s6 .spot-hero{background:linear-gradient(135deg,#5d4037,#3e2723);}
+    .s7 .spot-hero{background:linear-gradient(135deg,#00838f,#006064);}
+    .s8 .spot-hero{background:linear-gradient(135deg,#558b2f,#33691e);}
+
+    .spot-body{padding:24px 28px 28px;}
+
+    /* SECTION INSIDE CARD */
+    .sec-title{font-size:1.1em;font-weight:800;color:var(--dkred);margin:20px 0 10px;display:flex;align-items:center;gap:8px;}
+    .sec-title:first-child{margin-top:0;}
+
+    /* FEATURE GRID */
+    .feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:12px 0;}
+    .feat{background:#f8f4ef;border-radius:12px;padding:14px;text-align:center;}
+    .feat-icon{font-size:2em;margin-bottom:4px;}
+    .feat-name{font-size:.9em;font-weight:700;color:#333;}
+    .feat-desc{font-size:.82em;color:#666;margin-top:2px;}
+
+    /* HIGHLIGHT */
+    .hl{border-radius:12px;padding:14px 16px;margin:12px 0;font-size:.9em;line-height:1.7;}
+    .hl.purple{background:#f3e5f5;color:#4a148c;border-left:4px solid var(--purple);}
+    .hl.green{background:#e8f5e9;color:#1b5e20;border-left:4px solid var(--green);}
+    .hl.orange{background:#fff3e0;color:#e65100;border-left:4px solid var(--orange);}
+    .hl.blue{background:#e3f2fd;color:#0d47a1;border-left:4px solid var(--blue);}
+    .hl.red{background:#ffebee;color:#b71c1c;border-left:4px solid var(--red);}
+    .hl.brown{background:#efebe9;color:#3e2723;border-left:4px solid #795548;}
+
+    /* TAGS */
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0;}
+    .tag{border-radius:20px;padding:4px 12px;font-size:.82em;font-weight:700;}
+    .tag.food{background:#fff3e0;border:2px solid var(--orange);color:#e65100;}
+    .tag.tip{background:#e3f2fd;border:2px solid var(--blue);color:#0d47a1;}
+    .tag.warn{background:#ffebee;border:2px solid var(--red);color:#b71c1c;}
+    .tag.kid{background:#e8f5e9;border:2px solid var(--green);color:#1b5e20;}
+
+    /* INFO TABLE */
+    .info-tbl{width:100%;border-collapse:collapse;margin:10px 0;font-size:.88em;}
+    .info-tbl th{background:#f5f0ea;padding:8px 12px;text-align:left;font-weight:700;color:#555;}
+    .info-tbl td{padding:8px 12px;border-bottom:1px solid #f0ebe5;}
+
+    /* QUOTE */
+    .quote{background:#fffde7;border-left:4px solid #f9a825;padding:12px 16px;border-radius:0 12px 12px 0;margin:12px 0;font-size:.88em;color:#555;font-style:italic;}
+
+    /* PHOTO PLACEHOLDER - decorative pattern cards */
+    .photo-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:14px 0;}
+    .photo-card{border-radius:12px;padding:20px 14px;text-align:center;color:#fff;font-weight:700;font-size:.85em;min-height:100px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;}
+    .photo-card .p-icon{font-size:2.2em;}
+
+    /* FOOTER */
+    footer{background:#1a1a2e;color:#aaa;text-align:center;padding:28px 16px;font-size:.82em;line-height:2;}
+    footer strong{color:var(--red);}
+
+    /* PRINT */
+    @media print{
+      .nav{display:none!important;}
+      .spot{break-inside:avoid;box-shadow:none;border:1px solid #ddd;}
+      body{background:#fff;}
+    }
+    @media(max-width:600px){
+      .hero h1{font-size:1.6em;}
+      .spot-hero h2{font-size:1.3em;}
+      .spot-body{padding:16px 18px 22px;}
+      .feat-grid{grid-template-columns:1fr 1fr;}
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="#s1">🌸 足利花卉</a>
+  <a href="#s2">🌼 森林公園</a>
+  <a href="#s3">🦕 自然博物館</a>
+  <a href="#s4">♨️ 桐生溫泉</a>
+  <a href="#s5">♨️ きぬの湯</a>
+  <a href="#s6">🏯 羽生PA</a>
+  <a href="#s7">📚 書店</a>
+  <a href="#s8">🛒 Tsuruya</a>
+</nav>
+
+<header class="hero">
+  <div class="hero-emoji">🗼🌸🦕♨️</div>
+  <h1>2026 東京黃金週 行前景點導覽</h1>
+  <p>出發前先認識每個景點，到了現場更有感覺！<br>📅 2026 / 4 / 29 ～ 5 / 3 ｜ 5天4夜 自駕花季溫泉之旅</p>
+</header>
+
+<div class="wrap" style="margin-top:32px;">
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SPOT 1: 足利花卉公園 -->
+<!-- ═══════════════════════════════════════ -->
+<div class="spot s1" id="s1">
+  <div class="spot-hero">
+    <span class="spot-emoji">🌸</span>
+    <div class="spot-day">DAY 2 ・ 4/30（四）</div>
+    <h2>足利花卉公園</h2>
+    <div class="sub">あしかがフラワーパーク ｜ 栃木縣足利市 ｜ CNN 世界十大夢幻旅遊景點</div>
+  </div>
+  <div class="spot-body">
+
+    <div class="hl purple">
+      🌟 2014 年被 <strong>CNN 評選為「世界十大夢幻旅遊景點」</strong>，是日本唯一入選的景點！園內擁有樹齡超過 <strong>150 年</strong>的巨大紫藤，藤架面積達 <strong>1,000 平方公尺</strong>（約 600 疊榻榻米），花穗垂落如紫色瀑布，壯觀到讓人屏息。
+    </div>
+
+    <div class="sec-title">🌺 園內四大紫藤必看</div>
+    <div class="feat-grid">
+      <div class="feat">
+        <div class="feat-icon">💗</div>
+        <div class="feat-name">淡紅藤</div>
+        <div class="feat-desc">最早開花，淡粉紅色<br>4月中旬～下旬</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">💜</div>
+        <div class="feat-name">大藤（主角！）</div>
+        <div class="feat-desc">經典紫色，花穗長 1.5～2m<br>4月下旬～5月上旬</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🤍</div>
+        <div class="feat-name">白藤隧道</div>
+        <div class="feat-desc">80 公尺純白花隧道<br>5月上旬</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">💛</div>
+        <div class="feat-name">黃花藤</div>
+        <div class="feat-desc">金黃色，日本罕見<br>5月上旬～中旬</div>
+      </div>
+    </div>
+
+    <div class="sec-title">📸 必拍打卡點</div>
+    <div class="photo-strip">
+      <div class="photo-card" style="background:linear-gradient(135deg,#7b2ff7,#e040fb);"><span class="p-icon">🌊</span>紫藤瀑布<br>大藤棚</div>
+      <div class="photo-card" style="background:linear-gradient(135deg,#e0e0e0,#9e9e9e);color:#333;"><span class="p-icon">🕳️</span>白藤隧道<br>80m 夢幻拱廊</div>
+      <div class="photo-card" style="background:linear-gradient(135deg,#1a237e,#311b92);"><span class="p-icon">✨</span>夜間點燈<br>紫色光之瀑布</div>
+      <div class="photo-card" style="background:linear-gradient(135deg,#880e4f,#ad1457);"><span class="p-icon">🫧</span>水面倒影<br>經典攝影角度</div>
+    </div>
+
+    <div class="sec-title">✨ 夜間點燈</div>
+    <p>花季期間每天傍晚點燈，紫藤在燈光下彷彿發光的紫色瀑布，倒映水面更加夢幻。被稱為「夜之藤」，是攝影愛好者的天堂。17:30 開始售票入場。</p>
+
+    <div class="sec-title">🍦 園內必吃</div>
+    <div class="tags">
+      <span class="tag food">🍦 紫藤霜淇淋（藤ソフト）</span>
+      <span class="tag food">🍢 炸番薯串（栃木名產）</span>
+      <span class="tag food">🥟 宇都宮餃子</span>
+      <span class="tag food">🍜 炒麵</span>
+      <span class="tag food">🍡 紫藤饅頭</span>
+    </div>
+
+    <div class="sec-title">📋 實用資訊</div>
+    <table class="info-tbl">
+      <tr><th>面積</th><td>約 94,000 m²</td></tr>
+      <tr><th>門票</th><td>浮動票價：成人 ¥900～2,100 / 兒童 ¥500～1,100（花開越盛越貴）</td></tr>
+      <tr><th>花季開園</th><td>日間 7:00～17:30 ｜夜間 17:30～21:00（分開入場）</td></tr>
+      <tr><th>最近車站</th><td>JR「あしかがフラワーパーク駅」步行 3 分鐘</td></tr>
+    </table>
+
+    <div class="quote">
+      💡 <strong>小知識</strong>：園內最著名的大藤原種在別處，1996 年被女性樹木醫師塚本こなみ成功移植到現址，被視為「奇蹟大藤」。移植一棵 150 歲的巨大紫藤在當時是前所未有的壯舉！
+    </div>
+
+    <div class="tags">
+      <span class="tag tip">📱 建議提前在 KKday / Klook 買電子票</span>
+      <span class="tag warn">⚠️ 黃金週 10:00 後人潮洶湧，早去為妙！</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SPOT 2: 國營武藏森林公園 -->
+<!-- ═══════════════════════════════════════ -->
+<div class="spot s2" id="s2">
+  <div class="spot-hero">
+    <span class="spot-emoji">🌼</span>
+    <div class="spot-day">DAY 3 ・ 5/01（五）</div>
+    <h2>國營武藏丘陵森林公園</h2>
+    <div class="sub">国営武蔵丘陵森林公園 ｜ 埼玉縣 ｜ 日本第一座國營公園 ・ 東京巨蛋 65 個大！</div>
+  </div>
+  <div class="spot-body">
+
+    <div class="hl green">
+      🌳 日本第一座國營公園，面積達 <strong>304 公頃</strong>（東京巨蛋 65 個大！），結合三種花海、日本最大彈跳床、兒童冒險樂園、17公里自行車道。一天根本玩不夠！
+    </div>
+
+    <div class="sec-title">🌸 春季三花攻略</div>
+    <div class="feat-grid">
+      <div class="feat">
+        <div class="feat-icon">💜</div>
+        <div class="feat-name">粉蝶花 ネモフィラ</div>
+        <div class="feat-desc">藍紫色花海，夢幻至極<br>4月中旬～5月上旬<br>📍 西口ひろば</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🌺</div>
+        <div class="feat-name">罌粟花 ポピー</div>
+        <div class="feat-desc">30萬株紅粉色花海<br>5月中旬～6月<br>📍 運動広場</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🌼</div>
+        <div class="feat-name">魯冰花 ルピナス</div>
+        <div class="feat-desc">彩色塔狀花序<br>5月上旬～下旬<br>📍 木漏日花畑</div>
+      </div>
+    </div>
+
+    <div class="sec-title">🎪 孩子的天堂</div>
+    <div class="feat-grid">
+      <div class="feat">
+        <div class="feat-icon">🤍</div>
+        <div class="feat-name">ぽんぽこマウンテン</div>
+        <div class="feat-desc"><strong>日本最大</strong>白色空氣彈跳床！<br>免費！需穿襪子<br>小朋友可以跳到忘記時間</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🏰</div>
+        <div class="feat-name">むさしキッズドーム</div>
+        <div class="feat-desc">多層攀爬架、溜滑梯<br>繩索網、隧道探險<br>適合 3～12 歲</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🚴</div>
+        <div class="feat-name">自行車道 17km</div>
+        <div class="feat-desc">穿過森林與花田<br>可租電動輔助車<br>親子共騎超舒服</div>
+      </div>
+    </div>
+
+    <div class="sec-title">📋 實用資訊</div>
+    <table class="info-tbl">
+      <tr><th>門票</th><td>成人 ¥450 ｜中學生以下 <strong>免費！</strong></td></tr>
+      <tr><th>停車</th><td>普通車 ¥700 / 次</td></tr>
+      <tr><th>開園</th><td>9:30～17:00（3月～10月）</td></tr>
+      <tr><th>單車租借</th><td>成人約 ¥420 / 3hr ｜兒童約 ¥260 / 3hr</td></tr>
+      <tr><th>餐廳</th><td>展望餐廳（咖哩、拉麵等，約 ¥600～1,200）</td></tr>
+    </table>
+
+    <div class="tags">
+      <span class="tag warn">⚠️ 停「西口停車場」！不要去中央口！</span>
+      <span class="tag tip">🚴 優先搶租「電動輔助自行車」（數量有限）</span>
+      <span class="tag kid">🧦 彈跳床需穿襪子，別忘記帶！</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SPOT 3: 茨城自然博物館 -->
+<!-- ═══════════════════════════════════════ -->
+<div class="spot s3" id="s3">
+  <div class="spot-hero">
+    <span class="spot-emoji">🦕</span>
+    <div class="spot-day">DAY 4 ・ 5/02（六）</div>
+    <h2>茨城縣自然博物館</h2>
+    <div class="sub">ミュージアムパーク茨城県自然博物館 ｜ 茨城縣坂東市 ｜ 日本最大規模自然史博物館之一</div>
+  </div>
+  <div class="spot-body">
+
+    <div class="hl orange">
+      🦖 佔地 <strong>15.8 公頃</strong> 的超大型自然博物館！室內有等比例的<strong>會動暴龍</strong>嚇到小朋友尖叫，戶外有大型彈跳床玩到不想走。從宇宙大爆炸到恐龍時代，一次全搞懂！
+    </div>
+
+    <div class="sec-title">🔥 必看亮點</div>
+    <div class="feat-grid">
+      <div class="feat">
+        <div class="feat-icon">🦖</div>
+        <div class="feat-name">會動的暴龍！</div>
+        <div class="feat-desc">等比例 T-Rex 機械模型<br>會吼叫、頭會轉、嘴會張<br>小朋友又怕又愛！</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🦴</div>
+        <div class="feat-name">恐龍骨架</div>
+        <div class="feat-desc">巨大骨骼標本<br>猛瑪象復原模型<br>翼龍等多種恐龍</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🎪</div>
+        <div class="feat-name">戶外彈跳床</div>
+        <div class="feat-desc">嵌入地面的白色充氣床<br>免費使用！<br>孩子玩到不肯離開</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🌿</div>
+        <div class="feat-name">自然公園</div>
+        <div class="feat-desc">散步步道、池塘溪流<br>戶外恐龍雕塑合影<br>廣大草坪適合野餐</div>
+      </div>
+    </div>
+
+    <div class="sec-title">🍽️ 餐廳 Le Cinq（ル・サンク）</div>
+    <p>館內餐廳提供<strong>恐龍主題兒童餐</strong>！恐龍造型咖哩飯、恐龍形狀飯糰等，用恐龍盤子吃飯，孩子超開心。一般餐點約 ¥600～1,200。</p>
+    <div class="tags">
+      <span class="tag warn">⚠️ 黃金週午餐大排長龍！建議 10:50 前去排或自帶麵包野餐</span>
+    </div>
+
+    <div class="sec-title">📋 實用資訊</div>
+    <table class="info-tbl">
+      <tr><th>門票</th><td>成人 ¥750 ｜中小學生 <strong>免費</strong></td></tr>
+      <tr><th>開館</th><td>9:30～17:00（最後入館 16:30）</td></tr>
+      <tr><th>休館</th><td>週一（黃金週期間每日開館）</td></tr>
+      <tr><th>停車</th><td>免費（黃金週建議提早到！）</td></tr>
+    </table>
+
+    <div class="quote">
+      🧒 <strong>孩子最愛排行</strong>：① 會動的暴龍 ② 戶外彈跳床 ③ 恐龍骨架 ④ 互動體驗展品 ⑤ 戶外恐龍雕塑合影
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SPOT 4: 天然温泉ゆらぶ桐生 -->
+<!-- ═══════════════════════════════════════ -->
+<div class="spot s4" id="s4">
+  <div class="spot-hero">
+    <span class="spot-emoji">♨️</span>
+    <div class="spot-day">DAY 1 ・ 4/29（三）</div>
+    <h2>天然温泉 ゆらぶ桐生</h2>
+    <div class="sub">群馬縣桐生市 ｜ 美肌之湯 ・ 到達日本第一泡！</div>
+  </div>
+  <div class="spot-body">
+
+    <div class="hl blue">
+      💆 抵達日本的第一個溫泉體驗！泉質為<strong>鈉-氯化物泉</strong>，又稱「美肌之湯」，泡完皮膚滑溜溜。設有露天風呂、碳酸泉、壺湯等多種浴池，洗去長途飛行的疲勞！
+    </div>
+
+    <div class="feat-grid">
+      <div class="feat">
+        <div class="feat-icon">🏔️</div>
+        <div class="feat-name">露天風呂</div>
+        <div class="feat-desc">仰望星空泡湯</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🫧</div>
+        <div class="feat-name">碳酸泉</div>
+        <div class="feat-desc">細小氣泡包覆全身</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🏺</div>
+        <div class="feat-name">壺湯</div>
+        <div class="feat-desc">陶器個人浴池</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🪨</div>
+        <div class="feat-name">岩盤浴</div>
+        <div class="feat-desc">多種礦石（另加費）</div>
+      </div>
+    </div>
+
+    <table class="info-tbl">
+      <tr><th>門票</th><td>成人 ¥750～950 ｜兒童 ¥400～500</td></tr>
+      <tr><th>營業</th><td>約 10:00～24:00，全年無休</td></tr>
+      <tr><th>電話</th><td>0277-46-9967（導航用）</td></tr>
+    </table>
+
+    <div class="tags">
+      <span class="tag tip">🧴 準備：擦身毛巾、換洗內衣、¥100 零錢（吹頭髮）</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SPOT 5: きぬの湯 -->
+<!-- ═══════════════════════════════════════ -->
+<div class="spot s5" id="s5">
+  <div class="spot-hero">
+    <span class="spot-emoji">♨️</span>
+    <div class="spot-day">DAY 3 ・ 5/01（五）</div>
+    <h2>天然溫泉 きぬの湯</h2>
+    <div class="sub">茨城縣常總市 ｜ 源泉掛流 ・ 和食晚餐 ・ USB 充電躺椅休息區</div>
+  </div>
+  <div class="spot-body">
+
+    <div class="hl red">
+      💎 這間溫泉的最大賣點是「<strong>源泉掛流</strong>」— 溫泉水直接從源泉流入浴池，不循環、不加水、不稀釋，讓你泡到最新鮮、最天然的溫泉！還附設高水準和食餐廳。
+    </div>
+
+    <div class="feat-grid">
+      <div class="feat">
+        <div class="feat-icon">💧</div>
+        <div class="feat-name">源泉掛流</div>
+        <div class="feat-desc">100% 天然不循環<br>溫泉水最新鮮！</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🍱</div>
+        <div class="feat-name">米のはな 餐廳</div>
+        <div class="feat-desc">高品質和食料理<br>常陸牛、刺身定食</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🔌</div>
+        <div class="feat-name">USB 充電躺椅</div>
+        <div class="feat-desc">2F 休息區 30 個<br>泡完湯邊充電邊放鬆</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🧖</div>
+        <div class="feat-name">多種浴池</div>
+        <div class="feat-desc">露天、碳酸泉<br>寢湯、壺湯、桑拿</div>
+      </div>
+    </div>
+
+    <table class="info-tbl">
+      <tr><th>門票</th><td>成人平日 ¥900～1,100 ／ 假日 ¥1,100～1,300</td></tr>
+      <tr><th>停車</th><td>本館約 150 個免費車位</td></tr>
+    </table>
+
+    <div class="quote">
+      🍽️ <strong>餐廳推薦</strong>：和食處「米のはな」使用優質日本米現煮白飯，搭配常陸牛、生魚片等，在溫泉設施餐廳中品質超群，不只是「順便吃」的等級！
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SPOT 6: 羽生PA -->
+<!-- ═══════════════════════════════════════ -->
+<div class="spot s6" id="s6">
+  <div class="spot-hero">
+    <span class="spot-emoji">🏯</span>
+    <div class="spot-day">DAY 1 ・ 4/29（三）途中</div>
+    <h2>羽生 PA 鬼平江戶處</h2>
+    <div class="sub">羽生パーキングエリア ｜ 埼玉縣 ｜ 穿越時空回到江戶時代的休息站！</div>
+  </div>
+  <div class="spot-body">
+
+    <div class="hl brown">
+      🏯 這不是普通的高速公路休息站！<strong>羽生 PA 上行線</strong>被打造成「鬼平江戶處」主題區，完整重現了<strong>江戶時代的街道</strong>，走進去彷彿穿越時空。是全日本最具特色的休息站之一，很多人專程開車來逛！
+    </div>
+
+    <div class="photo-strip">
+      <div class="photo-card" style="background:linear-gradient(135deg,#5d4037,#795548);"><span class="p-icon">🏮</span>江戶風街道<br>町屋建築還原</div>
+      <div class="photo-card" style="background:linear-gradient(135deg,#4e342e,#6d4c41);"><span class="p-icon">🍲</span>軍雞鍋<br>主角最愛料理</div>
+      <div class="photo-card" style="background:linear-gradient(135deg,#3e2723,#5d4037);"><span class="p-icon">🌙</span>夜間點燈<br>氛圍更迷人</div>
+    </div>
+
+    <div class="sec-title">🍽️ 江戶美食</div>
+    <div class="tags">
+      <span class="tag food">🍲 軍雞鍋（小說名菜）</span>
+      <span class="tag food">🍜 江戶手打蕎麥麵</span>
+      <span class="tag food">🐟 江戶前鰻魚飯</span>
+      <span class="tag food">🍡 和菓子 &amp; 團子</span>
+    </div>
+
+    <div class="quote">
+      📖 「鬼平江戶處」靈感來自池波正太郎的時代小說《鬼平犯科帳》。從招牌到燈籠、每家店名都取自小說場景，2013 年開幕後立刻成為話題景點！
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SPOT 7: Coach & Four -->
+<!-- ═══════════════════════════════════════ -->
+<div class="spot s7" id="s7">
+  <div class="spot-hero">
+    <span class="spot-emoji">📚</span>
+    <div class="spot-day">DAY 4 ・ 5/02（六）</div>
+    <h2>Coach &amp; Four Tsukuba</h2>
+    <div class="sub">コーチャンフォーつくば ｜ 茨城縣筑波市 ｜ 全日本最大級複合書店</div>
+  </div>
+  <div class="spot-body">
+
+    <div class="hl blue">
+      📖 發源於北海道的超大型書店，店名「Coach and Four」意為「四頭馬車」。在日本書店逐漸縮小的趨勢下，它反其道而行，堅持<strong>超大面積、超多品項</strong>。文具控、繪本控、雜貨控通通會失心瘋！
+    </div>
+
+    <div class="feat-grid">
+      <div class="feat">
+        <div class="feat-icon">📖</div>
+        <div class="feat-name">書籍</div>
+        <div class="feat-desc">藏書量遠超一般書店<br>繪本區超級豐富！</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">✏️</div>
+        <div class="feat-name">文具</div>
+        <div class="feat-desc">從日常到高級書寫工具<br>品項堪比專業文具店</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🎁</div>
+        <div class="feat-name">雜貨</div>
+        <div class="feat-desc">精緻可愛小物<br>伴手禮挖寶好地方</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">☕</div>
+        <div class="feat-name">咖啡廳</div>
+        <div class="feat-desc">店內附設<br>邊喝咖啡邊看書</div>
+      </div>
+    </div>
+
+    <div class="tags">
+      <span class="tag tip">⏱️ 預留至少 1 小時！文具控可能出不來</span>
+      <span class="tag kid">👧 兒童繪本區很大，小朋友也開心</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SPOT 8: Tsuruya -->
+<!-- ═══════════════════════════════════════ -->
+<div class="spot s8" id="s8">
+  <div class="spot-hero">
+    <span class="spot-emoji">🛒</span>
+    <div class="spot-day">DAY 2 ・ 4/30（四）</div>
+    <h2>Tsuruya（ツルヤ）超市</h2>
+    <div class="sub">長野縣發跡的傳說級超市 ｜ 日本主婦心中的聖地 ｜ 蘋果奶油果醬必買！</div>
+  </div>
+  <div class="spot-body">
+
+    <div class="hl green">
+      🏆 被日本消費者封為「<strong>傳說級超市</strong>」！東京人專程開車到輕井澤，目的之一就是逛 Tsuruya。自有品牌商品品質高到像專櫃等級，價格卻很合理，送禮自用兩相宜！
+    </div>
+
+    <div class="sec-title">⭐ 必買明星商品</div>
+    <div class="feat-grid">
+      <div class="feat" style="background:#fce4ec;">
+        <div class="feat-icon">🍎</div>
+        <div class="feat-name">蘋果奶油果醬</div>
+        <div class="feat-desc"><strong>第一名必買！</strong><br>長野縣產蘋果 × 奶油<br>塗吐司美味到升天<br>經常被搶購一空</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🫐</div>
+        <div class="feat-name">各種果醬系列</div>
+        <div class="feat-desc">藍莓、草莓、杏桃<br>全用信州水果製作</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🍞</div>
+        <div class="feat-name">現烤麵包</div>
+        <div class="feat-desc">店內烘焙坊<br>出爐就搶光</div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🥬</div>
+        <div class="feat-name">生鮮食品</div>
+        <div class="feat-desc">長野農家直送蔬果<br>品質超高</div>
+      </div>
+    </div>
+
+    <div class="tags">
+      <span class="tag food">🍎 蘋果奶油果醬 ← 絕對不能錯過！</span>
+      <span class="tag food">🥜 乾燥蔬果片</span>
+      <span class="tag food">🍜 信州蕎麥麵</span>
+      <span class="tag food">🫘 信州味噌</span>
+    </div>
+
+    <div class="quote">
+      🛒 <strong>為什麼 Tsuruya 這麼猛？</strong>在地方超市中卻擁有全國知名度，幾乎每家分店都被媒體和美食節目反覆報導。自有品牌包裝精美，品質直逼專櫃，是帶回台灣當伴手禮的最佳選擇！
+    </div>
+  </div>
+</div>
+
+</div><!-- /wrap -->
+
+<footer>
+  <strong>🗼 2026 東京黃金週 — 行前景點導覽</strong><br>
+  帶著這份導覽，到了現場更有感覺！🌸♨️🦕📚<br><br>
+  祝旅途愉快！🎉✨
+</footer>
+
+</body>
+</html>

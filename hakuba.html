@@ -138,32 +138,15 @@
         </div>
     </div>
 
-    <!-- Accommodation Table -->
-    <div class="card">
-        <h2><span class="icon">🏨</span> 白馬精選住宿清單 (68間)</h2>
-        <div class="progress-bar">
+    <!-- Summary bar -->
+    <div class="card" style="padding:20px 32px;">
+        <div class="progress-bar" style="margin-bottom:0">
             📊 已發送 31 封聯繫信 → 收到 9 封回覆（含報價）→ 1 間已預先保留 (Morino Lodge)
         </div>
-        <div class="table-wrap">
-            <table id="hotelTable">
-                <thead>
-                    <tr>
-                        <th style="text-align:left">住宿名稱</th>
-                        <th>評分</th>
-                        <th>區域</th>
-                        <th>🍳 廚房</th>
-                        <th>♨️ 泡湯</th>
-                        <th>距雪場</th>
-                        <th>信件狀態</th>
-                        <th>地圖</th>
-                        <th class="note-col" style="min-width:280px">📝 筆記與評估</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-        </div>
     </div>
+
+    <!-- Area-grouped accommodation tables -->
+    <div id="area-sections"></div>
 </main>
 
 <footer>2027 Hakuba Valley Family Ski Trip Planning Dashboard</footer>
@@ -240,6 +223,54 @@ const hotels = [
   {n:"Lodge Tsubaki",r:"4.5",a:"栂池",k:0,o:1,d:"0 分 (Ski-in/out)",s:"✅ (Email公開)",u:"https://www.google.com/maps/search/?api=1&query=Lodge+Tsubaki"},
 ];
 
+const areaOrder = ["Wadano","Happo","栂池","Echoland","岩岳","岩岳/栂池","Goryu","車站區","Cortina","乘鞍"];
+const areaLabels = {
+    "Wadano":   "🏡 Wadano (和田野) — 八方尾根周邊",
+    "Happo":    "🎿 Happo (八方村)",
+    "栂池":     "⭐ 栂池高原 (Tsugaike) — 小孩首選",
+    "Echoland": "🏘️ Echoland (エコーランド)",
+    "岩岳":     "🏔️ 岩岳 (Iwatake)",
+    "岩岳/栂池":"🏔️ 岩岳/栂池 周邊",
+    "Goryu":    "🎿 Goryu (五龍 & 47)",
+    "車站區":   "🚉 白馬車站區",
+    "Cortina":  "🌲 Cortina (コルチナ)",
+    "乘鞍":     "⛷️ 乘鞍 (Norikura)"
+};
+
+// 栂池 hotels with public email (needs website lookup for actual address)
+const tsugaikeEmailHotels = [
+    { n: "Tsugaike Kogen Hotel",      web: "tsugaikekogenhotel.com" },
+    { n: "Grace Hakuba",              web: "gracehakuba.com" },
+    { n: "Tsugaike Hilltop",          web: "tsugaikehilltop.com" },
+    { n: "Resort Inn Marion Shinano", web: "marionshinano.com" },
+    { n: "Hotel New Bernina",         web: "newbernina.com" },
+    { n: "Ski Inn Hakuba",            web: "skiinnhakuba.com" },
+    { n: "Slopeside Chalet Hakuba",   web: "slopesidechalet.com" },
+    { n: "Hotel Sunplaza Tsugaike",   web: "sunplaza-tsugaike.com" },
+    { n: "Lodge Tsubaki",             web: "lodge-tsubaki.com" },
+];
+
+const mailSubject = encodeURIComponent("Accommodation Inquiry: Jan 22 - Jan 30, 2027");
+const mailBody = encodeURIComponent(
+`Dear Accommodation Manager,
+
+We are a family of 3 (2 adults, 1 child aged 7) planning a ski trip to Hakuba Tsugaike area.
+We would love to stay at your property!
+
+Check-in:  January 22, 2027
+Check-out: January 30, 2027 (8 Nights)
+Guests: 2 adults + 1 child
+Room Type: Family room or room with Two Double Beds
+
+Could you please let us know:
+1. Availability for the above dates
+2. Room rates per night
+3. Whether ski rental or lessons can be arranged
+
+Thank you very much!
+Best regards,
+Barry Huang`);
+
 function badgeClass(s) {
     if (s.includes('📨') || s.includes('👑')) return 'badge-blue';
     if (s.includes('⏳')) return 'badge-purple';
@@ -247,8 +278,7 @@ function badgeClass(s) {
     return 'badge-amber';
 }
 
-const tbody = document.querySelector('#hotelTable tbody');
-hotels.forEach(h => {
+function buildRow(h) {
     const key = 'hakuba_v3_' + encodeURIComponent(h.n);
     let data = { stat: 'none', txt: '' };
     try { const raw = localStorage.getItem(key); if (raw) data = JSON.parse(raw); } catch(e) {}
@@ -257,7 +287,6 @@ hotels.forEach(h => {
     tr.innerHTML = `
         <td>${h.n}</td>
         <td class="rating">${h.r}</td>
-        <td>${h.a}</td>
         <td class="${h.k ? 'text-emerald' : 'text-muted'}">${h.k ? '✅ 有' : '❌ 無'}</td>
         <td class="${h.o ? 'text-emerald' : 'text-muted'}">${h.o ? '✅ 有' : '❌ 無'}</td>
         <td>${h.d}</td>
@@ -274,7 +303,6 @@ hotels.forEach(h => {
     `;
 
     const save = () => localStorage.setItem(key, JSON.stringify(data));
-
     const updateUI = () => {
         tr.querySelectorAll('.btn-group button').forEach(btn => {
             btn.className = '';
@@ -290,20 +318,79 @@ hotels.forEach(h => {
     };
 
     tr.querySelectorAll('.btn-group button').forEach(btn => {
-        btn.addEventListener('click', () => {
-            data.stat = btn.dataset.v;
-            save();
-            updateUI();
-        });
+        btn.addEventListener('click', () => { data.stat = btn.dataset.v; save(); updateUI(); });
     });
-
-    tr.querySelector('.note-col input').addEventListener('input', e => {
-        data.txt = e.target.value;
-        save();
-    });
-
+    tr.querySelector('.note-col input').addEventListener('input', e => { data.txt = e.target.value; save(); });
     updateUI();
-    tbody.appendChild(tr);
+    return tr;
+}
+
+// Group hotels by area
+const grouped = {};
+hotels.forEach(h => { if (!grouped[h.a]) grouped[h.a] = []; grouped[h.a].push(h); });
+
+const container = document.getElementById('area-sections');
+
+areaOrder.forEach(area => {
+    if (!grouped[area]) return;
+    const areaHotels = grouped[area];
+    const isStugaike = area === '栂池';
+
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.id = 'area-' + area;
+
+    // Build email inquiry section for 栂池
+    let emailSection = '';
+    if (isStugaike) {
+        const rows = tsugaikeEmailHotels.map(h =>
+            `<tr><td style="text-align:left;font-weight:700">${h.n}</td>
+             <td><a href="https://${h.web}" target="_blank" class="map-link">🌐 官網</a></td>
+             <td><a href="mailto:?subject=${mailSubject}&body=${mailBody}" class="map-link">✉️ 用信件範本</a></td></tr>`
+        ).join('');
+        emailSection = `
+        <div style="margin-bottom:20px;background:var(--emerald-50);border:1px solid var(--emerald-100);border-radius:12px;padding:20px;">
+            <div style="font-weight:700;font-size:1rem;color:var(--emerald-700);margin-bottom:12px;">✉️ 栂池 Email 詢問清單 (9 間 Email 公開)</div>
+            <p style="font-size:0.85rem;color:var(--slate-600);margin-bottom:12px;">
+                步驟：點「🌐 官網」找到 Email → 複製 → 點「✉️ 用信件範本」開啟草稿 → 貼上 Email 到收件人欄位 → 寄出
+            </p>
+            <div class="table-wrap">
+                <table style="font-size:0.85rem">
+                    <thead><tr><th style="text-align:left">飯店名稱</th><th>官網</th><th>信件草稿</th></tr></thead>
+                    <tbody>${rows}</tbody>
+                </table>
+            </div>
+        </div>`;
+    }
+
+    card.innerHTML = `
+        <h2><span class="icon">${isStugaike ? '⭐' : '🏨'}</span>
+            ${areaLabels[area] || area}
+            <span style="font-size:0.85rem;font-weight:normal;color:var(--slate-500)">(${areaHotels.length} 間)</span>
+        </h2>
+        ${emailSection}
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="text-align:left">住宿名稱</th>
+                        <th>評分</th>
+                        <th>🍳 廚房</th>
+                        <th>♨️ 泡湯</th>
+                        <th>距雪場</th>
+                        <th>信件狀態</th>
+                        <th>地圖</th>
+                        <th class="note-col" style="min-width:280px">📝 筆記與評估</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody-${area}"></tbody>
+            </table>
+        </div>
+    `;
+    container.appendChild(card);
+
+    const tbody = card.querySelector('tbody');
+    areaHotels.forEach(h => tbody.appendChild(buildRow(h)));
 });
 </script>
 </body>

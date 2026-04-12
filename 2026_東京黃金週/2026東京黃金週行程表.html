@@ -191,7 +191,16 @@
       .tl { padding-left: 26px; }
       .sticky-nav a { font-size: .75em; padding: 5px 10px; }
     }
-  </style>
+  
+    .checklist li { cursor: pointer; }
+    .checklist input[type="checkbox"] { transform: scale(1.3); margin-right: 8px; accent-color: var(--c-red); }
+    .checklist li.checked span { text-decoration: line-through; color: #aaa; }
+    .checklist li::before { display: none; }
+</style>
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#e63946">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
 </head>
 <body>
 
@@ -326,7 +335,7 @@
       </div>
       <div class="ti spa"><div class="td"></div>
         <div class="tt">19:45 – 20:30</div>
-        <div class="th">♨️ <a href="https://maps.google.com/?q=天然温泉ゆらぶ桐生" target="_blank">天然温泉ゆらぶ桐生店</a></div>
+        <div class="th">♨️ <a href="https://maps.google.com/?q=天然温泉ゆらぶ桐生" target="_blank">天然温泉ゆらぶ桐生店</a><br><a href="行前景點導覽.html#s4" style="display:inline-block;margin-top:6px;padding:3px 10px;border-radius:12px;background:#e3f2fd;color:#0d47a1;text-decoration:none;font-weight:700;font-size:0.85em;border:1px solid #2196F3;">📖 看導覽介紹</a></div>
         <div class="tx">準備：擦身毛巾、換洗內衣、¥100（吹頭髮）｜電話：0277-46-9967</div>
       </div>
       <div class="ti sleep"><div class="td"></div>
@@ -615,36 +624,36 @@
     <div class="info-card" style="border-color:#FF9800;">
       <h3>📄 證件 & 金融</h3>
       <ul class="checklist">
-        <li>護照（全員）</li>
-        <li>駕照（國際駕照 / 日文譯本）</li>
-        <li>信用卡 / 現金日幣</li>
-        <li>租車預約確認單（編號 26010100518）</li>
-        <li>住宿確認信（HMHWJJR5B8 / 筑波 9542B4603693）</li>
-        <li>機票（電子票）</li>
+        <li><input type="checkbox" class="chk-item"> <span>護照（全員）</span></li>
+        <li><input type="checkbox" class="chk-item"> <span>駕照（國際駕照 / 日文譯本）</span></li>
+        <li><input type="checkbox" class="chk-item"> <span>信用卡 / 現金日幣</span></li>
+        <li><input type="checkbox" class="chk-item"> <span>租車預約確認單（編號 26010100518）</span></li>
+        <li><input type="checkbox" class="chk-item"> <span>住宿確認信（HMHWJJR5B8 / 筑波 9542B4603693）</span></li>
+        <li><input type="checkbox" class="chk-item"> <span>機票（電子票）</span></li>
       </ul>
     </div>
     <div class="info-card" style="border-color:#4CAF50;">
       <h3>👕 衣物 & 日用</h3>
       <ul class="checklist">
-        <li>舒適步行鞋（好穿脫，彈跳床用）</li>
-        <li>防曬帽 / 太陽眼鏡</li>
-        <li>薄外套（早晚溫差大）</li>
-        <li>換洗衣物（5天份）</li>
-        <li>毛巾（溫泉用）</li>
-        <li>雨具（折疊傘 / 輕便雨衣）</li>
+        <li><input type="checkbox" class="chk-item"> <span>舒適步行鞋（好穿脫，彈跳床用）</span></li>
+        <li><input type="checkbox" class="chk-item"> <span>防曬帽 / 太陽眼鏡</span></li>
+        <li><input type="checkbox" class="chk-item"> <span>薄外套（早晚溫差大）</span></li>
+        <li><input type="checkbox" class="chk-item"> <span>換洗衣物（5天份）</span></li>
+        <li><input type="checkbox" class="chk-item"> <span>毛巾（溫泉用）</span></li>
+        <li><input type="checkbox" class="chk-item"> <span>雨具（折疊傘 / 輕便雨衣）</span></li>
       </ul>
     </div>
     <div class="info-card" style="border-color:#2196F3;">
       <h3>🎒 實用物品</h3>
       <ul class="checklist">
-        <li>手機充電線 & 行動電源</li>
-        <li>車用手機架（CarPlay 導航用）</li>
-        <li>野餐墊</li>
-        <li>水壺 / 保溫瓶</li>
-        <li>防曬乳</li>
-        <li>100 日幣零錢（溫泉吹頭髮）</li>
-        <li>兒童用品（備用零食、濕紙巾）</li>
-        <li>塑膠袋（裝髒衣服）</li>
+        <li><input type="checkbox" class="chk-item"> <span>手機充電線 & 行動電源</span></li>
+        <li><input type="checkbox" class="chk-item"> <span>車用手機架（CarPlay 導航用）</span></li>
+        <li><input type="checkbox" class="chk-item"> <span>野餐墊</span></li>
+        <li><input type="checkbox" class="chk-item"> <span>水壺 / 保溫瓶</span></li>
+        <li><input type="checkbox" class="chk-item"> <span>防曬乳</span></li>
+        <li><input type="checkbox" class="chk-item"> <span>100 日幣零錢（溫泉吹頭髮）</span></li>
+        <li><input type="checkbox" class="chk-item"> <span>兒童用品（備用零食、濕紙巾）</span></li>
+        <li><input type="checkbox" class="chk-item"> <span>塑膠袋（裝髒衣服）</span></li>
       </ul>
     </div>
   </div>
@@ -700,7 +709,45 @@
       }
     });
   });
-</script>
 
+  const chks = document.querySelectorAll('.checklist input[type="checkbox"]');
+  chks.forEach((chk, i) => {
+    chk.id = 'chk-' + i;
+    const saved = localStorage.getItem(chk.id);
+    if(saved === 'true') {
+      chk.checked = true;
+      chk.parentElement.classList.add('checked');
+    }
+    chk.addEventListener('change', function() {
+      localStorage.setItem(this.id, this.checked);
+      if(this.checked) this.parentElement.classList.add('checked');
+      else this.parentElement.classList.remove('checked');
+    });
+  });
+</script><div style="display:none" class="checklist-interactive"></div>
+
+
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js');
+    });
+  }
+
+  const chks = document.querySelectorAll('.checklist input[type="checkbox"]');
+  chks.forEach((chk, i) => {
+    chk.id = 'chk-' + i;
+    const saved = localStorage.getItem(chk.id);
+    if(saved === 'true') {
+      chk.checked = true;
+      chk.parentElement.classList.add('checked');
+    }
+    chk.addEventListener('change', function() {
+      localStorage.setItem(this.id, this.checked);
+      if(this.checked) this.parentElement.classList.add('checked');
+      else this.parentElement.classList.remove('checked');
+    });
+  });
+</script><div style="display:none" class="checklist-interactive"></div>
 </body>
 </html>

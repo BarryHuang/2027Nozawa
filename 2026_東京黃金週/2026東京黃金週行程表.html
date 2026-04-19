@@ -71,7 +71,7 @@
     }
 
     /* ── INFO GRID ── */
-    .info-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 14px; margin-bottom: 24px; }
+    .info-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%, 340px), 1fr)); gap: 16px; margin-bottom: 24px; }
     .info-card {
       background: white; border-radius: var(--radius); padding: 18px;
       box-shadow: 0 3px 12px rgba(0,0,0,.07); border-left: 6px solid;
@@ -212,6 +212,7 @@
 <a class="nav-d4" href="#day4">D4 博物館</a>
 <a class="nav-d5" href="#day5">D5 返台</a>
 <a href="#pack" style="border-color:#f9a825;">🎒 打包</a>
+<a href="#jp-zone" style="border-color:#F06292;">🗣️ 日文</a>
 <a href="#sos" style="border-color:#ff5252;">🆘 緊急</a>
 <a href="行前景點導覽.html" style="border-color:#4dd0e1; background:linear-gradient(135deg,#00897b,#00acc1); border:2px solid #4dd0e1;">📖 景點導覽</a>
 </nav>
@@ -297,20 +298,25 @@
 <tr><th>項目</th><th>金額（日幣）</th><th>備注</th></tr>
 <tr><td>🚗 租車（含保險+ETC+幼兒椅）</td><td>¥120,120</td><td>4/29–5/03，含稅</td></tr>
 <tr><td>🏠 太田民宿（2晚）</td><td>¥96,452</td><td>4/29–5/01</td></tr>
-<tr><td>🏨 筑波日航酒店（2晚×3房）</td><td>¥98,323</td><td>5/01–5/03 含早餐 (單人/雙人/家庭)</td></tr>
-<tr><td>✈️ 機票（去回程）</td><td>NT$104,234</td><td>已結清 (星宇 JX800/801)</td></tr>
-<tr><td>🌸 足利花卉公園門票</td><td>~NT$2,800</td><td>預估 (KKday 白天+夜間)</td></tr>
-<tr><td>🌳 森林公園入園+單車</td><td>¥7,600</td><td>門票+電動車x5+童車x1</td></tr>
-<tr><td>♨️ 桐生溫泉ゆらぶ</td><td>¥5,720</td><td>門票(5大1小)+吹風機(¥100x6)</td></tr>
-<tr><td>♨️ きぬの湯（含晚餐）</td><td>¥24,800</td><td>假日門票(¥9,800)+晚餐(¥15,000)</td></tr>
-<tr><td>🦕 茨城縣自然博物館</td><td>¥4,250</td><td>門票已先付費</td></tr>
-<tr><td>🍽️ 餐飲預估 (中餐/晚餐/雜支)</td><td>~¥63,070</td><td>Vivre sa vie(¥23K)+もんどころ(¥25K)+其他</td></tr>
-<tr><td>⛽ 預估油資與交通</td><td>~¥13,000</td><td>550km油資 + Day 2 轉乘 JR</td></tr>
+<tr><td>🏨 筑波日航酒店（2晚×3房）</td><td>¥98,323</td><td>5/01–5/03 含早餐 (單人房 ¥27,645 / 雙人房 ¥34,294 / 三人家庭房 ¥36,384)</td></tr>
+<tr><td>✈️ 機票（去程/回程）</td><td>NT$104,234</td><td>已結清 (大人 NT$17,886×5 + 小孩 NT$14,804×1)</td></tr>
+<tr><td>🌸 足利花卉公園門票 (白天)</td><td>~NT$2,400</td><td>預估 (5大1小)</td></tr>
+<tr><td>🌸 足利花卉公園門票 (夜間)</td><td>~NT$2,200</td><td>預估 (5大1小)</td></tr>
+<tr><td>🌳 森林公園入園+單車</td><td>¥10,200</td><td>門票(¥450×5人)+電動車5小時(¥1800×3)+一般車5小時(¥1000×2)+童車5小時(¥550)</td></tr>
+<tr><td>♨️ 桐生溫泉 (ゆらぶ)</td><td>¥5,720</td><td>假日門票(5大1小) + 吹風機(¥100×6)</td></tr>
+<tr><td>♨️ きぬの湯（含晚餐）</td><td>¥24,800</td><td>假日門票(¥9,800) + 晚餐估算(¥15,000)</td></tr>
+<tr><td>🦕 自然博物館</td><td>¥4,250</td><td>門票已先付費</td></tr>
+<tr><td>🍽️ 餐點：Vivre sa vie</td><td>¥23,070</td><td>Day 2 法式午餐 (已點餐)</td></tr>
+<tr><td>🍽️ 餐點：もんどころ</td><td>~¥25,000</td><td>Day 4 晚餐 (預約未結，粗估常陸牛與鮟鱇魚)</td></tr>
+<tr><td>🍽️ 餐飲：其餘三餐</td><td>~¥40,000</td><td>休息站晚餐/超商早餐/公園餐廳/珈琲廳/外帶麵包/超市自煮/機場午餐</td></tr>
+<tr><td>🚃 區間交通與雜支</td><td>~¥3,000</td><td>Day 2 轉乘 JR 車資、足利學校等小型門票</td></tr>
+<tr><td>⛽ 預估油資</td><td>~¥10,000</td><td>預估總里程 550km 取車到還車</td></tr>
 <tr><td>🚕 台灣機場接送</td><td>~NT$3,000</td><td>預估去回程 (9人座包車)</td></tr>
-<tr class="total"><td>💳 總計花費預估 (機加酒+全費用)</td><td>¥333,335<br>+ NT$110,034</td><td></td></tr>
+<tr><td>🛡️ 旅遊保險 (東京海上日動)</td><td>¥11,700</td><td>4天方案 (¥1,950×6) / 抵達隔日起算</td></tr>
+<tr class="total"><td>💳 合計約（含機票）</td><td>¥472,635<br>+ ~NT$111,834</td><td>機加酒、台日交通、三餐餐費全包估值</td></tr>
 </table>
 <div style="background:#fff3e0;border-left:4px solid var(--c-orange);padding:14px;border-radius:8px;font-size:0.9em;margin-bottom:24px;line-height:1.6;">
-  <strong>👤 單一大人花費估算：</strong><br>機加酒自駕與大餐全包，住雙人房每名大人總開銷約 <strong>NT$ 36,000</strong>！獨睡單人房約 <strong>NT$ 38,500</strong>，極具 CP 值！
+  <strong>👤 單一大人花費估算：</strong><br>機加酒自駕與大餐全包，住雙人房每名大人總開銷約 <strong>NT$ 37,000</strong>！獨睡單人房約 <strong>NT$ 39,500</strong>，極具 CP 值！
 </div>
 </div>
 <!-- ═══ DAYS ═══ -->
@@ -336,50 +342,58 @@
 </div>
 <div class="tl">
 <div class="ti move"><div class="td"></div>
-<div class="tt">08:30</div>
-<div class="th">✈️ 桃園機場 T1 起飛</div>
-<div class="tx">🚨 <strong>降落前 40 分鐘務必全員在機上先上廁所！</strong>落地後直衝海關不逗留。飛往東京成田 T2，約 3 小時。</div>
+<div class="tt">08:30~12:55</div>
+<div class="th">✈️ 桃園機場 (T1) ➔ 成田機場 (T2)</div>
+<div class="tx">🚨 <strong>降落前 40 分鐘務必全員在機上先上廁所 (前30分會亮燈)！</strong>落地後直衝海關不逗留。</div>
 </div>
 <div class="ti move"><div class="td"></div>
-<div class="tt">12:55</div>
-<div class="th">🛬 <a href="https://maps.google.com/?q=成田国際空港第2ターミナル" target="_blank">成田機場 T2 落地</a></div>
-<div class="tx">13:00–14:45 通關、領行李。領完行李後切換「分頭行動戰術」。</div>
+<div class="tt">13:00~14:20</div>
+<div class="th">🛬 通關領行李</div>
+<div class="tx">若未遇嚴重塞車，目標 80 分鐘內出關！領完行李後切換「分頭行動戰術」。</div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">14:20~15:30</div>
+<div class="th">🚗 租車辦手續 (獨自前往)</div>
+<div class="tx">由 HUANG POYU 攜帶<strong>租車三寶</strong>，至 T2 櫃檯報到並搭接駁車赴外圍取車。取車後設定導航（桐生溫泉電話：0277-46-9967，選有料優先），再開回 T2 一樓最外側<strong>第3車道</strong>等候。<br>⚠️ <strong>【極度重要】絕對不能把「小孩的護照」帶走！</strong>留守組買 Suica 必須用到！</div>
 </div>
 <div class="ti act"><div class="td"></div>
-<div class="tt">14:55 – 15:20</div>
-<div class="th">💳 B1 購買 Welcome Suica 卡</div>
-<div class="tx">攜帶護照，記得買兒童版！儲值 ¥1,000 起</div>
+<div class="tt">14:30~15:00</div>
+<div class="th">💳 B1 購買 Welcome Suica</div>
+<div class="tx"><strong>繞過「JR 旅行服務中心」人潮，直接找紅色「Welcome Suica 自動售票機」</strong>（B1 JR 改札口附近）。<br>👧 小孩版需在機台輸入生年月日並出示護照驗證年齡。<br>💡 <strong>省時選項</strong>：若想跳過護照驗證手續，可幫小孩買大人版。<strong>全家每張卡都只需買 ¥1,000 最低面額，整趟免加值！</strong>（全程自駕，唯一搭 JR 只有 Day 2 足利花園，大人總車資 ¥649，即使小孩扣大人票價都有剩，完全不用為了儲值去排隊）。<br>🎥 <a href="https://www.youtube.com/results?search_query=Navigating+Narita+Airport:+How+to+get+the+Welcome+Suica+Card" target="_blank">教學影片：Navigating Narita Airport: How to get the Welcome Suica Card</a></div>
 </div>
 <div class="ti move"><div class="td"></div>
-<div class="tt">15:10 – 15:30</div>
-<div class="th">🚗 辦理租車 & 出發！</div>
-<div class="tx">由 HUANG POYU 攜帶<strong>租車三寶</strong>至 T2 櫃檯報到。<br>⚠️ <strong>絕對不能把「小孩的護照」帶走！</strong>留守組買 Suica 必須用到！15:30 全員出發。</div>
+<div class="tt">15:30~15:45</div>
+<div class="th">🚘 接機車道會合、出發</div>
+<div class="tx">買完後搭中央電梯回 1 樓入境大廳，在<strong>中央口室內座位區</strong>吹冷氣等 LINE 通知。<br>▸ 接到通知後，推行李走出大廳，穿越斑馬線到<strong>最外側第3車道（一般車レーン）安全島</strong>上車。<br>⚠️ 第1、2車道為巴士計程車專用，絕對不能在那裡等候！</div>
 </div>
 <div class="ti move"><div class="td"></div>
-<div class="tt">16:40 – 16:55</div>
-<div class="th">🛣️ <a href="https://maps.google.com/?q=坂東パーキングエリア" target="_blank">坂東 PA 休息</a></div>
-<div class="tx">上廁所、活動一下（離成田約 1 小時）</div>
+<div class="tt">16:45~17:00</div>
+<div class="th">🛣️ <a href="https://maps.google.com/?q=坂東パーキングエリア" target="_blank">坂東 PA 內回 (上廁所)</a></div>
+<div class="tx">此處有 2024年4月全新完工、非常乾淨的廁所。</div>
 </div>
 <div class="ti meal"><div class="td"></div>
-<div class="tt">17:45 – 18:45</div>
-<div class="th">🍜 <a href="https://maps.google.com/?q=羽生パーキングエリア" target="_blank">羽生 PA 晚餐</a><br><a href="行前景點導覽.html#s6" style="display:inline-block;margin-top:6px;padding:3px 10px;border-radius:12px;background:#e3f2fd;color:#0d47a1;text-decoration:none;font-weight:700;font-size:0.85em;border:1px solid #2196F3;">📖 看導覽介紹</a></br></div>
-<div class="tx">超大主題休息站，多種美食選擇，營業至 21:30</div>
+<div class="tt">17:50~18:50</div>
+<div class="th">🍜 <a href="https://maps.google.com/?q=羽生パーキングエリア" target="_blank">羽生 PA 下り / Pasar 羽生 (晚餐)</a><br><a href="行前景點導覽.html#s6" style="display:inline-block;margin-top:6px;padding:3px 10px;border-radius:12px;background:#e3f2fd;color:#0d47a1;text-decoration:none;font-weight:700;font-size:0.85em;border:1px solid #2196F3;">📖 看導覽介紹</a></br></div>
+<div class="tx">從坂東 PA 前往，維持 60 分鐘戰鬥用餐時間，吃飽即出發！</div>
 </div>
 <div class="ti spa"><div class="td"></div>
-<div class="tt">19:45 – 20:30</div>
-<div class="th">♨️ <a href="https://maps.google.com/?q=天然温泉ゆらぶ桐生" target="_blank">天然温泉ゆらぶ桐生店</a><br><a href="行前景點導覽.html#s4" style="display:inline-block;margin-top:6px;padding:3px 10px;border-radius:12px;background:#e3f2fd;color:#0d47a1;text-decoration:none;font-weight:700;font-size:0.85em;border:1px solid #2196F3;">📖 看導覽介紹</a></br></div>
-<div class="tx">準備：擦身毛巾、換洗內衣、¥100（吹頭髮）｜電話：0277-46-9967<br>門票假日：大人 ¥950 / 小孩 ¥370</div>
+<div class="tt">19:50~20:50</div>
+<div class="th">♨️ <a href="https://maps.google.com/?q=天然温泉ゆらぶ桐生" target="_blank">天然温泉ゆらぶ桐生店 (洗澡)</a><br><a href="行前景點導覽.html#s4" style="display:inline-block;margin-top:6px;padding:3px 10px;border-radius:12px;background:#e3f2fd;color:#0d47a1;text-decoration:none;font-weight:700;font-size:0.85em;border:1px solid #2196F3;">📖 看導覽介紹</a></br></div>
+<div class="tx">羽生出發近 1 小時。<br>💡<strong>必備 100円硬幣 (吹風機每人需投幣 ¥100)！</strong>另外請在容易取得的行李放擦身體毛巾與換洗內衣褲。*(門票假日：大人 ¥950 / 小孩 ¥370)*</div>
 </div>
 <div class="ti sleep"><div class="td"></div>
-<div class="tt">21:00</div>
-<div class="th">🏠 抵達太田市民宿（密碼：<strong style="color:var(--c-red)">186696</strong>）</div>
-<div class="tx">整棟一軒家，停車 3 台。隔天 05:30 起床！</div>
+<div class="tt">21:10</div>
+<div class="th">🏠 抵達民宿 (太田市)</div>
+<div class="tx">ゆらぶ出發約 20 分鐘。盡早抵達並火速就寢，隔日 05:30 起床。</div>
 </div>
 </div>
 <div class="tips">
-      💡 <strong>導航</strong>：第一段用車機輸入桐生溫泉電話 0277-46-9967，之後搭配 CarPlay / Android Auto<br>
-      🅿️ <strong>其他 PA</strong>：菖蒲 PA（頑者拉麵）、羽生 PA（規模最大，主題休息站）
-    </br></div>
+  ✈️ <strong>成田 T2 落地分流指南</strong><br>
+  <strong>🚗 駕駛</strong>：辦完租車後設定桐生溫泉導航 → 開回 T2 一樓 → 切入<strong>最外側第3車道（一般車レーン）</strong>等候 → 快到前 3 分鐘 LINE 通知家人 → 看到家人出來立刻搬行李出發，不可熄火久停<br>
+  <strong>💳 留守組</strong>：出關後直下 B1 → 找<strong>紅色 Welcome Suica 自動售票機</strong>（繞開人工服務中心）→ 小孩版須驗護照（省時買大人版，不須再排隊加值） → 搭中央電梯回 1 樓中央口室內等候 LINE → 穿越斑馬線到第3車道安全島上車<br>
+  💡 <strong>導航</strong>：第一段用車機輸入桐生溫泉電話 0277-46-9967，之後搭配 CarPlay / Android Auto<br>
+  🅿️ <strong>其他 PA</strong>：菖蒲 PA（頑者拉麵）、羽生 PA（規模最大，主題休息站）
+</div>
 </div>
 </div>
 <!-- ════ DAY 2 ════ -->
@@ -395,62 +409,80 @@
 <div class="hl purple">🌺 世界夢幻景點！紫藤花瀑布超壯觀，早去人少景色最美，晚上還有夢幻夜間點燈！</div>
 <div class="tl">
 <div class="ti sleep"><div class="td"></div>
-<div class="tt">05:30</div><div class="th">⏰ 起床！</div><div class="tx">06:20 到 7-11 買早餐</div>
+<div class="tt">05:30</div>
+<div class="th">⏰ 起床</div><div class="tx"></div>
+</div>
+<div class="ti meal"><div class="td"></div>
+<div class="tt">06:20</div>
+<div class="th">🥐 超商買早餐</div>
+<div class="tx">附近超商：<a href="https://maps.google.com/?q=7-Eleven+Yabuzuka+Sports+Park" target="_blank">7-Eleven</a> / <a href="https://maps.google.com/?q=FamilyMart+藪塚" target="_blank">FamilyMart</a> / <a href="https://maps.google.com/?q=Lawson+Yabuzuka+Inter" target="_blank">Lawson</a></div>
 </div>
 <div class="ti move"><div class="td"></div>
 <div class="tt">06:40</div>
-<div class="th">🚗 從太田市出發</div>
-<div class="tx">車程約 60 分鐘，避開 9:00–15:00 黃金週人潮</div>
+<div class="th">🚗 太田市民宿 出發</div>
+<div class="tx">提早出發避開塞車 (黃金週預估 60 分鐘)，最佳為直接停放<a href="https://www.ashikaga.co.jp/access.html" target="_blank">公園停車場</a>。</div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">07:40</div>
+<div class="th">🌸 抵達足利花卉公園</div>
+<div class="tx">趁人潮爆滿前拍攝大藤與白藤，出示事先買好的 <a href="https://www.kkday.com/zh-tw/product/132105-ashikaga-flower-park-illuminated-garden-admission-ticket-tochigi-japan?srsltid=AfmBOoqOnN2un4c1TblsrvWKOUOlpke7jweTnadybgjLBes79znog4Gg" target="_blank"><strong>KKday 白天票 QR Code</strong></a> 入園。</div>
 </div>
 <div class="ti act"><div class="td"></div>
-<div class="tt">07:40 – 11:45</div>
-<div class="th">🌸 <a href="https://maps.google.com/?q=あしかがフラワーパーク" target="_blank">足利花卉公園</a>（白天場）<br/><a href="行前景點導覽.html#s1" style="display:inline-block;margin-top:6px;padding:3px 10px;border-radius:12px;background:#e3f2fd;color:#0d47a1;text-decoration:none;font-weight:700;font-size:0.85em;border:1px solid #2196F3;">📖 看導覽介紹</a></div>
+<div class="tt">08:00~11:45</div>
+<div class="th">🌺 園內觀賞 (白天場) / 11:00 園內小食</div>
 <div class="tx">
-          08:00 入園，10:00 前是最舒適時段！<br/>
+黃金週 10 點後人潮湧現，這段時間為最舒適觀賞期。<br/>
 <div class="tags">
 <span class="tag">🍦 紫藤霜淇淋</span>
 <span class="tag">🍢 炸番薯串</span>
 <span class="tag">🥟 宇都宮餃子</span>
 <span class="tag">🍜 炒麵</span>
-<span class="tag">🍖 肉串</span>
 </div>
 </div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">11:45~12:00</div>
+<div class="th">🚶 離開公園</div><div class="tx"></div>
 </div>
 <div class="ti meal"><div class="td"></div>
-<div class="tt">13:15 – 15:00</div>
-<div class="th">🍽️ 午餐 — Restaurant Vivre sa vie ✅ 已訂位</div>
-<div class="tx">🍽️ <strong>已確認餐點</strong>：¥6,110×1 (一大一小共餐)，¥4,240×4 (四位大人)</div>
+<div class="tt">13:15~15:00</div>
+<div class="th">🍽️ 午餐 — <a href="https://maps.google.com/?q=Restaurant+Vivre+sa+vie" target="_blank">Restaurant Vivre sa vie</a> ✅ 已訂位</div>
+<div class="tx">🍽️ <strong>已確認餐點</strong>：¥6,110×1 (一大人一小孩共餐)，¥4,240×4 (四位大人)</div>
 </div>
 <div class="ti act"><div class="td"></div>
 <div class="tt">下午</div>
 <div class="th">👥 分組活動</div>
 <div class="tx">
 <div class="split">🌟 賞花組</div>
-          15:30–16:30 足利景點（<a href="https://maps.google.com/?q=太平記館+足利" target="_blank">太平記館</a>、咖啡 montemps、<a href="https://maps.google.com/?q=足利学校" target="_blank">足利學校</a>）<br/>
-          ✨ 17:30–18:30 <strong>夜間點燈</strong>（17:30 售票，JR 209円）→ 19:00 JR 返回太田（440円）
-          <div class="split">🏠 休息組</div>
-          16:00 超市採購（推薦 <a href="https://maps.google.com/?q=ツルヤ+みどり市" target="_blank">Tsuruya Midori</a> 超市 <a href="行前景點導覽.html#s8" style="display:inline-block;margin-top:6px;padding:3px 10px;border-radius:12px;background:#e3f2fd;color:#0d47a1;text-decoration:none;font-weight:700;font-size:0.85em;border:1px solid #2196F3;">📖 看導覽介紹</a>，必買蘋果奶油果醬！）<br/>
-          17:00 回住宿洗澡
-        </div>
+15:30~16:30 足利景點觀光（<a href="https://maps.google.com/?q=太平記館" target="_blank">太平記館</a>、<a href="https://maps.google.com/?q=カフェ・モンタン" target="_blank">咖啡店 montemps</a>、<a href="https://maps.google.com/?q=史跡足利学校" target="_blank">足利學校</a>）<br/>
+16:50~17:20 搭乘 JR 返回公園 <a href="https://transit.yahoo.co.jp/search/result?from=%E8%B6%B3%E5%88%A9&to=%E3%81%82%E3%81%97%E3%81%8B%E3%81%8C%E3%83%95%E3%83%A9%E3%83%AF%E3%83%BC%E3%83%91%E3%83%BC%E3%82%AF" target="_blank">🔍一鍵查去程班次</a><br/>
+17:30~18:30 <strong>二次入園 (夜間點燈場)</strong> 出示 <a href="https://www.kkday.com/zh-tw/product/132105-ashikaga-flower-park-illuminated-garden-admission-ticket-tochigi-japan?srsltid=AfmBOoqOnN2un4c1TblsrvWKOUOlpke7jweTnadybgjLBes79znog4Gg" target="_blank"><strong>KKday 夜間票 QR Code</strong></a><br/>
+19:00 離開公園 (返回太田市 JR 坐到桐生站) <a href="https://transit.yahoo.co.jp/search/result?from=%E3%81%82%E3%81%97%E3%81%8B%E3%81%8C%E3%83%95%E3%83%A9%E3%83%AF%E3%83%BC%E3%83%91%E3%83%BC%E3%82%AF&to=%E6%A1%90%E7%94%9F" target="_blank">🔍一鍵查回程班次</a>
+<div class="split">🏠 休息組</div>
+16:00~17:00 超市採買晚餐食材（推薦：<a href="https://maps.google.com/?q=ツルヤ+みどり店" target="_blank">Tsuruya Midori ツルヤ</a>，備案：<a href="https://maps.google.com/?q=アバンセ+大正店" target="_blank">Avance</a> 或 <a href="https://maps.google.com/?q=JA+ファーマーズ+太田藪塚" target="_blank">JA Famazuotayabuzuka</a>）<br/>
+17:00 回民宿輪流洗澡休息
+</div>
 </div>
 <div class="tips" style="margin-top:14px; border-color:#2196F3; background:#e3f2fd;">
   <strong style="color:#0d47a1;">💡 全員皆參加「賞花組」的備案策略（皆不先進民宿）</strong><br>
   若全員決定下午共同行動不分組，傍晚車子會停放在「JR 足利站」周邊。<br>
-  • <strong>19:00 離開公園</strong>：全員從「足利花卉公園站」搭 JR 返回「足利站」取車（僅 1 站，車程約 6 分鐘，票價 209 円）。<br>
-  • <strong>晚餐外帶</strong>：取車後開車回太田市民宿，路上順路買牛丼外帶。<br>
-  • <strong>順路餐廳</strong>：<a href="https://maps.google.com/?q=吉野家+50号線バイパス太田店" target="_blank">吉野家 50號線 Bypass 太田店</a>（順路回太田市）、或沿路的便利商店。
+  • <strong>19:00 離開公園</strong>：從「足利花卉公園站」搭 JR 返回「足利站」取車 (僅 1 站)。<br>
+  • <strong>晚餐外帶</strong>：取車後回太田市民宿路上順路買牛丼外帶。<br>
+  • <strong>順路餐廳導航</strong>：<a href="https://maps.google.com/?q=吉野家+50号線バイパス太田店" target="_blank">吉野家 50號線Bypass太田店</a>
 </div>
 <div class="ti meal"><div class="td"></div>
-<div class="tt">18:00 – 19:30</div>
-<div class="th">🍲 晚餐 — 肉蔬菜大鍋烏龍麵</div>
+<div class="tt">18:00~19:30</div>
+<div class="th">🍲 晚餐 — 大鍋烏龍麵</div>
 <div class="tx">超市採買日文對照：冷凍うどん x3、鶏もも肉或豚しゃぶしゃぶ用 500g、鍋用カット野菜 x2、鍋つゆ x2</div>
 </div>
 <div class="ti sleep"><div class="td"></div>
-<div class="tt">21:00</div><div class="th">😴 就寢（兔子 20:30 睡）</div><div class="tx"></div>
+<div class="tt">21:00</div>
+<div class="th">😴 睡覺</div>
+<div class="tx">小兔子 20:30 就寢</div>
 </div>
 </div>
 <div class="tips">
-      🎫 <strong>門票</strong>：提前在 KKday / Klook 買 QR Code 電子票省去排隊！<br>
+      🎫 <strong>門票</strong>：提前在 <a href="https://www.kkday.com/zh-tw/product/132105-ashikaga-flower-park-illuminated-garden-admission-ticket-tochigi-japan?srsltid=AfmBOoqOnN2un4c1TblsrvWKOUOlpke7jweTnadybgjLBes79znog4Gg" target="_blank">KKday / Klook 買 QR Code 電子票</a>省去排隊！<br>
       🚌 <strong>備案</strong>：停車難找可停 JR 太田站搭電車前往<br>
       🧥 <strong>天氣準備</strong>：早晚溫差大，夜間點燈時強風較多，請備妥<strong>防風外套與薄長袖</strong>洋蔥式穿搭。
     </div>
@@ -469,66 +501,93 @@
 <div class="hl green">🌸🌺🌼 一天攻略：粉蝶花 + 罌粟花 + 魯冰花 + 日本最大彈跳床，最後天然溫泉完美收尾！</div>
 <div class="tl">
 <div class="ti sleep"><div class="td"></div>
-<div class="tt">05:50</div><div class="th">⏰ 起床！</div>
-<div class="tx">06:40 超商買早餐，06:50 出發上交流道</div>
+<div class="tt">05:50</div><div class="th">⏰ 起床與退房</div>
+<div class="tx">🚨 <strong>注意退房事項：毛巾集中、關燈、鎖門。</strong></div>
+</div>
+<div class="ti meal"><div class="td"></div>
+<div class="tt">06:40</div>
+<div class="th">🥐 買早餐與水</div>
+<div class="tx">附近超商：<a href="https://maps.google.com/?q=7-Eleven+Yabuzuka+Sports+Park" target="_blank">7-Eleven</a> / <a href="https://maps.google.com/?q=FamilyMart+藪塚" target="_blank">FamilyMart</a> / <a href="https://maps.google.com/?q=Lawson+Yabuzuka+Inter" target="_blank">Lawson</a></div>
 </div>
 <div class="ti move"><div class="td"></div>
 <div class="tt">06:50</div>
-<div class="th">🚗 前往森林公園</div>
-<div class="tx">太田藪塚IC → 高崎JCT → 東松山IC<br>👑 首選：<a href="https://maps.google.com/?q=寄居PA+上り" target="_blank">寄居 PA（小王子主題）</a>｜🆘 備案：<a href="https://maps.google.com/?q=駒寄PA+上り" target="_blank">駒寄 PA</a>（車位好找、免排隊）</div>
+<div class="th">🚗 出發上交流道</div>
+<div class="tx">路線：太田藪塚 IC ➔ 北關東自動車道 ➔ 高崎 JCT ➔ 關越自動車道 ➔ 東松山 IC。</div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">07:35</div>
+<div class="th">🛣️ 高速公路休息站</div>
+<div class="tx">👑 <strong>首選：<a href="https://maps.google.com/?q=寄居PA+上り" target="_blank">寄居 PA (小王子主題)</a></strong><br><em>(通過高崎 JCT 後極佳的中繼站，特色建築非常值得一看，預計停靠 15 分鐘)</em><br><br>🆘 <strong>備案：<a href="https://maps.google.com/?q=駒寄PA+上り" target="_blank">駒寄 PA</a></strong><br><em>(位在高崎 JCT 之前，車位好找且廁所免排隊)</em></div>
 </div>
 <div class="ti act"><div class="td"></div>
 <div class="tt">08:50</div>
 <div class="th">🌳 <a href="https://maps.google.com/?q=国営武蔵丘陵森林公園+西口" target="_blank">國營武藏丘陵森林公園（西口）</a><br/><a href="行前景點導覽.html#s2" style="display:inline-block;margin-top:6px;padding:3px 10px;border-radius:12px;background:#e3f2fd;color:#0d47a1;text-decoration:none;font-weight:700;font-size:0.85em;border:1px solid #2196F3;">📖 看導覽介紹</a></div>
-<div class="tx">⚠️ <strong>一定要停西口停車場！</strong> 09:30 開園，衝去租電動輔助自行車（限量！）</div>
+<div class="tx">📍<strong>導航務必搜尋「国営武蔵丘陵森林公園 西口駐車場」</strong> (切勿去中央口)。<br><br>📝 <strong>重要資訊：</strong><a href="https://www.shinrinkoen.jp/?p=we-page-entry&amp;spot=605270&amp;type=spot" target="_blank">黃金週期間各設施的營業時間資訊</a><br>🗺️ <strong>園內地圖：</strong><a href="https://www.shinrinkoen.jp/?p=we-page-entrylist&amp;spotlist=26488&amp;nav=none" target="_blank">點此查看</a></div>
 </div>
 <div class="ti act"><div class="td"></div>
-<div class="tt">09:50 – 10:05</div>
-<div class="th">💜 第一站：粉蝶花（西口ひろば）</div>
-<div class="tx">藍紫色花海，早上光線最美！</div>
+<div class="tt">09:30</div>
+<div class="th">🚲 開園 & 租腳踏車</div>
+<div class="tx">⚠️ <strong>入園門票僅收「現金」！</strong> (大人 ¥450 / 中學生以下免費)。<br><strong>西サイクリングセンター</strong> (西口單車中心) 位於右手邊。務必第一時間搶租腳踏車：<br>・大人 3小時 600日圓（每 30 分鐘 100 日圓）<br>・中學生以下 3小時 350日圓（每 30 分鐘 50 日圓）<br>・電動腳踏車 3小時 1,000日圓（每 30 分鐘 200 日圓）<br>全程行駛 <strong>森林サイクリングコース</strong> (森林單車徑)，騎乘串聯各景點。</div>
 </div>
 <div class="ti act"><div class="td"></div>
-<div class="tt">10:05 – 10:45</div>
-<div class="th">👥 分頭行動 40 分鐘</div>
-<div class="tx">🧒 小孩組：むさしキッズドーム盡情玩 ｜ 🌺 賞花組：ボーダー花壇散步</div>
+<div class="tt">09:50~10:05</div>
+<div class="th">💜 第一站：粉蝶花</div>
+<div class="tx">於西口廣場拍攝著名藍色粉蝶花海。</div>
+</div>
+<div class="ti act"><div class="td"></div>
+<div class="tt">10:05~10:45</div>
+<div class="th">👥 雙軌分組活動</div>
+<div class="tx"><strong>【小孩組】</strong>：<strong>むさしキッズドーム</strong> (武藏兒童圓頂：含50種彩色遊具，安全遮陽)、<strong>冒険コース</strong> (冒險賽道：24種木製設施，7歲推薦終點24號「ローラーすべりだい」滾輪溜滑梯)。<br><strong>【賞花組】</strong>：西口區域 <strong>ボーダー花壇</strong> (帶狀花壇) 或 <strong>カラーリーフガーデン</strong> (彩葉花園) 散步散心。<em>(單車皆停於 P12)</em></div>
 </div>
 <div class="ti meal"><div class="td"></div>
-<div class="tt">11:15 – 12:00</div>
-<div class="th">🍛 展望餐廳午餐</div>
-<div class="tx">視野極佳！咖哩、拉麵等</div>
+<div class="tt">11:15~12:00</div>
+<div class="th">🍛 展望餐廳</div>
+<div class="tx">目的地：<strong>展望レストラン</strong> (展望餐廳)，從 P12 向南騎至 P1。餐廳環境安靜、有冷氣，供咖哩及拉麵。</div>
 </div>
 <div class="ti act"><div class="td"></div>
-<div class="tt">12:30 – 13:15</div>
-<div class="th">🎪 日本最大彈跳床 + 🌺 罌粟花 30 萬株</div>
-<div class="tx">ぽんぽこマウンテン — 白色空氣彈跳床，孩子必瘋！</div>
+<div class="tt">12:30~13:15</div>
+<div class="th">🎪 大彈跳床與罌粟花</div>
+<div class="tx">吃飽休息後，騎車 2 分鐘或步行至隔壁區域。<em>(單車改停 P2 駐輪場)</em><br><strong>ぽんぽこマウンテン</strong> (波可波可山)：日本最大的白色空氣彈跳床 (需脫鞋)。<br><strong>運動広場 / ポピー</strong> (運動廣場 / 虞美人草)：位於彈跳床旁，有 30 萬株紅粉色罌粟花海。</div>
 </div>
 <div class="ti act"><div class="td"></div>
-<div class="tt">13:15 – 13:45</div>
-<div class="th">🌼 第三站：魯冰花（こもれび花畑／木漏日花畑）</div>
-<div class="tx">騎行約 10 分鐘，彩色魯冰花超夢幻，花田隱藏在林間避暑</div>
+<div class="tt">13:15~13:45</div>
+<div class="th">🌼 第三站：魯冰花</div>
+<div class="tx"><strong>こもれび花畑</strong> (木漏日花畑)，中央口區域地圖編號 <strong>(5)</strong>。<br>單車移動：從 P2 出發往北騎，朝「植物園」方向前進，停在 P8 駐輪場（騎行約 10 分鐘）。花田隱藏在林間避暑，非常適合飯後消食。</div>
 </div>
 <div class="ti move"><div class="td"></div>
-<div class="tt">14:15 – 14:30</div>
-<div class="th">🚴 歸還單車 &amp; 撤離！</div>
-<div class="tx">14:30 開車，避開傍晚 16:00 塞車潮！<br/>🛑 <strong>中間停留點</strong>：優先選擇 <strong>菖蒲 PA</strong>，若太擠則下交流道找超商。</div>
+<div class="tt">13:45~14:15</div>
+<div class="th">🚴 最後騎行與折返</div>
+<div class="tx">路線：從 P8 沿著綠色 <strong>森林サイクリングコース</strong> (森林單車徑) 往「西口」方向慢慢騎回，綠意盎然，預留 30 分鐘。</div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">14:15~14:45</div>
+<div class="th">🚴 歸還單車與撤離</div>
+<div class="tx">地點：<strong>西サイクリングセンター</strong> (西口單車中心)。歸還電動車，在西口賣店最後如廁或買飲水。⚠️ 爭取在 14:30~14:45 之間正式開車離開，避開傍晚 16:00 湧入的高速公路返家車潮。</div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">14:45</div>
+<div class="th">🚗 開車離開</div>
+<div class="tx">路線：坂戸IC ➔ 圈央道 ➔ 常総IC，前往<a href="https://maps.google.com/?q=天然温泉+きぬの湯" target="_blank">天然溫泉 きぬの湯</a>，黃金週預抓 2 小時車程。<br>🛑 <strong>中間停留點</strong>：優先選擇 <strong>菖蒲 PA (Shobu PA)</strong>，若該處太擠則下交流道找超商。</div>
 </div>
 <div class="ti spa"><div class="td"></div>
 <div class="tt">16:45</div>
-<div class="th">♨️ <a href="https://maps.google.com/?q=天然温泉きぬの湯" target="_blank">天然溫泉 きぬの湯</a><br/><a href="行前景點導覽.html#s5" style="display:inline-block;margin-top:6px;padding:3px 10px;border-radius:12px;background:#e3f2fd;color:#0d47a1;text-decoration:none;font-weight:700;font-size:0.85em;border:1px solid #2196F3;">📖 看導覽介紹</a></div>
-<div class="tx">🅿️ 本館提供約 <strong>150 個免費停車位</strong>。<br>17:00 辦理入館與用餐。⚠️ <strong>入館費說明</strong>：5/1 採「假日收費」。進入本館需支付入館料(大人¥1,800/小孩¥800)。晚餐推薦 <strong>米のはな</strong>（常陸牛、生魚片）。策略：先吃飯後泡湯，避開 19:00 人潮。<br><br>
-18:30 泡湯組 vs 休息組。<br/>
-<strong>【泡湯組】</strong>：1 樓享受源泉掛流天然溫泉。<br/>
-<strong>【休息組】</strong>：2 樓提供 30 個可調整式躺椅（附電視、USB 座），免費毛毯。<br/>
-📵 <em>(休息區與浴場嚴禁攝影，僅限1樓可拍照)</em></div>
+<div class="th">♨️ <a href="https://maps.google.com/?q=天然温泉きぬの湯" target="_blank">抵達溫泉 (きぬの湯)</a><br/><a href="行前景點導覽.html#s5" style="display:inline-block;margin-top:6px;padding:3px 10px;border-radius:12px;background:#e3f2fd;color:#0d47a1;text-decoration:none;font-weight:700;font-size:0.85em;border:1px solid #2196F3;">📖 看導覽介紹</a></div>
+<div class="tx">🅿️ 本館提供約 <strong>150 個免費停車位</strong>；若車位已滿，配合工作人員導引至臨時停車區。<br>⚠️ <strong>請果斷執行「飯店備案」的情況</strong>：① 停車場門口有長龍（排隊 30 分鐘以上）；② 門口告示牌顯示「<strong>入場限制中</strong>」。直接前往<a href="https://maps.google.com/?q=Hotel+JAL+City+Tsukuba" target="_blank">Hotel JAL City Tsukuba</a>！</div>
+</div>
+<div class="ti meal"><div class="td"></div>
+<div class="tt">17:00</div>
+<div class="th">🍲 辦理入館與用餐</div>
+<div class="tx">⚠️ <strong>入館費說明</strong>：5/1 採「假日收費（休日料金）」。進入本館（含餐廳與休息區）<strong>必須支付入館料</strong> <em>(門票參考：大人 ¥1,800 / 小孩 ¥800)</em>。<br>和食處「<strong>米のはな</strong>」(館內 1 樓)：推薦常陸牛、生魚片及自家農園蔬菜。<em>(策略：先吃飯後泡湯，避開 19:00 用餐巔峰)</em></div>
+</div>
+<div class="ti spa"><div class="td"></div>
+<div class="tt">18:30</div>
+<div class="th">🧖‍♀️ 泡湯放鬆 vs 躺椅</div>
+<div class="tx"><strong>【泡湯組】</strong>：1 樓浴場，享受源泉掛流天然溫泉。<br><strong>【休息組】</strong>：2 樓「<strong>お休み処</strong>」，提供 <strong>30</strong> 個配備電視的可調整式躺椅，每個座位均有 USB 充電插座，館內提供免費毛毯。<br>📵 <em>(休息區與浴場嚴禁攝影，僅限 1 樓大廳與餐廳可拍照)</em></div>
 </div>
 <div class="ti move"><div class="td"></div>
-<div class="tt">20:00</div>
-<div class="th">🚗 前往筑波（30–40 分鐘）</div><div class="tx"></div>
-</div>
-<div class="ti sleep"><div class="td"></div>
-<div class="tt">20:40</div>
-<div class="th">🏨 <a href="https://maps.google.com/?q=Hotel+JAL+City+Tsukuba" target="_blank">筑波日航都市酒店</a> Check-in</div>
-<div class="tx">終於有飯店床！好好休息～</div>
+<div class="tt">20:00~20:40</div>
+<div class="th">🚗 離開抵達飯店</div>
+<div class="tx">返回筑波市區約 30-40 分鐘。辦理入住 <a href="https://maps.google.com/?q=Hotel+JAL+City+Tsukuba" target="_blank"><strong>Hotel JAL City Tsukuba</strong></a>。</div>
 </div>
 </div>
 <div class="tips">
@@ -539,7 +598,8 @@
 <strong style="color:#c1121f;">🏨 飯店備案行程（放棄溫泉時執行）</strong><br/>
       • <strong>16:45</strong> 若停車場管制，直接前往筑波（車程 30-40 分鐘）。<br/>
       • <strong>17:30</strong> Hotel JAL City Tsukuba Check-in。<br/>
-      • <strong>18:30</strong> 筑波車站周邊用餐：<a href="https://maps.google.com/?q=BiVi+つくば" target="_blank">BiVi Tsukuba</a> (餐廳居酒屋) 或 <a href="https://maps.google.com/?q=つくばクレオスクエア" target="_blank">Tsukuba Q't / Creo</a> (美食街定食)。
+      • <strong>18:30</strong> 筑波車站周邊用餐：<a href="https://maps.google.com/?q=BiVi+つくば" target="_blank">BiVi Tsukuba</a> (餐廳居酒屋) 或 <a href="https://maps.google.com/?q=つくばクレオスクエア" target="_blank">Tsukuba Q't / Creo</a> (美食街定食)。<br/>
+      • <strong>戶外用品</strong>：<a href="https://maps.google.com/?q=モンベル+つくばQ't店" target="_blank">Montbell Tsukuba Q't店</a> (位於 Q't 3 樓)。
     </div>
 </div>
 </div>
@@ -553,7 +613,7 @@
 </div>
 </div>
 <div class="day-body">
-<div class="hl orange">🦕 暴龍超震撼！書店文具控必逛，Uniqlo + 阿卡將大豐收，晚上包廂享用常陸牛！</div>
+<div class="hl orange">🦕 暴龍超震撼！書店文具控必逛，Uniqlo 大豐收，晚上包廂享用常陸牛！</div>
 <div class="tl">
 <div class="ti meal"><div class="td"></div>
 <div class="tt">06:30</div>
@@ -569,13 +629,38 @@
 <div class="th">🥐 <a href="https://maps.google.com/?q=クーロンヌつくば" target="_blank">Couronne Tsukuba</a> 買麵包當午餐</div>
 <div class="tx">⚠️ <strong>重要！</strong>黃金週博物館餐廳大排長龍，野餐麵包最省時！<br/><em>*(營業時間 06:30~18:00，⚠️ 注意定休日)*</em></div>
 </div>
-<div class="ti act"><div class="td"></div>
-<div class="tt">09:20 – 13:00</div>
-<div class="th">🦕 <a href="https://maps.google.com/?q=ミュージアムパーク茨城県自然博物館" target="_blank">茨城縣自然博物館</a><br/><a href="行前景點導覽.html#s3" style="display:inline-block;margin-top:6px;padding:3px 10px;border-radius:12px;background:#e3f2fd;color:#0d47a1;text-decoration:none;font-weight:700;font-size:0.85em;border:1px solid #2196F3;">📖 看導覽介紹</a></div>
-<div class="tx"><strong>路徑建議</strong>：若導航顯示高速公路 (谷和原IC) 擁塞，請手動選擇走「縣道123號」等平面道路。理由：避開前往守谷休息站與東京方向的車流。<br/>📍**已付費預約 09:30 開放入場，憑 Email QR Code 掃描**。*(門票 ¥4,250 已付)*<br/>亮點：會動的大暴龍、各項生態標本。<br/><br/>🍽️ <strong>午餐策略</strong>：<br/>① 首選（排隊趁早）：若能趕在 10:50 前去排隊「<a href="https://maps.google.com/?q=レストラン+ル・サンク+ミュージアムパーク" target="_blank">Le Cinq</a>」餐廳，可嘗恐龍主題餐。<br/>② 備案（激推）：直接在戶外廣場草地野餐，吃早上買好的 Couronne 麵包，免排隊！<br/>飽餐後盡情玩戶外大型跳床等遊樂設施。</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">08:40</div>
+<div class="th">🚗 前往茨城縣自然博物館</div>
+<div class="tx"><strong>路徑建議</strong>：若導航顯示高速公路擁塞，請手動選擇走「縣道123號」等平面道路，避開前往東京方向車流。</div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">09:20</div>
+<div class="th">🦕 抵達博物館</div>
+<div class="tx">聽從工作人員指派停車位。</div>
 </div>
 <div class="ti act"><div class="td"></div>
-<div class="tt">14:00 – 15:00</div>
+<div class="tt">09:30~11:00</div>
+<div class="th">🏛️ 博物館遊玩 (室內探索)<br/><a href="行前景點導覽.html#s3" style="display:inline-block;margin-top:6px;padding:3px 10px;border-radius:12px;background:#e3f2fd;color:#0d47a1;text-decoration:none;font-weight:700;font-size:0.85em;border:1px solid #2196F3;">📖 看導覽介紹</a></div>
+<div class="tx">📍<strong>已付費預約 09:30 開放入場，憑 Email QR Code 掃描</strong>。*(門票 ¥4,250 已付)*<br/>亮點：會動的大暴龍、各項生態標本。</div>
+</div>
+<div class="ti meal"><div class="td"></div>
+<div class="tt">11:00</div>
+<div class="th">🍽️ 野餐或餐廳午餐</div>
+<div class="tx">① 首選（排隊趁早）：若能趕在 10:50 前去排隊「<a href="https://maps.google.com/?q=レストラン+ル・サンク+ミュージアムパーク" target="_blank">Le Cinq</a>」餐廳，可嘗恐龍主題餐。<br/>② 備案（激推）：直接在戶外廣場草地野餐，吃早上買好的 Couronne 麵包，免排隊！</div>
+</div>
+<div class="ti act"><div class="td"></div>
+<div class="tt">11:45~13:00</div>
+<div class="th">🎪 戶外設施遊玩</div>
+<div class="tx">飽餐後前往戶外超大草皮，讓小孩玩大型空氣跳床等遊樂設施。</div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">13:00</div>
+<div class="th">🚗 離開返回筑波</div>
+<div class="tx">從博物館返回市區，黃金週抓 60 分鐘車程。</div>
+</div>
+<div class="ti act"><div class="td"></div>
+<div class="tt">14:00~15:00</div>
 <div class="th">📚 <a href="https://maps.google.com/?q=コーチャンフォーつくば店" target="_blank">Coach &amp; Four Tsukuba</a><br/><a href="行前景點導覽.html#s7" style="display:inline-block;margin-top:6px;padding:3px 10px;border-radius:12px;background:#e3f2fd;color:#0d47a1;text-decoration:none;font-weight:700;font-size:0.85em;border:1px solid #2196F3;">📖 看導覽介紹</a></div>
 <div class="tx">全日本最大級複合書店！精緻文具、繪本、雜貨
           <div class="tags">
@@ -586,12 +671,11 @@
 </div>
 </div>
 <div class="ti act"><div class="td"></div>
-<div class="tt">15:10 – 17:40</div>
+<div class="tt">15:10~17:40</div>
 <div class="th">🛍️ <a href="https://maps.google.com/?q=iias+つくば" target="_blank">iias 筑波</a></div>
 <div class="tx"><div class="tags">
 <span class="tag shop">👕 Uniqlo</span>
 <span class="tag shop">🎨 LoFt</span>
-<span class="tag shop">👶 阿卡將</span>
 <span class="tag shop">🛒 1F 超市</span>
 </div><br/>建議直開「<strong>頂樓停車場</strong>」或「<strong>立體停車場高樓層</strong>」較易有車位。<br/>逛累了可至美食街喝飲料休息，離開前可去 1 樓超市買零食。</div>
 </div>
@@ -601,7 +685,7 @@
 <div class="tx">約 10-15 分鐘車程抵達 <a href="https://maps.google.com/?q=つくばデイズタウン" target="_blank"><strong>Days Town</strong></a>。</div>
 </div>
 <div class="ti meal"><div class="td"></div>
-<div class="tt">18:00 – 20:00</div>
+<div class="tt">18:00~20:00</div>
 <div class="th">🥩 <a href="https://maps.google.com/?q=常陸の国もんどころ+つくばデイズタウン店" target="_blank">常陸之國もんどころ</a> 包廂晚餐</div>
 <div class="tx">📍<strong>已預約 18:00 六人位</strong>。推薦鮟鱇魚鍋、常陸牛、納豆料理。<em>(⚠️ 當日取消不聯絡罰 4000円)</em></div>
 </div>
@@ -652,7 +736,7 @@
 <div class="tx">還車地點：成田機場 T2 服務櫃檯。💡 記得：結算 ETC、出示加油收據，帶走車內所有私人物品。</div>
 </div>
 <div class="ti act"><div class="td"></div>
-<div class="tt">10:30 – 11:40</div>
+<div class="tt">10:30~11:40</div>
 <div class="th">🛍️ 機場 4F 商店街逛街</div>
 <div class="tx">趁報到櫃台未開，推行李至 T2 4F 吃午餐或逛街（Pokémon Store、無印等）。</div>
 </div>
@@ -662,7 +746,7 @@
 <div class="tx">星宇航空開櫃，至出境大廳櫃台辦理報到並卸下大型行李。</div>
 </div>
 <div class="ti act"><div class="td"></div>
-<div class="tt">12:00 – 13:30</div>
+<div class="tt">12:00~13:30</div>
 <div class="th">🛒 出關免稅店爆買！</div>
 <div class="tx">輕鬆通過安檢後，在 FaSoLa 等免稅店大掃貨，把東京伴手禮全部買齊。</div>
 </div>
@@ -717,6 +801,83 @@
 <li><input class="chk-item" type="checkbox"/> <span>塑膠袋（裝髒衣服）</span></li>
 </ul>
 </div>
+</div>
+</div>
+<!-- ═══ JAPANESE ZONE ═══ -->
+<div class="section" id="jp-zone">
+<div class="section-title">🗣️ 實用日文專區</div>
+<div class="info-grid">
+<div class="info-card" style="border-color:#F06292;">
+<h3 style="font-size: 1.1em; margin-bottom: 12px;">💳 1. 如何把 Suica 用完剩下用現金付</h3>
+<p style="margin-bottom: 15px; color: #555; line-height: 1.6;">在超商或超市結帳時，拿出 Suica 與現金，對店員說：</p>
+
+<div style="background: #fff8f0; border-left: 4px solid var(--c-orange); padding: 12px; border-radius: 8px; margin-bottom: 15px;">
+  <p style="font-size: 0.85em; color: #666; margin-bottom: 6px;"><strong>🙋 輕鬆開口小短句：</strong></p>
+  <p style="font-size: 1.25em; font-weight: bold; color: var(--c-darkred); letter-spacing: 1px; margin-bottom: 4px;">Suica と 現金 で</p>
+  <p style="font-size: 0.9em; color: #e65100;">🗣️ 發音：<em style="font-style: normal;">Suica 偷 Gen-kin 爹 (ㄊㄡ Gen-kin ㄉㄧㄝ)</em></p>
+</div>
+
+<div style="background: #e3f2fd; border-left: 4px solid var(--c-blue); padding: 12px; border-radius: 8px;">
+  <p style="font-size: 0.85em; color: #666; margin-bottom: 6px;"><strong>👩‍🏫 完整得體日文會話：</strong></p>
+  <p style="font-size: 1.05em; font-weight: bold; color: #0d47a1; margin-bottom: 4px; line-height: 1.4;">Suicaの残高を全部使って、残りは現金でお願いします。</p>
+  <p style="font-size: 0.85em; color: #1565c0;">🗣️ 平假名：<em style="font-style: normal;">すいかの ざんだかを ぜんぶつかって、のこりは げんきんで おねがいします</em></p>
+</div>
+</div>
+
+<div class="info-card" style="border-color:#ff5252;">
+<h3 style="font-size: 1.1em; margin-bottom: 12px;">🆘 2. 與家人走散時請人幫忙打電話</h3>
+<p style="margin-bottom: 15px; color: #555; line-height: 1.6;">如果不小心走散，請家人直接把以下畫面指給站務員、店員或路人看：</p>
+
+<div style="background: #fff8f0; border-left: 4px solid var(--c-orange); padding: 12px; border-radius: 8px;">
+  <p style="font-size: 0.85em; color: #666; margin-bottom: 6px;"><strong>🙋 給家人的求救小抄（直接指給對方看）：</strong></p>
+  <p style="font-size: 1.1em; font-weight: bold; color: var(--c-darkred); letter-spacing: 1px; margin-bottom: 8px; line-height: 1.5;">迷子になりました。<br>家族に連絡してもらえませんか？<br>電話番号は 080-3573-6079 です。</p>
+  <p style="font-size: 0.9em; color: #e65100;">🗣️ 配合短句發音：<br><em style="font-style: normal;">Mai-go de-su. (我迷路了)<br>Ko-ko ni den-wa shi-te ku-da-sai. (請打電話到這裡)</em></p>
+</div>
+</div>
+
+<div class="info-card" style="border-color:#4CAF50;">
+<h3 style="font-size: 1.1em; margin-bottom: 12px;">🍽️ 3. 餐廳日常會話</h3>
+<div style="background: #fff8f0; border-left: 4px solid var(--c-orange); padding: 12px; border-radius: 8px; margin-bottom: 15px;">
+  <p style="font-size: 0.85em; color: #666; margin-bottom: 10px;"><strong>🙋 輕鬆開口小短句：</strong></p>
+  <div style="color: #555; line-height: 1.6; font-size: 0.95em;">
+    <div style="margin-bottom: 10px;">🔸 <strong style="color:var(--c-darkred);">請給我水：</strong> お水をお願いします<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em style="color:#e65100;font-size:0.9em;">(歐咪租 歐捏該一西媽斯)</em></div>
+    <div>🔸 <strong style="color:var(--c-darkred);">廁所在哪裡：</strong> トイレはどこですか<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em style="color:#e65100;font-size:0.9em;">(偷伊勒 哇 豆摳爹斯卡)</em></div>
+  </div>
+</div>
+<div style="background: #e3f2fd; border-left: 4px solid var(--c-blue); padding: 12px; border-radius: 8px;">
+  <p style="font-size: 0.85em; color: #666; margin-bottom: 10px;"><strong>👩‍🏫 完整得體日文會話：</strong></p>
+  <div style="color: #0d47a1; line-height: 1.6; font-size: 0.95em;">
+    <div style="margin-bottom: 8px;">🔹 <strong style="color:#1565c0;">請給我水：</strong> お水（みず）をお願（ねが）いします。</div>
+    <div style="margin-bottom: 8px;">🔹 <strong style="color:#1565c0;">請問有 筷子/湯匙/空碗/空盤 嗎：</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;お箸（はし）/ スプーン / お椀（わん）/ 取（と）り皿（ざら） をもらえますか。</div>
+    <div>🔹 <strong style="color:#1565c0;">請幫我結帳：</strong> お会計（かいけい）をお願（ねが）いします。</div>
+  </div>
+</div>
+</div>
+
+<div class="info-card" style="border-color:#FF9800;">
+<h3 style="font-size: 1.1em; margin-bottom: 12px;">🛒 4. 商店與景點會話</h3>
+<div style="background: #fff8f0; border-left: 4px solid var(--c-orange); padding: 12px; border-radius: 8px; margin-bottom: 15px;">
+  <p style="font-size: 0.85em; color: #666; margin-bottom: 10px;"><strong>🙋 輕鬆開口小短句 (商店)：</strong></p>
+  <div style="color: #555; line-height: 1.6; font-size: 0.95em;">
+    <div style="margin-bottom: 8px;">🔸 <strong style="color:var(--c-darkred);">用現金（結帳）：</strong> 現金で <em style="color:#e65100;font-size:0.9em;">(Gen-kin 爹)</em></div>
+    <div style="margin-bottom: 8px;">🔸 <strong style="color:var(--c-darkred);">用信用卡（結帳）：</strong> クレジットカードで <em style="color:#e65100;font-size:0.9em;">(可雷基多卡豆 爹)</em></div>
+    <div style="margin-bottom: 15px;">🔸 <strong style="color:var(--c-darkred);">用 Suica（結帳）：</strong> Suicaで <em style="color:#e65100;font-size:0.9em;">(Suica 爹)</em></div>
+    <div style="margin-bottom: 8px;">🔸 <strong style="color:var(--c-darkred);">需要袋子：</strong> 袋 いります <em style="color:#e65100;font-size:0.9em;">(夫哭肉 依哩媽斯)</em></div>
+    <div style="margin-bottom: 15px;">🔸 <strong style="color:var(--c-darkred);">不用袋子：</strong> 袋 いりません <em style="color:#e65100;font-size:0.9em;">(夫哭肉 依哩媽線)</em></div>
+    <div style="margin-bottom: 15px;">🔸 <strong style="color:var(--c-darkred);">要加熱：</strong> 温めてください <em style="color:#e65100;font-size:0.9em;">(阿塔塔咩鐵 哭搭賽)</em></div>
+    <div style="margin-bottom: 8px;">🔸 <strong style="color:var(--c-darkred);">我要 1 個這個：</strong> これを 1つ ください <em style="color:#e65100;font-size:0.9em;">(摳勒歐 ㄏㄧ偷此 哭搭賽)</em></div>
+    <div style="margin-bottom: 8px;">🔸 <strong style="color:var(--c-darkred);">我要 2 個這個：</strong> これを 2つ ください <em style="color:#e65100;font-size:0.9em;">(摳勒歐 夫搭此 哭搭賽)</em></div>
+    <div>🔸 <strong style="color:var(--c-darkred);">我要 3 個這個：</strong> これを 3つ ください <em style="color:#e65100;font-size:0.9em;">(摳勒歐 密此 哭搭賽)</em></div>
+  </div>
+</div>
+<div style="background: #e3f2fd; border-left: 4px solid var(--c-blue); padding: 12px; border-radius: 8px;">
+  <p style="font-size: 0.85em; color: #666; margin-bottom: 10px;"><strong>👩‍🏫 完整得體日文會話 (景點)：</strong></p>
+  <div style="color: #0d47a1; line-height: 1.6; font-size: 0.95em;">
+    <div>🔹 <strong style="color:#1565c0;">可以請你幫我們拍照嗎？</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;写真（しゃしん）を撮（と）ってもらえませんか。</div>
+  </div>
+</div>
+</div>
+
 </div>
 </div>
 <!-- ═══ EMERGENCY ═══ -->

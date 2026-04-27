@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>☔ 2026 東京黃金週 雨天備案</title>
+<style>
+    :root {
+      --c-red: #e63946; --c-darkred: #c1121f; --c-deepred: #780000;
+      --c-blue: #2196F3; --c-purple: #9C27B0; --c-green: #4CAF50;
+      --c-orange: #FF9800; --c-fire: #FF5722;
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: "Helvetica Neue","PingFang TC","Microsoft JhengHei",sans-serif; background: #f5f0eb; color: #333; padding-top: 0; }
+
+    /* ── STICKY NAV ── */
+    .sticky-nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(26,26,46,.95); backdrop-filter: blur(8px);
+      display: flex; justify-content: center; flex-wrap: wrap; gap: 6px;
+      padding: 10px 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.25);
+    }
+    .sticky-nav a {
+      color: white; text-decoration: none; font-size: .85em; font-weight: 700;
+      padding: 6px 16px; border-radius: 30px; transition: .2s;
+      border: 2px solid rgba(255,255,255,.2);
+    }
+    .sticky-nav a:hover, .sticky-nav a:focus { background: var(--c-red); border-color: var(--c-red); }
+    .sticky-nav a.nav-d3 { border-color: var(--c-green); }
+    .sticky-nav a.nav-d4 { border-color: var(--c-orange); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--c-blue) 0%, #1976D2 50%, #0D47A1 100%);
+      color: white; text-align: center; padding: 60px 20px 50px;
+    }
+    .hero::before {
+      content: "☔🦕🌸"; font-size: 56px; display: block; margin-bottom: 14px;
+      letter-spacing: 10px; animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+    .hero h1 { font-size: 2.2em; font-weight: 900; letter-spacing: 2px; text-shadow: 2px 3px 6px rgba(0,0,0,.3); }
+    .hero p  { font-size: 1.1em; margin-top: 10px; opacity: .9; }
+
+    .meta-strip {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;
+      padding: 16px; background: #fff; border-bottom: 3px solid var(--c-blue); text-align: center; font-size: 0.9em;
+    }
+
+    /* ── DAY CARDS ── */
+    .days-wrapper { max-width: 960px; margin: 0 auto; padding: 0 16px 40px; display: flex; flex-direction: column; gap: 24px; }
+    .day-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,.1); }
+
+    .day-header {
+      padding: 20px 24px; color: white; display: flex; align-items: center; gap: 14px; cursor: pointer;
+      user-select: none; position: relative;
+    }
+    .day-header::after {
+      content: "▼"; position: absolute; right: 24px; top: 50%; transform: translateY(-50%);
+      font-size: .9em; opacity: .6; transition: transform .3s;
+    }
+    .day-card.collapsed .day-header::after { transform: translateY(-50%) rotate(-90deg); }
+    .day-card.collapsed .day-body { display: none; }
+    .day-header .day-num { font-size: 2.2em; font-weight: 900; line-height: 1; opacity: .85; }
+    .day-header .day-info h2 { font-size: 1.25em; font-weight: 800; }
+    .day-header .day-info .sub { font-size: .85em; opacity: .85; margin-top: 2px; }
+
+    .day3 .day-header { background: linear-gradient(135deg, #4CAF50, #1b5e20); }
+    .day4 .day-header { background: linear-gradient(135deg, #FF9800, #e65100); }
+
+    .day-body { padding: 18px 24px 24px; }
+
+    /* ── HIGHLIGHT ── */
+    .hl { border-radius: 12px; padding: 12px 16px; margin-bottom: 18px; font-size: .9em; line-height: 1.7; font-weight: 600; }
+    .hl.green  { background: #e8f5e9; color: #1b5e20; border-left: 4px solid var(--c-green); }
+    .hl.orange { background: #fff3e0; color: #e65100; border-left: 4px solid var(--c-orange); }
+
+    /* ── TIMELINE ── */
+    .tl { position: relative; padding-left: 34px; }
+    .tl::before { content: ""; position: absolute; left: 12px; top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom,var(--c-blue),#90caf9,var(--c-blue)); border-radius: 3px; }
+    .ti { position: relative; margin-bottom: 18px; }
+    .ti:last-child { margin-bottom: 0; }
+    .td { position: absolute; left: -26px; top: 5px; width: 18px; height: 18px; border-radius: 50%; background: var(--c-blue); border: 3px solid white; box-shadow: 0 0 0 2px var(--c-blue); }
+    .ti.sleep    .td { background: var(--c-purple); box-shadow: 0 0 0 2px var(--c-purple); }
+    .ti.meal     .td { background: var(--c-orange); box-shadow: 0 0 0 2px var(--c-orange); }
+    .ti.act      .td { background: var(--c-green); box-shadow: 0 0 0 2px var(--c-green); }
+    .ti.move     .td { background: var(--c-blue); box-shadow: 0 0 0 2px var(--c-blue); }
+    .ti.spa      .td { background: var(--c-fire); box-shadow: 0 0 0 2px var(--c-fire); }
+
+    .tt { font-size: .78em; color: #999; font-weight: 700; margin-bottom: 2px; }
+    .th { font-size: .98em; font-weight: 700; color: #222; margin-bottom: 3px; }
+    .th a { color: var(--c-blue); text-decoration: none; border-bottom: 1px dashed var(--c-blue); }
+    .th a:hover { border-bottom-style: solid; }
+    .tx { font-size: .86em; color: #666; line-height: 1.65; }
+
+    /* ── TIPS ── */
+    .tips { background: #fffde7; border: 2px dashed #f9a825; border-radius: 12px; padding: 12px 16px; margin-top: 18px; font-size: .86em; line-height: 1.7; color: #555; }
+    .tips strong { color: #f57f17; }
+</style>
+</head>
+<body>
+
+<!-- ── STICKY NAV ── -->
+<div class="sticky-nav">
+<a class="nav-d3" href="#day3">5/1 博物館與溫泉</a>
+<a class="nav-d4" href="#day4">5/2 笠間賞花與購物</a>
+</div>
+
+<!-- ── HERO ── -->
+<header class="hero">
+<h1>☔ 2026 東京黃金週 雨天備案</h1>
+<p>專為 5/1 預期下雨與 5/2 行程調整之替代方案</p>
+</header>
+<div class="meta-strip">
+    💡 本頁面為專屬備案。航班、租車與詳細聯絡資訊請參閱主文件 <strong>2026東京黃金週行程表</strong>。
+</div>
+
+<div class="days-wrapper" style="margin-top:24px;">
+
+<!-- ════ DAY 3 ════ -->
+<div class="day-card day3" id="day3">
+<div class="day-header" onclick="this.parentElement.classList.toggle('collapsed')">
+<div class="day-num">D3</div>
+<div class="day-info">
+<h2>🦕 自然博物館與溫泉之旅 (雨天備案)</h2>
+<div class="sub">📅 5/01（五）｜🏨 今晚住筑波日航酒店</div>
+</div>
+</div>
+<div class="day-body">
+<div class="hl green">🌧️ 雨天重點策略：改走室內行程：恐龍生態博物館，接著去泡天然溫泉！</div>
+
+<div class="tl">
+<div class="ti sleep"><div class="td"></div>
+<div class="tt">06:00</div><div class="th">⏰ 起床與退房</div>
+<div class="tx">🚨 <strong>注意退房事項：毛巾集中、關燈、鎖門。</strong></div>
+</div>
+<div class="ti meal"><div class="td"></div>
+<div class="tt">07:00~07:40</div>
+<div class="th">☕ 享用早餐</div>
+<div class="tx">驅車至市區享用早餐。<br>推薦：<a href="https://maps.google.com/?q=コメダ珈琲店+太田藤阿久店" target="_blank">客美多 太田藤阿久店</a> 或 <a href="https://maps.google.com/?q=スターバックス+太田小舞木店" target="_blank">星巴克 太田小舞木店</a>（皆 07:00 營業，留意出發時間）。</div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">07:40</div>
+<div class="th">🚗 驅車前往茨城縣</div>
+<div class="tx">從太田市出發，車程預抓將近 <strong>2 小時</strong>（包含黃金週塞車大緩衝），直奔茨城縣自然博物館。</div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">09:30</div>
+<div class="th">🦕 抵達博物館</div>
+<div class="tx">聽從工作人員指派停車位。<br>♿ <strong>奶奶備用</strong>：入口櫃台可<strong>免費借用輪椅</strong>（先到先得、無法預約）。</div>
+</div>
+<div class="ti act"><div class="td"></div>
+<div class="tt">09:40~12:30</div>
+<div class="th">🏛️ 博物館遊玩 (室內探索)</div>
+<div class="tx">📍<strong>已付費預約 09:30 開放入場，憑 Email QR Code 掃描</strong>。*(門票 ¥4,250 已付)*<br/>亮點：會動的大暴龍、各項生態標本。館內極大，可盡情消磨時間！</div>
+</div>
+<div class="ti meal"><div class="td"></div>
+<div class="tt">12:30~14:00</div>
+<div class="th">🍽️ 餐廳午餐</div>
+<div class="tx">若無緣排到館內「<a href="https://maps.google.com/?q=レストラン+ル・サンク+ミュージアムパーク" target="_blank">Le Cinq</a>」餐廳，可至附近找室內餐廳或家庭餐廳避雨。</div>
+</div>
+<div class="ti act"><div class="td"></div>
+<div class="tt">12:30~14:30</div>
+<div class="th">🏛️ 博物館遊玩 (下半場)</div>
+<div class="tx">吃飽後繼續探索剩餘展區，或在館內自然觀察中心放鬆。14:30 準備離開。</div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">14:30</div>
+<div class="th">🚗 離開博物館</div>
+<div class="tx">前往<a href="https://maps.google.com/?q=天然温泉+きぬの湯" target="_blank">天然溫泉 きぬの湯</a>，距離極近，車程僅需約 15 分鐘！</div>
+</div>
+<div class="ti spa"><div class="td"></div>
+<div class="tt">14:45</div>
+<div class="th">♨️ <a href="https://maps.google.com/?q=天然温泉きぬの湯" target="_blank">抵達溫泉 (きぬの湯)</a></div>
+<div class="tx">🅿️ 本館提供約 <strong>150 個免費停車位</strong>。<br>⚠️ 若因下雨人潮爆滿「<strong>入場限制中</strong>」，請果斷執行備案前往 <a href="https://maps.google.com/?q=Hotel+JAL+City+Tsukuba" target="_blank">Hotel JAL City Tsukuba</a>！</div>
+</div>
+<div class="ti act"><div class="td"></div>
+<div class="tt">15:00~18:30</div>
+<div class="th">🧖‍♀️ 泡湯與晚餐</div>
+<div class="tx">⚠️ <strong>入館費說明</strong>：5/1 採「假日收費」。進入本館<strong>必須支付入館料</strong> *(大人 ¥1,800 / 小孩 ¥800)*。<br><strong>【泡湯組】</strong>：1 樓浴場。<br><strong>【休息組】</strong>：2 樓「<strong>お休み処</strong>」提供電視躺椅與 USB 充電。<br>晚餐可直接在和食處「<strong>米のはな</strong>」享用常陸牛與生魚片。</div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">18:45~19:30</div>
+<div class="th">🚗 離開抵達飯店</div>
+<div class="tx">返回筑波市區約 30-40 分鐘。辦理入住 <a href="https://maps.google.com/?q=Hotel+JAL+City+Tsukuba" target="_blank"><strong>Hotel JAL City Tsukuba</strong></a>。</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ════ DAY 4 ════ -->
+<div class="day-card day4" id="day4">
+<div class="day-header" onclick="this.parentElement.classList.toggle('collapsed')">
+<div class="day-num">D4</div>
+<div class="day-info">
+<h2>🌸 笠間賞花、神社與筑波購物</h2>
+<div class="sub">📅 5/02（六）｜🏨 今晚住筑波日航酒店</div>
+</div>
+</div>
+<div class="day-body">
+<div class="hl orange">🌸 本日重點策略：上午在笠間享受杜鵑花海與漫步神社，下午專心留給筑波市區大型書店與戶外用品購物！</div>
+<div class="tl">
+<div class="ti sleep"><div class="td"></div>
+<div class="tt">06:00</div>
+<div class="th">⏰ 起床與準備</div>
+<div class="tx">早起為塞車做準備。</div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">06:40</div>
+<div class="th">🚗 飯店出發</div>
+<div class="tx">驅車前往餐廳。</div>
+</div>
+<div class="ti meal"><div class="td"></div>
+<div class="tt">07:00~08:15</div>
+<div class="th">☕ 早餐</div>
+<div class="tx">於附近享用 (<a href="https://maps.google.com/?q=高倉町珈琲+つくば店" target="_blank">高倉町珈琲</a> 07:00 營業，早點去避開人潮)。</div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">08:15</div>
+<div class="th">🚗 驅車前往笠間</div>
+<div class="tx">檢查隨身物品，水壺補滿。驅車前往笠間市（車程約 1 小時）。</div>
+</div>
+<div class="ti act"><div class="td"></div>
+<div class="tt">09:15~10:30</div>
+<div class="th">🌺 <a href="https://maps.google.com/?q=笠間つつじ公園" target="_blank">笠間杜鵑花公園</a></div>
+<div class="tx">滿山遍野的杜鵑花海，設有步道適合散步拍照。</div>
+</div>
+<div class="ti act"><div class="td"></div>
+<div class="tt">10:45~11:30</div>
+<div class="th">⛩️ <a href="https://maps.google.com/?q=笠間稲荷神社" target="_blank">笠間稻荷神社</a></div>
+<div class="tx">日本三大稻荷神社之一，感受歷史氣息與參道風情。</div>
+</div>
+<div class="ti meal"><div class="td"></div>
+<div class="tt">11:30~12:30</div>
+<div class="th">🍽️ 笠間午餐</div>
+<div class="tx">🍴 <strong>提早用餐避開人潮</strong>！<br>推薦名產「<strong>笠間特色豆皮壽司</strong>」(常包蕎麥麵或核桃)：推薦至 <a href="https://maps.google.com/?q=柏屋+笠間" target="_blank">柏屋</a> (可內用蕎麥麵+豆皮壽司)、或 <a href="https://maps.google.com/?q=つの國や" target="_blank">つの國や</a>。</div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">12:30</div>
+<div class="th">🚗 返回筑波市區</div>
+<div class="tx">趁下午車潮湧現前，提早從笠間驅車回筑波市（車程約 1 小時）。</div>
+</div>
+<div class="ti act"><div class="td"></div>
+<div class="tt">13:30~14:45</div>
+<div class="th">📚 <a href="https://maps.google.com/?q=コーチャンフォーつくば店" target="_blank">Coach &amp; Four Tsukuba</a></div>
+<div class="tx">全日本最大級別的複合書店。慢挑日本製精緻文具與繪本。</div>
+</div>
+<div class="ti act"><div class="td"></div>
+<div class="tt">15:00~17:40</div>
+<div class="th">🛍️ 筑波市區購物 (二擇一或趕場)</div>
+<div class="tx">📍 <strong>找戶外用品</strong>：請去 <a href="https://maps.google.com/?q=つくばクレオスクエア" target="_blank">Tsukuba Q't / Creo 商場</a> (有 Montbell 與 Columbia)。<br>📍 <strong>找服飾雜貨</strong>：請去 <a href="https://maps.google.com/?q=iias+つくば" target="_blank">iias 筑波</a> (有 Uniqlo、LoFt 與大型超市)。</div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">17:40</div>
+<div class="th">🚗 前往餐廳</div>
+<div class="tx">約 10-15 分鐘車程抵達 <a href="https://maps.google.com/?q=つくばデイズタウン" target="_blank"><strong>Days Town</strong></a>。</div>
+</div>
+<div class="ti meal"><div class="td"></div>
+<div class="tt">18:00~20:00</div>
+<div class="th">🥩 <a href="https://maps.google.com/?q=常陸の国もんどころ+つくばデイズタウン店" target="_blank">常陸之國もんどころ</a> 包廂晚餐</div>
+<div class="tx">📍<strong>已預約 18:00 六人位</strong>。推薦鮟鱇魚鍋、常陸牛、納豆料理。<em>(⚠️ 當日取消不聯絡罰 4000円)</em></div>
+</div>
+<div class="ti sleep"><div class="td"></div>
+<div class="tt">20:15</div>
+<div class="th">🏨 返回筑波日航酒店</div>
+<div class="tx">📦 <strong>晚間任務</strong>：打包行李，準備隔天前往機場。</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2027 妙高 (Myoko) 住宿決策面板</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --teal-50:#f0fdfa; --teal-100:#ccfbf1; --teal-200:#99f6e4;
+            --teal-500:#14b8a6; --teal-600:#0d9488; --teal-700:#0f766e; --teal-800:#115e59; --teal-900:#134e4a;
+            --emerald-50:#ecfdf5; --emerald-100:#d1fae5; --emerald-500:#10b981; --emerald-700:#047857;
+            --rose-50:#fff1f2; --rose-500:#f43f5e;
+            --amber-500:#f59e0b;
+            --slate-50:#f8fafc; --slate-100:#f1f5f9; --slate-200:#e2e8f0; --slate-300:#cbd5e1;
+            --slate-400:#94a3b8; --slate-500:#64748b; --slate-600:#475569; --slate-700:#334155; --slate-800:#1e293b;
+            --blue-50:#eff6ff; --blue-100:#dbeafe; --blue-500:#3b82f6; --blue-700:#1d4ed8; --blue-800:#1e40af;
+            --purple-100:#f3e8ff; --purple-800:#6b21a8;
+            --green-100:#dcfce7; --green-800:#166534;
+            --orange-50:#fff7ed; --orange-500:#f97316;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Noto Sans TC',-apple-system,sans-serif; background:var(--slate-50); color:var(--slate-800); }
+
+        nav { background:var(--teal-900); color:white; padding:12px 24px; display:flex; justify-content:space-between; align-items:center; position:sticky; top:0; z-index:50; box-shadow:0 2px 8px rgba(0,0,0,0.2); }
+        nav .brand { font-weight:700; font-size:18px; letter-spacing:1px; }
+        nav .links { display:flex; gap:12px; flex-wrap:wrap; }
+        nav .links a { color:rgba(255,255,255,0.7); text-decoration:none; padding:6px 14px; border-radius:8px; font-size:14px; transition:all 0.2s; background:var(--teal-800); }
+        nav .links a:hover { background:var(--teal-700); color:white; }
+        nav .links a.active { background:var(--teal-600); color:white; font-weight:700; box-shadow:inset 0 1px 4px rgba(0,0,0,0.2); }
+
+        header { background:linear-gradient(135deg,var(--teal-100),var(--emerald-50)); padding:60px 24px; text-align:center; border-bottom:1px solid var(--teal-200); position:relative; overflow:hidden; }
+        header::before { content:'♨️'; position:absolute; top:16px; right:32px; font-size:56px; opacity:0.15; }
+        header::after { content:'🎿'; position:absolute; bottom:16px; left:40px; font-size:48px; opacity:0.15; }
+        header h1 { font-size:2.8rem; font-weight:700; background:linear-gradient(135deg,var(--teal-700),var(--emerald-500)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:12px; }
+        header p { font-size:1.2rem; color:var(--slate-600); }
+
+        main { max-width:1600px; margin:40px auto; padding:0 16px; }
+
+        .card { background:white; border-radius:16px; padding:32px; margin-bottom:24px; border:1px solid var(--slate-100); box-shadow:0 1px 3px rgba(0,0,0,0.06); }
+        .card h2 { font-size:1.5rem; font-weight:700; margin-bottom:16px; display:flex; align-items:center; gap:12px; }
+        .card h2 .icon { background:var(--teal-100); width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; }
+
+        .resort-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; margin-top:16px; }
+        .resort-item { padding:16px; border-radius:12px; border-left:4px solid; }
+        .resort-item.teal  { background:var(--teal-50);    border-color:var(--teal-500); }
+        .resort-item.emerald { background:var(--emerald-50); border-color:var(--emerald-500); }
+        .resort-item.blue  { background:var(--blue-50);    border-color:var(--blue-500); }
+        .resort-item.orange{ background:var(--orange-50);  border-color:var(--orange-500); }
+        .resort-item.amber { background:#fffbeb;           border-color:var(--amber-500); }
+        .resort-item.purple{ background:var(--purple-100); border-color:#a855f7; }
+        .resort-item h3 { font-weight:700; font-size:1rem; margin-bottom:4px; }
+        .resort-item p  { font-size:0.85rem; color:var(--slate-600); line-height:1.5; }
+
+        .progress-bar { background:var(--teal-50); border-left:4px solid var(--teal-500); padding:10px 16px; border-radius:0 8px 8px 0; font-size:0.85rem; color:var(--slate-700); margin-bottom:20px; }
+
+        .table-wrap { overflow-x:auto; border-radius:12px; border:1px solid var(--slate-200); }
+        table { width:100%; border-collapse:collapse; font-size:0.85rem; white-space:nowrap; }
+        thead { background:var(--teal-50); }
+        th { padding:14px 12px; font-weight:700; color:var(--teal-900); text-align:center; border-bottom:2px solid var(--teal-200); }
+        th:first-child { text-align:left; padding-left:16px; }
+        td { padding:10px 12px; text-align:center; border-bottom:1px solid var(--slate-100); }
+        td:first-child { text-align:left; font-weight:700; color:var(--slate-800); padding-left:16px; }
+        tr:hover { background:var(--slate-50); }
+        tr { transition:all 0.15s; }
+
+        .badge { display:inline-block; padding:3px 10px; border-radius:6px; font-size:0.75rem; font-weight:700; }
+        .badge-blue   { background:var(--blue-100);   color:var(--blue-800); }
+        .badge-purple { background:var(--purple-100); color:var(--purple-800); }
+        .badge-green  { background:var(--green-100);  color:var(--green-800); }
+        .badge-amber  { background:#fef3c7; color:#92400e; }
+        .badge-teal   { background:var(--teal-100);   color:var(--teal-800); }
+
+        .text-emerald { color:var(--emerald-700); font-weight:700; }
+        .text-muted   { color:var(--slate-400); }
+        .rating       { color:var(--amber-500); font-weight:700; }
+        a.map-link    { color:var(--teal-600); font-weight:700; text-decoration:none; }
+        a.map-link:hover { color:var(--teal-800); text-decoration:underline; }
+
+        .note-col { background:var(--slate-50); border-left:1px solid var(--slate-200); padding:6px 10px !important; min-width:280px; }
+        .note-col .btn-group { display:flex; border:1px solid var(--slate-300); border-radius:8px; overflow:hidden; height:28px; }
+        .note-col .btn-group button { flex:1; font-size:0.7rem; font-weight:700; border:none; cursor:pointer; transition:all 0.15s; background:white; color:var(--slate-400); }
+        .note-col .btn-group button:not(:last-child) { border-right:1px solid var(--slate-300); }
+        .note-col .btn-group button:hover { background:var(--slate-100); }
+        .note-col .btn-group button.active-yes  { background:var(--teal-600); color:white; }
+        .note-col .btn-group button.active-no   { background:var(--rose-500); color:white; }
+        .note-col .btn-group button.active-none { background:var(--slate-200); color:var(--slate-600); }
+        .note-col input { width:100%; margin-top:6px; padding:5px 10px; border:1px solid var(--slate-300); border-radius:6px; font-size:0.8rem; outline:none; transition:border 0.2s; }
+        .note-col input:focus { border-color:var(--teal-500); box-shadow:0 0 0 3px rgba(20,184,166,0.1); }
+
+        .row-eliminated { opacity:0.35; }
+        .row-kept { background:var(--teal-50) !important; }
+
+        footer { text-align:center; padding:40px; color:var(--slate-400); font-size:0.8rem; }
+
+        @media(max-width:768px){ header h1{font-size:1.8rem;} .card{padding:20px;} }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="brand">😎 2027 家族滑雪決策面板</div>
+    <div class="links">
+        <a href="../2027_野澤滑雪/dashboard.html">♨️ 方案A: 野澤溫泉</a>
+        <a href="../2027_白馬滑雪/dashboard.html">🏔️ 方案B: 白馬 Valley</a>
+        <a href="dashboard.html" class="active">🌋 方案C: 妙高高原</a>
+    </div>
+</nav>
+
+<header>
+    <h1>2027 妙高 (Myoko) 家庭滑雪之旅</h1>
+    <p>新潟縣妙高市 • 距東京約 2.5 小時 • 日本最大降雪量雪場群</p>
+</header>
+
+<main>
+    <!-- Resort Overview -->
+    <div class="card">
+        <h2><span class="icon">🌋</span> 妙高雪場概覽（6 大雪場群）</h2>
+        <div class="resort-grid">
+            <div class="resort-item teal">
+                <h3>赤倉温泉スキー場 (Akakura Onsen) 🏘️ 最熱鬧</h3>
+                <p>妙高最大雪場，24 條路線，腳下即是溫泉街，餐廳商店最密集。外國人比例高（尤其澳洲），英文服務佳。有 5,200m 超長山頂路線，含家庭適用的寬廣中緩坡。</p>
+            </div>
+            <div class="resort-item emerald">
+                <h3>赤倉観光リゾート (Akakura Kanko) 🏨 旅館直結</h3>
+                <p>傳奇的赤倉観光ホテル（1937年創業）直結纜車，是日本最早 Ski-in/out 飯店之一。路線以中高級為主，粉雪品質極高。與赤倉溫泉雪場相鄰可互通。</p>
+            </div>
+            <div class="resort-item blue">
+                <h3>池の平温泉 アルペンブリック ⭐ 小孩首選</h3>
+                <p>寬廣平緩主路線（4km），80% 為初中級坡，設有 Kids Garden 圍欄區與免費雪橇場，<strong>極度適合帶小朋友</strong>。獨特「黑色硫磺泥湯+透明溫泉」雙泉質。</p>
+            </div>
+            <div class="resort-item orange">
+                <h3>妙高杉ノ原 (Suginohara) 🎿 日本最長路線</h3>
+                <p>日本最長滑雪道 <strong>8.5km</strong>（標高差 1,100m），海拔最高 1,855m，80% 初中級坡。Prince Hotels 經營，設施現代齊全，粉雪質量一流。</p>
+            </div>
+            <div class="resort-item amber">
+                <h3>Lotte Arai Resort 🌟 頂級奢華</h3>
+                <p>5 星級豪華渡假村，Ski-in/out 直結 Arai 滑雪道，擁有全套 Spa、溫泉、多間餐廳及室內泳池。全球粉雪愛好者朝聖地，距赤倉約 20 分鐘車程。</p>
+            </div>
+            <div class="resort-item purple">
+                <h3>斑尾高原 (Madarao Kogen) 🌲 樹林天堂</h3>
+                <p>與 Tangram 相連，以深厚粉雪森林路線著稱，喜愛 Tree skiing 的滑雪者最愛。距赤倉約 40 分鐘，可搭配住宿一起規劃。</p>
+            </div>
+        </div>
+        <div style="margin-top:20px;padding:16px;background:var(--teal-50);border-radius:12px;font-size:0.9rem;color:var(--slate-700);border-left:4px solid var(--teal-500)">
+            💡 <strong>妙高 vs 白馬</strong>：妙高雪場集中在同一個溫泉村（赤倉），步行或短距離接駁即可切換雪場，不像白馬需要跨越 Valley。溫泉街氣氛濃郁、日本味十足，外國遊客較白馬少。距離東京（新幹線＋接駁）約 2.5 小時，交通便利度高。
+        </div>
+    </div>
+
+    <!-- Summary bar -->
+    <div class="card" style="padding:20px 32px;">
+        <div class="progress-bar" style="margin-bottom:0">
+            📊 目前蒐集 <strong>17 間</strong>飯店型住宿（含 Ski-in/out 為主）• 尚未發送詢問信 • 所有資訊待確認
+        </div>
+    </div>
+
+    <!-- Hotel tables by area -->
+    <div id="area-sections"></div>
+</main>
+
+<footer>2027 Myoko Kogen Family Ski Trip Planning Dashboard</footer>
+
+<script>
+const hotels = [
+  // ── 赤倉温泉 ──────────────────────────────────────────────────
+  {n:"Alp Myoko",                    r:"4.5",a:"赤倉温泉",k:0,o:1,d:"Ski-in/out (赤倉温泉+赤倉観光)",s:"🆕 需查官網",u:"https://www.google.com/maps/search/?api=1&query=Alp+Myoko"},
+  {n:"The Residence Myoko",          r:"4.6",a:"赤倉温泉",k:0,o:1,d:"Ski-in/out (赤倉温泉)",s:"⚠️ Adults-Only (無小孩)",u:"https://www.google.com/maps/search/?api=1&query=The+Residence+Myoko"},
+  {n:"Red Warehouse Myoko",          r:"4.7",a:"赤倉温泉",k:1,o:1,d:"步行 3 分 (赤倉温泉/観光)",s:"🆕 需查官網 (#1 TripAdvisor)",u:"https://www.google.com/maps/search/?api=1&query=Red+Warehouse+Myoko"},
+  {n:"Myoko Ski Lodge",              r:"4.3",a:"赤倉温泉",k:0,o:1,d:"步行 5 分 (赤倉温泉)",s:"🆕 需查官網",u:"https://www.google.com/maps/search/?api=1&query=Myoko+Ski+Lodge+Akakura"},
+  {n:"Hotel Taiko (大子)",           r:"4.3",a:"赤倉温泉",k:0,o:1,d:"步行 2 分 (赤倉温泉)",s:"🆕 需查官網 (兩種露天溫泉)",u:"https://www.google.com/maps/search/?api=1&query=Hotel+Taiko+Myoko+Akakura"},
+  {n:"赤倉ホテル (Akakura Hotel)",   r:"4.0",a:"赤倉温泉",k:0,o:1,d:"步行 5 分 (赤倉温泉)",s:"🆕 需查官網 (200年老店/雙泉質)",u:"https://www.google.com/maps/search/?api=1&query=赤倉ホテル+妙高"},
+  {n:"旅館おかやまかん",             r:"4.1",a:"赤倉温泉",k:0,o:1,d:"步行 5 分 (赤倉温泉)",s:"🆕 需查官網 (源泉掛流)",u:"https://www.google.com/maps/search/?api=1&query=旅館おかやまかん+妙高"},
+  {n:"Mountain Base Myoko",          r:"4.2",a:"赤倉温泉",k:0,o:1,d:"步行 8 分 (赤倉温泉)",s:"🆕 需查官網 (全新建造)",u:"https://www.google.com/maps/search/?api=1&query=Mountain+Base+Myoko"},
+  {n:"Kotobukirou (寿楼)",           r:"4.0",a:"赤倉温泉",k:0,o:1,d:"步行 5 分 (赤倉温泉)",s:"🆕 需查官網 (彈性退房)",u:"https://www.google.com/maps/search/?api=1&query=寿楼+妙高赤倉温泉"},
+  // ── 赤倉観光リゾート ──────────────────────────────────────────
+  {n:"赤倉観光ホテル (Akakura Kanko Hotel)", r:"4.6",a:"赤倉観光",k:0,o:1,d:"Ski-in/out (赤倉観光リゾート)",s:"🆕 需查官網 (1937年/法式餐廳)",u:"https://www.google.com/maps/search/?api=1&query=赤倉観光ホテル+妙高"},
+  {n:"赤倉観光リゾートスパ (AKH Japan)", r:"4.3",a:"赤倉観光",k:0,o:1,d:"Ski-in/out (赤倉観光リゾート)",s:"🆕 需查官網 (Spa/大浴場)",u:"https://www.google.com/maps/search/?api=1&query=赤倉観光リゾートスパ+妙高"},
+  // ── 池の平温泉 ────────────────────────────────────────────────
+  {n:"池の平温泉 アルペンブリックリゾート", r:"4.0",a:"池の平",k:0,o:1,d:"Ski-in/out (池の平)",s:"🆕 需查官網 (硫黄泥湯+透明湯)",u:"https://www.google.com/maps/search/?api=1&query=アルペンブリックリゾート+妙高池の平"},
+  {n:"Legend Inn Myoko",             r:"4.2",a:"池の平",k:0,o:1,d:"車 3 分 (池の平)",s:"🆕 需查官網",u:"https://www.google.com/maps/search/?api=1&query=Legend+Inn+Myoko"},
+  // ── 妙高杉ノ原 ────────────────────────────────────────────────
+  {n:"Sora Tobu Usagi (空飛ぶうさぎ)", r:"4.0",a:"杉ノ原",k:1,o:0,d:"Ski-in/out (杉ノ原)",s:"🆕 需查官網 (含早晚餐可選/家庭房)",u:"https://www.google.com/maps/search/?api=1&query=空飛ぶうさぎ+妙高杉ノ原"},
+  {n:"Red Fox Lodge",                r:"4.1",a:"杉ノ原",k:1,o:0,d:"Ski-in/out (杉ノ原)",s:"🆕 需查官網 (新裝家庭小屋)",u:"https://www.google.com/maps/search/?api=1&query=Red+Fox+Lodge+Myoko+Suginohara"},
+  {n:"Lodge Puruku",                 r:"4.0",a:"杉ノ原",k:0,o:1,d:"步行 1 分 (杉ノ原)",s:"🆕 需查官網 (森林溫泉小屋)",u:"https://www.google.com/maps/search/?api=1&query=Lodge+Puruku+Myoko"},
+  // ── Lotte Arai Resort ─────────────────────────────────────────
+  {n:"Lotte Arai Resort",            r:"4.2",a:"Arai",k:0,o:1,d:"Ski-in/out (Arai Resort)",s:"🆕 需查官網 (5星/Spa/泳池/距赤倉20分)",u:"https://www.google.com/maps/search/?api=1&query=Lotte+Arai+Resort+Myoko"},
+  // ── 斑尾高原 ──────────────────────────────────────────────────
+  {n:"Japan Snowsports Madarao Lodge", r:"4.3",a:"斑尾",k:0,o:0,d:"步行 5 分 (斑尾高原)",s:"🆕 需查官網 (滑雪教練隨附)",u:"https://www.google.com/maps/search/?api=1&query=Japan+Snowsports+Madarao"},
+  {n:"Madarao Kogen Hotel",          r:"3.9",a:"斑尾",k:0,o:1,d:"Ski-in/out (斑尾高原)",s:"🆕 需查官網",u:"https://www.google.com/maps/search/?api=1&query=Madarao+Kogen+Hotel"},
+];
+
+const areaOrder = ["赤倉温泉","赤倉観光","池の平","杉ノ原","Arai","斑尾"];
+const areaLabels = {
+    "赤倉温泉": "🏘️ 赤倉温泉 (Akakura Onsen) — 溫泉街核心，最多飯店",
+    "赤倉観光": "🏨 赤倉観光リゾート (Akakura Kanko) — 旅館直結纜車",
+    "池の平":   "⭐ 池の平温泉 アルペンブリック — 小孩首選，寬廣緩坡",
+    "杉ノ原":   "🎿 妙高杉ノ原 (Suginohara) — 日本最長路線 8.5km",
+    "Arai":     "🌟 Lotte Arai Resort — 頂級5星獨立雪場",
+    "斑尾":     "🌲 斑尾高原 (Madarao Kogen) — 粉雪森林樂園",
+};
+const areaDesc = {
+    "赤倉温泉": "妙高最熱鬧的區域，溫泉街步行即可逛，外國遊客英文溝通無礙。多數住宿集中在此，前往各雪場接駁方便。",
+    "赤倉観光": "1937年創業的赤倉観光ホテル是妙高地標，直結雪場纜車口，粉雪品質絕佳，適合追求高品質溫泉飯店體驗的家庭。",
+    "池の平":   "適合攜帶小孩的初學者家庭！寬廣緩坡、Kids Garden 圍欄區、雪橇場，加上罕見的硫磺泥湯溫泉。",
+    "杉ノ原":   "Prince Hotels 管理，設施現代，海拔最高，粉雪最輕盈。Ski-in/out 住宿選擇相對少，但滑行體驗一流。",
+    "Arai":     "Lotte 集團旗艦，距赤倉溫泉村約 20 分鐘，適合想要奢華體驗又不在乎隔絕感的家庭。",
+    "斑尾":     "Distance from Akakura ~40 min car. 以深林粉雪路線著稱，可配合赤倉 1-2 天日歸計畫。",
+};
+
+function badgeClass(s) {
+    if (s.includes('已寄') || s.includes('保留') || s.includes('#1')) return 'badge-green';
+    if (s.includes('Adults-Only') || s.includes('關閉'))               return 'badge-amber';
+    if (s.includes('🆕'))                                               return 'badge-teal';
+    return 'badge-amber';
+}
+
+function buildRow(h) {
+    const key = 'myoko_v1_' + encodeURIComponent(h.n);
+    let data = {stat:'none', txt:''};
+    try { const raw = localStorage.getItem(key); if (raw) data = JSON.parse(raw); } catch(e) {}
+
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+        <td>${h.n}</td>
+        <td class="rating">${h.r}</td>
+        <td class="${h.k ? 'text-emerald' : 'text-muted'}">${h.k ? '✅ 有' : '❌ 無'}</td>
+        <td class="${h.o ? 'text-emerald' : 'text-muted'}">${h.o ? '✅ 有' : '❌ 無'}</td>
+        <td>${h.d}</td>
+        <td><span class="badge ${badgeClass(h.s)}">${h.s}</span></td>
+        <td><a href="${h.u}" target="_blank" class="map-link">📍 前往</a></td>
+        <td class="note-col">
+            <div class="btn-group">
+                <button data-v="none">未決</button>
+                <button data-v="yes">👍 保留</button>
+                <button data-v="no">❌ 剃除</button>
+            </div>
+            <input type="text" placeholder="私人筆記..." value="${data.txt.replace(/"/g,'&quot;')}">
+        </td>
+    `;
+
+    const save = () => localStorage.setItem(key, JSON.stringify(data));
+    const updateUI = () => {
+        tr.querySelectorAll('.btn-group button').forEach(btn => {
+            btn.className = '';
+            if (btn.dataset.v === data.stat) {
+                if (data.stat === 'yes') btn.className = 'active-yes';
+                else if (data.stat === 'no') btn.className = 'active-no';
+                else btn.className = 'active-none';
+            }
+        });
+        tr.classList.remove('row-eliminated','row-kept');
+        if (data.stat === 'no')  tr.classList.add('row-eliminated');
+        else if (data.stat === 'yes') tr.classList.add('row-kept');
+    };
+    tr.querySelectorAll('.btn-group button').forEach(btn => {
+        btn.addEventListener('click', () => { data.stat = btn.dataset.v; save(); updateUI(); });
+    });
+    tr.querySelector('.note-col input').addEventListener('input', e => { data.txt = e.target.value; save(); });
+    updateUI();
+    return tr;
+}
+
+const grouped = {};
+hotels.forEach(h => { if (!grouped[h.a]) grouped[h.a] = []; grouped[h.a].push(h); });
+
+const container = document.getElementById('area-sections');
+
+areaOrder.forEach(area => {
+    if (!grouped[area]) return;
+    const areaHotels = grouped[area];
+    const isKids = area === '池の平';
+
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.id = 'area-' + area;
+
+    card.innerHTML = `
+        <h2><span class="icon">${isKids ? '⭐' : '🏨'}</span>
+            ${areaLabels[area] || area}
+            <span style="font-size:0.85rem;font-weight:normal;color:var(--slate-500)">(${areaHotels.length} 間)</span>
+        </h2>
+        <div class="progress-bar" style="margin-bottom:16px">${areaDesc[area] || ''}</div>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="text-align:left">住宿名稱</th>
+                        <th>評分</th>
+                        <th>🍳 廚房</th>
+                        <th>♨️ 泡湯</th>
+                        <th>雪場距離</th>
+                        <th>聯絡狀態</th>
+                        <th>地圖</th>
+                        <th class="note-col" style="min-width:280px">📝 筆記與評估</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody-${area}"></tbody>
+            </table>
+        </div>
+    `;
+    container.appendChild(card);
+    const tbody = card.querySelector('tbody');
+    areaHotels.forEach(h => tbody.appendChild(buildRow(h)));
+});
+</script>
+</body>
+</html>

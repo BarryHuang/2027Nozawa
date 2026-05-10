@@ -110,6 +110,8 @@
     <div class="links">
         <a href="../2027_野澤滑雪/dashboard.html">♨️ 方案A: 野澤溫泉</a>
         <a href="dashboard.html" class="active">🏔️ 方案B: 白馬 Valley</a>
+        <a href="../2027_妙高滑雪/dashboard.html">🌋 方案C: 妙高高原</a>
+        <a href="#goryu30-section">🎿 五龍30分圈</a>
     </div>
 </nav>
 
@@ -147,6 +149,9 @@
 
     <!-- Area-grouped accommodation tables -->
     <div id="area-sections"></div>
+
+    <!-- Goryu 30-min radius table -->
+    <div id="goryu30-section"></div>
 </main>
 
 <footer>2027 Hakuba Valley Family Ski Trip Planning Dashboard</footer>
@@ -324,6 +329,146 @@ function buildRow(h) {
     updateUI();
     return tr;
 }
+
+// ─── 五龍30分圈 資料 ───────────────────────────────────────────
+const goryu30 = [
+  // 五龍直近 (步行圈)
+  {n:"Condominium Hotel Hakuba Goryu",r:"4.4",t:"公寓",k:1,o:0,d:"Ski-in/out",z:"🟠 五龍直近",u:"https://www.google.com/maps/search/?api=1&query=Condominium+Hotel+Hakuba+Goryu"},
+  {n:"Hotel Stelle Belle",r:"4.2",t:"飯店",k:0,o:1,d:"步行 3 分",z:"🟠 五龍直近",u:"https://www.google.com/maps/search/?api=1&query=Hotel+Stelle+Belle+Hakuba"},
+  {n:"Hotel Montblanc Hakuba",r:"4.3",t:"飯店",k:0,o:1,d:"步行 5 分",z:"🟠 五龍直近",u:"https://www.google.com/maps/search/?api=1&query=Hotel+Montblanc+Hakuba"},
+  {n:"Hotel Abest Hakuba Resort",r:"4.0",t:"飯店",k:0,o:1,d:"步行 1 分",z:"🟠 五龍直近",u:"https://www.google.com/maps/search/?api=1&query=Hotel+Abest+Hakuba+Resort"},
+  {n:"Hotel Sejour Mint",r:"4.0",t:"飯店",k:0,o:0,d:"步行 5 分",z:"🟠 五龍直近",u:"https://www.google.com/maps/search/?api=1&query=Hotel+Sejour+Mint+Hakuba"},
+  {n:"Pals Inn Raicho",r:"4.5",t:"民宿",k:0,o:0,d:"步行 8 分",z:"🟠 五龍直近",u:"https://www.google.com/maps/search/?api=1&query=Pals+Inn+Raicho+Hakuba"},
+  {n:"Hakuba Park Hotel",r:"4.0",t:"飯店",k:0,o:1,d:"步行 7 分",z:"🟠 五龍直近",u:"https://www.google.com/maps/search/?api=1&query=Hakuba+Park+Hotel"},
+  {n:"HAKUBA GARDEN Hotel",r:"4.5",t:"飯店",k:0,o:0,d:"車 3 分",z:"🟠 五龍直近",u:"https://www.google.com/maps/search/?api=1&query=HAKUBA+GARDEN+Hotel"},
+  {n:"Hakuba Sunvalley Hotel",r:"3.8",t:"飯店",k:0,o:0,d:"車 1 分",z:"🟠 五龍直近",u:"https://www.google.com/maps/search/?api=1&query=Hakuba+Sunvalley+Hotel"},
+  {n:"Ski-in/Ski-out Goryu Hotel (Escal Plaza)",r:"4.2",t:"飯店",k:0,o:1,d:"Ski-in/out",z:"🟠 五龍直近",u:"https://www.google.com/maps/search/?api=1&query=Escal+Plaza+Goryu"},
+  {n:"Sunplaza Hakuba",r:"4.1",t:"飯店",k:0,o:1,d:"車 3 分",z:"🟠 五龍直近",u:"https://www.google.com/maps/search/?api=1&query=Sunplaza+Hakuba"},
+  {n:"Goryu 館",r:"4.2",t:"旅館",k:0,o:1,d:"車 5 分",z:"🟠 五龍直近",u:"https://www.google.com/maps/search/?api=1&query=Goryu+Kan+Hakuba"},
+  {n:"Marillen Hotel by HHG",r:"4.4",t:"飯店",k:0,o:0,d:"Ski-in/out (47纜車)",z:"🟠 五龍直近",u:"https://www.google.com/maps/search/?api=1&query=Marillen+Hotel+Hakuba"},
+  {n:"Hakuba Ryujin Onsen Ryokan Sui",r:"4.0",t:"旅館",k:0,o:1,d:"車 5 分",z:"🟠 五龍直近",u:"https://www.google.com/maps/search/?api=1&query=Hakuba+Ryujin+Onsen+Ryokan+Sui"},
+  {n:"Hotel Lady Diana & Saint George",r:"3.9",t:"飯店",k:0,o:0,d:"車 5 分",z:"🟠 五龍直近",u:"https://www.google.com/maps/search/?api=1&query=Hotel+Lady+Diana+Saint+George+Hakuba"},
+  // Echoland (車10-15分)
+  {n:"Courtyard by Marriott Hakuba",r:"4.3",t:"飯店",k:0,o:1,d:"車 10 分",z:"🔵 Echoland",u:"https://www.google.com/maps/search/?api=1&query=Courtyard+by+Marriott+Hakuba"},
+  {n:"Hotel La Vigne Hakuba (by Onko Chishin)",r:"4.6",t:"飯店",k:1,o:0,d:"免費接駁 (車10分)",z:"🔵 Echoland",u:"https://www.google.com/maps/search/?api=1&query=Hotel+La+Vigne+Hakuba+Onkochishin"},
+  {n:"Roka Apartments",r:"4.8",t:"公寓",k:1,o:0,d:"車 10 分",z:"🔵 Echoland",u:"https://www.google.com/maps/search/?api=1&query=Roka+Hakuba"},
+  {n:"Powder Suites",r:"4.7",t:"公寓",k:1,o:0,d:"車 10 分",z:"🔵 Echoland",u:"https://www.google.com/maps/search/?api=1&query=Powder+Suites+Hakuba"},
+  {n:"Echoland Apartments",r:"4.7",t:"公寓",k:1,o:0,d:"車 10 分",z:"🔵 Echoland",u:"https://www.google.com/maps/search/?api=1&query=Echoland+Apartments"},
+  {n:"The Bohemians",r:"4.6",t:"公寓",k:1,o:0,d:"車 10 分",z:"🔵 Echoland",u:"https://www.google.com/maps/search/?api=1&query=The+Bohemians+Hakuba"},
+  {n:"Log Cottage Epoch",r:"4.5",t:"民宿",k:1,o:0,d:"車 10 分",z:"🔵 Echoland",u:"https://www.google.com/maps/search/?api=1&query=Log+Cottage+Epoch+Hakuba"},
+  {n:"Kamon",r:"4.4",t:"民宿",k:1,o:0,d:"車 10 分",z:"🔵 Echoland",u:"https://www.google.com/maps/search/?api=1&query=Kamon+Hakuba"},
+  {n:"Shakespeare Hotel",r:"4.1",t:"飯店",k:0,o:1,d:"車 10 分",z:"🔵 Echoland",u:"https://www.google.com/maps/search/?api=1&query=Shakespeare+Hotel+Hakuba"},
+  {n:"Oak Forest Hotel",r:"4.2",t:"飯店",k:0,o:1,d:"車 10 分",z:"🔵 Echoland",u:"https://www.google.com/maps/search/?api=1&query=Oak+Forest+Hotel+Hakuba"},
+  // 岩岳 (車10-15分)
+  {n:"Hotel Sierra Resort Hakuba",r:"4.7",t:"飯店",k:0,o:1,d:"車 10 分",z:"🟣 岩岳",u:"https://www.google.com/maps/search/?api=1&query=Hotel+Sierra+Resort+Hakuba"},
+  {n:"Sundance Resort",r:"4.0",t:"飯店",k:1,o:1,d:"車 10 分",z:"🟣 岩岳",u:"https://www.google.com/maps/search/?api=1&query=Sundance+Resort+Hakuba"},
+  {n:"Iwatake Apartments",r:"4.6",t:"公寓",k:1,o:0,d:"車 10 分",z:"🟣 岩岳",u:"https://www.google.com/maps/search/?api=1&query=Iwatake+Apartments+Hakuba"},
+  {n:"Iwatake Chalet",r:"4.7",t:"公寓",k:1,o:0,d:"車 10 分",z:"🟣 岩岳",u:"https://www.google.com/maps/search/?api=1&query=Iwatake+Chalet+Hakuba"},
+  // Happo / Wadano (車15-20分)
+  {n:"evo Hotel Hakuba",r:"4.3",t:"飯店",k:0,o:1,d:"車 15 分",z:"🟢 Happo/Wadano",u:"https://www.google.com/maps/search/?api=1&query=evo+Hotel+Hakuba"},
+  {n:"The Happo by HHG",r:"4.0",t:"飯店",k:0,o:1,d:"車 15 分",z:"🟢 Happo/Wadano",u:"https://www.google.com/maps/search/?api=1&query=The+Happo+Hakuba"},
+  {n:"Phoenix Hotel by HHG",r:"4.1",t:"飯店",k:0,o:1,d:"車 20 分",z:"🟢 Happo/Wadano",u:"https://www.google.com/maps/search/?api=1&query=Phoenix+Hotel+Hakuba+HHG"},
+];
+
+// ─── 五龍30分圈 渲染 ───────────────────────────────────────────
+(function buildGoryu30() {
+  const section = document.getElementById('goryu30-section');
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.style.borderTop = '4px solid #f97316';
+
+  // group by zone
+  const zones = {};
+  goryu30.forEach(h => { if (!zones[h.z]) zones[h.z] = []; zones[h.z].push(h); });
+
+  let zonesHtml = '';
+  Object.entries(zones).forEach(([zone, list]) => {
+    const rows = list.map(h => {
+      const key = 'goryu30_' + encodeURIComponent(h.n);
+      let data = { stat: 'none', txt: '' };
+      try { const raw = localStorage.getItem(key); if (raw) data = JSON.parse(raw); } catch(e) {}
+      const typeColor = h.t === '公寓' ? 'badge-purple' : h.t === '旅館' ? 'badge-amber' : 'badge-blue';
+      return `<tr data-key="${key}" data-stat="${data.stat}" class="${data.stat==='no'?'row-eliminated':data.stat==='yes'?'row-kept':''}">
+        <td>${h.n}</td>
+        <td class="rating">${h.r}</td>
+        <td><span class="badge ${typeColor}">${h.t}</span></td>
+        <td class="${h.k ? 'text-emerald' : 'text-muted'}">${h.k ? '✅' : '❌'}</td>
+        <td class="${h.o ? 'text-emerald' : 'text-muted'}">${h.o ? '✅' : '❌'}</td>
+        <td>${h.d}</td>
+        <td><a href="${h.u}" target="_blank" class="map-link">📍</a></td>
+        <td class="note-col">
+          <div class="btn-group">
+            <button data-v="none">未決</button>
+            <button data-v="yes">👍 保留</button>
+            <button data-v="no">❌ 剃除</button>
+          </div>
+          <input type="text" placeholder="私人筆記..." value="${data.txt.replace(/"/g,'&quot;')}">
+        </td>
+      </tr>`;
+    }).join('');
+
+    const zoneBg = zone.includes('五龍') ? 'background:#fff7ed;border-left:3px solid #f97316' :
+                   zone.includes('Echoland') ? 'background:#eff6ff;border-left:3px solid #3b82f6' :
+                   zone.includes('岩岳') ? 'background:#faf5ff;border-left:3px solid #a855f7' :
+                   'background:#f0fdf4;border-left:3px solid #22c55e';
+
+    zonesHtml += `
+      <div style="margin-bottom:20px;border-radius:10px;overflow:hidden;${zoneBg}">
+        <div style="padding:10px 16px;font-weight:700;font-size:0.9rem;">${zone} <span style="font-weight:normal;color:var(--slate-500)">(${list.length} 間)</span></div>
+        <div class="table-wrap" style="border:none;border-radius:0">
+          <table>
+            <thead><tr>
+              <th style="text-align:left">住宿名稱</th>
+              <th>評分</th><th>類型</th><th>🍳</th><th>♨️</th>
+              <th>距五龍</th><th>地圖</th>
+              <th class="note-col" style="min-width:260px">📝 筆記</th>
+            </tr></thead>
+            <tbody>${rows}</tbody>
+          </table>
+        </div>
+      </div>`;
+  });
+
+  card.innerHTML = `
+    <h2><span class="icon">🎿</span> 白馬五龍 30 分圈住宿
+      <span style="font-size:0.85rem;font-weight:normal;color:var(--slate-500)">共 ${goryu30.length} 間 ／ Google 3.8+</span>
+    </h2>
+    <div class="progress-bar" style="margin-bottom:20px">
+      📍 以白馬五龍（エイブル白馬五竜）為中心，開車 30 分鐘內可抵達的飯店型 & 公寓型住宿。橘色區域為步行可達，藍/紫/綠區域需開車 10–20 分鐘。
+    </div>
+    ${zonesHtml}
+  `;
+  section.appendChild(card);
+
+  // Wire up interactivity after DOM insert
+  section.querySelectorAll('tr[data-key]').forEach(tr => {
+    const key = tr.dataset.key;
+    let data = { stat: tr.dataset.stat || 'none', txt: '' };
+    try { const raw = localStorage.getItem(key); if (raw) data = JSON.parse(raw); } catch(e) {}
+
+    const updateUI = () => {
+      tr.querySelectorAll('.btn-group button').forEach(btn => {
+        btn.className = '';
+        if (btn.dataset.v === data.stat) {
+          if (data.stat === 'yes') btn.className = 'active-yes';
+          else if (data.stat === 'no') btn.className = 'active-no';
+          else btn.className = 'active-none';
+        }
+      });
+      tr.classList.remove('row-eliminated','row-kept');
+      if (data.stat === 'no') tr.classList.add('row-eliminated');
+      else if (data.stat === 'yes') tr.classList.add('row-kept');
+    };
+    const save = () => localStorage.setItem(key, JSON.stringify(data));
+
+    tr.querySelectorAll('.btn-group button').forEach(btn => {
+      btn.addEventListener('click', () => { data.stat = btn.dataset.v; save(); updateUI(); });
+    });
+    const inp = tr.querySelector('.note-col input');
+    if (inp) { inp.value = data.txt; inp.addEventListener('input', e => { data.txt = e.target.value; save(); }); }
+    updateUI();
+  });
+})();
 
 // Group hotels by area
 const grouped = {};

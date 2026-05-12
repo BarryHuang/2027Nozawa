@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026-27 家庭旅遊計劃</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Noto Sans TC',-apple-system,sans-serif; background:#f8fafc; color:#1e293b; min-height:100vh; }
+
+        nav { background:#134e4a; color:white; padding:14px 24px; display:flex; align-items:center; box-shadow:0 2px 8px rgba(0,0,0,0.2); }
+        nav .brand { font-weight:700; font-size:20px; letter-spacing:1px; }
+
+        .container { max-width:860px; margin:48px auto; padding:0 24px; }
+
+        h1 { font-size:28px; font-weight:700; color:#134e4a; margin-bottom:8px; }
+        .subtitle { color:#64748b; font-size:15px; margin-bottom:40px; }
+
+        .trip-card {
+            background:white;
+            border-radius:16px;
+            padding:28px 32px;
+            margin-bottom:20px;
+            box-shadow:0 1px 4px rgba(0,0,0,0.07);
+            border:1px solid #e2e8f0;
+            display:flex;
+            flex-direction:column;
+            gap:14px;
+        }
+        .trip-header { display:flex; align-items:flex-start; gap:14px; }
+        .trip-icon { font-size:32px; line-height:1; }
+        .trip-info { flex:1; }
+        .trip-title { font-size:18px; font-weight:700; color:#0f766e; margin-bottom:4px; }
+        .trip-date { font-size:13px; color:#94a3b8; }
+        .trip-links { display:flex; flex-wrap:wrap; gap:10px; }
+
+        .btn {
+            display:inline-block;
+            padding:8px 18px;
+            border-radius:8px;
+            font-size:13px;
+            font-weight:500;
+            text-decoration:none;
+            transition:all 0.15s;
+        }
+        .btn-primary { background:#0d9488; color:white; }
+        .btn-primary:hover { background:#0f766e; }
+        .btn-secondary { background:#f1f5f9; color:#475569; border:1px solid #e2e8f0; }
+        .btn-secondary:hover { background:#e2e8f0; }
+
+        @media(max-width:600px) {
+            .container { margin:24px auto; }
+            .trip-card { padding:20px; }
+        }
+    </style>
+</head>
+<body>
+    <nav><span class="brand">🧳 家庭旅遊計劃</span></nav>
+
+    <div class="container">
+        <h1>2026–27 行程總覽</h1>
+        <p class="subtitle">集中管理家庭旅遊行程規劃、互動式 Dashboard 與相關文件</p>
+
+        <div class="trip-card">
+            <div class="trip-header">
+                <div class="trip-icon">⛷️</div>
+                <div class="trip-info">
+                    <div class="trip-title">2027 野澤溫泉滑雪</div>
+                    <div class="trip-date">2027/1/21 – 2/1　｜　野澤溫泉家庭滑雪行程</div>
+                </div>
+            </div>
+            <div class="trip-links">
+                <a href="2027_野澤滑雪/dashboard.html" class="btn btn-primary">住宿比較 Dashboard</a>
+                <a href="2027_野澤滑雪/行程規劃.md" class="btn btn-secondary">行程規劃.md</a>
+            </div>
+        </div>
+
+        <div class="trip-card">
+            <div class="trip-header">
+                <div class="trip-icon">🏔️</div>
+                <div class="trip-info">
+                    <div class="trip-title">2027 白馬 Valley 滑雪</div>
+                    <div class="trip-date">2027/1/22 – 2/1　｜　白馬備案行程</div>
+                </div>
+            </div>
+            <div class="trip-links">
+                <a href="2027_白馬滑雪/dashboard.html" class="btn btn-primary">住宿比較 Dashboard</a>
+                <a href="2027_白馬滑雪/行程草案.md" class="btn btn-secondary">行程草案.md</a>
+            </div>
+        </div>
+
+        <div class="trip-card">
+            <div class="trip-header">
+                <div class="trip-icon">🎿</div>
+                <div class="trip-info">
+                    <div class="trip-title">2027 妙高滑雪</div>
+                    <div class="trip-date">2027　｜　妙高高原滑雪行程</div>
+                </div>
+            </div>
+            <div class="trip-links">
+                <a href="2027_妙高滑雪/dashboard.html" class="btn btn-primary">住宿比較 Dashboard</a>
+            </div>
+        </div>
+
+        <div class="trip-card">
+            <div class="trip-header">
+                <div class="trip-icon">🌸</div>
+                <div class="trip-info">
+                    <div class="trip-title">2026 東京黃金週</div>
+                    <div class="trip-date">2026 黃金週　｜　東京親子行程</div>
+                </div>
+            </div>
+            <div class="trip-links">
+                <a href="2026_東京黃金週/2026東京黃金週行程表.html" class="btn btn-primary">互動式行程表</a>
+                <a href="2026_東京黃金週/行前景點導覽.html" class="btn btn-secondary">景點導覽</a>
+                <a href="2026_東京黃金週/2026東京黃金週_雨天備案.html" class="btn btn-secondary">雨天備案</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

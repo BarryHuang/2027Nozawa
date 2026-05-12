@@ -19,6 +19,11 @@
 - [dashboard.html](./2027_白馬滑雪/dashboard.html) — 互動式住宿比較 Dashboard
 - [scripts/批量寄出詢問信.py](./2027_白馬滑雪/scripts/批量寄出詢問信.py) — 透過 Apple Mail 批量發送住宿詢問信
 
+### [2027_妙高滑雪/](./2027_妙高滑雪/)
+> 🗓️ 2027 ｜ 妙高高原滑雪行程
+
+- [dashboard.html](./2027_妙高滑雪/dashboard.html) — 互動式住宿比較 Dashboard
+
 ### [2026_東京黃金週/](./2026_東京黃金週/)
 > 🗓️ 2026 黃金週 ｜ 東京親子行程
 

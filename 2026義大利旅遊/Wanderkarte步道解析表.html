@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderkarte 步道解析表</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+        <style>
+            :root {
+                --primary: #2c7a7b;
+                --secondary: #285e61;
+                --accent: #38b2ac;
+                --bg: #f0fff4;
+                --card-bg: #ffffff;
+                --text: #1a202c;
+                --border: #e2e8f0;
+            }
+            body {
+                font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+                line-height: 1.6;
+                color: var(--text);
+                background-color: var(--bg);
+                margin: 0;
+                padding: 0;
+            }
+            .container {
+                max-width: 1000px;
+                margin: 0 auto;
+                padding: 2rem;
+            }
+            header {
+                background: linear-gradient(135deg, #2c7a7b 0%, #38b2ac 100%);
+                color: white;
+                padding: 3rem 2rem;
+                border-radius: 12px;
+                margin-bottom: 2rem;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+            h1 {
+                margin: 0;
+                font-size: 2.5rem;
+            }
+            h2 {
+                color: var(--primary);
+                border-bottom: 2px solid var(--accent);
+                padding-bottom: 0.5rem;
+                margin-top: 2.5rem;
+            }
+            h3 {
+                color: var(--secondary);
+                margin-top: 2rem;
+            }
+            a {
+                color: var(--accent);
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.2s;
+            }
+            a:hover {
+                color: #234e52;
+                text-decoration: underline;
+            }
+            .nav-links {
+                background: var(--card-bg);
+                padding: 1rem 1.5rem;
+                border-radius: 8px;
+                margin-bottom: 2rem;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+                border: 1px solid var(--border);
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 1.1rem;
+            }
+            .nav-links a {
+                display: inline-block;
+                padding: 0.5rem 1rem;
+                background: #e6fffa;
+                border-radius: 6px;
+                border: 1px solid #b2f5ea;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 1.5rem 0;
+                background: var(--card-bg);
+                box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            th, td {
+                padding: 12px 15px;
+                text-align: left;
+                border-bottom: 1px solid var(--border);
+            }
+            th {
+                background-color: var(--primary);
+                color: white;
+                font-weight: 600;
+            }
+            tr:hover {
+                background-color: #f7fafc;
+            }
+            blockquote {
+                border-left: 4px solid var(--accent);
+                background: #e6fffa;
+                margin: 1.5rem 0;
+                padding: 1rem 1.5rem;
+                border-radius: 0 8px 8px 0;
+            }
+            ul, ol {
+                padding-left: 1.5rem;
+            }
+            li {
+                margin-bottom: 0.5rem;
+            }
+            .content-wrapper {
+                background: var(--card-bg);
+                padding: 2.5rem;
+                border-radius: 12px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            }
+        </style>
+        
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🗺️ Wanderkarte 步道解析表</h1>
+            <p>多洛米蒂 (Dolomites) 經典步道地形與難度評估</p>
+        </header>
+        
+        <div class="nav-links">
+            <span>👉 <strong>返回主行程：</strong></span>
+            <a href="2026德國北義之旅.html">🏔️ 2026 德國北義之旅 (每日行程表)</a>
+        </div>
+        
+        <div class="content-wrapper">
+            <h1>🗺️ 官方 Wanderkarte (第二頁) 推薦步道解析、纜車與交通指南</h1>
+<p>為確保您從飯店 (Residence Ciastel) 出門時能無縫接軌，我已將原先的停車評估升級為 <strong>「🚠 纜車與交通指南」</strong>，詳細列出每條路線需要搭乘的<strong>特定纜車名稱</strong>，以及<strong>從飯店出發的步行/開車時間</strong>！</p>
+<blockquote>
+<p>[!IMPORTANT]<br />
+<strong>🎫 Gardena Card 無腦搭乘神卡 (2026 夏季)</strong><br />
+- 以下步道中所依賴的纜車，高達 90% 都在這張卡包含的 18 條纜車內！<br />
+- <strong>分頭行動密技</strong>：只要有了這張 6 天卡，不想走太累的家人就能獨自搭乘以下表格中的纜車（特別是第一梯隊的 Resciesa 等），0 開車 0 負擔，完全自由掌握旅行節奏。</p>
+</blockquote>
+<p><em>(📝 地圖方位基準：Ortisei 鎮在西方、S. Cristina 在正中央、Selva 鎮在東方)</em></p>
+
+<h3>🗺️ 官方步道地圖 (可縮放瀏覽)</h3>
+<iframe src="wanderkarte_groeden拷貝.pdf#toolbar=1&navpanes=0&view=FitH"
+        style="width:100%;height:700px;border:2px solid #b2d8d8;border-radius:10px;display:block;margin:10px 0 20px;"
+        title="Wanderkarte Gröden / Val Gardena 官方步道地圖">
+  <p>您的瀏覽器不支援 PDF 內嵌。<a href="wanderkarte_groeden拷貝.pdf" target="_blank">點此另開 PDF</a></p>
+</iframe>
+<p style="font-size:.85em;color:#888;margin-top:-12px;">💡 若地圖無法顯示，請改用 Safari 或 Firefox 開啟此頁；或直接 <a href="wanderkarte_groeden拷貝.pdf" target="_blank">另開 PDF</a>。</p>
+
+<hr />
+<h2 id="tier1">🌟 第一梯隊：完美契合親子與全家同遊 (極度推薦)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">地圖編號 / 方位 / 實際步道號碼</th>
+<th style="text-align: left;">路線名稱 (中文)</th>
+<th style="text-align: left;">距離 / 爬降</th>
+<th style="text-align: left;">🚠 纜車與交通 (從飯店出發)</th>
+<th style="text-align: left;">重點短評與沿途餐廳</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>路線 A：輕鬆路線</strong><br>📍 西南方<br>➤ 走 <strong>6A→6→6B</strong></td>
+<td style="text-align: left;"><strong>Giro dell'Alpe di Siusi</strong><br>(休斯高原精華小環線)<br><a href="https://www.google.com/search?q=site:moonhoneytravel.com+Alpe+di+Siusi+Meadows+Circuit">📸 網址搜尋直達</a></td>
+<td style="text-align: left;">5 KM<br>140m / 140m</td>
+<td style="text-align: left;">🚠 <strong>搭乘纜車</strong>：<code>Mont Sëuc (Ortisei-Alpe di Siusi)</code> 纜車<br>🚶‍♂️ <strong>出發</strong>：步行 10 分鐘抵達。<br>🔄 <strong>路線</strong>：完美環線，起終站相同。</td>
+<td style="text-align: left;"><strong>【最佳親子首選】(排入 7/19)</strong><br>平緩無敵，草皮與動物是小孩最愛。<br>⏱️ <strong>一般腳程：2-2.5 小時</strong><br>⏱️ <strong>小孩腳程：3-3.5 小時</strong><br>🍽️ <strong>途經餐廳：</strong> <strong>Malga Sanon</strong>。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>路線 B：體力好路線</strong><br>📍 西北方<br>➤ 走 <strong>9→30→3→6B</strong></td>
+<td style="text-align: left;"><strong>Saltria–Compaccio大環線</strong><br>(休斯高原外圍完整環線)</td>
+<td style="text-align: left;">14.4 KM<br>350m / 350m</td>
+<td style="text-align: left;">🚠 <strong>搭乘纜車</strong>：<code>Mont Sëuc (Ortisei-Alpe di Siusi)</code> 纜車<br>🚶‍♂️ <strong>出發</strong>：步行 10 分鐘抵達。<br>🔄 <strong>路線</strong>：完美大環線，起終站相同。</td>
+<td style="text-align: left;"><strong>【極度開闊大景】</strong><br>下切谷底後需爬坡，小孩會極辛苦。<br>⏱️ <strong>一般腳程：5-6 小時</strong><br>⏱️ <strong>小孩腳程：7.5-8.5 小時</strong><br>🍽️ <strong>途經餐廳：</strong> <strong>Rauchhütte</strong>。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Trail 9</strong><br>📍 西北方<br>➤ 走 <strong>31→35</strong></td>
+<td style="text-align: left;"><strong>Resciesa</strong><br>(斜坡小火車與十字架)<br><a href="https://www.google.com/search?q=site:mominitaly.com+Resciesa+funicular">📸 網址搜尋直達</a></td>
+<td style="text-align: left;">5.2 KM<br>190m / 190m</td>
+<td style="text-align: left;">🚠 <strong>搭乘纜車</strong>：<code>Resciesa</code> 斜坡小火車 (官方3號)<br>🚶‍♂️ <strong>飯店出發</strong>：直接往北坡步行約 12-15 分鐘抵達。<br>🔄 <strong>來回取車</strong>：完美環線，到十字架後繞回車站。</td>
+<td style="text-align: left;"><strong>【無腦平坦神線】(極推單飛散步)</strong><br>落差極小，視野極佳。持 Gardena Card 可無腦搭乘！<br>🍽️ <strong>途經餐廳：</strong> <strong>Rifugio Resciesa</strong> (百年避難山屋)。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Trail 1</strong><br>📍 東北方<br>➤ 走 <strong>14</strong></td>
+<td style="text-align: left;"><strong>Vallunga</strong><br>(長谷冰河地形)<br><a href="https://www.google.com/search?q=site:swissfamilyfun.com+Vallunga+Dolomites">📸 網址搜尋直達</a></td>
+<td style="text-align: left;">5.5 KM<br>180m / 180m</td>
+<td style="text-align: left;">🚠 <strong>搭乘纜車</strong>：無 (走純平地峽谷)<br>🚗 <strong>飯店出發</strong>：開車約 15-20 分鐘抵達 Selva 鎮底的 Vallunga 停車場。<br>🔄 <strong>來回取車</strong>：單純原路折返，車停步道口。</td>
+<td style="text-align: left;"><strong>【隱藏版親子秘境】</strong><br>兩側是垂直岩壁，推嬰兒車也能走。<br>🍽️ <strong>途經餐廳：</strong> <strong>Baita Ciampac Hut</strong> (步道入口，有兒童木造溜滑梯)。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="tier2">🚶‍♂️ 第二梯隊：風景絕佳，但需視體力分流 (進階體力發揮區)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">地圖編號 / 方位 / 實際步道號碼</th>
+<th style="text-align: left;">路線名稱 (中文)</th>
+<th style="text-align: left;">距離 / 爬降</th>
+<th style="text-align: left;">🚠 纜車與交通 (從飯店出發)</th>
+<th style="text-align: left;">重點短評與沿途餐廳</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Trail 4</strong><br>📍 東南方<br>➤ 走 <strong>Naturonda</strong> (接 526)</td>
+<td style="text-align: left;"><strong>Piz Seteur - Naturonda</strong><br>(巨石城自然生態步道)<br><a href="https://www.google.com/search?q=Naturonda+Sassolungo+hike+blog">📸 網址搜尋直達</a></td>
+<td style="text-align: left;">官方: 10.8 KM<br>103m / 747m<br><br><em>(💯 7/22 實際走法：<br>約 4.5 KM<br>起伏不到 50m)</em></td>
+<td style="text-align: left;">🚠 <strong>搭乘纜車</strong>：<code>Piz Seteur</code> 纜車 (Plan de Gralba出發)<br>🚗 <strong>飯店出發</strong>：開車約 30 分鐘抵達纜車站。<br>🔄 <strong>【來回取車評估】</strong> 官方版本是 10.8KM 單向長途下坡。但在我們 <strong>7/22 行程安排中</strong>，我們改為直接從 Passo Sella 出發，由上游直接切入最精華的 526 巨石城段並「原路折返」，完美避開了漫長的下坡路並輕鬆走回原車位置。<br></td>
+<td style="text-align: left;"><strong>【巨石城段】(排入 7/22)</strong><br>這條路線的核心風景就是位於巨石塊中的 Città dei Sassi。<br>🍽️ <strong>途經餐廳：</strong> <strong>Rifugio Comici</strong> (深山最高級的海鮮龍蝦大餐)。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Trail 6</strong><br>📍 正北方<br>➤ 繞 <strong>Mastlé/Seceda</strong></td>
+<td style="text-align: left;"><strong>UNESCO hike below Odle</strong><br>(蓋斯勒群峰 UNESCO 環線)<br><a href="https://www.google.com/search?q=site:moonhoneytravel.com+Seceda+to+Rifugio+Firenze">📸 網址搜尋直達</a></td>
+<td style="text-align: left;">7.5 KM<br>400m / 400m</td>
+<td style="text-align: left;">🚠 <strong>搭乘纜車</strong>：<code>Col Raiser</code> 纜車 (地圖線 5)<br>🚗 <strong>飯店出發</strong>：開車約 10 分鐘抵達隔壁村 S. Cristina 纜車站。<br>🔄 <strong>來回取車</strong>：完美大環線，繞一大圈回原纜車站拿車。</td>
+<td style="text-align: left;"><strong>【進階挑戰 ⭐️⭐️⭐️】</strong><br>400m 爬升適合強者，神猛大景。<br>🍽️ <strong>途經餐廳：</strong> <strong>Malga Pieralongia</strong> (驢群與蘋果卷)、<strong>Rifugio Firenze</strong>。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Trail 11</strong><br>📍 北偏中央<br>➤ 攻頂 <strong>Monte Pic</strong></td>
+<td style="text-align: left;"><strong>Monte Pic</strong><br>(皮克山 360° 觀景台)<br><a href="https://www.google.com/search?q=site:moonhoneytravel.com+Monte+Pic+Baita+Sëurasas+Secret+Day+Hike">📸 網址搜尋直達</a></td>
+<td style="text-align: left;">10 KM<br>420m / 1100m</td>
+<td style="text-align: left;">🚠 <strong>搭乘纜車</strong>：<code>Col Raiser</code> 纜車 (地圖線 5)<br>🚗 <strong>飯店出發</strong>：開車約 10 分鐘抵達 S. Cristina 纜車站。<br>🔄 <strong>來回取車</strong>：大陡降 1100m 且不同點進出，走完需搭公車回原處拿車。</td>
+<td style="text-align: left;"><strong>【進階挑戰 ⭐️⭐️⭐️⭐️】</strong><br>傷膝蓋碎石大下坡，風景無死角。<br>🍽️ <strong>途經餐廳：</strong> <strong>Baita Sëurasas</strong> (極致日落景棚，超強烤肋排)。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="hidden">🎉 隱藏版特線：Gardena Card 纜車回本最大化 (純看景)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">地圖編號 / 方位</th>
+<th style="text-align: left;">路線名稱 (中文)</th>
+<th style="text-align: left;">距離 / 爬降</th>
+<th style="text-align: left;">🚠 纜車與交通 (從飯店出發)</th>
+<th style="text-align: left;">重點短評與沿途餐廳</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>連乘組合 A</strong><br>📍 S. Cristina鎮</td>
+<td style="text-align: left;"><strong>Sassolungo 近距離震撼</strong><br>(8+9+10 號纜車連搭)</td>
+<td style="text-align: left;">纜車上<br>看景</td>
+<td style="text-align: left;">🚠 <strong>搭乘纜車</strong>：<code>Monte Pana</code> (8) ➡️ <code>Mont de Sëura</code> (9) ➡️ <code>Tramans</code> (10)<br>🚗 <strong>飯店出發</strong>：公車或開車 10 分鐘到 S. Cristina。<br>🔄 <strong>【無限狂搭】</strong>：適合安排在 7/24 的空白日。</td>
+<td style="text-align: left;"><strong>【高 CP 值回本線】</strong><br>底站剛好是 PanaRaida 原木童話闖關步道，適合兵分兩路。<br>🍽️ <strong>途經餐廳：</strong> <strong>Rifugio Mont Sëura</strong>。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>連乘組合 B</strong><br>📍 Selva鎮</td>
+<td style="text-align: left;"><strong>Passo Gardena 大景</strong><br>(13+14 號纜車連搭)</td>
+<td style="text-align: left;">纜車上<br>看景</td>
+<td style="text-align: left;">🚠 <strong>搭乘纜車</strong>：<code>Dantercëpies</code> (13) ➡️ <code>Passo Gardena</code> (14)<br>🚗 <strong>飯店出發</strong>：公車或開車到 Selva 鎮底。<br>🔄 <strong>【無限狂搭】</strong>：不需走路，直上全景隘口。</td>
+<td style="text-align: left;"><strong>【不同山勢體驗】</strong><br>遠看完全不同的 Sella 群峰，純看景的奢華高空旅行。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="tier3">🌲 第三梯隊：森林與小鎮路線 (適合作為雨天/午後備案)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">地圖編號 / 方位 / 實際步道號碼</th>
+<th style="text-align: left;">路線名稱 (中文)</th>
+<th style="text-align: left;">距離 / 爬降</th>
+<th style="text-align: left;">🚠 纜車與交通 (從飯店出發)</th>
+<th style="text-align: left;">重點短評與沿途餐廳</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Trail 2</strong><br>📍 正中央 (S. Cristina)<br>➤ 從 Mont Sëura 下坡</td>
+<td style="text-align: left;"><strong>Mont Sëura to Monte Pana</strong><br>(蒙特瑟拉森林下坡)<br><a href="https://www.google.com/search?q=Mont+Seura+to+Monte+Pana+hike">📸 網址搜尋直達</a></td>
+<td style="text-align: left;">5.5 KM<br>6m / 416m</td>
+<td style="text-align: left;">🚠 <strong>搭乘纜車</strong>：需搭乘 <code>Monte Pana</code> 與 <code>Mont de Sëura</code> 兩段纜車<br>🚗 <strong>飯店出發</strong>：開車 10 分鐘抵達 S. Cristina 纜車站。<br>🔄 <strong>【單向路線】</strong> 這是從 Mont Sëura 纜車頂站，一路往下坡走 416 公尺回到 Monte Pana 的單向路線。若將車停在山下的 S. Cristina 鎮上，走完需搭公車或步行回鎮上取車。</td>
+<td style="text-align: left;"><strong>【森林大下坡】</strong><br>遠離人群的森林與草地陡降路線。若膝蓋不好或帶推車，不建議走這 416m 的連續下坡。<br>🍽️ <strong>途經餐廳：</strong> <strong>Rifugio Mont Sëura</strong> (纜車頂站的觀景餐廳)。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Trail 8</strong><br>📍 西方邊緣<br>➤ 走 <strong>P 步道</strong></td>
+<td style="text-align: left;"><strong>Sentiero della Posta</strong><br>(老郵差步道)<br><a href="https://www.google.com/search?q=Sentiero+della+Posta+Ortisei+hike+blog">📸 網址搜尋直達</a></td>
+<td style="text-align: left;">5.5 KM<br>100m / 320m</td>
+<td style="text-align: left;">🚠 <strong>搭乘纜車</strong>：無 (走森林平地)<br>🚶‍♂️ <strong>飯店出發</strong>：直接從飯店/鎮上往下切，<strong>步行出發 0 分鐘</strong>。<br>🔄 <strong>來回取車</strong>：走到隔壁村 Laion，搭 351 公車回飯店。</td>
+<td style="text-align: left;"><strong>【半日散步】</strong><br>微神秘森林，全程不用煩惱開車。<br>🍽️ <strong>途經餐廳：</strong> <strong>Pedrutscherhof</strong> (樹林中途的傳統南提洛農莊)。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Trail 7</strong><br>📍 西半部山腰<br>➤ 走 <strong>2A→9</strong></td>
+<td style="text-align: left;"><strong>Costamula-Furnes</strong><br>(中海拔森林下坡)<br><a href="https://www.google.com/search?q=Furnes+Costamula+hike+Val+Gardena">📸 網址搜尋直達</a></td>
+<td style="text-align: left;">4.5 KM<br>240m / 280m</td>
+<td style="text-align: left;">🚠 <strong>搭乘纜車</strong>：無 (或取巧搭 Seceda 纜車至中繼站)<br>🚌 <strong>飯店出發</strong>：搭公車至 Costamula 站。<br>🔄 <strong>來回取車</strong>：單向橫切路線，結束搭公車回鎮上即刻回飯店。</td>
+<td style="text-align: left;"><strong>【不推薦小孩】</strong><br>有陡峭步道，林跡對小孩不友善。<br>🍽️ <strong>途經餐廳：</strong> <strong>Baita Costamula</strong> (登山口旁的絕美木造餐廳)。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="tier4">⚠️ 第四梯隊：硬核登山路線 (強烈不建議帶小孩)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">地圖編號 / 方位 / 實際步道號碼</th>
+<th style="text-align: left;">路線名稱 (中文)</th>
+<th style="text-align: left;">距離 / 爬降</th>
+<th style="text-align: left;">🚠 纜車與交通 (從飯店出發)</th>
+<th style="text-align: left;">重點短評與沿途餐廳</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Trail 10</strong><br>📍 東北方<br>➤ 走 <strong>12A→2→12</strong></td>
+<td style="text-align: left;"><strong>Val Chedul</strong><br>(切杜爾神秘山谷)<br><a href="https://www.google.com/search?q=site:moonhoneytravel.com+Vallunga+Valley+and+Val+de+Chedul+Circuit+Hike">📸 網址搜尋直達</a></td>
+<td style="text-align: left;">7 KM<br>257m / 927m</td>
+<td style="text-align: left;">🚠 <strong>搭乘纜車</strong>：<code>Dantercepies</code> 纜車<br>🚗 <strong>飯店出發</strong>：開車約 20 分鐘抵達 Selva 車站。<br>🔄 <strong>來回取車</strong>：纜車上、雙腳下。走回鎮上底部再走回纜車站取車。</td>
+<td style="text-align: left;"><strong>【神級極限挑戰】</strong><br>連續陡降近 1000m，完全是膝蓋爆擊。<br>🍽️ <strong>途經餐廳：</strong> <strong>Jimmy Hütte (吉米山屋)</strong> (起點處的全區五星美食)。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Trail 5</strong><br>📍 東方邊緣<br>➤ 走 <strong>654</strong></td>
+<td style="text-align: left;"><strong>Plans de Frea</strong><br>(Ciampinoi 到 Selva)<br><a href="https://www.google.com/search?q=Plans+de+Frea+hike+Selva+blog">📸 網址搜尋直達</a></td>
+<td style="text-align: left;">10.9 KM<br>280m / 960m</td>
+<td style="text-align: left;">🚠 <strong>搭乘纜車</strong>：<code>Ciampinoi</code> 纜車<br>🚗 <strong>飯店出發</strong>：開車約 15 分鐘抵達 Selva 車站。<br>🔄 <strong>來回取車</strong>：纜車上、雙腳下一路切回山谷取車。</td>
+<td style="text-align: left;"><strong>【神級極限挑戰】</strong><br>距離長達 11 公里，走完絕對鐵腿。<br>🍽️ <strong>途經餐廳：</strong> <strong>Rifugio Passo Gardena</strong> 隘口休息站。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Trail 12</strong><br>📍 東半部外圍<br>➤ 跨 <strong>四谷地</strong></td>
+<td style="text-align: left;"><strong>Sellaronda HIKE Tour</strong><br>(夏季 Sella 大環線)<br><a href="https://www.google.com/search?q=Sellaronda+hike+tour+summer+blog">📸 網址搜尋直達</a></td>
+<td style="text-align: left;">25 KM<br>750m / 1900m</td>
+<td style="text-align: left;">🚠 <strong>搭乘纜車</strong>：需搭數段纜車 (Dantercepies, Ciampinoi 等)<br>🚗 <strong>飯店出發</strong>：開車至 Selva 或搭公車。<br>🔄 <strong>來回取車</strong>：無底洞般的大環線，累死人不償命。</td>
+<td style="text-align: left;"><strong>【官方警告：不適合家庭】</strong><br>耗時一整天，無神級體力請避開。<br>🍽️ <strong>途經餐廳：</strong> 沿線會經過數十家頂級山屋 (強烈依賴體力)。</td>
+</tr>
+</tbody>
+</table>
+        </div>
+    </div>
+</body>
+</html>

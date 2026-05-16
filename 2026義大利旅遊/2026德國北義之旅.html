@@ -1,0 +1,2379 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 德國北義之旅 - Ortisei 每日行程表</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+  <style>
+    :root {
+      --c-sage: #4d7e68;
+      --c-forest: #2a4a3c;
+      --c-stone: #6b7a6e;
+      --c-terra: #9a6b58;
+      --c-sky: #5e8faa;
+      --c-gold: #b8923a;
+      --c-bg: #f4f0e8;
+      --c-card: #ffffff;
+      --c-border: #ddd6c6;
+      --c-text: #282828;
+      --c-muted: #6a6a6a;
+      --radius: 13px;
+      --shadow: 0 2px 12px rgba(60,50,30,.08);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Helvetica Neue", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      background: var(--c-bg);
+      color: var(--c-text);
+      line-height: 1.65;
+    }
+
+    /* ── STICKY NAV ── */
+    .sticky-nav {
+      position: sticky; top: 0; z-index: 200;
+      background: rgba(42,74,60,.96);
+      backdrop-filter: blur(10px);
+      display: flex; flex-wrap: wrap; gap: 5px;
+      padding: 8px 14px;
+      box-shadow: 0 2px 14px rgba(0,0,0,.2);
+    }
+    .sticky-nav a {
+      color: rgba(255,255,255,.88);
+      text-decoration: none;
+      font-size: .78em; font-weight: 600;
+      padding: 5px 11px; border-radius: 20px;
+      border: 1.5px solid rgba(255,255,255,.18);
+      transition: .2s; white-space: nowrap;
+    }
+    .sticky-nav a:hover { background: var(--c-sage); border-color: var(--c-sage); color: white; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #3d6e56 0%, #2b5043 50%, #1c3528 100%);
+      color: white; text-align: center; padding: 54px 20px 46px;
+    }
+    .hero-emoji { font-size: 50px; letter-spacing: 10px; animation: float 4s ease-in-out infinite; display: block; margin-bottom: 14px; }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+    .hero h1 { font-size: 2.1em; font-weight: 900; letter-spacing: 1px; text-shadow: 1px 2px 8px rgba(0,0,0,.35); }
+    .hero .sub { font-size: 1em; margin-top: 10px; opacity: .85; }
+
+    /* ── META STRIP ── */
+    .meta-strip {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 9px;
+      padding: 16px 16px; background: white;
+      border-bottom: 3px solid var(--c-sage);
+    }
+    .meta-badge {
+      display: flex; align-items: center; gap: 6px;
+      background: #eef6f1; border: 1.5px solid #a8c9b6;
+      border-radius: 50px; padding: 5px 13px;
+      font-size: .85em; font-weight: 600; color: var(--c-forest);
+    }
+    .meta-badge a { color: var(--c-forest); }
+
+    /* ── CONTAINER ── */
+    .container { max-width: 960px; margin: 0 auto; padding: 0 16px 48px; }
+    .content-wrapper { background: transparent; padding: 0; }
+
+    /* ── TYPOGRAPHY ── */
+    h1 { display: none; }
+    h2 {
+      font-size: 1.3em; font-weight: 800;
+      margin: 34px 0 14px;
+      padding: 13px 18px 13px 20px;
+      background: var(--c-card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border-left: 6px solid var(--c-sage);
+      color: var(--c-forest);
+      scroll-margin-top: 56px;
+    }
+    h3 {
+      font-size: 1.05em; font-weight: 700;
+      color: var(--c-sage);
+      margin: 18px 0 9px;
+      padding-bottom: 5px;
+      border-bottom: 2px solid #cde0d6;
+    }
+    p { margin-bottom: 11px; line-height: 1.75; }
+    p strong { color: var(--c-forest); }
+    ul, ol { padding-left: 1.4em; margin-bottom: 11px; }
+    li { margin-bottom: 5px; line-height: 1.7; }
+    li > ul, li > ol { margin-top: 5px; }
+    hr { border: none; border-top: 2px solid var(--c-border); margin: 26px 0; }
+
+    /* ── LINKS ── */
+    a { color: var(--c-sky); text-decoration: none; font-weight: 500; transition: color .2s; }
+    a:hover { color: var(--c-forest); text-decoration: underline; }
+
+    /* ── CODE ── */
+    code {
+      background: #eaf2ee; color: #3a6e55;
+      padding: 2px 6px; border-radius: 4px;
+      font-family: "SFMono-Regular", Consolas, monospace; font-size: .87em;
+    }
+
+    /* ── TABLES ── */
+    table {
+      width: 100%; border-collapse: collapse;
+      margin: 12px 0 18px; background: var(--c-card);
+      border-radius: var(--radius); overflow: hidden;
+      box-shadow: var(--shadow); font-size: .9em;
+    }
+    th {
+      background: var(--c-forest); color: white;
+      padding: 10px 13px; text-align: left; font-weight: 600;
+      white-space: nowrap;
+    }
+    td { padding: 9px 13px; border-bottom: 1px solid #f0ece2; vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: #faf7f2; }
+    tr:hover td { background: #eff6f2; transition: background .15s; }
+
+    /* ── BLOCKQUOTES ── */
+    blockquote {
+      border-radius: var(--radius);
+      padding: 14px 17px; margin: 12px 0 18px;
+      border-left: 5px solid var(--c-sage);
+      background: #eef6f1; color: #27453a;
+      font-size: .91em; line-height: 1.72;
+    }
+    blockquote p { margin-bottom: 7px; }
+    blockquote p:last-child { margin-bottom: 0; }
+    blockquote.alert-caution  { border-color: #a06050; background: #fdf0ea; color: #5a2a18; }
+    blockquote.alert-important{ border-color: #b89040; background: #fdf7ec; color: #4a3010; }
+    blockquote.alert-tip      { border-color: #5e8faa; background: #ecf3f9; color: #183855; }
+    blockquote.alert-note     { border-color: #7a9b82; background: #f1f7f3; color: #253a2a; }
+
+    /* ── ORIGINAL NAV-LINKS ── */
+    .nav-links {
+      background: var(--c-card); padding: 12px 16px;
+      border-radius: var(--radius); margin: 16px 0;
+      box-shadow: var(--shadow); border: 1.5px solid var(--c-border);
+      display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+      font-size: .95em;
+    }
+    .nav-links a {
+      display: inline-block; padding: 5px 12px;
+      background: #eef6f1; border-radius: 6px;
+      border: 1px solid #a8c9b6; font-weight: 600;
+    }
+
+    /* ── IMAGE ── */
+    img { max-width: 100%; border-radius: var(--radius); box-shadow: var(--shadow); margin: 10px 0; }
+
+    /* ── TIMELINE ── */
+    .tl { margin: 14px 0 6px; display: flex; flex-direction: column; gap: 8px; }
+    .tl-item {
+      background: var(--c-card); border-radius: 10px;
+      padding: 11px 14px; box-shadow: var(--shadow);
+      border-left: 4px solid var(--c-sage);
+    }
+    .tl-item.tl-milestone { border-left-color: var(--c-gold); }
+    .tl-time {
+      display: inline-block;
+      background: var(--c-sage); color: white;
+      border-radius: 8px; padding: 2px 9px;
+      font-size: .72em; font-weight: 700; font-family: monospace;
+      margin-bottom: 5px; letter-spacing: .4px;
+    }
+    .tl-title { font-weight: 700; color: var(--c-forest); margin-bottom: 4px; font-size: .92em; }
+    .tl-content { font-size: .88em; color: #484848; line-height: 1.72; }
+    .tl-content > p { margin: 3px 0 5px; }
+    .tl-content > p:last-child { margin-bottom: 0; }
+    .tl-content ul { padding-left: 1.2em; margin: 4px 0; }
+    .tl-content li { margin-bottom: 3px; }
+
+    /* ── TRAIL DETAIL CARD ── */
+    .tdc { background: #f2f7f4; border: 1.5px solid #b8d4c4; border-radius: 10px; padding: 12px 14px; margin: 4px 0; }
+    .tdc-header { font-weight: 700; color: var(--c-forest); margin-bottom: 9px; font-size: .93em; }
+    .tdc-row { font-size: .88em; line-height: 1.72; padding: 5px 0; border-bottom: 1px solid #deeae4; }
+    .tdc-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+    /* ── TIMELINE SUB-ITEMS ── */
+    .tl-header-content { font-size: .92em; line-height: 1.7; }
+    .tl-sub { margin-top: 8px; padding-top: 7px; border-top: 1px dashed #e8e4dc; font-size: .88em; color: #484848; line-height: 1.7; }
+    .tl-sub ol, .tl-sub ul { padding-left: 1.3em; margin-top: 5px; }
+    .tl-sub li { margin-bottom: 4px; }
+
+    /* ── CHECKLIST ── */
+    .checklist { list-style: none; padding: 0; margin: 6px 0; }
+    .checklist li { padding: 6px 2px; border-bottom: 1px solid rgba(0,0,0,.07); }
+    .checklist li label { display: flex; align-items: flex-start; gap: 9px; cursor: pointer; line-height: 1.65; }
+    .checklist li input[type="checkbox"] { margin-top: 3px; flex-shrink: 0; width: 15px; height: 15px; accent-color: var(--c-sage); cursor: pointer; }
+    .checklist li input:checked + span, .checklist li label:has(input:checked) { opacity: .55; text-decoration: line-through; }
+
+    /* ── PRINT ── */
+    @media print {
+      .sticky-nav { display: none !important; }
+      .hero { padding: 20px; background: white !important; color: #333 !important; }
+      .hero-emoji { display: none; }
+      .hero h1 { display: block; color: #333; text-shadow: none; font-size: 1.8em; }
+      body { background: white; }
+      h2 { box-shadow: none; border: 1px solid #ccc; }
+      blockquote { border: 1px solid #ccc; background: #f9f9f9 !important; color: #333 !important; }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 1.55em; }
+      .hero-emoji { font-size: 36px; }
+      h2 { font-size: 1.1em; padding: 11px 13px 11px 16px; }
+      table { font-size: .82em; }
+      td, th { padding: 7px 9px; }
+      .sticky-nav a { font-size: .72em; padding: 4px 9px; }
+    }
+  </style>
+        
+</head>
+<body>
+<!-- ═══ STICKY NAV ═══ -->
+<nav class="sticky-nav" id="main-nav">
+  <a href="#" style="border-color:rgba(255,255,255,.5);">🏔️ 頂端</a>
+</nav>
+<!-- ═══ HERO ═══ -->
+<header class="hero">
+  <span class="hero-emoji">🏔️⛰️🌿</span>
+  <h1>2026 德國北義之旅</h1>
+  <p class="sub">🗓️ 7/17 – 8/1 ｜ 慕尼黑 ➔ 多洛米蒂 (Ortisei) ➔ 奧地利 ➔ 國王湖 ➔ 慕尼黑</p>
+</header>
+<!-- ═══ META STRIP ═══ -->
+<div class="meta-strip">
+  <div class="meta-badge">✈️ 國泰航空 CX479 / CX301</div>
+  <div class="meta-badge">🚗 SIXT VW Touareg 級</div>
+  <div class="meta-badge">🏨 Ortisei 6晚</div>
+  <div class="meta-badge">👨‍👩‍👧‍👦 4人同行</div>
+  <div class="meta-badge">📅 7/17 – 8/1 共 16天</div>
+  <div class="meta-badge">🗺️ <a href="Wanderkarte步道解析表.html" target="_blank">步道解析表</a></div>
+</div>
+<div class="container">
+        <div class="nav-links">
+            <span>👉 <strong>關聯文件：</strong></span>
+            <a href="Wanderkarte步道解析表.html" target="_blank">🗺️ Wanderkarte 步道解析表 (含地形與難度評估)</a>
+        </div>
+        <div class="content-wrapper">
+            <h1>🏔️ 德國北義 每日行程規劃 (7/17 - 8/1)</h1>
+<h2>✈️ 航班與座位資訊 (國泰航空 Cathay Pacific)</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">日期</th>
+<th style="text-align: left;">航段</th>
+<th style="text-align: left;">航班號</th>
+<th style="text-align: left;">機型</th>
+<th style="text-align: left;">起飛時間</th>
+<th style="text-align: left;">抵達時間</th>
+<th style="text-align: left;">劃位資訊 (共 4 位)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>2026/07/17</strong></td>
+<td style="text-align: left;">台北 (TPE) ➔ 香港 (HKG)</td>
+<td style="text-align: left;"><strong>CX479</strong></td>
+<td style="text-align: left;">A350-900</td>
+<td style="text-align: left;">21:05</td>
+<td style="text-align: left;">23:05</td>
+<td style="text-align: left;"><strong>42A, 42B, 42C, 42D</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2026/07/18</strong></td>
+<td style="text-align: left;">香港 (HKG) ➔ 慕尼黑 (MUC)</td>
+<td style="text-align: left;"><strong>CX301</strong></td>
+<td style="text-align: left;">A350-900</td>
+<td style="text-align: left;">01:00</td>
+<td style="text-align: left;">08:05</td>
+<td style="text-align: left;"><strong>31H, 31K, 32H, 32K</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2026/08/01</strong></td>
+<td style="text-align: left;">慕尼黑 (MUC) ➔ 香港 (HKG)</td>
+<td style="text-align: left;"><strong>CX300</strong></td>
+<td style="text-align: left;">A350-900</td>
+<td style="text-align: left;">13:05</td>
+<td style="text-align: left;">06:50 (+1)</td>
+<td style="text-align: left;"><strong>17A, 18A, 18D, 18G</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2026/08/02</strong></td>
+<td style="text-align: left;">香港 (HKG) ➔ 台北 (TPE)</td>
+<td style="text-align: left;"><strong>CX466</strong></td>
+<td style="text-align: left;">A350-900</td>
+<td style="text-align: left;">09:00</td>
+<td style="text-align: left;">11:00</td>
+<td style="text-align: left;"><strong>12A, 12D, 12G, 14A</strong></td>
+</tr>
+</tbody>
+</table>
+<h2>🚗 SIXT 租車預訂總覽</h2>
+<p><strong>【基本資訊與取還車】</strong><br />
+| 項目 | 預訂細節 | 備註 |<br />
+| :--- | :--- | :--- |<br />
+| <strong>預訂號碼</strong> | <strong><code>9732518290</code></strong> | SIXT 預付帳單號：1001020002453101 |<br />
+| <strong>主駕駛人</strong> | <strong>POYU HUANG</strong> | 現場需出示：①護照 ②本國駕照 ③國際駕照 ④預訂信用卡(VISA 108) |<br />
+| <strong>車輛組別</strong> | <strong>LFDR</strong> | 例如：VW Touareg 或同級休旅車 |<br />
+| <strong>預付總額</strong> | <strong>€ 1,522.81</strong> | 已於 2026/4/4 透過 VISA 108 卡全額支付 |<br />
+| <strong>現場押金</strong> | <strong>€ 500.00</strong> | 取車時於信用卡凍結，還車後數日解除 |<br />
+| <strong>取車資訊</strong> | <strong>7/18 (六) 10:30</strong> | Munich Airport Terminalstr. Mitte/MWZ (取車寬限期 60 分鐘) |<br />
+| <strong>還車資訊</strong> | <strong>8/01 (六) 10:30</strong> | Munich Airport Terminalstr. Mitte/Parkhaus P6 (建議當日 09:00 提前抵達以預留退稅時間) |</p>
+<p><strong>【已包含服務與保險細目 (已預付)】</strong><br />
+* <strong>核心保障</strong>：全險/竊盜險 (Vollkasko-/Diebstahlschutz)、最低自負額減免、第三方責任險<br />
+* <strong>駕駛與乘客</strong>：額外駕駛人 (Zusatzfahrer)、兒童增高座椅 (Kindersitzerhöhung)<br />
+* <strong>車輛裝備</strong>：跨境駕駛許可 (Cross-border driving)、全輪驅動 (All-wheel drive)、GPS 導航與連線功能<br />
+* <strong>其他規費</strong>：地點附加費、註冊費、24/7 故障協助 皆已含在總額中</p>
+<blockquote>
+<p>[!IMPORTANT]<br />
+<strong>✅ 待辦事項 (To-Do List)</strong><br />
+- [ ] <strong>行前準備</strong>：出發前完成線上 Check-in (SIXT App)：出發前一週，下載 SIXT App 並登入您的訂單，提前把護照、國際駕照等資料拍照上傳完成「Online Check-in」，可大幅縮短當天現場人工核對證件與建檔的時間。<br />
+- [ ] <strong>行前準備 (7/15 ~ 7/17)</strong>：填寫 <strong>Travel to Europe App</strong> (歐盟 EES 官方 App)：請於上飛機前 (抵達慕尼黑前 72 小時內即可) 事先為全家人輸入護照資料與入境問卷，過海關時出示 QR Code，能大幅省去海關現場打字與問話的時間。<br />
+  * <strong>📱 App 填寫通關小抄 (請照抄以下標準答案)</strong>：<br />
+    * <strong>抵達航班 (Arrival Flight)</strong>：<code>CX301</code><br />
+    * <strong>離境航班 (Departure Flight)</strong>：<code>CX300</code> (若需填寫回程)<br />
+    * <strong>旅遊目的 (Purpose of Stay)</strong>：<code>Tourism</code> 或 <code>Holiday</code><br />
+    * <strong>預計停留天數 (Duration of Stay)</strong>：<code>15 days</code><br />
+    * <strong>首晚住宿名稱 (Accommodation Name)</strong>：<code>Residence Ciastel</code><br />
+    * <strong>首晚住宿地址 (Address)</strong>：<code>Str. Minert 2, I-39046 Ortisei in Val Gardena, Italy</code><br />
+    * <strong>飯店電話 (Phone Number)</strong>：<code>+39 0471 798288</code> (若 App 需填寫聯絡電話)<br />
+- [ ] <strong>7/18</strong>：<strong>抵達 Ortisei 飯店 Check-in 時，務必向櫃檯預約隔天早上的麵包配送 (Bread Delivery) 服務</strong>，確保隔天一早有早餐可吃。<br />
+- [ ] <strong>7/18</strong>：Val di Funes 停車場寄信給車牌（取車後務必在 <strong>7/20 中午 12:00 前</strong>發 email 至 <code>info@odlesdolomites.com</code> 更新真實車牌）。<br />
+- [ ] <strong>7/21</strong>：Val di Funes <a href="https://www.odlesdolomites.com/en/parking-reservation/">Parking Zans 停車場</a>預約（選 <code>Parking Zans</code> → <code>Car</code> → <code>7/21</code> → 最早時段 → 車牌先填 <code>AB000CD</code>）。最晚取車當天完成預約。<br />
+- [ ] <strong>7/22</strong>：<strong>Rifugio Comici 午餐 ✅ 已訂位</strong>（12:00，4人）。若天氣太差不上山，記得提前寫信取消預約。<br />
+- [ ] <strong>7/24</strong>：晚餐地點尋找與安排（或確認自己煮）。<br />
+- [ ] <strong>7/25</strong>：移動日晚餐尚未決定，應該要訂（抵達 Misurina 後，在米蘇里納湖畔找一間好餐廳）。<br />
+- [ ] <strong>7/26</strong> 🔥：<strong>Auronzo 三尖峰停車場預約 — 系統已於 4 月底開放，請立即至 <a href="https://pass.auronzo.info">pass.auronzo.info</a> 搶購 <code>06:00–08:00</code> 時段！</strong> 費用 €40／12 小時，出發前 5 天可全額退款，車牌最晚入場前一晚 23:59 補登。<br />
+- [ ] <strong>7/27</strong>：<strong>大鐘山冰川公路門票</strong>。⚠️ <strong>必須等 7/18 拿到租車、確認車牌號碼後</strong>，再至 <a href="https://grossglockner.at/gg/de/preiseundtickets">官網 Ticket Shop</a> 購買並截圖 QR Code（或當天直接開到閘口刷卡買票亦可）。<br />
+- [ ] <strong>7/27</strong>：<strong>卡普倫 (Kaprun) 晚餐尚未安排</strong>。預計當晚 18:10 抵達 Vötter's Hotel，需提早尋找附近餐廳並評估是否需要先訂位（或直接確認是否在飯店內用餐）。<br />
+- [ ] <strong>7/28</strong>：<strong>Ramsau 午餐地點尚未決定</strong>。需提前尋找 Ramsau / Berchtesgaden 附近適合的午餐餐廳。<br />
+- [ ] <strong>7/28</strong>：<strong>晚上 Check-in 時請飯店將隔天早餐改成 Lunch Box 形式</strong>（方便隔天早出發）。<br />
+- [ ] <strong>7/29</strong> 🔥：<strong>國王湖船票預購</strong>，現在就買可省去現場排隊！至 <strong><a href="https://shop-ks.seenschifffahrt.de/?lang=en">shop-ks.seenschifffahrt.de</a></strong> 選 <strong>7/29 日期</strong>，票種選「<strong>Seelände → Salet 全程來回</strong>」，出發時間選最早班 <strong>08:15</strong>。⚠️ 票券<strong>不可退款、不可換日期</strong>，確認天氣與行程後再下單。買完務必將 PDF 存到手機<strong>離線資料夾</strong>（國王湖附近手機訊號極差）。<br />
+- [ ] <strong>7/29</strong>：<strong>晚餐地點尚未決定</strong>。需提前尋找 Schönau am Königssee 附近適合的晚餐餐廳（或確認能否在 St. Bartholomä 的 Fischerstüberl 餐廳下午就解決晚餐）。<br />
+- [ ] <strong>7/30</strong>：<strong>慕尼黑晚餐方式待決定</strong>。選項 A：出外吃，推薦 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Augustiner+Klosterwirt+München">Augustiner Klosterwirt</a></strong> 或 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Ratskeller+München">Ratskeller München（市政廳地窖）</a></strong>（旺季建議提前確認是否需訂位）。選項 B：回飯店自己煮（Harry's Home 是公寓式酒店，房內有廚房設備，可在 Check-in 後順路至對面 Kaufland 超市採買食材）。<br />
+- [ ] <strong>7/30</strong>：<strong>耶拿峰纜車票</strong>，可以考慮提前在 <a href="https://www.jennerbahn.de">官網</a> 購票，到時候再決定。<br />
+- [ ] <strong>7/31</strong> 🔥：<strong>德意志博物館電子票預購</strong>，於 <strong>7月10日左右</strong> (提前三週) 至 <a href="https://tickets.deutsches-museum.de/">官網售票頁面</a> 購買指定時段門票 (Time-slot Ticket)，並備妥 1 歐元或 2 歐元硬幣供寄物櫃使用。<br />
+- [ ] <strong>7/31</strong>：<strong>晚餐安排</strong>，找尋卡爾廣場周邊或亞洲菜餐廳（並確認是否需訂位）。<br />
+- [ ] <strong>8/1</strong>：<strong>退稅前置作業 (7/31 晚上)</strong>，填妥所有退稅單據（簽名、護照、姓名、地址），並將要退稅的物品（如液體保養品、刀具）集中放進欲託運的行李箱。</p>
+</blockquote>
+<p>根據您帶 7 歲小孩的腳程（成人 0.7 倍速）、喜歡寬敞安全步道、定時需要廁所與咖啡廳休息的習慣，我為您挑選了該區<strong>最精華且最友善</strong>的親子路線。</p>
+<blockquote>
+<p>[!CAUTION]<br />
+<strong>🚨 2026 年出行必修：強制預約與死線總整理 🚨</strong><br />
+根據最新限流政策，您的行程中有幾個核心景點及餐廳必須「強制事先預約」，否則將無法進入：</p>
+<p><strong>🚗 交通與纜車限流預約</strong><br />
+1. <strong>Seceda 纜車 (7/20)</strong>：2026 年夏季開始實施<strong>線上預約指定時段 (Time-slot)</strong>（每半小時為一梯次限流）。根據官網最新公告，售票系統已於 <strong>4 月份</strong> 正式上線開放預約！請務必現在就上官網 <a href="https://www.seceda.it">seceda.it</a> 搶下早晨黃金時段。<br />
+   * <strong>💳 買票戰略建議：</strong> 2026 年成人來回票價高達 <strong>70 歐元</strong>。強烈建議您「<strong>只買單程上山票 (One-way) 46.5 歐元</strong>」！請特別注意：<strong>訂票時系統會詢問目的地，請務必選擇「Seceda (山頂站)」，絕對不要只買到 Furnes (中繼站)</strong>，否則還得自己爬超陡的上坡才能到刀鋒山！<br />
+   * 搭配我們為您設計的「不走回頭路、純下坡」神級路線，直接走到另一頭的 Col Raiser 搭纜車下山（單程約 20 歐）。不僅總價更便宜，而且完全免除爬上坡的痛苦！</p>
+</blockquote>
+<hr />
+<h2>✈️ July 18 (六) 第一天：入境與跨國長征 (Arrival Day)</h2>
+<p>這天是星期六，正好逢歐洲暑假大連假出遊車潮的最佳塞車時段。加上今年起慕尼黑機場實施 <strong>EES 新生物辨識通關</strong> 所導致的大塞車，今天唯一的目標就是「安全、順利地把車開到義大利飯店」。</p>
+<p><strong>⏳ 殘酷且真實的時程沙盤推演 (針對您 08:05 降落的國泰航空 CX301 班機)：</strong><br />
+* <strong><code>08:05 - 11:15</code></strong> <strong>【海關地獄與 Family Lane 戰略】</strong>：下飛機過 EES 海關、提領行李。<br />
+  * <strong>🔥 衝刺戰略</strong>：下飛機後「能走多快就走多快」！盡全力超越同班機的人潮，提早抵達查驗區。<br />
+  * <strong>👨‍👩‍👧‍👦 Family Lane (家庭通道) 必用秘技</strong>：由於 EES 新制上路，但 <strong>12 歲以下兒童豁免按指紋</strong>，無法使用自助機台。請抵達排隊區時，<strong>直接尋找工作人員並表明有 7 歲小孩同行</strong>，要求走 <strong>Family Lane (家庭通道)</strong> 去人工查驗櫃台。<br />
+  * <strong>👨‍👩‍👧‍👦 全家同進退</strong>：<strong>所有同行大人請務必跟小孩走在一起通關！</strong> 海關會將您們視為一個「同行家庭 (Traveling Party)」一起審查。小孩不需按指紋，大人則直接在人工櫃台完成指紋與拍照即可，這能幫全家人省下極大的排隊時間，千萬不要讓任何同行家人被拆散去排一般隊伍。<br />
+* <strong><code>11:15 - 12:45</code></strong> <strong>【租車大戰】 (預訂時間 10:30, 緩衝期 60 分鐘)</strong>：領完行李後前往慕尼黑機場 SIXT 櫃台 (Terminalstr. Mitte/MWZ)。<br />
+  * <strong>🚗 租車憑證資訊</strong>：SIXT 預訂編號 <code>9732518290</code>，主駕駛 <code>POYU HUANG</code>，預借車型 <code>LFDR</code> (VW Touareg 級別)。已含兒童增高墊、額外駕駛及跨境費，全險已付費。<br />
+  * <strong>💡 必備文件 (不可放行李箱)</strong>：抵達櫃台時主駕駛必須出示：① 預訂信用卡(VISA 108) ② 護照 ③ 台灣駕照正本 ④ 國際駕照。<br />
+  * <strong>🏃 戰術建議</strong>：抵達大廳後，主駕駛拿齊上述 4 樣文件「先空手衝去 SIXT 櫃台排隊抽號碼牌」，另一人帶小孩悠哉等行李再推車過去會合。<br />
+* <strong><code>12:45 - 17:45</code></strong> <strong>【塞車長征與跨國收費】</strong>：離開慕尼黑，行經奧地利，直達義大利 Ortisei。<br />
+  * <strong>🗺️ 今日導航路線</strong>：<strong><a href="https://www.google.com/maps/dir/?api=1&amp;origin=Munich+Airport+Terminal+1&amp;destination=Residence+Ciastel,+Ortisei,+Italy&amp;waypoints=Rastst%C3%A4tte+Irschenberg%7CInntal+Rastst%C3%A4tte%7CRaststation+Europabr%C3%BCcke%7CArea+di+servizio+Plose+Ovest">點此開啟含有 4 個推薦休息站的 Google Maps 路線</a></strong> (機場 -&gt; 德國 A8 -&gt; 奧地利 A12/A13 -&gt; 義大利 A22 -&gt; Ortisei)<br />
+  * <strong>🚗 奧地利高速公路通行證 (Vignette)</strong>：租車通常不含此證。離開德國邊境前，務必停靠休息站加油站（如 Irschenberg），購買「實體貼紙」貼在擋風玻璃左上角（約 10 歐元）。或拿到租車知道車牌後，立刻用手機上 <a href="https://shop.asfinag.at">ASFINAG 官網</a> 買「1 日數位通行證 (1-Day Digital Vignette)」，立即生效免貼紙！<br />
+  * <strong>💳 布倫納山口過路費 (Brenner Pass / A13)</strong>：這是「不包含在 Vignette 內」的額外高山過路費！遇到收費站時排一般車道刷卡付費即可。<strong>🔥 進階戰略</strong>：知道車牌後，提前在 ASFINAG 官網加買「數位過路費 (Digital Section Toll)」。<strong>購買路徑</strong>：首頁選 <code>Digital Section Toll</code> ➔ 路線務必選 <code>A13 Brenner motorway</code> ➔ 買單程 <code>1 trip</code> ➔ 輸入車牌與國家 (德國)。過收費站時直接走綠色車道 (Video Toll / PKW Digital)，攝影機會掃車牌自動開柵欄，秒殺長長車陣！<br />
+  * <strong>🇮🇹 義大利高速公路收費 (Autostrada)</strong>：進入義大利 Vipiteno 收費站時，走白色通道「按鈕取票 (Biglietto)」。下 Chiusa 交流道時插入票卡，刷信用卡付費。<br />
+  * <strong>💡 塞車預警</strong>：正常車程 3.5 小時，但週六南下通常嚴重塞車，建議<strong>抓 5 小時行車時間</strong>。<br />
+* <strong><code>17:45 - 18:45</code></strong> <strong>【中途休息與快速晚餐】</strong>：此時台灣時間已經是半夜 12 點，司機與小孩肯定很睏了。<strong>強烈建議在下方第 ④ 站「<a href="https://maps.google.com/?q=Area+di+Servizio+Plose+Ovest+A22+Italy">Area di Servizio Plose Ovest」Autogrill 把晚餐解決</a></strong>（買熱狗堡、現烤帕尼尼），千萬別餓著肚子開夜路。<br />
+* <strong><code>18:45 - 19:45</code></strong> <strong>【抵達飯店與秒躺平】</strong>：抵達 Ortisei Residence Ciastel 辦理入住手續，卸下行李。<strong>(⚠️ 記得向旅館結帳櫃檯預約隔天早上的麵包配送 Bread Delivery！)</strong> 進房洗完澡大約晚上七、八點 (台灣時間半夜 1-2 點)，不需再出門，全家直接躺平一覺到天亮！<br />
+* <strong>✅ 抵達 Ortisei 導航注意事項（飯店已確認不在 ZTL 範圍）</strong>： <br />
+  * 飯店已來信確認 Residence Ciastel 位於 ZTL 管制區之外，直接開車抵達即可，<strong>不需要白名單申請、不需要特別繞路</strong>。<br />
+  * <strong>⚠️ 導航請打全名：<code>RESIDENCE CIASTEL, Via Minert 2, Ortisei</code></strong>——Ortisei 另有一間「CASTEL」位於 ZTL 區內，打錯就開進管制區！務必確認是「CIASTEL」（帶 i）。<br />
+  * 抵達途中如有問題，飯店提供 WhatsApp 即時聯絡。<br />
+* <strong>🔥 戰略隱藏優勢：維持台灣時差！</strong> 這樣不僅讓司機徹底得到休息，隔天全家人更能精神百倍地在歐洲時間 <strong>清晨 06:00</strong> 輕鬆自然醒。這將直接成為您未來 5 天完美執行「早上出門包場步道、下午回飯店避開大雷雨」的<strong>無敵外掛武器</strong>！</p>
+<p><strong>⛽ 沿途休息站推薦 (依照疲憊程度，可任選 1-2 處停靠)：</strong><br />
+1. <strong>【開車 40 分鐘的絕美觀景台】<a href="https://maps.google.com/?q=Raststätte+Irschenberg+A8+Bayern" target="_blank">Irschenberg (德國 A8)</a></strong><br />
+   * <strong>特色：</strong> 您聽說的完全正確！這個休息站位在半山腰上，擁有<strong>毫無遮蔽的巴伐利亞阿爾卑斯山全景 (Panoramic View)</strong>，被譽為德國最美的高速公路休息站之一。裡面有知名的 Dinzler 咖啡烘焙坊與麥當勞，非常適合一邊看山景、一邊喝杯頂級 Espresso 提神再上路。<br />
+2. <strong>【開車 1.5 小時的必停站】<a href="https://maps.google.com/?q=Inntal+Raststätte+Kufstein+A12" target="_blank">Kufstein Süd / Inntal (德奧交界)</a></strong><br />
+   * <strong>特色：</strong> 剛進入奧地利境內。如果您租車時尚未購買<strong>奧地利高速公路通行證 (Vignette)</strong>，這是必停站！可以去加油站買貼紙，順便讓小孩下來走跳放風。<br />
+3. <strong>【開車 2.5 小時的絕景中繼站】<a href="https://maps.google.com/?q=Raststation+Europabrücke+A13+Innsbruck" target="_blank">Europabrücke 歐洲橋休息站 (奧地利 A13)</a></strong><br />
+   * <strong>特色：</strong> 位於因斯布魯克 (Innsbruck) 附近，就在準備翻越阿爾卑斯山的最險要處。休息站旁邊就是壯觀的「歐洲大橋」，可以直接在那邊的餐廳看風景吃午餐，順便欣賞深谷。<br />
+4. <strong>🍽️ 晚餐站【開車 3.5 小時的首發義式體驗】<a href="https://maps.google.com/?q=Area+di+Servizio+Plose+Ovest+A22+Italy" target="_blank">Area di Servizio Plose Ovest (義大利 A22)</a></strong><br />
+   * <strong>特色：</strong> 這是下交流道前最後一個完美順向 (南下車道) 的義大利大型休息站，也是上方 17:45 時段的晚餐停靠點。司機可以在這裡站著喝第一杯 1.5 歐元的超道地義大利 Espresso，點一份現烤的 帕尼尼 (Panini) 三明治當晚餐。</p>
+<hr />
+<h2>🌻 July 19 (日) 輕鬆暖身：休斯高原 (Alpe di Siusi)</h2>
+<p><strong>為何排在這天：</strong> 週末避開車潮，從住宿直接走路去搭纜車！高原腹地極大，能完美稀釋週末人潮。<br />
+<strong>🚗 交通 (從 Residence Ciastel 出發)：</strong> 步行約 10 分鐘至 Mont Sëuc 纜車站，搭纜車直達山頂。<strong>(不用開車)</strong>。</p>
+<p><strong>🥾 今日與鎮上可能行經步道總覽：</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">路線屬性</th>
+<th style="text-align: left;">實際步道編號 (Trail)</th>
+<th style="text-align: left;">路線重點與終結點</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">輕鬆親子小環線</td>
+<td style="text-align: left;"><a href="Wanderkarte步道解析表.html#tier1" target="_blank"><code>6A</code> ➡️ <code>6</code> ➡️ <code>6B</code></a></td>
+<td style="text-align: left;">高原精華、Sanon 山屋 (吃午餐)</td>
+</tr>
+<tr>
+<td style="text-align: left;">體力好長征大環線</td>
+<td style="text-align: left;"><a href="Wanderkarte步道解析表.html#tier1" target="_blank"><code>9</code> ➡️ <code>30</code> ➡️ <code>3</code> ➡️ <code>6B</code></a></td>
+<td style="text-align: left;">谷底 Saltria、Rauchhütte、Sanon 山屋會合</td>
+</tr>
+<tr>
+<td style="text-align: left;">進階岩石秘境線</td>
+<td style="text-align: left;"><a href="Wanderkarte步道解析表.html#tier2" target="_blank"><code>6</code> ➡️ <code>7</code> ➡️ <code>8</code></a></td>
+<td style="text-align: left;">遠離草皮，朝向 Rifugio Molignon (莫利農)</td>
+</tr>
+<tr>
+<td style="text-align: left;">全日大備案：女巫草甸</td>
+<td style="text-align: left;"><a href="wanderkarte_groeden拷貝.pdf" target="_blank"><code>Trail 14</code> (Puflatsch / Bullaccia)</a></td>
+<td style="text-align: left;">需搭巴士至 Compatsch，去尋找奇岩「女巫長椅」</td>
+</tr>
+<tr>
+<td style="text-align: left;">午後放電：大型遊樂場</td>
+<td style="text-align: left;"><a href="https://maps.google.com/?q=Luis+Trenker+Promenade+Ortisei" target="_blank"><code>Luis Trenker Promenade</code> (無編號)</a></td>
+<td style="text-align: left;">沿著舊鐵道遺跡的鎮上散步徑，直達木頭遊樂設施</td>
+</tr>
+<tr>
+<td style="text-align: left;">午後放電/平地大備案</td>
+<td style="text-align: left;"><a href="Wanderkarte步道解析表.html#tier1" target="_blank"><code>Trail 9</code></a> (Val d'Anna / 安娜谷)</td>
+<td style="text-align: left;">從纜車站旁出發的林蔭步道，推車可達，沿途滿是吊床</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p><strong>🎯 【終極同樂分流方案】：全家合體午餐 ＋ 午後各自放電 (完美克服時差早起)</strong><br />
+  因應時差早起，全家統一搭乘 <strong>08:30 首班纜車</strong>上山，並鎖定 11:30 於中繼點 <strong>Sanon 山屋</strong> 共同享用午餐，吃飽後兵分兩路！</p>
+</li>
+<li>
+<p><strong>上半場：08:45 - 11:30 【全家合體漫步與早茶】</strong></p>
+<ol>
+<li>所有人從 Mont Sëuc 出發，<strong>一起走右側平緩的 Trail 6A 轉 6</strong>。這段路毫無難度且無比開闊，以輕鬆組的小孩節奏緩步推進、拍合照。</li>
+<li><strong>09:30 必停早茶點</strong>：中途經過 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Malga+Contrin+Alpe+di+Siusi">Malga Contrin (Contrin 山屋)</a></strong>，這時候請立刻坐下，幫大家點熱可可跟蘋果捲。不僅能在清早取暖，還能完美填補五點起床提早發作的飢餓感，順便殺掉 45 分鐘！</li>
+<li><strong>11:00 抵達大會合點</strong>：漫遊抵達 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Malga+Sanon+Alpe+di+Siusi">Malga Sanon (Sanon 山屋)</a></strong>。讓小孩去衝向大草皮與動物遊具玩瘋，大人在陽光下放鬆。</li>
+<li><strong>11:30 - 12:30 山屋午餐</strong>：11:30 正好是國外餐廳剛開門的時間！全家人在無敵美景前面對面享用烤肉、披薩與啤酒。</li>
+</ol>
+</li>
+<li>
+<p><strong>下半場：12:30 吃飽後 【正式分流出發】</strong></p>
+<ul>
+<li><strong>【輕鬆組 (帶小孩)】👉 下山回鎮上睡午覺／去遊樂場</strong><br />
+  小孩子吃飽後剛好想睡覺，這時候沿著左半邊的 <strong>Trail 6B</strong> (途中會經過 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Schgaguler+Schwaige+Alpe+di+Siusi">Schgaguler Schwaige</a></strong>) 慢慢散步。大約 1 小時 (13:30) 就能走回纜車站，下午兩點可以舒服地躲回鎮上飯店睡午覺！</li>
+<li><strong>【體力好的家人】👉 往腹地深處長征 (預計多走 3.5 - 4 小時)</strong><br />
+  獲得大量熱量後，把 Sanon 當作「新起點」！往西走 <strong>Trail 3 切轉 Trail 30</strong> (途中有機會路過超有名的 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Rauchhütte+Alpe+di+Siusi">Rauchhütte</a></strong> 與 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Gostner+Schwaige+Alpe+di+Siusi">Gostner Schwaige</a></strong>)，一路下切到 Saltria，再沿 <strong>Trail 9</strong> 爬長上坡回纜車站，約傍晚 16:30 返回鎮上。（若不走這圈，也可從 Sanon 走平行的 6 轉 7 去山谷裡的秘境 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Rifugio+Molignon+Alpe+di+Siusi">Rifugio Molignon</a></strong>）。</li>
+</ul>
+</li>
+<li><strong>🛝 午餐後鎮上放電行程 (Ortisei's Playground)</strong>：中午回鎮上吃完飯後，超級推薦午後帶小孩去鎮上最有名的 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Luis+Trenker+Promenade+Ortisei">Luis Trenker Promenade (路易斯・特倫克步道)</a></strong>，那裡有您看到的那個傳說中極度好玩的 <strong>Ortisei 大型木頭遊樂場</strong>！沿著滿是花草的舊鐵路平坦步道悠晃、吃著冰淇淋讓小孩攀爬放電，是完美的外國度假午後時光。</li>
+<li><strong>🛡️ 彈性備案 (若想徹底換路線)：</strong></li>
+<li>【原路線備案】：不上高山，改走 Ortisei 鎮上的 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Funivie+Seceda+Spa+Ortisei">Val d'Anna (安娜谷步道入口)</a></strong>。步道入口就位在鎮上的 Seceda 纜車底站旁邊，是一條完全平坦的森林溪流步道，沿途有吊床、免費遊樂設施，走到盡頭吃蘋果卷。</li>
+<li>
+<p><strong>【整天備案 1：Wanderkarte Trail 14 (女巫草甸環線)】</strong>：</p>
+<ul>
+<li>交通：搭纜車上 Mont Sëuc，轉乘高山巴士 (Almbus) 10 分鐘抵達 Compatsch 總站。</li>
+<li>玩法：跟著官方地圖走 <strong>Trail 14 (Puflatsch / Bullaccia 環線)</strong>。這是一條輕鬆的 2 小時景觀步道，沒有危險的陡坡。途中會經過傳說中的「女巫長椅 (Hexenbänke) 巨石」，非常適合跟 7 歲小孩講故事探險，且能俯瞰整個 Val Gardena 山谷。</li>
+</ul>
+</li>
+<li>
+<p><strong>🛒 今天記得買！ <a href="https://www.google.com/maps/search/?api=1&amp;query=Despar+Dolomiti+Ortisei+Str+Rezia+46">Despar Dolomiti 超市</a></strong>（步行即達，在 Str. Rezia 46）</p>
+</li>
+<li><strong>⚠️ 週日特殊營業時間（夏季 7/1–9/9）：<code>10:00–13:15</code> 上午場 + <code>16:00–19:15</code> 下午場</strong></li>
+<li><strong>平日（週一至六）：08:00–19:15</strong></li>
+<li>💡 建議：下午回纜車站後（約 14:00），搭纜車下山，直接順路走進 Despar 補齊整週食材，免得之後幾天要另外安排採購。</li>
+</ul>
+<hr />
+<h2>⛰️ July 20 (一) 絕景打卡：刀背山 (Seceda)</h2>
+<p><strong>為何排在這天：</strong> 週一平日，搭乘熱門纜車的人潮稍減。<br />
+<strong>🚗 交通 (從 Residence Ciastel 出發)：</strong> 步行約 12-15 分鐘（或搭鎮上電扶梯）至 Ortisei-Furnes-Seceda 纜車站。<strong>(不用開車，但須先網購指定時段票)</strong>。</p>
+<p><strong>🥾 今日與鎮上可能行經步道總覽：</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">路線屬性</th>
+<th style="text-align: left;">實際步道編號 (Trail)</th>
+<th style="text-align: left;">路線重點與終結點</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>主線：神級大下坡縱走</strong></td>
+<td style="text-align: left;"><a href="Wanderkarte步道解析表.html#tier2" target="_blank"><code>1</code> ➡️ <code>2B</code> ➡️ <code>13</code> ➡️ <code>4</code></a></td>
+<td style="text-align: left;">刀背山崖、看驢子雙子壁、Rifugio Firenze，終點 Col Raiser 纜車站</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>外掛備案 (閃避限流人潮)</strong></td>
+<td style="text-align: left;"><a href="Wanderkarte步道解析表.html#tier3" target="_blank"><code>2</code></a> (完全平坦)</td>
+<td style="text-align: left;">從 Col Raiser 頂站走到 Fermeda 吊椅站，直接空投刀背山頂</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>全日大備案：森林斜坡小火車</strong></td>
+<td style="text-align: left;"><a href="Wanderkarte步道解析表.html#tier1" target="_blank"><code>Trail 35</code> (Resciesa)</a></td>
+<td style="text-align: left;">搭小火車上山，極度平坦漫步至絕美高山教堂</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>午後鎮上放電/散步徑</strong></td>
+<td style="text-align: left;"><a href="https://maps.google.com/?q=Val+d+Anna+Ortisei" target="_blank"><code>Val d'Anna</code> (安娜谷)</a></td>
+<td style="text-align: left;">Seceda 纜車站旁出發的林蔭平地徑，沿途滿是吊床與小溪</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong><code>08:00</code> 🌟 主路線：神級大下坡縱走 (不走回頭路、純放電吃喝)</strong></li>
+<li><strong><code>08:30</code></strong> 搭指定時段纜車上山。<strong><code>約 08:50</code></strong> 抵達頂站。</li>
+<li><strong>🎯 起點分流戰術：</strong> 一位大人陪小孩在頂站 Playground 玩耍，另外兩位大人到 <a href="https://www.google.com/maps/search/?api=1&amp;query=Panorama+Seceda">觀景台 (Panorama Seceda)</a> 拍刀背山斷崖 📸，拍完走回遊樂場會合。（約 30 分鐘）</li>
+<li><strong><code>約 09:20</code></strong> 🥾 全家出發，走 <strong>Trail 1 👉 2B 👉 13 👉 4</strong>：<ol>
+<li>沿 <strong>Trail 1</strong> 順著懸崖邊緣往下走（最平緩舒適的起點）。</li>
+<li>切入 <strong>Trail 2B</strong> 穿過大草坡，抵達 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Malga+Pieralongia">Malga Pieralongia 山屋</a></strong>。雙子星奇石 + 驢子牛群 + 沙坑鞦韆。<strong><code>約 10:45</code></strong> 抵達，停留 30 分鐘。</li>
+<li>繼續 <strong>Trail 2B 轉 Trail 13</strong> 全景大下坡，抵達 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Rifugio+Firenze+Seceda">Rifugio Firenze</a></strong>。<strong><code>約 12:15</code></strong> 🍽️ 午餐（約 1.5 小時）。</li>
+<li>走 <strong>Trail 4</strong> 散步抵達 <strong>Col Raiser 纜車站</strong>。<strong><code>約 13:45</code></strong> 出發，<strong><code>約 14:25</code></strong> 到站。</li>
+<li>💡 <strong>【近路備案】</strong> 在 Pieralongia 若小孩累了，直接切 <strong>Trail 4A</strong> 斜線回 Col Raiser，跳過 Firenze 山屋。</li>
+</ol>
+</li>
+<li>
+<p>搭 Col Raiser 纜車下山至 S. Cristina，轉 350/352 公車（憑 Val Gardena Mobil Card <strong>完全免費</strong>）。<strong><code>約 15:15</code></strong> 🏠 <strong>回到 Ortisei！</strong></p>
+</li>
+<li>
+<p><strong>🛝 下午鎮上放電行程 (神級森林步道 Val d'Anna)</strong>：搭纜車回到 Ortisei 鎮上後，<strong>千萬不要馬上回飯店！</strong> Seceda 纜車站的旁邊就是極度出名的 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Funivie+Seceda+Spa+Ortisei">Val d'Anna (安娜谷步道入口)</a></strong>。這是一條推嬰兒車也能走，長約 20 分鐘的純平地綠蔭滿分步道，沿途有過河吊橋、滿滿的免費林間吊床，可以讓大人躺平休息。終點更是超棒的露天山屋與大草皮遊戲區，小孩保證再度玩瘋。</p>
+</li>
+<li><strong>🛡️ 天氣與預算彈性備案 (若不想花 40 歐元跟天氣對賭，隨到隨買的完美退路)：</strong></li>
+<li><strong>【備案 1：終極外掛空投！Col Raiser 轉 Fermeda 纜車神玩法】</strong>：如果您當初沒搶到 08:30 的黃金時段，或當天臨時想臨時改期上山卻買不到票，請直接啟動這組「免預約空投」終極備案！<ul>
+<li><strong>交通</strong>：改開車約 10 分鐘到 S. Cristina 小鎮，現場買票搭乘 <strong>Col Raiser 纜車</strong>（這條線永遠不需預約排隊）至 2107m 頂站。</li>
+<li><strong>無痛換乘</strong>：出站後，沿著非常平坦舒適、連嬰兒車都能推的 <strong>Trail 2</strong> 緩下坡散步約 15-20 分鐘當暖身，抵達 <strong>Fermeda 吊椅纜車</strong>的底站 (Cuca 2050m)。</li>
+<li><strong>登頂與玩法</strong>：搭上 Fermeda 雙人吊椅只需大概 5 分鐘，就能把您直接空投到名氣最大的 <strong>Seceda 山頂 (2500m)</strong> 刀背山斷崖旁！接著您只要完全照著上面的「主路線 (大下坡縱走)」，一路往下吃喝玩樂走回 Col Raiser。完美破解 Ortisei 主纜車的限流噩夢！</li>
+</ul>
+</li>
+<li><strong>【備案 2：Wanderkarte Trail 35 (Resciesa 森林鐵路)】</strong>：改搭同在 Ortisei 鎮上的 <strong>Resciesa 斜坡小火車</strong>。出站後沿著平坦的直線步道走 40 分鐘抵達漂亮小教堂。</li>
+</ul>
+<hr />
+<h2>🌲 July 21 (二) 童話村莊：富內斯山谷 (Val di Funes)</h2>
+<p><strong>為何排在這天：</strong> 平日前往，大幅增加搶到 Zanser Alm (德) / Malga Zannes (義) 停車格的機率。<br />
+<strong>🚗 交通 (從 Residence Ciastel 出發)：</strong> 開車約 45 分鐘抵達 <strong>Zanser Alm (德) / Malga Zannes (義)</strong> 停車場（同一個地方，兩種語言叫法）。<strong>(⚠️ 目前已開放預約，請盡速上 <a href="https://www.odlesdolomites.com/en/parking-reservation/">官方預訂系統 odlesdolomites.com</a> 搶下車位)</strong>。</p>
+<p><strong>📋 預約操作步驟（進入網站後照順序選）：</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">步驟</th>
+<th style="text-align: left;">欄位</th>
+<th style="text-align: left;">選什麼</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">①</td>
+<td style="text-align: left;"><strong>停車場選擇</strong></td>
+<td style="text-align: left;">點開 <strong><code>Parking Zans</code></strong>（第一個選項），再點 "Parking Zans online reservation" 連結（實際訂票系統在 <code>portal.funes.guest.net</code>，若出現憑證警告可忽略繼續）</td>
+</tr>
+<tr>
+<td style="text-align: left;">②</td>
+<td style="text-align: left;"><strong>車型</strong></td>
+<td style="text-align: left;"><code>Car（Autovettura）</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">③</td>
+<td style="text-align: left;"><strong>日期</strong></td>
+<td style="text-align: left;"><code>2026年7月21日</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">④</td>
+<td style="text-align: left;"><strong>抵達時間段</strong></td>
+<td style="text-align: left;">選最早的早上時段</td>
+</tr>
+<tr>
+<td style="text-align: left;">⑤</td>
+<td style="text-align: left;"><strong>車牌號碼</strong></td>
+<td style="text-align: left;">先填 <strong><code>AB000CD</code></strong>（官方租車替代代碼，取車後再寄信更新）</td>
+</tr>
+<tr>
+<td style="text-align: left;">⑥</td>
+<td style="text-align: left;"><strong>費用</strong></td>
+<td style="text-align: left;">約 <strong>€10–12</strong>（現場也可，但有預約才保證能進場）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>📧 取車後（7/18-19），務必在 <strong>7/20 中午 12:00 前</strong> 發 email 至 <code>info@odlesdolomites.com</code> 更新真實車牌，否則當天可能被拒絕進場</li>
+<li>🎟️ 預約完成後會收到含 <strong>QR Code</strong> 的確認信，當天進場掃碼即可</li>
+<li>🧾 7/21 出發時攜帶訂位確認單（或手機截圖）備查</li>
+</ul>
+<blockquote>
+<p>[!CAUTION]<br />
+<strong>🚦 2026 年 5-11 月 富內斯谷新交通管制（對您的影響分析）</strong><br />
+1. <strong>St. Magdalena 觀景點設閘門路障</strong>：開車無法直上教堂上方觀景點。✅ <strong>對您無影響</strong> — 您本就計畫在村莊停車後步行 5-10 分鐘上去，本來就不開車進去。<br />
+2. <strong>Zanser Alm (德) / Malga Zannes (義) 停車場限額預約 + Ranui 紅綠燈</strong>：🟢 綠燈 = 現場付費進場；🔴 紅燈 = 僅持預約證明的車輛通行。✅ <strong>對您無影響</strong> — 只要提前在 odlesdolomites.com 完成預約，亮紅燈仍可通行。若萬一沒有預約遇到紅燈，請見下方備案。</p>
+</blockquote>
+<ul>
+<li><strong>🚻 廁所情報（帶小孩必看）：</strong></li>
+<li><strong><code>Zanser Alm / Malga Zannes 停車場</code></strong>：✅ 有公共廁所（停車場旁）</li>
+<li><strong><code>Malga Zannes 小屋</code></strong>：✅ 消費顧客可使用</li>
+<li><strong><code>步道中途（林道段）</code></strong>：❌ 完全無廁所，出發前請先上好</li>
+<li><strong><code>Geisleralm 蓋斯勒山屋</code></strong>：✅ 顧客廁所（點餐即可使用，山屋禮儀）</li>
+<li><strong><code>Gschnagenhardt Alm</code></strong>：✅ 顧客廁所</li>
+<li>
+<p><strong><code>Santa Maddalena 村莊</code></strong>：✅ 遊客中心內有廁所；Hotel Fines 消費顧客可使用</p>
+</li>
+<li>
+<p><strong>主路線：<a href="https://www.google.com/maps/search/?api=1&amp;query=Adolf+Munkel+Weg+Val+di+Funes">Adolf Munkel Weg / Trail #35-36 / Via delle Odle</a></strong></p>
+<blockquote>
+<p><strong>⏱️ 預估時間軸（<code>08:00</code> 從 Ortisei 出發）</strong><br />
+| 時間 | 事項 |<br />
+| :--- | :--- |<br />
+| <code>08:40</code> | 📍 途中停靠 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Cappella+San+Giovanni+in+Ranui+Val+di+Funes">Ranui 聖約翰禮拜堂</a></strong> 拍照（約 20 分鐘，富內斯必拍景點之一）。 |<br />
+| <code>09:15</code> | 抵達 <strong>Zanser Alm / Malga Zannes</strong> 停車場，先上廁所，在 <a href="https://www.google.com/maps/search/?api=1&amp;query=Malga+Zannes">📍 Malga Zannes 小屋</a> 補充能量，開始健行。 |<br />
+| <code>11:00</code> | 🍽️ 抵達 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Geisleralm+Val+di+Funes">Geisleralm</a></strong> 午餐（上廁所），約 1-1.5 小時。 |<br />
+| <code>12:30</code> | 走 <strong>Trail #35 精華段</strong>（逆時鐘環狀，沿山峰底部，最美風景留最後）下山回停車場。 |<br />
+| <code>14:00</code> | 回到停車場，開車前往 Santa Maddalena（約 20 分鐘）。 |<br />
+| <code>14:20</code> | 🏛️ <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Naturparkhaus+Puez+Geisler+Santa+Maddalena">Puez-Geisler 自然公園遊客中心</a></strong> 參觀（30-45 分鐘，內有廁所，週二開放 ✅，含 Reinhold Messner 影片）。 |<br />
+| <code>15:00</code> | ☕ <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Fines+Santa+Maddalena+Val+di+Funes">Hotel Fines 露台咖啡廳</a></strong> 喝飲料休息（約 30 分鐘，有廁所）。 |<br />
+| <code>15:30</code> | 📸 <strong><a href="https://maps.app.goo.gl/FvE3M7ZBRZEigdsb7">St. Magdalena 教堂</a></strong> 正面拍攝，再步行上 <strong><a href="https://maps.app.goo.gl/rNQp4SVFEuQ8Hgbv6">Panorama Sitzbank</a></strong> 俯拍（2026 起禁止開車，步行 5-10 分鐘）。 |<br />
+| <code>18:00</code> | 🍽️ 前往 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Pitzock+Essen+Trinken+San+Pietro+Val+di+Funes">Pitzock</a></strong> 吃晚餐（⚠️ 已寄信預定，富內斯眼鏡羊 Slow Food 認證）。 |<br />
+| <code>19:30</code> | 用餐完畢離開餐廳，此時天還是全亮的（甚至運氣好能看到黃金光線）。 |<br />
+| <code>19:40</code> | 🚗 開車回 Ortisei（約 45 分鐘，夏季此時路面明亮、路況好開）。 |<br />
+| <code>20:25</code> | 🏠 回到 Ortisei 飯店休息（此時天色才剛準備變暗）。 |</p>
+</blockquote>
+</li>
+<li>
+<p><strong>關於這條步道：</strong> 難度<strong>簡單到中等</strong>，非常適合帶小孩。大部分時間在樹林間穿梭，不時與牛群相遇，氛圍悠閒療癒，壯麗感相對收斂（比起 Seceda 或休斯高原）。</p>
+</li>
+<li><div class="tdc">
+  <div class="tdc-header">💡 走法建議（Throne &amp; Vine 推薦）：逆時鐘環狀 — 去程 Trail #36（較寬林道）上山，回程 <strong>Trail #35</strong>（沿山峰底部精華段）下山，最美風景留到最後。</div>
+  <div class="tdc-row"><strong>路況：</strong> 約 9 km 環狀，爬升 ~380m，來回含休息約 <strong>4-5 小時</strong>（親子腳程）。</div>
+  <div class="tdc-row"><strong>動線：</strong> <a href="https://www.google.com/maps/search/?api=1&amp;query=Parcheggio+Malga+Zannes+Funes">📍 停車場</a> → <a href="https://www.google.com/maps/search/?api=1&amp;query=Malga+Zannes">📍 Malga Zannes 小屋</a>（出發前補充能量）→ Trail #36 → <a href="https://www.google.com/maps/search/?api=1&amp;query=Geisleralm+Val+di+Funes">📍 Geisleralm</a> + <a href="https://www.google.com/maps/search/?api=1&amp;query=Gschnagenhardt+Alm+Val+di+Funes">📍 Gschnagenhardt Alm</a> → <strong>Trail #35</strong> → 回停車場</div>
+  <div class="tdc-row"><strong>導航提示：</strong> 步道分岔多，沿指標往 <strong>Geisleralm</strong> 或 <strong>Gschnagenhardt Alm</strong> 方向走即可，不會迷路。</div>
+  <div class="tdc-row"><strong>休息：</strong> <strong>Geisleralm</strong>（多洛米蒂電影院）— 木製躺椅正對蓋斯勒岩峰，被稱為「全多洛米蒂最美觀景台」；餐廳外有兒童遊樂場。⚠️ <strong>週一公休</strong>（您排週二 ✅）</div>
+  <div class="tdc-row"><strong>資料來源：</strong> <a href="https://www.travelwitherin.co.uk/travel-to-italy/val-di-funes-dolomites">Travel with Erin</a>（中文）・<a href="https://throneandvine.com/val-di-funes/">Throne &amp; Vine</a> ⚠️（英文）</div>
+</div></li>
+<li><div class="tdc" style="border-color:#c4b8a8; background:#f8f5f0;">
+  <div class="tdc-header" style="color:#7a5a40;">🛡️ 彈性備案 (若 Zanser Alm / Malga Zannes 亮紅燈且無預約)</div>
+  <div class="tdc-row"><strong>備案 1（推薦）</strong>：把車停在 Santa Maddalena 的替代停車場（<a href="https://www.google.com/maps/search/?api=1&amp;query=Ranui+Parking+Santa+Maddalena+Val+di+Funes">📍 Ranui</a> / Putzen / Filler），搭 <strong>330 號接駁巴士</strong>（每小時一班）上 Zanser Alm / Malga Zannes，一樣可以走步道。</div>
+  <div class="tdc-row"><strong>備案 2</strong>：直接在 St. Magdalena 村莊周圍走輕鬆的 <strong>Panorama Trail（全景步道）</strong>，遠望山峰與教堂即可，適合體力較差或時間不足時。</div>
+</div></li>
+</ul>
+<hr />
+<h2>🪨 July 22 (三) 奇岩迷宮：Passo Sella &amp; 棺材纜車</h2>
+<p><strong>為何排在這天：</strong> 平日前往，以利提早卡位不用預約的高山停車場。</p>
+<div class="tdc">
+  <div class="tdc-header">🚗 交通與停車戰略 (從 Residence Ciastel 開車約 40 分鐘)</div>
+  <div class="tdc-row"><strong>方案 A：<a href="https://www.google.com/maps/search/?api=1&amp;query=Rifugio+Carlo+Valentini">Rifugio Valentini</a> 私人停車場</strong>：位在巨石城步道上的私人山屋停車場。車位極少，建議 <strong>08:00 前抵達，只收現金 (約 10-15 歐)</strong>。走到棺材纜車底站微上坡，步行約 8-10 分鐘。</div>
+  <div class="tdc-row"><strong>方案 B：<a href="https://www.google.com/maps/search/?api=1&amp;query=Passo+Sella+Parking">Passo Sella Parking</a> 主停車場</strong>：若方案 A 客滿，退回大馬路旁官方計時收費停車場（可刷卡）。就在棺材纜車底站正對面，步行 1-3 分鐘。</div>
+</div>
+<div class="tdc">
+  <div class="tdc-header">🚻 廁所情報</div>
+  <div class="tdc-row"><strong>起點周邊</strong>：棺材纜車底站有付費廁所（約 0.5–1 歐）；Rifugio Valentini 山屋內有顧客廁所。</div>
+  <div class="tdc-row"><strong>步道中途</strong>：纜車頂站 (Rifugio Toni Demetz) 有顧客廁所。進入巨石城 (Città dei Sassi) 後<strong>完全無廁所</strong>。</div>
+  <div class="tdc-row"><strong>終點（午餐處）</strong>：Rifugio Comici 有免費廁所供顧客使用。</div>
+</div>
+<p><strong>🥾 今日可能行經步道總覽：</strong> </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">路線屬性</th>
+<th style="text-align: left;">實際步道編號 (Trail)</th>
+<th style="text-align: left;">路線重點與終結點</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>主線：巨石城迷宮探險</strong></td>
+<td style="text-align: left;"><a href="Wanderkarte步道解析表.html" target="_blank"><code>Trail 526</code> (Città dei Sassi)</a></td>
+<td style="text-align: left;">穿梭巨石陣，無爬升直達 Rifugio Comici 吃午餐後原路折返</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>鎮上備案：安娜谷叢林</strong></td>
+<td style="text-align: left;"><a href="https://maps.google.com/?q=Val+d+Anna+Ortisei" target="_blank"><code>Val d'Anna</code> (無編號)</a></td>
+<td style="text-align: left;">飯店直接出發，走平穩小溪步道戲水，或去旁邊森林繩索公園放電</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>鄰鎮備案：水陸大闖關</strong></td>
+<td style="text-align: left;"><a href="https://maps.google.com/?q=PanaRaida+Santa+Cristina+Val+Gardena" target="_blank"><code>PanaRaida</code> (無編號)</a></td>
+<td style="text-align: left;">開車10分鐘直達 Monte Pana，專門給小童破解水壩與木製迷宮</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>高山備案：女巫草甸</strong></td>
+<td style="text-align: left;"><a href="wanderkarte_groeden拷貝.pdf" target="_blank"><code>Trail 14</code> (休斯高原)</a></td>
+<td style="text-align: left;">從飯店直接去搭纜車，這是一條零開車、充滿巨石傳說的輕鬆路線</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p><strong>主路線 (迷宮探險)：</strong></p>
+<blockquote>
+<p><strong>⏱️ 預估時間軸（<code>07:20</code> 從 Ortisei 出發，提早到停車場卡位）</strong><br />
+| 時間 | 事項 |<br />
+| :--- | :--- |<br />
+| <code>07:20</code> | 🚗 從 Ortisei 飯店出發（車程約 40 分鐘，需早起卡位） |<br />
+| <strong><code>08:00</code></strong> | 📍 抵達 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Passo+Sella+Parking">Passo Sella Parking</a></strong>，進入停車場（建議 08:00 前抵達） |<br />
+| <code>08:30</code> | 走到對面搭乘 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Telecabina+Sassolungo">棺材纜車 Telecabina Sassolungo</a></strong> 上山 |<br />
+| <code>08:45</code> | 抵達頂端的 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Rifugio+Toni+Demetz">Rifugio Toni Demetz</a></strong>，喝杯熱可可、拍山坳美景（待 30-45 分鐘） |<br />
+| <code>09:30</code> | 🚠 <strong>全家人原車搭棺材纜車下山</strong>（千萬別走下山，全是陡峭危險碎石） |<br />
+| <code>09:45</code> | 回到底站，上個廁所準備健行 |<br />
+| <code>10:00</code> | 🥾 開始走 <strong>Trail 526 (Città dei Sassi 巨石城迷宮)</strong>，看落石奇景 |<br />
+| <strong><code>11:30</code></strong> | 抵達 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Rifugio+Emilio+Comici">Rifugio Comici 夢幻藍餐廳</a></strong>（✅ 已訂位 12:00，4人）。先讓小孩去山屋旁草地玩 <strong>超長綠色溜滑梯</strong> 🛝，大人休息等開桌 |<br />
+| <strong><code>12:00</code></strong> | 🍽️ 入座享用高山地中海料理（海鮮為主），小孩吃飽後繼續在戶外草地跑跑 |<br />
+| <code>13:30</code> | 吃飽喝足，沿原路 Trail 526 走回停車場（完美破解官方單向陷阱，保證拿車） |<br />
+| <code>14:30</code> | 回到停車場，開車下山 |<br />
+| <strong><code>15:15</code></strong> | 🏠 回到 Ortisei！下午可在鎮上超市補給或好好休息 |</p>
+</blockquote>
+</li>
+<li>
+<div class="tdc">
+  <div class="tdc-header">🍽️ 午餐預約與天氣備案</div>
+  <div class="tdc-row"><strong>預約策略</strong>：✅ 已訂位（12:00，4人）。若到了當地前兩天看天氣預報下雨，<strong>寫信取消</strong>即可，完全不用有壓力。</div>
+  <div class="tdc-row"><strong>B計畫（突然下小雨 / 洗手間對策）</strong>：抵達 Comici 後，可以改成在旁邊的戶外小吧台快速買個熱狗吃。如果不想在外面吹風，那就<strong>提早走原路回 Passo Sella 停車場</strong>，停車場旁邊就有 <strong>Rifugio Passo Sella</strong> 或 <strong>Rifugio Valentini</strong> 可以吃傳統義大利麵避雨，而且幾乎永遠有位子。</div>
+  <div class="tdc-row"><strong>C計畫（早上下暴雨）</strong>：若早上 7 點看窗外下大雨，<strong>千千萬萬別開車上去</strong>（下雨的巨石陣和沒有包廂的棺材纜車非常濕冷且危險），直接啟動下方的「鎮上備案：安娜谷叢林」。</div>
+</div>
+</li>
+<li>
+<div class="tdc">
+  <div class="tdc-header">🛡️ 彈性備案</div>
+  <div class="tdc-row"><strong>備案 1：安娜谷 + 繩索攀爬公園</strong>（最輕鬆，走 5 分鐘）：從飯店步行前往 Seceda 底站旁的 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Val+d'Anna+Ortisei">Val d'Anna (安娜谷)</a></strong> 步道。沿途有大吊床與免費戲水區，再讓小孩進旁邊的 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Col+de+Flam+Ortisei">Col de Flam 森林高空探險樂園</a></strong> 瘋狂玩超大彈跳床、繩索攀爬與森林溜索。</div>
+  <div class="tdc-row"><strong>備案 2：PanaRaida 兒童冒險步道</strong>（最好玩）：直接開 10 分鐘的車到隔壁村的 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Monte+Pana+Parking">Monte Pana 停車場</a></strong>（或搭公車）。<strong><a href="https://www.google.com/maps/search/?api=1&amp;query=PanaRaida+Santa+Cristina">PanaRaida 兒童冒險步道</a></strong>內有木製水壩、樹屋跟大型迷宮。</div>
+  <div class="tdc-row"><strong>備案 3：Trail 14 休斯高原女巫草甸環線</strong>（零開車聽故事）：從 Ortisei 出發搭 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Funivia+Ortisei+Alpe+di+Siusi">Ortisei-Alpe di Siusi 纜車</a></strong> 上休斯高原轉乘巴士。充滿神秘「女巫長椅 (Hexenbänke)」巨石傳說的輕鬆景觀步道，超適合向小孩說故事探險。</div>
+  <div class="tdc-row"><strong>備案 4：Col Raiser 纜車與 Firenze 山屋</strong>（極致放鬆）：搭 10 分鐘公車到 S. Cristina 換搭 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Col+Raiser+Cable+Car">Col Raiser 纜車</a></strong> 上山。出站往下走 20 分鐘抵達 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Rifugio+Firenze+Seceda">Rifugio Firenze</a></strong>，在群山環抱的盆地草坡上極致放鬆。</div>
+</div>
+</li>
+</ul>
+<hr />
+<h2>🚂 July 23 (四) Resciesa 森林小火車與鎮上溫泉水上樂園</h2>
+<p><strong>為何排在這天：</strong> 前面連續幾天高山健行與開車後，這天安排留在 Ortisei 鎮上，不開長途車，全程輕鬆無壓力。</p>
+<blockquote>
+<p>[!NOTE]<br />
+<strong>📋 排程備忘：</strong> 休斯高原 (7/19) 與刀背山 Seceda (7/20) 均已安排完畢，第一優先條件已滿足！<br />
+今天執行<strong>「③ Resciesa 小火車（上午）+ ④ Mar Dolomit 游泳池（下午）」</strong>，兩者都在 Ortisei 鎮上，<strong>完全不用開車！</strong></p>
+</blockquote>
+<p><strong>🚞 今日路線總覽：</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">段落</th>
+<th style="text-align: left;">方式</th>
+<th style="text-align: left;">路線說明</th>
+<th style="text-align: center;">費用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>① 上山</strong></td>
+<td style="text-align: left;"><a href="https://www.google.com/maps/search/?api=1&amp;query=Funicolare+Resciesa">3號 Resciesa 斜坡小火車</a></td>
+<td style="text-align: left;">飯店步行 5 分鐘至底站，搭車上山</td>
+<td style="text-align: center;">✅ Gardena Card</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>② 漫步</strong></td>
+<td style="text-align: left;">步行 Trail 35（約 40 分鐘）</td>
+<td style="text-align: left;">頂站 → Santnerspass 石頭小教堂，全程超平坦</td>
+<td style="text-align: center;">免費</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>③ 下山</strong></td>
+<td style="text-align: left;">步行 or 斜坡小火車</td>
+<td style="text-align: left;">原路走回或搭車下山</td>
+<td style="text-align: center;">✅ Gardena Card</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>④ 下午</strong></td>
+<td style="text-align: left;"><a href="https://www.google.com/maps/search/?api=1&amp;query=Mar+Dolomit+Ortisei">Mar Dolomit 水上樂園</a></td>
+<td style="text-align: left;">鎮上溫水游泳池與滑水道，步行可達</td>
+<td style="text-align: center;">🏨 飯店免費資格</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong><code>09:00</code> 🚞 上午：<a href="https://www.google.com/maps/search/?api=1&amp;query=Funicolare+Resciesa">Resciesa 森林斜坡小火車</a></strong></li>
+<li>從飯店步行 5 分鐘至底站，搭小火車上山。出站後沿 <strong>Trail 35</strong> 走到 <strong>Santnerspass 石頭小教堂</strong> 拍照俯瞰全鎮（全程超平坦，不會喘）。中途山屋咖啡廳喝可可吃蘋果捲。回程搭小火車下山（Gardena Card 免費）。</li>
+<li>
+<p><strong><code>約 11:00</code></strong> 回到 Ortisei 鎮上。</p>
+</li>
+<li>
+<p><strong><code>約 11:30</code> 🕛 午餐 + 逛小鎮（至約 14:00）</strong></p>
+</li>
+<li>
+<p>11:30 先逛一下木雕工藝店暖身，等 12:00 餐廳開門後用午餐（義大利餐廳多從中午 12 點才開始營業）。飯後繼續逛特色小店：</p>
+<ul>
+<li><strong>木雕工藝品</strong>：Ortisei 是南蒂羅爾木雕重鎮，可以買到精緻的手工雕刻動物、聖誕擺飾當紀念品。</li>
+<li><strong>在地食材店</strong>：挑一瓶南蒂羅爾蘋果酒 (Apfelsaft)、Speck 風乾火腿或當地起司帶回飯店當宵夜。</li>
+<li><strong>冰淇淋 &amp; 甜品</strong>：義大利手工 Gelato 是鎮上下午必買，讓小孩拿著 Ice Cream 邊走邊看櫥窗。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>約 14:00</code> 🏊 下午：完美分流放電方案（全部免費！）</strong></p>
+</li>
+<li>
+<p><strong>【小孩組】→ <a href="https://www.google.com/maps/search/?api=1&amp;query=Mar+Dolomit+Ortisei">Mar Dolomit 室內外溫水樂園</a></strong>（步行 5 分鐘）</p>
+<ul>
+<li>飯店設施清單明確載明 <strong>Free entrance to MAR DOLOMIT</strong>，帶著飯店房卡或憑證直接入場即可，<strong>完全免費</strong>。</li>
+<li>室內/戶外溫水游泳池與滑水道，讓小孩徹底在水裡放電 2~3 小時。</li>
+<li>毛巾自備（或現場租借 €3 + €10 押金，僅收現金）。</li>
+</ul>
+</li>
+<li>
+<p><strong>【大人組】→ 飯店自家 Wellness「L Ciastel dla Dolomites」</strong>（在飯館內，零步行）</p>
+<ul>
+<li>飯店自帶的頂級免費 SPA 設施，非常適合大人趁這段時間徹底放鬆：</li>
+<li>🌊 <strong>熱水按摩泡泡浴 (Crespeina)</strong></li>
+<li>🔥 <strong>芬蘭桑拿 (Stua Ciauda)</strong></li>
+<li>🧊 <strong>冷水浸泡池 (Ega Freida)</strong>（桑拿後的經典提神儀式）</li>
+<li>🌿 <strong>山草藥蒸氣室 (L Ciule)</strong></li>
+<li>🧂 <strong>鹽岩吸入室 + 遠紅外線 (Sas da Sel)</strong></li>
+<li>🎵 <strong>靜音沙發廳 / Alpha 平衡椅廳 / 色彩療癒鞦韆室</strong></li>
+<li>這組設施非常適合讓疲憊的司機或老人家在裡面完全躺平，讓體力完整恢復！</li>
+</ul>
+</li>
+<li>
+<p><strong>🛡️ 彈性備案 (若當天想出鎮走走大自然)：</strong></p>
+</li>
+<li><strong>【備案一：PanaRaida 兒童尋寶步道 (開車 15 分鐘)】</strong>：開車到 S. Cristina 的 <a href="https://www.google.com/maps/search/?api=1&amp;query=Monte+Pana+Parking">Monte Pana 停車場</a>，走全長 3 公里、極度平緩的環狀步道，沿途有 10 個大型原木闖關設施（水車、樹屋迷宮、森林巨大鞦韆）。</li>
+<li><strong>【備案二：Col de Flam 冒險公園 (步行即達)】</strong>：走路前往鎮上的 <a href="https://www.google.com/maps/search/?api=1&amp;query=Col+de+Flam+Ortisei">Col de Flam 冒險公園</a>。高空繩索樂園，有兒童專屬黃色路線 (4-12 歲)、大彈跳床與可愛動物區。</li>
+</ul>
+<hr />
+<h2>🚡 July 24 (五) 備用空白日 (纜車大滿貫 / 峽谷瀑布)</h2>
+<p><strong>概覽：</strong> 旅程最後的「精華挑戰日」！上午在 Selva 完成三台高山纜車大滿貫，俯瞰全程最不一樣的 Sella 群峰；下午沿 Passo Gardena 山口往東，到 Alta Badia 的溪谷帶小孩踩水。<strong>兩個地點地理上完美順路，一路往東不走回頭路！</strong></p>
+<blockquote>
+<p>[!TIP]<br />
+<strong>今天動線：Ortisei → Selva（上午纜車）→ 翻越 Passo Gardena 山口 → Colfosco（下午瀑布）</strong></p>
+</blockquote>
+<p><strong>🚡 今日路線總覽：</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">段落</th>
+<th style="text-align: left;">方式</th>
+<th style="text-align: left;">路線說明</th>
+<th style="text-align: center;">Gardena Card</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>① Selva → 上升</strong></td>
+<td style="text-align: left;"><a href="https://www.google.com/maps/search/?api=1&amp;query=Seggiovia+Costabella+Selva">15號 Costabella 吊椅</a></td>
+<td style="text-align: left;">從 Selva 鎮上出發，省去走坡路</td>
+<td style="text-align: center;">✅ 含蓋</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>② → 2300m 頂站</strong></td>
+<td style="text-align: left;"><a href="https://www.google.com/maps/search/?api=1&amp;query=Funivia+Dantercepies+Selva">13號 Dantercëpies 大纜車</a></td>
+<td style="text-align: left;">直升山頂，出站即 Cir 峰全景震撼</td>
+<td style="text-align: center;">✅ 含蓋</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>③ 步行段</strong></td>
+<td style="text-align: left;">步行 Trail 12A（約 30 分鐘）</td>
+<td style="text-align: left;">頂站 → Rifugio Jimmi 山屋，純緩坡下行</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>④ → Passo Gardena</strong></td>
+<td style="text-align: left;"><a href="https://www.google.com/maps/search/?api=1&amp;query=Seggiovia+Cir+Selva">14號 Cir 吊椅</a></td>
+<td style="text-align: left;">由上往下「坐著降落」至山口</td>
+<td style="text-align: center;">✅ 含蓋</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>⑤ 取車（倒搭）</strong></td>
+<td style="text-align: left;">14號 ↑ → 13號 ↓ 回 Selva</td>
+<td style="text-align: left;">原路倒坐回 Selva 取車</td>
+<td style="text-align: center;">✅ 含蓋</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>⑥ 瀑布步道</strong></td>
+<td style="text-align: left;">步行（來回約 1.5~2 小時）</td>
+<td style="text-align: left;">Colfosco → Cascate del Pisciadù 來回</td>
+<td style="text-align: center;">—</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[!NOTE]<br />
+<strong>💳 費用總結：</strong> 三台纜車（15號、13號、14號）全部含蓋在 <strong>Gardena Card</strong> 內，<strong>不需另外付費</strong>！連倒搭取車也完全免費刷。唯一需要另外付費的是 Colfosco 瀑布步道的停車場費用（約 €2-3/小時）。若您家裡沒有 Gardena Card，三台纜車的現場單程票每人約需 €10-15 左右。</p>
+</blockquote>
+<ul>
+<li><strong>🌄 上午：[15號 Costabella] ➡️ [13號 Dantercëpies] ➡️ 步行 (Trail 12A) ➡️ [14號 Cir]</strong></li>
+<li><strong><code>08:30</code></strong> 從飯店出發 → 開車 15 分鐘 → Selva 停車，開始連乘三台纜車。</li>
+<li><strong><code>約 09:20</code></strong> 🏔️ <strong>13號頂站 (2300m)！</strong> 含等車、買票、小孩慢走的 buffer，預計此時抵達山頂。出站無敵景。開始沿 Trail 12A 步行往 Jimmi 山屋（緩坡下行，小孩腳程預留 30 分鐘）。</li>
+<li><strong><code>約 10:00</code></strong> 抵達 <strong>Rifugio Jimmi (吉米山屋)</strong>，停留約 <strong>1 小時</strong>（含喝可可、拍照、上廁所、讓小孩在草坪跑跑）。</li>
+<li>
+<p><strong><code>約 11:00</code></strong> 搭 <strong>[14號 Cir]</strong> 降落 Passo Gardena → 倒搭纜車回 Selva 取車（含等候、換乘，預留 <strong>40 分鐘</strong>）。</p>
+</li>
+<li>
+<p><strong><code>約 11:40</code> 🕛 開車前往 Passo Gardena 午餐</strong></p>
+</li>
+<li>
+<p>取車後開車 15 分鐘回到山口（含停車、找到餐廳，預留彈性）。山口山屋餐廳約 11 點開門，位子充裕。午餐預計 <strong>1 小時至 1.5 小時</strong>。</p>
+</li>
+<li>
+<p><strong><code>約 13:15</code> 🌊 <a href="https://www.google.com/maps/search/?api=1&amp;query=Cascate+del+Pisciadu+Colfosco">Cascate del Pisciadù 瀑布步道</a></strong></p>
+</li>
+<li>從 Passo Gardena 開車 10 分鐘抵達 Colfosco，導航至 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Luianta+Colfosco">Hotel Luianta</a></strong> 停車。</li>
+<li>步道來回約 1.5 小時，含小孩踩水、拍瀑布、坐下休息，<strong>預留 2 小時緩衝</strong>。</li>
+<li>
+<p><strong><code>約 15:15</code></strong> 步道結束，開車 35 分鐘回 Ortisei（翻越 Passo Gardena）。</p>
+</li>
+<li>
+<p><strong><code>約 16:00</code></strong> 🏠 <strong>回到 Ortisei 飯店！</strong> 剩餘下午時間完全自由。</p>
+</li>
+<li>
+<p><strong>🍽️ 晚餐建議：7/24 是最後一晚住在 Residence Ciastel（公寓式住宿），也是整趟旅程最後一次有廚房可以自己煮！7/25 起換飯店就無法自炊了。</strong></p>
+</li>
+</ul>
+<p><strong>【選項 A：✅ 自己煮（最推薦的選項！）】</strong> 公寓有廚房，下午 16:00 前就會回到鎮上。可先去 <a href="https://www.google.com/maps/search/?api=1&amp;query=Spar+Ortisei">SPAR 超市</a> 或鎮上雜貨店採買食材，做一頓家常菜。對孩子來說，能吃到熟悉的口味是最放鬆的。而且明天 07:30 就要出發，提早睡覺才是最重要的！</p>
+<p><strong>【選項 B：在 Colfosco / Corvara 就地解決】</strong> 瀑布步道結束後直接在當地吃，吃完翻山回 Ortisei，省去再出門。<br />
+  | 餐廳 | 地點 | 特色 |<br />
+  | :--- | :--- | :--- |<br />
+  | <a href="https://www.google.com/maps/search/?api=1&amp;query=Ristorante+Borest+Colfosco">Ristorante Borest</a> | Colfosco（停車場旁，零移動） | 拉丁傳統菜，可預訂起司火鍋/肉類 Fondue |<br />
+  | <a href="https://www.google.com/maps/search/?api=1&amp;query=Adlerkeller+Corvara+Alta+Badia">Adlerkeller</a> | Corvara（5 分鐘車程） | Alta Badia 最受好評的傳統木屋餐廳，家庭友善，評價極高 |<br />
+  | <a href="https://www.google.com/maps/search/?api=1&amp;query=Posta+Zirm+Corvara">Posta Zirm Taverna</a> | Corvara | 傳統料理 + 窯烤披薩，小孩有更多選擇 |</p>
+<p><strong>【選項 C：回 Ortisei 後在鎮上吃】</strong> 回公寓後再出門去鎮上餐廳告別。<br />
+  | 餐廳 | 特色 |<br />
+  | :--- | :--- |<br />
+  | <a href="https://www.google.com/maps/search/?api=1&amp;query=Restaurant+Tubladel+Ortisei">Restaurant Tubladel</a> | 評價最高，南蒂羅爾料理精緻版，浪漫木屋氛圍，<strong>建議提前訂位</strong> |<br />
+  | <a href="https://www.google.com/maps/search/?api=1&amp;query=Mauriz+Keller+Ortisei">Mauriz Keller</a> | 百年老店拱頂石窟，4.4 分，在地人也愛，傳統菜 + 披薩皆有，<strong>建議提前訂位</strong> |</p>
+<ul>
+<li><strong>🛡️ 彈性備案 (若想輕鬆或天氣不配合)：</strong></li>
+<li><strong>【備案：⑤ 三段纜車連乘 (Monte Pana 線)】</strong>：放棄遠征 Selva，改從 Ortisei 開 15 分鐘到 S. Cristina，以 <strong>[8號 Monte Pana] ➡️ [9號 Mont Sëura] ➡️ [10號 Tramans]</strong> 連乘三台纜車，近距離觀賞巨大的薩索倫戈 (Sassolungo) 岩壁，小孩可在高山草坪奔跑放電。早上也可先讓小孩在 8 號底站的 PanaRaida 步道闖關，下午再全家一起狂搭纜車。</li>
+</ul>
+<hr />
+<h2>🚗 July 25 (六) 移動日：山口遠征與高山雙湖 (前往 Lake Misurina)</h2>
+<p><strong>概覽：</strong> 今天將告別 Ortisei，跨越數個絕美山口前往東多洛米蒂的米蘇里納湖住宿。因為是週六，車潮眾多，主打「早出發、避開 Cortina 市區地雷塞車、並穿插短途步道讓小孩放電」。</p>
+<blockquote>
+<p>[!TIP]<br />
+<strong>🚗 交通總覽：</strong><br />
+*   <a href="https://www.google.com/maps/dir/?api=1&amp;origin=Ortisei&amp;destination=Corvara+in+Badia&amp;waypoints=46.5500,11.8094">Ortisei → Corvara（波湖纜車站）</a>： 約 45 分鐘（經 Passo Gardena）。<br />
+*   <a href="https://www.google.com/maps/dir/?api=1&amp;origin=Corvara+in+Badia&amp;destination=Misurina&amp;waypoints=46.5189,12.0094%7CCortina+d'Ampezzo">Corvara → 米蘇里納湖 (Misurina)</a>： 約 1 小時 20 分鐘（經 Passo Falzarego 與 Cortina）。<br />
+*   總純開車時間： 約 2 小時 10 分鐘，沿途切成多段休息。</p>
+</blockquote>
+<ul>
+<li>
+<p><strong>🌄 上午：出發與第一座湖泊 (Lago Boé)</strong></p>
+<blockquote>
+<p><strong>⏱️ 預估時間軸</strong><br />
+| 時間 | 事項 |<br />
+| :--- | :--- |<br />
+| <code>07:30</code> | 🚗 <strong>從 Ortisei 出發</strong>（重點：提早出發避開週六紅爆車潮，確保各站車位） |<br />
+| <code>07:55</code> - <code>08:25</code> | 📍 抵達 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Passo+Gardena">Passo Gardena (加爾代納山口)</a></strong> 拍照，眺望壯麗 Sella 群峰。若需廁所可至 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Rifugio+Frara">Rifugio Frara</a></strong> (需付費 1 歐元)。<code>08:25 準時離開</code>。 |<br />
+| <code>08:45</code> | 抵達 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Corvara+in+Badia">Corvara</a></strong>，剛好趕上第一波準備上山的 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Boe+Cable+Car+Corvara">Boé 纜車站</a></strong>。 |<br />
+| <code>09:00</code> - <code>11:15</code> | 🚠 搭乘纜車抵達頂站，開始步行前往 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Lago+Boe">Lago Boé (波湖)</a></strong> 拍照（單程約 20 分鐘），隨後回頂站讓小孩在 <strong>熊主題公園 (Bear Park)</strong> 盡情放電玩耍。 |</p>
+</blockquote>
+</li>
+<li>
+<p><strong>🕛 中午：能量補給與輕健行</strong></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">時間</th>
+<th style="text-align: left;">事項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>11:15</code> - <code>12:10</code></td>
+<td style="text-align: left;">🚗 搭纜車下回 Corvara 取車，開車前往 <strong>Passo Falzarego</strong>（預留 55 分鐘作為找車位與塞車緩衝）。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>12:10</code> - <code>13:40</code></td>
+<td style="text-align: left;">🍽️ 抵達並於 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Rifugio+Passo+Falzarego">Rifugio Passo Falzarego</a></strong> 悠閒吃午餐、休息上廁所（由於下午路段無廁所，<strong>務必在此排空</strong>）。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>13:40</code> - <code>15:40</code></td>
+<td style="text-align: left;">🥾 開始 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Lago+Limides">Lago Limides</a></strong> 輕健行與小教堂拍照。此區有<strong>兩條起點可選（見下方指南）</strong>。<br>○ <strong>健行</strong>：來回約 1.5 小時。<br>○ <strong>拍照</strong>：預留 30 分鐘於湖邊探險，及回到 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Cappella+San+Nicola+Passo+Falzarego">San Nicola 小教堂</a></strong> 拍經典地標照。</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+</li>
+</ul>
+<p><strong>📍 Lago Limides 健行路線選擇（因為您已停在纜車站，</strong>路線 A 不需移車<strong>，優先推薦）</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">✅ 路線 A（推薦）：從 Passo Falzarego 出發</th>
+<th style="text-align: left;">路線 B：從 Col Gallina 出發</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>停車場</strong></td>
+<td style="text-align: left;"><a href="https://www.google.com/maps/search/?api=1&amp;query=Passo+Falzarego+Parking">Falzarego Parking</a>（纜車站旁，已停好）</td>
+<td style="text-align: left;"><a href="https://www.google.com/maps/search/?api=1&amp;query=Rifugio+Col+Gallina">Col Gallina / Lago Limides Parking</a>（纜車站下方約 1 公里，開車 2 分鐘）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>路線組成</strong></td>
+<td style="text-align: left;">步道 <strong>#441</strong> 銜接 <strong>#419</strong></td>
+<td style="text-align: left;">從 Col Gallina 餐廳後方直接步行 <strong>#419</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>來回總長度</strong></td>
+<td style="text-align: left;">約 3.1 公里</td>
+<td style="text-align: left;">約 2.0 公里</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>海拔抬升/下降</strong></td>
+<td style="text-align: left;">約 110 公尺</td>
+<td style="text-align: left;">約 120 - 130 公尺</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>估計健行時間</strong></td>
+<td style="text-align: left;">約 1 小時 - 1.5 小時</td>
+<td style="text-align: left;">約 45 分鐘 - 1 小時 15 分鐘</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>優點</strong></td>
+<td style="text-align: left;">1. 視野極度開闊，全程皆有山景。<br>2. <strong>無需移車</strong>，直接銜接 Lagazuoi 纜車行程。<br>3. 坡度平緩，多為橫切路段。</td>
+<td style="text-align: left;">1. <strong>距離最短</strong>，前往湖泊最快。<br>2. 植被較多，前半段有林蔭遮蔽。<br>3. 步道變化較多（森林、碎石、凹谷）。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>缺點</strong></td>
+<td style="text-align: left;">距離較長，步道全程無遮蔭。</td>
+<td style="text-align: left;">1. 坡度感較明顯（連續上坡）。<br>2. 需移車或走較遠才能搭纜車。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>🗺️ 路線 A 步行動線指南（帶著 7 歲孩子的視角）</strong><br />
+  * <strong>起點：</strong> 從 Lagazuoi 纜車站停車場往「Col Gallina」的方向看（往下坡方向看）。<br />
+  * <strong>第一段路：</strong> 尋找 <strong>#441</strong> 標示，這是一條緩緩下坡/平移的碎石草坡路。<br />
+  * <strong>分叉點：</strong> 走約 15 分鐘，會看到一個木製標示牌指向「<strong>#419 Lago Limides</strong>」。<br />
+  * <strong>抵達湖泊：</strong> 接上 #419 後，再往上爬約 15-20 分鐘，就會看到隱藏在凹地裡的湖泊。<br />
+  * <strong>回程：</strong> 循原路走回纜車站，或是往下走到 Col Gallina。</p>
+<ul>
+<li><strong>🌆 下午：關鍵決策點 (15:40) ⚠️ 務必打開 Google Maps 查看進入 Cortina 的交通顏色</strong></li>
+</ul>
+<p><strong>【方案 A：路況綠色－探索冬奧小鎮 Cortina】</strong></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">時間</th>
+<th style="text-align: left;">事項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>15:40</code> - <code>16:30</code></td>
+<td style="text-align: left;">🚗 驅車前往 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Cortina+d'Ampezzo">Cortina d'Ampezzo</a></strong> (已預留 50 分鐘交通時間含塞車緩衝)。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>16:30</code> - <code>17:15</code></td>
+<td style="text-align: left;">🚶‍♂️ Cortina 小鎮快閃散步！逛最熱鬧的 Corso Italia 步行街，買球 Gelato 冰淇淋。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>17:15</code> - <code>17:50</code></td>
+<td style="text-align: left;">🚗 離開小鎮前往 Misurina。行車途中短暫停靠 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Lago+Antorno">Lago Antorno (安托諾湖)</a></strong> 看三尖峰倒影。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>17:50</code></td>
+<td style="text-align: left;">🏠 抵達 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Dolomiti+des+Alpes+Misurina">Hotel Dolomiti des Alpes</a></strong> 辦理入住！準備休息吃晚餐。</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p><strong>【方案 B：路況紅色擁塞－避開市中心備案】</strong></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">時間</th>
+<th style="text-align: left;">事項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>15:40</code> - <code>16:30</code></td>
+<td style="text-align: left;">🚗 <strong>繞過 Cortina 直奔湖區</strong>。不要跟著導航進入 Centro (市中心)。<br><strong>導航設定</strong>：直接設定目的地為 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Passo+Tre+Croci">Passo Tre Croci</a></strong>，接著再導向 Misurina。<br><strong>走外環道</strong>：沿著 SR48 道路順著走，這條大路會從 Cortina 小鎮北緣切過去（外環繞行），直接銜接上往 Passo Tre Croci 的山路，完美避開市區紅綠燈與找車位地獄。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>16:30</code> - <code>17:00</code></td>
+<td style="text-align: left;">📸 提前抵達 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Lago+Antorno">Lago Antorno (安托諾湖)</a></strong>，趁著午後柔和的光線拍攝最美的森林湖面倒影。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>17:10</code></td>
+<td style="text-align: left;">🏠 提早抵達飯店 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Dolomiti+des+Alpes+Misurina">Hotel Dolomiti des Alpes</a></strong> 辦理入住，在米蘇里納湖畔悠閒吃晚餐。</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<ul>
+<li>
+<p><strong>🍽️ 晚餐：待決定（已加入上方待辦事項）</strong><br />
+  今晚住進 <strong>Hotel Dolomiti des Alpes</strong>，是飯店非公寓，<strong>無法自炊</strong>。建議直接在 <a href="https://www.google.com/maps/search/?api=1&amp;query=Lago+di+Misurina+restaurants">Misurina 湖畔</a> 附近找一間餐廳輕鬆解決，不需要長途開車。抵達後可先去超市買隔天早餐備品，再散步找晚餐。</p>
+</li>
+<li>
+<p><strong>⚠️ July 25 行程與健行注意事項必讀</strong></p>
+</li>
+<li><strong>🚗 停車提醒</strong>：週六 Passo Falzarego 山口人潮極多，若纜車站主停車場滿位，請繼續沿路往 Rifugio Col Gallina 的方向尋找合法停車位，切勿違停。</li>
+<li><strong>🥾 Lago Limides 健行安全</strong>：步道雖然完全沒有懸崖感、非常安全，但<strong>路面碎石較多容易滑</strong>，請務必給小朋友穿著抓地力強的運動鞋，勿穿休閒平底鞋。</li>
+<li><strong>💧 水量預期心理</strong>：7 月底高山湖泊 (如 Limides 或 Antorno) 水位通常較低甚至部分乾涸，建議行前可跟小朋友包裝成「尋找神祕池塘的石頭探險之旅」，降低不符預期的失落感。</li>
+<li><strong>🚻 設施與補給</strong>：離開 Passo Falzarego 前，<strong>「絕對」要提醒全家人再去上一次廁所</strong>，接下來往後一直到飯店的路段都不方便尋找洗手間。另外，山口風大且紫外線極強，防風外套與高係數防曬乳必須隨身攜帶。</li>
+<li><strong>🚴 交通情報</strong>：出發前一天在 Ortisei 飯店退房時，可請櫃檯幫忙確認「週六這幾個山口是否有單車比賽導致的封閉 (Pass Closure)」，若有封閉須提早改道。</li>
+</ul>
+<hr />
+<h2>📅 Day 9 | 7/26 (日) 拉瓦雷多三尖峰 Tre Cime di Lavaredo</h2>
+<blockquote>
+<p>[!CAUTION]<br />
+<strong>🅿️ Auronzo 停車場預約 — 進場唯一方式，請立即行動！</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>官方預約網站</strong></td>
+<td style="text-align: left;"><a href="https://pass.auronzo.info">pass.auronzo.info</a>（另可由 <a href="https://auronzo.info">auronzo.info</a> 進入）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>開放狀態</strong></td>
+<td style="text-align: left;">⚠️ <strong>2026 年 4 月底前後開放 — 目前極可能已開放，請立即上網確認！</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>搶購時段</strong></td>
+<td style="text-align: left;">請預約 <strong><code>06:00 – 08:00</code></strong> 入場（週日旺季名額極速秒殺）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>費用</strong></td>
+<td style="text-align: left;"><strong>€40 / 12 小時</strong>（出發前 5 天前可全額退款）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>車牌補登</strong></td>
+<td style="text-align: left;">租賃車可先預約，<strong>最晚於入場前一晚 23:59 前補登真實車牌</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>導航地點</strong></td>
+<td style="text-align: left;"><code>Parcheggio Auronzo</code></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<ul>
+<li><strong>🌅 早晨：避開人潮與壯麗健行</strong></li>
+</ul>
+<blockquote>
+<p><strong>⏱️ 預估時間軸</strong><br />
+| 時間 | 事項 |<br />
+| :--- | :--- |<br />
+| <code>06:30</code> | 🚗 <strong>出發：Misurina 旅館</strong>。目標直指 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Parcheggio+Auronzo+Tre+Cime+di+Lavaredo">Parcheggio Auronzo</a></strong>。⚠️ <strong>務必在 07:00 前通過收費站</strong>，避免 07:00 開始的塞車車潮。 |<br />
+| <code>07:05</code> – <code>08:02</code> | 🥾 <strong>健行起點：<a href="https://www.google.com/maps/search/?api=1&amp;query=Rifugio+Auronzo">Rifugio Auronzo</a></strong>（建行距離：1.8 km）。停在最近的停車場（預約制），出發前先上廁所。步行前往 <strong>[點 A] <a href="https://www.google.com/maps/search/?api=1&amp;query=Rifugio+Lavaredo">Rifugio Lavaredo</a></strong>。 |<br />
+| <code>08:02</code> – <code>08:17</code> | ☕️ <strong>短休：<a href="https://www.google.com/maps/search/?api=1&amp;query=Rifugio+Lavaredo">Rifugio Lavaredo</a></strong>（停留 15 分鐘）。喝杯咖啡、吃果醬可頌（推薦！），感受山間清晨。 |<br />
+| <code>08:17</code> – <code>09:29</code> | 📸 <strong>經典視角：<a href="https://www.google.com/maps/search/?api=1&amp;query=Forcella+Lavaredo">Forcella Lavaredo 鞍部</a></strong>（建行距離：1.0 km）。前往 <strong>[點 B]</strong> 鞍部，包含 15 分鐘拍照休息。⚠️ 此段為上坡，孩子腳程已預留充足緩衝。<strong>此處可拍到三尖峰經典正面照</strong>。 |<br />
+| <code>09:29</code> – <code>10:41</code> | 🥾 <strong>絕景漫步：前往 [點 C] 山屋</strong>（建行距離：2.1 km）。沿 <strong>#101 步道</strong>緩步抵達 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Rifugio+Locatelli+Tre+Cime">Rifugio Locatelli</a></strong>。視野極度開闊，路徑寬敞安全，孩子腳程約 72 分鐘。 |</p>
+</blockquote>
+<ul>
+<li><strong>☀️ 中午：絕美山屋午餐與洞穴探險</strong></li>
+</ul>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">時間</th>
+<th style="text-align: left;">事項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>10:41</code> – <code>12:41</code></td>
+<td style="text-align: left;">🍴 <strong>午餐：<a href="https://www.google.com/maps/search/?api=1&amp;query=Rifugio+Locatelli+Tre+Cime">Rifugio Locatelli</a></strong>（停留 2 小時，充裕大休息）。在此享用 Lunch Box 或山屋熱餐。<br>💡 <strong>體力組加碼</strong>：山屋後方山壁有「<strong>小洞穴</strong>」可前往拍照（來回約 1 小時），其餘人在湖畔或山屋放空。<br>⚠️ <strong>此處為分流決策點</strong>：體力不好或孩子請在此決定是否原路折返（選行程 A）。</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<ul>
+<li><strong>⛰️ 下午：兩路分流回程</strong></li>
+</ul>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">時間</th>
+<th style="text-align: left;">路線</th>
+<th style="text-align: left;">說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>12:41</code> – <code>16:24</code></td>
+<td style="text-align: left;">🐢 <strong>行程 A：原路折返 #101</strong>（路況最穩定，適合保留體力）</td>
+<td style="text-align: left;"><code>12:41–14:21</code>：從 <strong>[點 C]</strong> 爬回 <strong>[點 B]</strong> 鞍部（陡上坡，已預留 100 分鐘緩衝）。<br><code>14:36–16:24</code>：經 <strong>[點 A]</strong> 緩步回到停車場（含兩次 15 分鐘休息）。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>12:41</code> – <code>15:31</code></td>
+<td style="text-align: left;">🚀 <strong>行程 B：環線 #105</strong>（風景變化豐富，較具挑戰性）</td>
+<td style="text-align: left;"><code>12:41–14:21</code>：進入 <strong>#105 步道</strong>，下切谷底後陡爬升。<br><code>14:36–15:31</code>：經過 <strong>[點 D] Malga Langalm 牧場</strong>，繞行平緩山腰路回到停車場（途中會經過 Rienzquelle 水源地）。</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p><strong>📍 路線段落距離與時間一覽</strong></p>
+<p><img alt="三尖峰健行路線段落示意圖" src="./2026-07-26-route.png" /></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">路線段落</th>
+<th style="text-align: center;">距離</th>
+<th style="text-align: center;">正常腳程（含拍照）</th>
+<th style="text-align: center;">孩子腳程（0.7 倍速）</th>
+<th style="text-align: left;">路況特徵</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Auronzo → 點 A</td>
+<td style="text-align: center;">1.8 km</td>
+<td style="text-align: center;">40 min</td>
+<td style="text-align: center;">57 min</td>
+<td style="text-align: left;">極平坦碎石路，全家皆宜</td>
+</tr>
+<tr>
+<td style="text-align: left;">點 A → 點 B（鞍部）</td>
+<td style="text-align: center;">1.0 km</td>
+<td style="text-align: center;">30 min</td>
+<td style="text-align: center;">43 min</td>
+<td style="text-align: left;">緩坡爬升，略有喘感</td>
+</tr>
+<tr>
+<td style="text-align: left;">點 B → 點 C（山屋）</td>
+<td style="text-align: center;">2.1 km</td>
+<td style="text-align: center;">50 min</td>
+<td style="text-align: center;">72 min</td>
+<td style="text-align: left;">視野極佳，路徑清晰寬闊</td>
+</tr>
+<tr>
+<td style="text-align: left;">點 C → 點 D（牧場）</td>
+<td style="text-align: center;">2.5 km</td>
+<td style="text-align: center;">80 min</td>
+<td style="text-align: center;">115 min</td>
+<td style="text-align: left;">最辛苦，包含下切與回升</td>
+</tr>
+<tr>
+<td style="text-align: left;">點 D → Auronzo</td>
+<td style="text-align: center;">2.5 km</td>
+<td style="text-align: center;">50 min</td>
+<td style="text-align: center;">72 min</td>
+<td style="text-align: left;">繞行山腰，起伏適中</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>⚠️ July 26 關鍵提醒與筆記</strong></li>
+<li><strong>🅿️ 預約停車</strong>：官網於 <strong>5 月中下旬開放</strong>（⚠️ 根據最新資訊，4 月底已開放，請立即確認！）。請選 <code>06:00 – 08:00</code> 時段。費用 <strong>€40 / 12 小時</strong>（出發前 5 天可全額退款）；租賃車可先預約，<strong>入場前一晚 23:59 前補登真實車牌</strong>。</li>
+<li><strong>💰 現金與離線地圖</strong>：務必攜帶充足現金，高山收訊差無法刷卡（含廁所清潔費）。請先下載 Offline Map 離線地圖，以便在岔路處確認方位。</li>
+<li>
+<p><strong>🧥 裝備建議</strong>：即使是 7 月，早晨與山屋休息時仍有寒意，請採取洋蔥式穿法，並備好雨具。</p>
+</li>
+<li>
+<p><strong>🏁 行前準備與停車攻略</strong></p>
+</li>
+<li><strong>官方網站</strong>：<a href="https://auronzo.info">auronzo.info</a>（預計 2026 年 4 月底至 5 月中旬開放夏季預約）</li>
+<li><strong>搶票重點</strong>：預約 <strong>7/26 (日) 的 <code>06:00 – 08:00</code> 時段</strong>（越早越好，避免 07:00 後的車潮）</li>
+<li><strong>費用</strong>：€40 / 12 小時</li>
+<li><strong>租車必知</strong>：可先預約位子，車牌號碼最晚於入場前一晚 23:59 補登即可</li>
+<li><strong>退改</strong>：出發前 5 天可全額退款</li>
+<li>
+<p><strong>導航地點</strong>：<code>Parcheggio Auronzo</code></p>
+</li>
+<li>
+<p><strong>🗺️ 其他參考路線（天氣不佳或提早下山時備案）</strong></p>
+</li>
+</ul>
+<p><strong>1. Misurina 湖環湖步道（Lago di Misurina Loop）</strong><br />
+  最輕鬆、最安全且完全平坦的選擇，即便下點小雨也能在湖邊散步。<br />
+  * <strong>距離</strong>：約 2.7 公里環線<br />
+  * <strong>時間</strong>：45 – 60 分鐘<br />
+  * <strong>亮點</strong>：沿途有無數長椅可以休息，且隨時可以進到湖邊的咖啡廳或飯店躲雨</p>
+<p><strong>2. Antorno 湖散步路線（Lago d'Antorno）</strong><br />
+  Antorno 湖就位於通往三尖峰收費站的前方，湖面較小但非常寧靜。<br />
+  * <strong>距離</strong>：從 Misurina 北端出發，單程約 20 – 40 分鐘；來回約 1.5 小時（包含環湖）<br />
+  * <strong>亮點</strong>：從這裡可以看到三尖峰的倒影，步道穿過森林與草地，緩坡向上</p>
+<p><strong>3. Col de Varda 景觀吊椅與山徑</strong><br />
+  想念高處風景但不想走路，可以直接搭乘吊椅。<br />
+  * <strong>方式</strong>：在 Misurina 湖南端搭乘 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Seggiovia+Col+de+Varda">Seggiovia Col de Varda</a></strong> 吊椅直達 2,115 公尺的山屋<br />
+  * <strong>費用</strong>：2026 年預計約單程 €15 – 17<br />
+  * <strong>亮點</strong>：山頂視野極佳，可俯瞰整個湖區；另有非常平緩的短步道可走約 15 分鐘</p>
+<p><strong>4. Cadini di Misurina 景觀台（短途版）#117</strong><br />
+  若已開車到三尖峰停車場，但發現孩子走不動大環線，可以改走這一條。<br />
+  * <strong>距離</strong>：從停車場出發，單程僅約 1.6 – 2 公里；來回約 1.5 小時<br />
+  * <strong>亮點</strong>：路徑較窄，能看到像「魔戒」場景般的尖銳群峰</p>
+<hr />
+<h2>📅 Day 10 | 7/27 (一) 大鐘山冰川公路 Grossglockner High Alpine Road</h2>
+<ul>
+<li><strong>🌅 早晨：最美湖景與跨國移動</strong></li>
+</ul>
+<blockquote>
+<p><strong>⏱️ 預估時間軸</strong><br />
+| 時間 | 事項 |<br />
+| :--- | :--- |<br />
+| <code>06:45</code> | 🚗 <strong>出發：Misurina Lake</strong>。準備出發，目標直指 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Lago+di+Braies">Lake Braies</a></strong> 最近的 P4 停車場。 |<br />
+| <code>07:35</code> – <code>09:20</code> | 📸 <strong>景點：<a href="https://www.google.com/maps/search/?api=1&amp;query=Lago+di+Braies">Lake Braies (布萊埃斯湖)</a></strong>（停留 1 小時 45 分）。<br>重點：停在 P4 停車場（最近），享受清晨無人的湖畔倒影，悠閒散步吃早餐。<br>⚠️ <strong>提醒</strong>：務必在 <code>09:20</code> 前離開，避開 <code>09:30</code> 開始的管制車潮。 |<br />
+| <code>09:20</code> – <code>11:35</code> | 🚗 <strong>移動：前往奧地利</strong>（車程預留 2 小時 15 分，含跨國與休息）。長途車程，小朋友若需上廁所可隨時停靠沿途加油站。 |</p>
+</blockquote>
+<ul>
+<li><strong>☀️ 中午：大鐘山腳下用餐</strong></li>
+</ul>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">時間</th>
+<th style="text-align: left;">事項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>11:35</code> – <code>13:05</code></td>
+<td style="text-align: left;">🍴 <strong>午餐：<a href="https://www.google.com/maps/search/?api=1&amp;query=Heiligenblut+am+Grossglockner">Heiligenblut (海利根布盧特)</a></strong>（停留 1 小時 30 分）。避開正午人潮，悠閒享用熱食午餐，讓駕駛充分休息。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>13:05</code> – <code>13:50</code></td>
+<td style="text-align: left;">🚗 <strong>移動：過收費站上山</strong>。使用手機截圖的「<a href="https://grossglockner.at/gg/de/preiseundtickets">線上票 QR Code</a>」快速通過收費站。（🎫 購票請至 <a href="https://grossglockner.at/gg/de/preiseundtickets">官方 Ticket Shop</a>）</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<ul>
+<li><strong>🏔️ 下午：冰川公路與親子時光</strong></li>
+</ul>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">時間</th>
+<th style="text-align: left;">事項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>13:50</code> – <code>15:05</code></td>
+<td style="text-align: left;">🏔️ <strong>景點：<a href="https://www.google.com/maps/search/?api=1&amp;query=Kaiser-Franz-Josefs-Hohe">法蘭茲·約瑟夫高地 (Kaiser-Franz-Josefs-Höhe / KFJ)</a></strong>（停留 1 小時 15 分）。觀賞帕斯特澤冰川 (Pasterze)、尋找野生土撥鼠（記得帶望遠鏡）。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>15:40</code> – <code>16:25</code></td>
+<td style="text-align: left;">🤸‍♂️ <strong>景點：<a href="https://www.google.com/maps/search/?api=1&amp;query=Fuscher+Lacke">Fuscher Lacke 遊樂場</a></strong>（停留 45 分鐘）。位於 Mankei-Wirt 餐廳旁，讓小朋友玩溜滑梯、看土撥鼠放電。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>16:45</code> – <code>17:00</code></td>
+<td style="text-align: left;">📸 <strong>景點：<a href="https://www.google.com/maps/search/?api=1&amp;query=Fuscher+Torl">Fuscher Törl</a></strong>（停留 15 分鐘）。快速與紀念碑合照，欣賞剛剛開上來的壯觀髮夾彎。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>17:10</code> – <code>17:25</code></td>
+<td style="text-align: left;">🚩 <strong>備案：<a href="https://www.google.com/maps/search/?api=1&amp;query=Haus+Alpine+Naturschau">Haus Alpine Naturschau 自然館</a></strong>。<br>• <strong>狀況 A</strong>：若提早抵達且尚未關門 ➔ 進去上廁所、逛商店。<br>• <strong>狀況 B</strong>：若已關門 (通常 17:00 關) ➔ 僅參觀戶外土撥鼠步道，或直接繼續下山。</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<ul>
+<li><strong>🏨 傍晚：抵達飯店</strong></li>
+</ul>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">時間</th>
+<th style="text-align: left;">事項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>17:25</code> – <code>18:10</code></td>
+<td style="text-align: left;">🚗 <strong>移動：下山</strong>（車程預留 45 分鐘，慢慢開）。最後一段下坡路，享受沿途風景，不用趕路。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>18:10</code></td>
+<td style="text-align: left;">🏨 <strong>抵達：<a href="https://www.google.com/maps/search/?api=1&amp;query=Votter's+Hotel+Kaprun">Vötter's Hotel (卡普倫 Kaprun)</a></strong>。順利抵達！辦理入住，享用晚餐。</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<ul>
+<li><strong>🎒 出發前 3 大檢查：</strong></li>
+<li>[ ] <strong>大鐘山門票</strong>：是否已購買並將 QR Code 截圖存手機？</li>
+<li>[ ] <strong>零錢</strong>：是否備好歐元硬幣（支付 Braies 停車費）？</li>
+<li>[ ] <strong>衣物</strong>：冰川觀景台海拔高風大，厚外套是否放在車內好拿的地方？</li>
+</ul>
+<hr />
+<h2>🎢 Day 11 | 7/28 (二) 奧地利最後衝刺 &amp; 德國森林浴</h2>
+<ul>
+<li><strong><code>09:00 - 10:30</code> 🎢 【奧地利】Maisi Flitzer 阿爾卑斯山雲霄飛車</strong></li>
+<li>
+<p>🎯 策略：建議 <strong>09:00-09:15</strong> 就到售票口，09:30 開門第一批玩。</p>
+</li>
+<li>
+<p><strong><code>10:30 - 12:00</code> 🚗 跨國移動 (Kaprun → Berchtesgaden)</strong></p>
+</li>
+<li>
+<p>車程約 <strong>1.5 小時</strong>，途中會經過國界。</p>
+</li>
+<li>
+<p><strong><code>12:00 - 13:00</code> 🍽️ 開車抵達 Ramsau 附近 (午餐)</strong></p>
+</li>
+<li>
+<p>⚠️ 午餐地點待決定（已加入待辦事項）。</p>
+</li>
+<li>
+<p><strong><code>13:30 - 16:30</code> 🌲 【德國】Hintersee (後湖) + 魔法森林深度遊</strong></p>
+</li>
+<li>直接前往 Hintersee (後湖)，行李直接放車上。</li>
+<li><strong>🅿️ 停車</strong>：建議停在 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Parkplatz+Seeklause+Ramsau">Parkplatz Seeklause</a></strong>（位於後湖與魔法森林交界）。<ul>
+<li>📍 地址：Am See 65, 83486 Ramsau bei Berchtesgaden, Germany</li>
+<li>若使用機器繳停車費，請準備零錢；記得將停車票放在擋風玻璃明顯處。</li>
+</ul>
+</li>
+<li><strong>🛡️ 備案</strong>：若 Seeklause 客滿，改導航至 <strong>Parkplatz Zauberwald</strong>（距離約 500 公尺），同樣能輕鬆走到這兩個景點。</li>
+<li>
+<p><strong>🥾 深度遊路線（約 3 小時，步道平緩，穿一般運動鞋即可）</strong>：</p>
+<ul>
+<li><a href="https://www.google.com/maps/search/?api=1&amp;query=Parkplatz+Seeklause+Ramsau">📍 Parkplatz Seeklause</a> 停車 → 順著指標走進 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Zauberwald+Ramsau">Zauberwald (魔法森林)</a></strong>（路徑沿著溪流穿梭在巨石與樹根間）→ 接回 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Hintersee+Ramsau+Berchtesgaden">Hintersee (後湖) 環湖步道</a></strong> → 繞行半圈回停車場。全程平緩好走，適合慢慢拍照。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>16:30 - 17:00</code> 🏨 返回飯店 Check-in &amp; 整理衣物</strong></p>
+</li>
+<li>進房稍作休息，把要洗的衣服分類好。</li>
+<li>
+<p>⚠️ <strong>記得請飯店將隔天早餐改成 Lunch Box 形式</strong>（已加入待辦事項）。</p>
+</li>
+<li>
+<p><strong><code>17:00 - 19:30</code> 🧺 洗衣 + 晚餐 (Gasthof Neuhaus)</strong></p>
+</li>
+<li>前往 SB-Waschsalon 投幣洗衣。請準備足夠的 <strong>1 歐元、50 分硬幣</strong>。</li>
+<li>等待時間去隔壁餐廳吃飯，吃完剛好烘衣完成。</li>
+<li>🍽️ <strong>晚餐推薦</strong>：<a href="https://www.google.com/maps/search/?api=1&amp;query=Gasthof+Neuhaus+Berchtesgaden">Gasthof Neuhaus</a></li>
+</ul>
+<hr />
+<h2>🚢 Day 12 | 7/29 (三) 國王湖 (Königssee) 深度慢遊</h2>
+<blockquote>
+<p>[!TIP]<br />
+<strong>核心策略：先去最遠的上湖 (Obersee)，回程再玩紅蔥頭教堂</strong><br />
+大多數團客會先在紅蔥頭教堂下船，我們反其道而行，直奔最深處，獨享早晨的寧靜。</p>
+</blockquote>
+<ul>
+<li><strong><code>07:30</code> 🏨 旅館出發</strong></li>
+<li>
+<p>早餐改為 <strong>Lunch Box</strong>（前一晚 Check-in 時已請飯店準備）。</p>
+</li>
+<li>
+<p><strong><code>08:00 - 08:15</code> ⛵ 抵達 Seelände 主碼頭，準備登船</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>🅿️ 停車</strong></td>
+<td style="text-align: left;">停在大型停車場 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Königssee+Parkplatz">Königssee Parkplatz</a></strong>，步行至 <strong>Seelände 碼頭</strong>約 10 分鐘（沿路是商店街）。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>🎫 船票</strong></td>
+<td style="text-align: left;">強烈建議<strong>提前於網上預購</strong>（購票網址：<strong><a href="https://shop-ks.seenschifffahrt.de/?lang=en">shop-ks.seenschifffahrt.de</a></strong>）。有線上票可直接走向登船閘口，<strong>完全跳過現場購票排隊</strong>。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>🎟️ 票種</strong></td>
+<td style="text-align: left;"><strong>Seelände → Salet 全程來回</strong>（終點站即上湖 Obersee 入口，即「Königssee → Salet」）。<br>💶 票價：大人 <strong>€29.80</strong>、兒童(6–17歲) 約 <strong>€14.90</strong>、5歲以下 <strong>免費</strong>。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>⚠️ 退票規定</strong></td>
+<td style="text-align: left;">線上票<strong>不可退款、不可換日期</strong>。請確認天氣後再購買。買完務必將 PDF 儲存至手機<strong>離線資料夾</strong>（此區手機訊號極差）。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>🚢 第一班出發時間</strong></td>
+<td style="text-align: left;"><strong>08:15</strong>（7/29 最早班次，建議搶這班！出發後第一站直奔 Salet，獨享早晨寧靜）。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>💺 選位秘訣</strong></td>
+<td style="text-align: left;">去程請坐在船的<strong>「右側」</strong>。這樣當船經過紅蔥頭教堂 (St. Bartholomä) 時，可拍到最經典的「洋蔥頭教堂與瓦茨曼山 (Watzmann)」合影。</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong><code>08:30 - 09:30</code> 🎺 船上時光 &amp; 迴音壁</strong></li>
+<li>船長會在岩壁前停船，吹起小號，讓您聽著名的<strong>「國王湖迴音」</strong>。</li>
+<li>
+<p>記得準備零錢給小費。這段時間請讓孩子靜下心來聆聽，非常神奇。</p>
+</li>
+<li>
+<p><strong><code>09:30 - 12:00</code> 🥛 深度遊精華：上湖 (Obersee) 與牛奶小屋</strong></p>
+</li>
+</ul>
+<blockquote>
+<p><strong>⏱️ 上湖深度遊時間軸</strong><br />
+| 時間 | 事項 |<br />
+| :--- | :--- |<br />
+| <code>09:30</code> | 抵達 <strong>Salet 碼頭</strong>（船程約 55 分鐘）。下船後，別急著拍照，跟著人群往前走。 |<br />
+| <code>09:45</code> | 🏞️ <strong>第一站：Obersee 湖頭</strong>（步行約 15 分鐘平坦步道）。當您看到 Obersee 時，會被那如鏡面般的倒影震撼。這裡有著名的<strong>「湖中船屋」</strong>，是必拍景點。 |<br />
+| <code>10:00</code> | 🥾 <strong>第二站：健行至 Fischunkelalm 牛奶小屋</strong>（步行約 45 – 60 分鐘）。沿著湖的右側走，前往湖對岸的小屋。⚠️ 中間有一段岩石階梯，有些高低落差，對 7 歲小孩來說是有趣的冒險，但請務必穿防滑運動鞋。 |<br />
+| <code>11:00</code> | 🐄 <strong>抵達 Fischunkelalm（牛奶小屋）</strong>。在此休息，買一杯最新鮮的阿爾卑斯山牛奶（也有白脫牛奶）和塗滿奶油的麵包。坐在草地上，欣賞後方的<strong>略特巴赫瀑布 (Röthbachfall)</strong>（德國最高的瀑布）——這是只有走到這裡才能享受到的獨家視角。 |<br />
+| <code>11:45</code> | 原路折返 Salet 碼頭。 |</p>
+</blockquote>
+<ul>
+<li><strong><code>12:30 - 13:00</code> ⛵ 搭船前往中繼站</strong></li>
+<li>
+<p>從 Salet 搭船往回，在 <strong>St. Bartholomä（紅蔥頭教堂）</strong> 下車。</p>
+</li>
+<li>
+<p><strong><code>13:00 - 14:30</code> 🍴 午餐與湖畔戲水</strong></p>
+</li>
+<li><strong>餐廳</strong>：<strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Fischerstüberl+St+Bartholomä+Königssee">Fischerstüberl</a></strong>（St. Bartholomä 著名餐廳）。<ul>
+<li>⚠️ <strong>免訂位（也無法訂位）</strong>：這是一間<strong>半自助式</strong>餐廳，請直接在櫃台排隊點餐、結帳，然後自己端盤子找空位坐（翻桌率快，通常很快有位子，建議一人佔位一人點餐）。</li>
+</ul>
+</li>
+<li><strong>必點</strong>：<strong>煙燻鱒魚 (Schwarzreiter)</strong>。這是國王湖的特產，用古法煙燻，風味絕佳（刺多一點，小孩可選炸魚排替代）。</li>
+<li>
+<p><strong>餐後活動</strong>：教堂邊的湖水非常淺且清澈，有很多鴨子；可沿著教堂後面的平坦森林步道散步，氛圍比上湖熱鬧，適合放鬆。</p>
+</li>
+<li>
+<p><strong><code>14:30 - 15:30</code> 🌲 森林環狀步道 (Eisbach Rundweg)</strong></p>
+</li>
+<li>教堂後方有一條平緩的森林步道，通往 <strong>Eisbach（冰溪）</strong> 的出海口。</li>
+<li>
+<p>遊客極少、樹蔭涼爽，溪水是從冰河融化下來的，<strong>超級冰冷</strong>！</p>
+</li>
+<li>
+<p><strong><code>15:30 - 16:00</code> ⛵ 搭船返回起點 Seelände 主碼頭</strong></p>
+</li>
+<li>
+<p><strong><code>16:00 - 17:00</code> 🎨 畫家之角 (Malerwinkel)</strong></p>
+</li>
+<li>回到 Schönau 碼頭後，<strong>不要急著去開車</strong>。面對湖的左手邊有一條步道。</li>
+<li><strong>路況</strong>：緩坡向上，來回約 30 – 40 分鐘。</li>
+<li>
+<p><strong>景色</strong>：這是一個俯瞰點，可以看到整個國王湖像峽灣一樣延伸進山谷，船隻像玩具一樣在湖面劃出波紋。這是和在船上完全不同的視角，也是完美的句點。</p>
+</li>
+<li>
+<p><strong><code>17:30 - 19:00</code> 🍽️ 晚餐 &amp; 休息</strong></p>
+</li>
+<li>⚠️ <strong>晚餐地點尚未決定（已加入上方待辦事項）</strong>。</li>
+</ul>
+<h3>🎒 出發前準備清單</h3>
+<ul>
+<li>[ ] 👟 <strong>鞋子</strong>：要去上湖牛奶小屋，<strong>千萬不要穿拖鞋或平底涼鞋</strong>。請穿抓地力好的運動鞋或輕量登山鞋。</li>
+<li>[ ] 💶 <strong>現金</strong>：牛奶小屋和船上的小費通常只收現金，請準備足夠的歐元零錢。</li>
+<li>[ ] 💧 <strong>飲用水</strong>：健行過程會流汗，雖然牛奶好喝，但請自備足夠的飲用水。</li>
+<li>[ ] 🧴 <strong>防曬與薄外套</strong>：湖面紫外線強，但陰影處或船開動時會有風，洋蔥式穿搭最適合。</li>
+<li>[ ] 🚻 <strong>廁所規劃</strong>：Salet 碼頭有廁所，走往上湖後即無廁所（直到牛奶小屋才有簡易廁所）。<strong>記得在碼頭先解決！</strong></li>
+</ul>
+<hr />
+<h2>🏔️ Day 13 | 7/30 (四) 耶拿峰 &amp; 慕尼黑逛街</h2>
+<blockquote>
+<p>[!TIP]<br />
+<strong>核心策略：早上衝耶拿峰鳥瞰國王湖，12:00 黃金時間出發搶在車潮前進城</strong><br />
+12:00 前離開是關鍵，可完美避開 14:00–16:00 基姆湖 (Chiemsee) 的返程車潮。</p>
+</blockquote>
+<ul>
+<li><strong><code>06:00</code> 🛎️ 起床</strong></li>
+<li>
+<p>早餐前先把退房行李全部整理好。</p>
+</li>
+<li>
+<p><strong><code>07:30 - 08:30</code> 🍳 早餐 &amp; 退房</strong></p>
+</li>
+<li>
+<p>辦理退房，行李放車上。</p>
+</li>
+<li>
+<p><strong><code>08:30</code> 🚗 從 <a href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+AlpinaRos+Schönau+am+Königssee">Hotel AlpinaRos</a> 出發</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>車程</strong></td>
+<td style="text-align: left;">僅需約 <strong>5–10 分鐘</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>導航目的地</strong></td>
+<td style="text-align: left;"><strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Jennerbahn+Talstation+Schönau+am+Königssee">Jennerbahn Talstation</a></strong>（Jennerbahnstraße 18, 83471 Schönau am Königssee）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong><code>09:00 - 10:30</code> ⛰️ 耶拿峰 (Jennerbahn) 登頂與輕健行</strong></li>
+<li>📌 官方資訊：<a href="https://www.jennerbahn.de/en/opening-hours-and-operating-times-jennerbahn">Jennerbahn 開放時間與票價</a></li>
+<li>09:00 纜車開始運轉，搭纜車直達山頂站 (Bergstation)。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">景點</th>
+<th style="text-align: left;">說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>觀景台</strong></td>
+<td style="text-align: left;">出站即有無敵觀景台，可以俯瞰整個<strong>國王湖</strong>（像峽灣一樣美）。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>輕健行</strong></td>
+<td style="text-align: left;">從山頂站慢慢步行至<strong>峰頂 (Gipfel)</strong>，高度差不大，親子皆宜。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>人工湖</strong></td>
+<td style="text-align: left;">中繼站 (Mittelstation) 旁有一座漂亮的 <strong>Speicherteich 人工湖</strong>，值得停留拍照。</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong><code>10:30 - 11:30</code> 🍽️ 午餐：<a href="https://www.google.com/maps/search/?api=1&amp;query=Jenneralm+Jennerbahn+Königssee">Jenneralm</a>（山頂景觀餐廳）</strong></li>
+<li>📍 地點：就在山頂纜車站旁。</li>
+<li>🍴 形式：<strong>採自助式 (Self-service)</strong>，拿托盤點餐結帳，速度快不用等服務生。</li>
+<li>
+<p>🌄 優點：風景絕佳。推薦點香腸、薯條或熱湯，輕鬆填飽肚子再下山。</p>
+</li>
+<li>
+<p><strong><code>12:00</code> 🚗 離開國王湖，前往慕尼黑</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>導航目的地</strong></td>
+<td style="text-align: left;"><a href="https://www.google.com/maps/search/?api=1&amp;query=Harry's+Home+Hotel+Munich+Moosach">Harry's Home Hotel &amp; Apartments Munich (Moosach)</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>出發時間</strong></td>
+<td style="text-align: left;">⚠️ <strong>12:00 是黃金出發時間</strong>，可完美避開 14:00–16:00 的基姆湖返程車潮。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>預計車程</strong></td>
+<td style="text-align: left;">約 <strong>1 小時 45 分 – 2 小時</strong>（視路況）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong><code>14:00 - 15:00</code> 🏨 Harry's Home (Moosach) Check-in</strong></li>
+<li>停車、卸行李、辦理入住。</li>
+<li>
+<p>💡 <strong>隱藏優勢</strong>：飯店對面有購物中心 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Moosach+Meile+München">Moosach Meile</a></strong>，內有超市 <strong>Kaufland</strong> 和藥妝店 <strong>dm</strong>，非常適合補給生活用品。</p>
+</li>
+<li>
+<p><strong><code>15:15</code> 🚗 開車進城（前往瑪利亞廣場）</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>主停車場</strong></td>
+<td style="text-align: left;"><a href="https://www.google.com/maps/search/?api=1&amp;query=Parkhaus+Schrannenhalle+München">Parkhaus Schrannenhalle</a>（Prälat-Zistl-Straße 3）限高 <strong>2.1m</strong>，離瑪利亞廣場步行 <strong>3 分鐘</strong>。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>備案停車場</strong></td>
+<td style="text-align: left;"><a href="https://www.google.com/maps/search/?api=1&amp;query=Parkhaus+Oberanger+München">Parkhaus Oberanger</a>（Oberanger 27）限高 <strong>2.0m</strong>，若主場滿位時使用。</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong><code>16:00 - 18:30</code> 🛍️ 慕尼黑老城逛街</strong></li>
+<li>停好車後，穿過熱鬧的 <a href="https://www.google.com/maps/search/?api=1&amp;query=Viktualienmarkt+München">Viktualienmarkt（穀物市場）</a>，感受慕尼黑活力。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">地點</th>
+<th style="text-align: left;">推薦理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Rimowa+Store+Dienerstrasse+Munich">Rimowa Store</a></strong>（Dienerstraße 19）</td>
+<td style="text-align: left;">旗艦店，選購行李箱的好時機。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Max+Krug+München+Neuhauser+Strasse">Max Krug GmbH</a> &amp; <a href="https://www.google.com/maps/search/?api=1&amp;query=Herrmann+Geschenke+München+Neuhauser+Strasse">Herrmann Geschenke GmbH</a></strong>（Neuhauser Straße）</td>
+<td style="text-align: left;">兩家相距很近，是買<strong>咕咕鐘、木頭音樂盒、胡桃鉗</strong>的重點紀念品戰區，建議花時間細逛。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Hugendubel+Marienplatz+München">Hugendubel 書店</a></strong>（Marienplatz）</td>
+<td style="text-align: left;">隨意逛逛，有繪本和德文書。</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⏰ <strong>17:00 準時抵達瑪利亞廣場看木偶報時鐘 (Rathaus-Glockenspiel)！</strong><br />
+夏季（3 月 – 10 月）報時場次：<strong>11:00、12:00、17:00</strong>。請提前 5 分鐘到廣場佔位。</p>
+</blockquote>
+<ul>
+<li><strong><code>18:30 - 20:00</code> 🍺 晚餐（市政廳地窖或回飯店自煮）</strong></li>
+<li>
+<p>推薦餐廳（⚠️ 旺季建議提前確認是否需訂位）：</p>
+<ul>
+<li><strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Augustiner+Klosterwirt+München">Augustiner Klosterwirt</a></strong></li>
+<li><strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Ratskeller+München">Ratskeller München（市政廳地窖）</a></strong></li>
+</ul>
+</li>
+<li>
+<p><strong><code>20:30</code> 🏨 返回飯店</strong></p>
+</li>
+<li>使用飯店的 <strong>24H Service Point 自助洗衣</strong>，順手把衣服送洗。</li>
+</ul>
+<hr />
+<h3>💡 B 計畫：萬一高速公路大塞車怎麼辦？</h3>
+<p>如果 13:00 後出發，發現預計抵達慕尼黑時間已超過 16:00：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">步驟</th>
+<th style="text-align: left;">做法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>跳過 Check-in</strong></td>
+<td style="text-align: left;">行李放車上，<strong>直奔市中心</strong>，不回飯店。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>停車</strong></td>
+<td style="text-align: left;">直接導航至 <strong>Parkhaus Schrannenhalle</strong>。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>晚一點再 Check-in</strong></td>
+<td style="text-align: left;">逛完街、吃完晚餐後再回飯店辦入住（24 小時都可以 Check-in）。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3>🚇 搭車攻略：從瑪利亞廣場回 Moosach（如需搭大眾運輸）</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>搭乘路線</strong></td>
+<td style="text-align: left;"><strong>U-Bahn 地鐵 U3 線</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>優點</strong></td>
+<td style="text-align: left;">Moosach 是 U3 的<strong>終點站</strong>，絕對不會坐過頭。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>搭乘步驟</strong></td>
+<td style="text-align: left;">在瑪利亞廣場地下車站找<strong>藍底白字「U」</strong>標誌 → 找 U3，方向 (Richtung)：<strong>Moosach</strong> → 坐到底下車 → 搭手扶梯上樓，飯店就在車站建築群旁邊。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>票種</strong></td>
+<td style="text-align: left;">Single Ticket (Einzelfahrkarte) - <strong>Zone M</strong>，約 <strong>€3.90</strong>。機器有<strong>簡體中文介面</strong>，操作不難。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>⚠️ 記得打票！</strong></td>
+<td style="text-align: left;">上車前務必找<strong>藍色小機器</strong>插票打時間戳記。沒打票視同逃票，被查到罰款 <strong>€60</strong>。（如果在售票機買票時選了 "Immediate validation"，或票上已經印了大大的時間，就不用再打——但通常建議打一下比較保險）。</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>🏛️ Day 14 | 7/31 (五) 德意志博物館與逛街購物</h2>
+<blockquote>
+<p>[!TIP]<br />
+<strong>核心策略：早起先攻德意志博物館，下午轉戰卡爾廣場採購</strong><br />
+第一天停東邊 (Rindermarkt) 攻老城區，第二天停西邊 (Stachus) 攻百貨區，完全不用提重物走長路。</p>
+</blockquote>
+<ul>
+<li><strong><code>07:00</code> 🍳 早餐</strong></li>
+<li>
+<p>飯店附近早餐或在房間用早餐。</p>
+</li>
+<li>
+<p><strong><code>08:15</code> 🚗 開車前往德意志博物館</strong></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>開車導航目的地</strong></td>
+<td style="text-align: left;"><strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Garage+am+Gasteig+Munich">Garage am Gasteig</a></strong>（Rosenheimer Str. 5, 81667 München）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>停車注意</strong></td>
+<td style="text-align: left;">⚠️ 博物館門口<strong>沒有公眾停車場</strong>！請務必先開車導航至這個最近的大型停車場，停好車後走路過橋就到博物館 (約 5 分鐘)。</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong><code>09:00 - 14:00</code> 🏛️ 德意志博物館 (Deutsches Museum)</strong></li>
+</ul>
+<p><strong>【🗝️ 行前與入場要點】</strong><br />
+  * <strong>【必做】預購電子票：</strong> 務必提前於 <a href="https://tickets.deutsches-museum.de/">德意志博物館官方售票網</a> 購買<strong>指定時段門票 (Time-slot Ticket)</strong>。系統通常只開放<strong>「未來 3 週內」</strong>的門票預購，因此請於 <strong>7月10日左右</strong> 記得上網購買。現場購票人潮極多且有名額限制，持 QR Code 電子票可由「持票者專用入口」掃碼進館，省下大量排隊時間。<br />
+  * <strong>寄物與硬幣：</strong> 館內禁止攜帶大型背包與外套進入展場。寄物櫃需使用 <strong>1 或 2 歐元硬幣</strong> 作為押金（取物時退還），請務必隨身備好硬幣。<br />
+  * <strong>地點：</strong> 博物館本體位於市中心的 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Deutsches+Museum+Munich">Museumsinsel (博物館島總館)</a></strong>。（⚠️ <strong>注意：車子開不進去！</strong> 開車請導航至前述的 Gasteig 停車場，下車後步行導航才設定為博物館島）。<br />
+  * <strong>進館第一件事：</strong> 檢查大廳螢幕上的 <strong>"Vorführungen" (演示秀)</strong> 時間表，特別是「高壓電秀」，建議開演前 20 分鐘去排隊。<br />
+  * 💡 <strong>2026 年特別提醒：</strong> 屆時博物館第二階段整修可能影響部分展區（如老航海區），請以進館當天的官方地圖與 App 顯示的「開放區域」為準。</p>
+<p><strong>【⚡ 大人推薦亮點 (深度科技與工藝)】</strong><br />
+  * <strong>0 樓 | 高壓電秀 (High-Voltage Show)：</strong> 博物館必看招牌！親眼目睹數百萬伏特閃電擊中法拉第籠的震撼感。<br />
+  * <strong>0 樓 &amp; 1 樓 | 航空展區 (Aviation)：</strong> 從早期滑翔機、二戰 Me 262 噴射機到現代空中巴士橫切面，展現精密工業美學。<br />
+  * <strong>地下 1 樓 | 地底採礦 (Mining)：</strong> 極其逼真的沉浸式礦道，帶你穿越中世紀到現代的挖掘技術。<br />
+  * <strong>1 樓 | 機器人與微電子 (Robotics)：</strong> 互動性強，適合大人思考 AI 與現代科技對人類生活的影響。<br />
+  * <strong>3 樓 | 航太展區 (Space)：</strong> 近距離觀察巨大的火箭引擎與人造衛星模型。<br />
+  * <strong>頂樓露台 | 天文日晷 (Roof Terrace)：</strong> 除了天文儀器，這裡有俯瞰慕尼黑市區與遠眺阿爾卑斯山的絕佳視角。</p>
+<p><strong>【🎡 小朋友推薦亮點 (手作體驗與奇趣)】</strong><br />
+  * <strong>0 樓 | 兒童王國 (Kinderreich)：</strong> 專為 3-8 歲設計，有巨大的吉他、水力實驗區、大型積木與齒輪組，放電首選。<br />
+  * <strong>1 樓 | 物理互動區 (Physics)：</strong> 充滿可以動手操作的實驗裝置，如巨大的槓桿、凹透鏡、聲波傳遞管。<br />
+  * <strong>2 樓 | 樂器展區 (Musical Instruments)：</strong> 有自動鋼琴演示，部分區域可互動了解聲音產生的原理。</p>
+<p><strong>【📱 個人化安排建議 (APP 與工具)】</strong><br />
+  * <strong>官方 App 下載：</strong> 搜尋 "Deutsches Museum"。<br />
+    * <strong>即時地圖：</strong> 館內像迷宮，App 內建 3D 導航能幫你精確找到展廳。<br />
+    * <strong>場次預報：</strong> 每個成員可透過 App 查看當天高壓電、液態氮等秀的準確時間，自行微調想看的點。<br />
+    * <strong>語音導覽：</strong> 支援多國語言，每個人可以戴上耳機，根據自己的步調挑選有興趣的展品聽說明。<br />
+  * <strong>分散與集合：</strong> 博物館非常大，建議全家先看過 App 內的展廳分佈，約定 1.5 - 2 小時後在 0 樓大廳或咖啡廳 集合分享心得。</p>
+<p><strong>【🍴 館內午餐選項】</strong><br />
+  * <strong>選項 A：<a href="https://www.google.com/maps/search/?api=1&amp;query=Frau+im+Mond+Deutsches+Museum">Frau im Mond</a> (月亮上的女人) —— 頂樓景觀餐廳</strong><br />
+    * 位置：位於博物館頂樓 (Rooftop)。<br />
+    * 特色：擁有無敵視野，可以俯瞰伊薩河 (Isar) 和慕尼黑市景。有戶外露台座位（天氣好時非常舒服）。提供正餐（義大利麵、沙拉、咖哩香腸）和蛋糕咖啡。口味不錯，價格屬中高價位（風景值回票價）。<br />
+    * 建議：逛累了直接上樓吃這間，大人可以看風景放鬆，小孩有空間透氣。<br />
+  * <strong>選項 B：Museumscafé (博物館咖啡廳) —— 1樓</strong><br />
+    * 位置：靠近入口大廳。<br />
+    * 食物：比較簡單的三明治、蝴蝶結麵包 (Pretzel)、蛋糕、飲料。適合趕時間、只想簡單填飽肚子的人。</p>
+<p><img alt="2026-07-31-博物館截圖" src="./2026-07-31-博物館截圖.png" /></p>
+<ul>
+<li><strong><code>14:00</code> 🚗 取車，移動到「卡爾廣場」</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>導航目的地</strong></td>
+<td style="text-align: left;"><strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Tiefgarage+Stachus+Munich">Tiefgarage Stachus</a></strong>（Adolf-Kolping-Straße 10）</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>停車策略</strong></td>
+<td style="text-align: left;">這裡限高 <strong>2.2m</strong>，非常好停。停在購物街的另一頭 (西端)，專攻百貨和玩具。</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong><code>14:30 - 18:00</code> 🛍️ 現代購物行程</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">地點</th>
+<th style="text-align: left;">特色與推薦</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Obletter+Spielwaren+Munich">Obletter Spielwaren</a></strong></td>
+<td style="text-align: left;">超大玩具店，這就在停車場樓上/出口旁！</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Oberpollinger+Munich">Oberpollinger (奧伯林格)</a></strong></td>
+<td style="text-align: left;">慕尼黑最高級的百貨，建築很美，適合大人逛精品。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Galeria+Karlsplatz+Munich">GALERIA (Karlsplatz 分店)</a></strong></td>
+<td style="text-align: left;">藥妝與雜貨。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Muller+Tal+Munich">Müller</a></strong></td>
+<td style="text-align: left;">麵包與藥妝/玩具。在 Tal 街上（靠近 Isartor）就有一間大的 Müller，離博物館最近，可以在這裡先買些生活用品或玩具。</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong><code>18:30</code> 🍽️ 晚餐</strong></li>
+<li>
+<p>可以在卡爾廣場附近吃，或者如果想吃亞洲菜，這附近有很多選擇。</p>
+</li>
+<li>
+<p><strong><code>19:30</code> 🚗 開車回飯店</strong></p>
+</li>
+</ul>
+<h3>🚇 搭車攻略：從卡爾廣場回 Moosach（如需搭大眾運輸）</h3>
+<p>若傍晚不想開車，可從卡爾廣場 (Karlsplatz / Stachus) 搭車回去：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">項目</th>
+<th style="text-align: left;">說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>搭乘路線</strong></td>
+<td style="text-align: left;"><strong>S-Bahn 郊區鐵路 S1 線</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>優點</strong></td>
+<td style="text-align: left;">不需要轉車，從卡爾廣場直達。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>搭乘步驟</strong></td>
+<td style="text-align: left;">在卡爾廣場地下車站，找<strong>綠底白字的「S」標誌</strong> → 尋找 S1 路線，方向 (Richtung) 寫著：<strong>Freising / Flughafen (機場)</strong> → 上車搭約 15 分鐘，聽到廣播 "Moosach" 下車。</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>🎒 今日待辦清單：</strong></li>
+<li>[ ] <strong>博物館預約</strong>：於 <strong>7月10日左右</strong> (提前三週) 至 <a href="https://tickets.deutsches-museum.de/">官網售票頁面</a> 購買 Deutsches Museum 指定時段門票 (Time-slot Ticket)。</li>
+<li>[ ] <strong>備妥硬幣</strong>：準備好 1 或 2 歐元硬幣，作為博物館寄物櫃押金。</li>
+<li>[ ] <strong>下載 APP</strong>：行前下載 "Deutsches Museum" 官方導航 App。</li>
+<li>[ ] <strong>晚餐安排</strong>：找尋卡爾廣場附近或亞洲菜餐廳（並確認是否需訂位）。</li>
+</ul>
+<hr />
+<h2>✈️ Day 15 | 8/1 (六) 賦歸與慕尼黑機場退稅作戰</h2>
+<blockquote>
+<p>[!CAUTION]<br />
+<strong>🚨 退稅作戰核心觀念</strong><br />
+在暑假旺季（8/1 是週六），慕尼黑機場的退稅人潮可能會非常多。請預留 <strong>「45 分鐘 ～ 1.5 小時」</strong> 的時間專門處理退稅！<br />
+<em>退稅物品：</em> 必須是「先去櫃檯貼行李條」 ➡️ 「拉回來去海關蓋章」 ➡️ 「在海關那邊送進輸送帶」。</p>
+</blockquote>
+<ul>
+<li><strong><code>08:15</code> 🚗 離開旅館前往機場</strong></li>
+<li><strong><code>09:00</code> 🚗 抵達機場還車點 (Car Rental Return)</strong> </li>
+<li>導航目的地：<strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Munich+Airport+Car+Rental+Return">Munich Airport Car Rental Return</a></strong></li>
+<li><strong><code>09:20</code> 🚶 走到航廈 Check-in 櫃檯</strong></li>
+<li>導航地點：<strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Terminal+1+Munich+Airport">Terminal 1, Munich Airport</a></strong>（國泰航空位於第一航廈）</li>
+<li><strong><code>09:30 - 10:30</code> 💰 【退稅作戰時間】 (辦理 Check-in + 海關蓋章 + 領錢)</strong></li>
+<li><em>詳細 SOP 請見下方說明</em></li>
+<li><strong><code>10:30 - 11:15</code> 🛂 安檢 + 護照查驗 (出境)</strong></li>
+<li><strong><code>11:15 - 12:20</code> ☕ 進入管制區，優雅逛免稅店或吃午餐</strong></li>
+<li><strong><code>12:20</code> 🛫 登機</strong></li>
+<li><strong><code>13:05</code> ✈️ 飛機起飛 (CX300)</strong></li>
+</ul>
+<h3>💰 慕尼黑機場托運行李退稅 SOP (Tax Refund)</h3>
+<p><strong>【⏳ 時間殺手三大關卡】</strong><br />
+1. <strong>海關蓋章 (Customs / Zoll)：</strong> 預估排隊 15-40 分鐘。這是最不可控的一環，若運氣不好遇到前面有「代購大戶」或是旅行團，海關人員逐一檢查商品，就會卡很久。地點：第一航廈 (Terminal 1) 的海關辦公室 (通常位在 Check-in 區域附近，請依現場指標前往 Zoll / Customs)。<br />
+2. <strong>領錢櫃檯 (Global Blue Refund Office)：</strong> 預估排隊 10-30 分鐘。蓋完章後要領錢通常也要排隊。若趕時間可選擇「退信用卡」或「投入郵筒」，就不用排隊（但入帳要等很久且匯率較差）。如果要「領現金」，就必須排隊。<br />
+3. <strong>Check-in 櫃檯的來回奔波：</strong> 預估耗時 15-20 分鐘。流程：您必須先去航空公司櫃檯 Check-in -&gt; 秤重貼行李條 -&gt; 把行李拉出來 -&gt; 去海關排隊 -&gt; 蓋章 -&gt; 行李送進去。這段「排兩次隊」的過程很耗時。</p>
+<p><strong>【📋 為了不讓退稅搞到趕飛機，完美退稅 5 步驟】</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">步驟</th>
+<th style="text-align: left;">說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Step 1: 打包策略 (前一晚)</strong></td>
+<td style="text-align: left;">將您買的所有 護手霜、刀具、液體保養品，全部塞進<strong>要托運的大行李箱</strong>裡。⚠️ <strong>注意：不要把退稅單鎖在箱子裡！退稅單要拿在手上。</strong> 每一張都要簽名，並填好 護照號碼 (Passport No.)、英文姓名、地址、Email。千萬不要到海關櫃檯才開始找筆填寫，海關會生氣叫您去旁邊填完重排。退稅品請集中放。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Step 2: 航空櫃檯 (Check-in)</strong></td>
+<td style="text-align: left;">若人手足夠，可分頭進行：一人排海關，另一人排 Check-in（正規流程要先拿登機證，海關才受理）。去航空公司櫃檯辦理登機，地勤會請您把行李放上去秤重。<strong>【關鍵動作】：當地勤貼好行李條 (Tag) 後，請馬上跟他說：「Tax Refund (我要退稅)！」</strong> 地勤會把貼好條碼的行李箱還給您，不會讓輸送帶把行李吸進去。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Step 3: 海關蓋章 (Customs)</strong></td>
+<td style="text-align: left;">走到 Check-in 區附近的 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Customs+Clearance+Munich+Airport">海關辦公室 (Customs Clearance)</a></strong>。把退稅單、護照、登機證給海關看。海關可能會說：「打開箱子給我看。」確認無誤後，會在單子上蓋章。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Step 4: 行李托運 (Drop-off)</strong></td>
+<td style="text-align: left;">蓋完章後，海關旁邊通常就有一個專門的行李輸送帶。您直接把行李箱放上去，它就會送去飛機肚子裡了（不用再走回去航空櫃檯）。這時候您的手就空了，只剩下蓋好章的單據。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Step 5: 領錢 (Global Blue)</strong></td>
+<td style="text-align: left;">拿著蓋好章的單據，去旁邊的 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Global+Blue+Refund+Office+Munich+Airport">Global Blue Refund Office</a></strong> 櫃檯領現金。</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>🎒 今日待辦清單：</strong></li>
+<li>[ ] <strong>前一晚退稅單整理</strong>：把所有退稅單（長長的感熱紙）拿出來，每一張都要簽名，並填妥護照號碼、英文姓名、地址、Email。</li>
+<li>[ ] <strong>行李分配</strong>：確認液體與刀具等退稅品都集中放在「要托運的行李箱」內，且退稅單拿在手上。</li>
+<li>[ ] <strong>還車準備</strong>：確認租賃車輛已加滿油（如合約要求），並準備好車輛歸還手續相關文件。</li>
+</ul>
+<hr />
+<h2>🔗 精選實戰網誌參考 (Blog References)</h2>
+<p>歐美與國內最知名的多洛米蒂遊記，<strong>依景點分類</strong>方便跨日查找。標示 ⚠️ 的連結直接用瀏覽器開啟正常，但部分海外網站會阻擋爬蟲或亞洲 IP，無法開啟時可使用備用的「Google 搜尋直達」連結。</p>
+<hr />
+<h3>🏔️ Ortisei 小鎮總覽 &amp; 纜車交通</h3>
+<ul>
+<li><a href="https://www.travelwitherin.co.uk/travel-to-italy/what-to-do-in-ortisei-dolomites">Travel with Erin：Ortisei 三大纜車路線與健行攻略</a>（中文，含 Seceda / Alpe di Siusi / Resciesa 全攻略）</li>
+<li><a href="https://www.travelwitherin.co.uk/travel-to-italy/val-gardena-dolomites-18-cable-cars">Travel with Erin：Val Gardena 交通 &amp; 18 條纜車搭乘攻略</a>（中文，含 Gardena Card 回本分析與實戰動線圖）</li>
+<li><a href="https://tings.tw/val-gardena-cable-car/">Ting's 旅行筆記：Val Gardena 纜車連乘實戰</a> ⚠️（中文，詳細介紹 Monte Pana → Mont Sëura → Tramans 三段連乘）</li>
+</ul>
+<hr />
+<h3>🌿 休斯高原 Alpe di Siusi（對應：7/19 主線 &amp; 各日備案）</h3>
+<ul>
+<li><a href="https://www.moonhoneytravel.com/alpe-di-siusi-hike/">Moon &amp; Honey Travel：Alpe di Siusi 草甸環線</a>（英文，精華小環線圖文最詳盡）</li>
+<li><a href="https://mominitaly.com/alpe-di-siusi-with-kids/">Mom In Italy：帶小孩玩 Alpe di Siusi</a>（英文，專攻親子遊樂設施與山屋）</li>
+<li><a href="https://www.youtube.com/results?search_query=Puflatsch+Bullaccia+hike">📽️ YouTube：Puflatsch (Bullaccia) 女巫草甸實況</a>（看巨石區真實地貌，判斷小孩適不適合）</li>
+<li><a href="https://www.google.com/search?q=Puflatsch+hike+Witches+Benches+Dolomites">🔍 Google 搜尋：Puflatsch hike Witches Benches</a>（IP 受限時的備用）</li>
+</ul>
+<hr />
+<h3>🏔️ 刀背山 Seceda（對應：7/20 主線 &amp; 各日備案）</h3>
+<ul>
+<li><a href="https://www.moonhoneytravel.com/hiking-seceda-regensburger-hutte-val-gardena/">Moon &amp; Honey Travel：Seceda 刀背山縱走</a>（英文，頂點視角照片 + 2026 纜車預約最新情報）</li>
+<li><a href="https://mominitaly.com/seceda-dolomites-with-kids/">Mom In Italy：帶小孩走 Seceda</a>（英文，Pieralongia 看驢子詳解）</li>
+<li><a href="https://www.google.com/search?q=Throne+and+Vine+Seceda+Dolomites+hike">🔍 Google 搜尋：Throne &amp; Vine Seceda 縱走圖文</a>（Trail 2B 具體拍照位置）</li>
+<li><a href="https://www.google.com/search?q=outdooractive+Seceda+Pieralongia+Col+Raiser+hike+route">🔍 Google 搜尋：Outdooractive Seceda → Col Raiser GPS</a>（路線 GPS + 路人實測時間）</li>
+</ul>
+<hr />
+<h3>🌲 富內斯山谷 Val di Funes（對應：7/21 主線）</h3>
+<ul>
+<li><a href="https://www.travelwitherin.co.uk/travel-to-italy/val-di-funes-dolomites">Travel with Erin：富內斯山谷全攻略</a>（中文，含交通、停車、拍照地點）</li>
+<li><a href="https://throneandvine.com/val-di-funes/">Throne &amp; Vine：Val di Funes 路線完整攻略</a> ⚠️（英文，含環狀路線圖解、山屋介紹與夕陽拍攝建議）</li>
+<li><a href="https://www.earthtrekkers.com/adolf-munkel-weg-hike-geisler-alm-dolomites/">Earth Trekkers：Adolf Munkel Weg 全攻略</a> ⚠️（英文，全球點擊率最高的教學）</li>
+<li><a href="https://throneandvine.com/geisler-alm-adolf-munkel-trail/">Throne &amp; Vine：Geisler Alm 夕陽拍攝攻略</a> ⚠️（英文，山屋夕陽光線全解析）</li>
+</ul>
+<hr />
+<h3>🪨 Passo Sella &amp; 棺材纜車（對應：7/22 主線）</h3>
+<ul>
+<li><a href="https://www.viaggieritratti.it/da-passo-sella-a-rifugio-comici/" target="_blank">Viaggi e Ritratti：Trail 526 巨石城圖解</a>（義大利文，三個路標實拍，路線最完整）</li>
+<li><a href="https://destinazionedolomiti.com/2019/09/11/la-magia-della-citta-dei-sassi-dal-rifugio-passo-sella-al-rifugio-emilio-comici/" target="_blank">Destinazione Dolomiti：Città dei Sassi 魔法路線</a>（去程 Naturonda 步道 + 回程 Trail 526，含時間與海拔資料）</li>
+<li><a href="https://www.babytrekking.it/rifugio-comici-passeggino-sassolungo/" target="_blank">BabyTrekking：推車族到 Rifugio Comici</a>（親子實測，Comici 草地遊戲區、廁所、推車路段說明）</li>
+<li><a href="https://www.google.com/search?q=site:moonhoneytravel.com+Sassolungo+circuit">🔍 Google 搜尋：Moon &amp; Honey Sassolungo Circuit</a>（棺材纜車與 Comici 山屋照片）</li>
+</ul>
+<hr />
+<h3>🌿 Resciesa 森林小火車（對應：7/23 主線）</h3>
+<ul>
+<li><a href="https://www.google.com/search?q=site:mominitaly.com+resciesa">🔍 Google 搜尋：Mom In Italy Resciesa with Kids</a>（帶小孩搭斜坡小火車與超平坦步道全攻略）</li>
+</ul>
+<hr />
+<h3>🚡 三段纜車連乘：Costabella → Dantercëpies → Cir（對應：7/24 主線）</h3>
+<ul>
+<li><a href="https://tings.tw/val-gardena-cable-car/">Ting's 旅行筆記：Val Gardena 纜車連乘實戰</a> ⚠️（中文，最詳盡的連乘解析）</li>
+</ul>
+<hr />
+<h3>🌊 Cascate del Pisciadù 瀑布步道（對應：7/24 下午 &amp; 各日備案）</h3>
+<ul>
+<li><a href="https://mominitaly.com/cascate-del-pisciadu/">Mom In Italy：Cascate del Pisciadù 詳細圖文</a>（英文，停車位置、步道難度、帶小孩實測記錄）</li>
+</ul>
+<hr />
+<h3>🏊 鎮上設施（Col de Flam / Mar Dolomit / PanaRaida）</h3>
+<ul>
+<li><a href="https://www.coldeflam.it/">Col de Flam 冒險公園 官網</a>（含各年齡層路線說明與 FLY Line 影片）</li>
+<li><a href="https://www.mardolomit.com/en/">Mar Dolomit 水上樂園 官網</a>（室內外溫水泳池與滑水道設施）</li>
+<li><a href="https://www.valgardena.it/en/summer-holidays-dolomites/families/panaraida/">Val Gardena 官方：PanaRaida 闖關地圖</a>（10 關原木設施地圖與影片）</li>
+<li><a href="https://www.google.com/search?q=site:nikoexplores.com+PanaRaida">🔍 Google 搜尋：Niko Explores PanaRaida</a>（10 大闖關關卡全圖解）</li>
+<li><a href="https://www.google.com/search?q=site:altabadia.org+Moviment+Parks">🔍 Google 搜尋：Alta Badia Movimënt Parks</a>（親水熊洞設施照片）</li>
+</ul>
+<hr />
+<blockquote>
+<p>[!IMPORTANT]<br />
+<strong>💡 2026 實務小提醒與預約作戰清單</strong><br />
+- <strong>纜車 (必須搶票)：</strong> <strong>Seceda 纜車</strong> 2026 年改為嚴格的時段預約制，官方已於 <strong>4 月份</strong> 開放全夏季的線上購票。請務必現在就上網劃位！棺材纜車 (Passo Sella) 與 Paolina 纜車目前則現場買票即可。<br />
+- <strong>停車場 (必須搶票與早起)：</strong> <strong>Val di Funes 的 Zanser Alm (德) / Malga Zannes (義) 停車場</strong>（同一個地方）必須事前在官網預約。<strong>Passo Sella 停車場</strong> 則是無法預約、純現場排隊，沒搶到請果斷放棄開往免預約備案地。<br />
+- <strong>山屋午餐：</strong> 如果真的想去吃 <strong>Rifugio Comici</strong> (7/22 行程)，這間強烈建議提前兩週到一個月在官網預約，其他的山屋（如 Pieralongia, Sanon, Geisleralm）通常現場找位子即可。</p>
+<p><strong>🎫 回本纜車購買戰略 (Gardena Card 2026 攻略)</strong><br />
+- <strong>票券選擇</strong>：行程剛涵蓋 6 天，建議幫大人直升 <strong>Gardena Card (連續 6 天卡)</strong>（2026 成人價格 €160.00 / 青少年 €112.00）。18 條所有鄰近纜車無限搭乘，是最無腦省心的超強後盾！<br />
+- <strong>兒童極省專案</strong>：8 歲以下兒童拿一張卡<strong>只需超便宜的 €5.00</strong>，無懸念直接買給孩子當紀念品使用。<br />
+- <strong>買卡的神級優勢</strong>：萬一 7/20 Seceda 被限流人數管制導致行程卡關，憑此卡能立刻免費轉搭 <strong>7 號 + 6 號纜車</strong> 上山當作絕妙備案。這張卡也能讓「不想健行的家人無腦單飛」，隨便跳上纜車去山頂喝咖啡放空。<br />
+- <strong>備註與待釐清</strong>：雖然持 Gardena Card 可暢遊打卡，但 2026 年 Seceda 的人流管控制度尚不確定是否會針對 Gardena Card 持卡者特別限流預約。提醒您 <strong>5 月中旬</strong> 再至官網查詢最新搭乘規範。</p>
+</blockquote>
+<hr />
+<h2>🍽️ Ortisei 本鎮嚴選必吃晚餐 (建議儘早線上對時預約)</h2>
+<p>在 Ortisei 連住 6 晚，以下精挑細選 3 家鎮上評價極優、氣氛最好、極受小孩與肉食愛好者歡迎的名店。它們與白天的行程互不衝突，您可以自由安插在每天行程歸來後的晚上去享用：</p>
+<ol>
+<li><strong>Mauriz Keller (鎮上人潮 No.1 黑森林地窖披薩)</strong></li>
+<li><strong>特色：</strong> 裝潢如同一座宏偉的歐洲中世紀地窖，氣氛極佳！這裡的披薩便宜、超大、世界級好吃，烤雞與義大利麵也非常受小朋友歡迎。</li>
+<li><strong>預約建議：</strong> 生意永遠大爆滿，強烈建議提早 2-3 週前上官網預訂。</li>
+<li><strong>Restaurant Tubladel (大口吃肉的終極名店)</strong></li>
+<li><strong>特色：</strong> 以「烤排骨 (Ribs)」和「無敵巨無霸戰斧牛排」聞名。在山區健行了一整天，若司機極度需要補充蛋白質與油脂，這家絕對是全鎮吃得最爽快過癮的一間。</li>
+<li><strong>預約建議：</strong> 極度熱門又難搶，建議至少提早 1 個月起訂位。</li>
+<li><strong>Vives (精緻氣氛優雅的地中海與義式海鮮)</strong></li>
+<li><strong>特色：</strong> 如果有幾餐不想吃油膩烤肉，想吃精緻悠哉的義大利麵或海鮮料理，這家在各大評價網站穩居全鎮前三。環境安靜悠閒，非常適合排在「空白備用日」那天晚上去犒賞全家人。</li>
+</ol>
+<hr />
+<h2>🗺️ 跨區與遠距離景點參考專區 (其他自駕路線儲備)</h2>
+<p>如果您在旅途中有幾天天氣異常晴朗、或是臨時想體驗完全不同的區域地貌（山谷與高原之外的景致），可以參考以下這三個遠程大備案：</p>
+<ul>
+<li><strong>【遠程大備案 1：Alta Badia 兒童樂園】 (車程 45 分，小孩徹底放電)</strong><br />
+  開車越過山脈抵達 La Villa，搭乘 Piz La Ila 現代化纜車 (⚠️ <strong>不含於 Gardena Card</strong>，成人來回約 €25-€28，7 歲兒童同行免費)。山頂是 2000 公尺高的 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Moviment+Parks+Alta+Badia">Movimënt Parks (動態遊樂園)</a></strong>，公園完全免費，有超大型木製溜索、抽水循環設施、熊洞隧道，是讓小孩瘋狂的聖地。</li>
+<li><strong>【遠程大備案 2：Sass Pordoi 帝王絕景】 (車程 50 分，無痛登頂看冰川)</strong><br />
+  多往東開 15 分鐘越過 Passo Sella 抵達停位充足的 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Passo+Pordoi+Parking">Passo Pordoi 停車場</a></strong>。搭乘 60 人透明纜車登頂 2,950 公尺的 <strong>[Sass Pordoi 觀景台]</strong> (⚠️ <strong>不含於 Gardena Card</strong>，成人來回約 €32) 欣賞 360 度冰川大景；接著下山回到停車場，改步行出發，走超級平緩寬敞的 <strong>Viel dal Pan</strong> (Trail 601) 冰川陽台步道，直視對面的最高峰 Marmolada。</li>
+<li><strong>【遠程大備案 3：Lago di Carezza 彩虹湖】 (車程 1 小時 15 分，純看景)</strong><br />
+  開車前往有「多洛米蒂珍珠」美稱的絕美湖泊 <strong><a href="https://www.google.com/maps/search/?api=1&amp;query=Lago+di+Carezza+Parking">Carezza Parking</a></strong>。湖水因陽光折射會閃爍著如彩虹般的色澤，背景配上鋸齒狀的 Latemar 岩峰非常夢幻。但請注意這是一個<strong>「被木柵欄完全圍死、嚴禁觸碰湖水」</strong>的純打卡景點，走完一圈只需 30 分鐘。若要從 Ortisei 專程前往，司機會非常疲勞，建議只有在您突然極度渴望看高山湖泊時，才將其作為殺手鐧備案。</li>
+</ul>
+        </div>
+</div>
+<script>
+(function(){
+  // 1. Classify blockquotes by content
+  document.querySelectorAll('blockquote').forEach(function(bq){
+    var t = bq.textContent;
+    if(t.includes('[!CAUTION]')){
+      bq.classList.add('alert-caution');
+      bq.innerHTML = bq.innerHTML.replace(/\[!CAUTION\]<br\s*\/?>/g,'⚠️ <strong>注意</strong><br>');
+    } else if(t.includes('[!IMPORTANT]')){
+      bq.classList.add('alert-important');
+      bq.innerHTML = bq.innerHTML
+        .replace(/\[!IMPORTANT\]<br\s*\/?>\s*/g,'')
+        .replace(/<strong>✅?\s*待辦事項[^<]*<\/strong>\s*<br\s*\/?>\s*/g,'');
+    } else if(t.includes('[!TIP]')){
+      bq.classList.add('alert-tip');
+      bq.innerHTML = bq.innerHTML.replace(/\[!TIP\]<br\s*\/?>/g,'💡 <strong>小提示</strong><br>');
+    } else if(t.includes('[!NOTE]')){
+      bq.classList.add('alert-note');
+      bq.innerHTML = bq.innerHTML.replace(/\[!NOTE\]<br\s*\/?>/g,'📋 <strong>備注</strong><br>');
+    }
+  });
+
+  // 2. Color h2 elements and assign IDs for nav
+  var palette = [
+    '#4d7e68','#5e8faa','#9a7868','#5a8a6a','#7a8fa0',
+    '#9a7a68','#6a9a88','#8a9a7a','#6a7a9a','#9a8a68',
+    '#7a6a9a','#8a9a6a','#6a9a8a','#9a9268','#8a6a9a'
+  ];
+  var h2s = document.querySelectorAll('h2');
+  h2s.forEach(function(h2,i){
+    h2.style.borderLeftColor = palette[i % palette.length];
+    h2.id = 'sec-' + i;
+  });
+
+  // 3. Build sticky nav from h2 headings
+  var nav = document.getElementById('main-nav');
+  if(nav && h2s.length){
+    h2s.forEach(function(h2,i){
+      var a = document.createElement('a');
+      a.href = '#sec-' + i;
+      var txt = h2.textContent.replace(/\s+/g,' ').trim();
+      var emoji = txt.match(/^([\u{1F300}-\u{1FFFF}✈️⛰️🌻🌲🪨🚂🚡🚗🏔️🚢🏙️🏛️🔗🍽️🗺️🌿]+)/u);
+      var dateStr = null;
+      var m1 = txt.match(/July\s*(\d+)/); if(m1) dateStr = '7/' + m1[1];
+      else { var m2 = txt.match(/Aug(?:ust)?\s*(\d+)/); if(m2) dateStr = '8/' + m2[1]; }
+      if(!dateStr){ var m3 = txt.match(/(\d+\/\d+)/); if(m3) dateStr = m3[1]; }
+      var label;
+      if(dateStr) {
+        label = (emoji ? emoji[0] : '') + ' ' + dateStr;
+      } else {
+        var ct = txt
+          .replace(/^[\u{1F000}-\u{1FFFF}☀-⟿✈️⛰️🌻🌲🪨🚂🚡🚗🏔️🚢🏙️🏛️🔗🍽️🗺️🌿\s]+/gu,'')
+          .replace(/\s*[\(（][^)\）]*[\)）]\s*/g,' ')
+          .replace(/Day\s*\d+\s*[|｜]\s*/i,'')
+          .replace(/^[A-Za-z][A-Za-z0-9\s]*/,'').trim();
+        ct = ct.replace(/^(精選|嚴選|本鎮|跨區|遠距離|實戰|每日)+\s*/g,'').trim();
+        ct = ct.replace(/^(與|和|及|之)\s*/,'').trim();
+        ct = ct.replace(/^(精選|嚴選|本鎮|跨區|遠距離|實戰|每日)+\s*/g,'').trim();
+        ct = ct.replace(/(與|和|及)[^\s]*/g,'').trim();
+        var short = ct.replace(/\s/g,'').substring(0,4) || '資訊';
+        label = (emoji ? emoji[0] : '') + ' ' + short;
+      }
+      a.textContent = label.trim().substring(0, 12);
+      a.title = txt.substring(0, 50);
+      nav.appendChild(a);
+    });
+  }
+
+  // 4. Convert markdown pipe-tables inside <p> tags to real HTML tables
+  document.querySelectorAll('.content-wrapper p').forEach(function(p){
+    var html = p.innerHTML;
+    var lines = html.split(/<br\s*\/?>/i);
+    var hasPipe = lines.some(function(l){ return l.replace(/<[^>]+>/g,'').trim().charAt(0)==='|'; });
+    if(!hasPipe) return;
+
+    function parseCells(row){
+      var parts = row.split('|');
+      if(!parts[0].replace(/<[^>]+>/g,'').trim()) parts.shift();
+      if(parts.length && !parts[parts.length-1].replace(/<[^>]+>/g,'').trim()) parts.pop();
+      return parts.map(function(c){ return c.trim(); });
+    }
+    function isSep(l){ return /^[\|\s\-:]+$/.test(l.replace(/<[^>]+>/g,'')); }
+
+    var groups = [];
+    lines.forEach(function(line){
+      var type = line.replace(/<[^>]+>/g,'').trim().charAt(0)==='|' ? 'tbl' : 'txt';
+      var last = groups[groups.length-1];
+      if(last && last.type===type) last.lines.push(line);
+      else groups.push({type:type, lines:[line]});
+    });
+
+    var newHtml = '';
+    groups.forEach(function(g){
+      if(g.type==='txt'){
+        var txt = g.lines.join('<br>').replace(/^(<br>)+|(<br>)+$/g,'');
+        if(txt.trim()) newHtml += '<p>' + txt + '</p>';
+      } else {
+        if(g.lines.length < 2){ newHtml += '<p>' + g.lines.join('<br>') + '</p>'; return; }
+        var header = parseCells(g.lines[0]);
+        var dataLines = g.lines.slice(1).filter(function(l){ return !isSep(l); });
+        var tbl = '<table><thead><tr>' + header.map(function(h){ return '<th>'+h+'</th>'; }).join('') + '</tr></thead><tbody>';
+        dataLines.forEach(function(row){ tbl += '<tr>' + parseCells(row).map(function(c){ return '<td>'+c+'</td>'; }).join('') + '</tr>'; });
+        tbl += '</tbody></table>';
+        newHtml += tbl;
+      }
+    });
+
+    var dummy = document.createElement('div');
+    dummy.innerHTML = newHtml;
+    var parent = p.parentNode;
+    while(dummy.firstChild) parent.insertBefore(dummy.firstChild, p);
+    parent.removeChild(p);
+  });
+
+  // 5. Convert "- [ ]" items in [!IMPORTANT] blockquotes to interactive checkboxes
+  document.querySelectorAll('blockquote.alert-important').forEach(function(bq){
+    var inner = bq.querySelector('p') || bq;
+    var lines = inner.innerHTML.split(/<br\s*\/?>/i);
+    var newHtml = '';
+    var inList = false;
+    lines.forEach(function(line){
+      if(/^[\s\n]*-\s*\[\s*\]/.test(line)){
+        if(!inList){ newHtml += '<ul class="checklist">'; inList = true; }
+        var content = line.replace(/^[\s\n]*-\s*\[\s*\]\s*/,'');
+        newHtml += '<li><label><input type="checkbox"> <span>' + content + '</span></label></li>';
+      } else {
+        if(inList){ newHtml += '</ul>'; inList = false; }
+        if(line.trim()) newHtml += line + '<br>';
+      }
+    });
+    if(inList) newHtml += '</ul>';
+    inner.innerHTML = newHtml;
+  });
+
+  // 6b. Convert top-level <ul>s whose first <li> has a time code into timeline blocks
+  (function(){
+    function isMilestoneStart(h){
+      return h.startsWith('<p>') ||
+             (h.startsWith('<strong>') && (h.indexOf('🛡') < 30 || h.indexOf('🛝') < 30));
+    }
+    document.querySelectorAll('.content-wrapper ul').forEach(function(ul){
+      if(ul.closest('li')) return;
+      var lis = Array.from(ul.children).filter(function(el){ return el.tagName==='LI'; });
+      if(!lis.length) return;
+      if(!/^<strong><code>/.test(lis[0].innerHTML.trim())) return;
+
+      var cards=[], cur=null;
+      lis.forEach(function(li){
+        var h = li.innerHTML.trim();
+        if(/^<strong><code>/.test(h)){
+          if(cur) cards.push(cur);
+          var tm = h.match(/<code>([^<]*)<\/code>/);
+          cur = {time:tm?tm[1].trim():'', parts:[h], milestone:false};
+        } else if(isMilestoneStart(h) && cur){
+          cards.push(cur);
+          cur = {time:'', parts:[h], milestone:true};
+        } else if(cur){
+          cur.parts.push(h);
+        }
+      });
+      if(cur) cards.push(cur);
+
+      var out='<div class="tl">';
+      cards.forEach(function(c){
+        out += '<div class="tl-item'+(c.milestone?' tl-milestone':'')+'">';
+        if(c.time) out += '<span class="tl-time">'+c.time+'</span>';
+        out += '<div class="tl-body"><div class="tl-content">';
+        c.parts.forEach(function(p,i){
+          var body = i===0 && c.time
+            ? p.replace(/<code>[^<]*<\/code>\s*/g,'').replace(/<strong>\s*<\/strong>/g,'').trim()
+            : p;
+          out += i===0
+            ? '<div class="tl-header-content">'+body+'</div>'
+            : '<div class="tl-sub">'+body+'</div>';
+        });
+        out += '</div></div></div>';
+      });
+      out += '</div>';
+
+      var d=document.createElement('div');
+      d.innerHTML=out;
+      ul.parentNode.replaceChild(d,ul);
+    });
+  })();
+
+  // 6. Convert * `time-code` bullet paragraphs to visual timeline cards
+  (function(){
+    function isSub(l){ return /^\s{2,}\*/.test(l); }
+
+    document.querySelectorAll('.content-wrapper p').forEach(function(p){
+      var lines = p.innerHTML.split(/<br\s*\/?>/i);
+
+      // Only process paragraphs that contain at least one time-code main item
+      var hasTL = lines.some(function(l){
+        return !isSub(l) && /^\*\s*<strong><code>/.test(l.trim());
+      });
+      if(!hasTL) return;
+
+      var before = [], items = [], cur = null, started = false;
+
+      lines.forEach(function(line){
+        if(!line.trim()) return;
+        var t = line.trim();
+
+        if(!isSub(line) && /^\*\s*<strong><code>/.test(t)){
+          // ── Time-code main item ──
+          started = true;
+          if(cur) items.push(cur);
+          var m = t.match(/^\*\s*<strong><code>([^<]+)<\/code><\/strong>\s*(.*)/);
+          var time = m ? m[1].trim() : '';
+          var rest = m ? m[2] : t.replace(/^\*\s*/,'');
+          var tm = rest.match(/^<strong>(【[^<]*)<\/strong>\s*[：:]\s*(.*)/);
+          cur = {time:time, title:tm?tm[1]:'', body:tm?tm[2]:rest, subs:[]};
+
+        } else if(!isSub(line) && /^\*\s*<strong>/.test(t) && started){
+          // ── No-time main item (warning/tip) ──
+          if(cur) items.push(cur);
+          cur = {time:'', title:'', body:t.replace(/^\*\s*/,''), subs:[], notime:true};
+
+        } else if(isSub(line) && cur){
+          // ── Sub-item ──
+          cur.subs.push(t.replace(/^\*\s*/,''));
+
+        } else if(!started){
+          before.push(line);
+        } else if(cur && t){
+          cur.body += (cur.body ? '<br>' : '') + t;
+        }
+      });
+      if(cur) items.push(cur);
+      if(!items.length) return;
+
+      var html = '';
+      var bt = before.join('<br>').trim();
+      if(bt) html += '<p>' + bt + '</p>';
+
+      html += '<div class="tl">';
+      items.forEach(function(it){
+        html += '<div class="tl-item' + (it.notime ? ' tl-milestone' : '') + '">';
+        if(it.time) html += '<span class="tl-time">' + it.time + '</span>';
+        html += '<div class="tl-body">';
+        if(it.title) html += '<div class="tl-title">' + it.title + '</div>';
+        html += '<div class="tl-content">';
+        if(it.body) html += '<p>' + it.body + '</p>';
+        if(it.subs.length) html += '<ul>' + it.subs.map(function(s){ return '<li>'+s+'</li>'; }).join('') + '</ul>';
+        html += '</div></div></div>';
+      });
+      html += '</div>';
+
+      var d = document.createElement('div');
+      d.innerHTML = html;
+      var par = p.parentNode;
+      while(d.firstChild) par.insertBefore(d.firstChild, p);
+      par.removeChild(p);
+    });
+  })();
+
+})();
+</script>
+</body>
+</html>

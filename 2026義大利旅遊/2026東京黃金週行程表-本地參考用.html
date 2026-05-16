@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>🗼 2026 日本黃金週關東行行程表</title>
+<style>
+    :root {
+      --c-red: #e63946; --c-darkred: #c1121f; --c-deepred: #780000;
+      --c-blue: #2196F3; --c-purple: #9C27B0; --c-green: #4CAF50;
+      --c-orange: #FF9800; --c-fire: #FF5722;
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: "Helvetica Neue","PingFang TC","Microsoft JhengHei",sans-serif; background: #f5f0eb; color: #333; padding-top: 0; }
+
+    /* ── STICKY NAV ── */
+    .sticky-nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(26,26,46,.95); backdrop-filter: blur(8px);
+      display: flex; justify-content: center; flex-wrap: wrap; gap: 6px;
+      padding: 10px 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.25);
+    }
+    .sticky-nav a {
+      color: white; text-decoration: none; font-size: .85em; font-weight: 700;
+      padding: 6px 16px; border-radius: 30px; transition: .2s;
+      border: 2px solid rgba(255,255,255,.2);
+    }
+    .sticky-nav a:hover, .sticky-nav a:focus { background: var(--c-red); border-color: var(--c-red); }
+    .sticky-nav a.nav-d1 { border-color: var(--c-blue); }
+    .sticky-nav a.nav-d2 { border-color: var(--c-purple); }
+    .sticky-nav a.nav-d3 { border-color: var(--c-green); }
+    .sticky-nav a.nav-d4 { border-color: var(--c-orange); }
+    .sticky-nav a.nav-d5 { border-color: var(--c-red); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--c-red) 0%, var(--c-darkred) 50%, var(--c-deepred) 100%);
+      color: white; text-align: center; padding: 60px 20px 50px;
+    }
+    .hero::before {
+      content: "🌸🗼🌸"; font-size: 56px; display: block; margin-bottom: 14px;
+      letter-spacing: 10px; animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+    .hero h1 { font-size: 2.5em; font-weight: 900; letter-spacing: 2px; text-shadow: 2px 3px 6px rgba(0,0,0,.3); }
+    .hero p  { font-size: 1.1em; margin-top: 10px; opacity: .9; }
+
+    .meta-strip {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;
+      padding: 22px 16px; background: #fff; border-bottom: 3px solid var(--c-red);
+    }
+    .meta-badge {
+      display: flex; align-items: center; gap: 7px;
+      background: #fff8f0; border: 2px solid var(--c-red); border-radius: 50px;
+      padding: 7px 16px; font-size: .9em; font-weight: 600; color: var(--c-darkred);
+    }
+
+    /* ── LAYOUT ── */
+    .section { max-width: 960px; margin: 28px auto 0; padding: 0 16px; }
+    .section-title {
+      text-align: center; font-size: 1.45em; font-weight: 800; color: var(--c-darkred);
+      margin: 28px 0 14px; display: flex; align-items: center; justify-content: center; gap: 10px;
+    }
+    .section-title::before, .section-title::after {
+      content: ""; flex: 1; height: 2px;
+      background: linear-gradient(to right, transparent, var(--c-red), transparent);
+    }
+
+    /* ── INFO GRID ── */
+    .info-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%, 340px), 1fr)); gap: 16px; margin-bottom: 24px; }
+    .info-card {
+      background: white; border-radius: var(--radius); padding: 18px;
+      box-shadow: 0 3px 12px rgba(0,0,0,.07); border-left: 6px solid;
+    }
+    .info-card.flight { border-color: var(--c-blue); }
+    .info-card.car    { border-color: var(--c-orange); }
+    .info-card.hotel1 { border-color: var(--c-purple); }
+    .info-card.hotel2 { border-color: var(--c-green); }
+    .info-card h3 { font-size: .95em; margin-bottom: 8px; }
+    .info-card p  { font-size: .88em; line-height: 1.7; color: #555; }
+    .info-card strong { color: #222; }
+    .info-card a { color: var(--c-blue); text-decoration: none; font-weight: 600; }
+    .info-card a:hover { text-decoration: underline; }
+
+    /* ── BUDGET TABLE ── */
+    .budget-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: .9em; }
+    .budget-table th { background: var(--c-red); color: white; padding: 10px 14px; text-align: left; }
+    .budget-table td { padding: 9px 14px; border-bottom: 1px solid #eee; }
+    .budget-table tr:nth-child(even) td { background: #fdf8f4; }
+    .budget-table .total td { font-weight: 800; color: var(--c-deepred); background: #ffebee; border-top: 2px solid var(--c-red); font-size: 1.05em; }
+
+    /* ── DAY CARDS ── */
+    .days-wrapper { max-width: 960px; margin: 0 auto; padding: 0 16px 40px; display: flex; flex-direction: column; gap: 24px; }
+    .day-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,.1); }
+
+    .day-header {
+      padding: 20px 24px; color: white; display: flex; align-items: center; gap: 14px; cursor: pointer;
+      user-select: none; position: relative;
+    }
+    .day-header::after {
+      content: "▼"; position: absolute; right: 24px; top: 50%; transform: translateY(-50%);
+      font-size: .9em; opacity: .6; transition: transform .3s;
+    }
+    .day-card.collapsed .day-header::after { transform: translateY(-50%) rotate(-90deg); }
+    .day-card.collapsed .day-body { display: none; }
+    .day-header .day-num { font-size: 2.2em; font-weight: 900; line-height: 1; opacity: .85; }
+    .day-header .day-info h2 { font-size: 1.25em; font-weight: 800; }
+    .day-header .day-info .sub { font-size: .85em; opacity: .85; margin-top: 2px; }
+
+    .day1 .day-header { background: linear-gradient(135deg, #2196F3, #0d47a1); }
+    .day2 .day-header { background: linear-gradient(135deg, #9C27B0, #4a148c); }
+    .day3 .day-header { background: linear-gradient(135deg, #4CAF50, #1b5e20); }
+    .day4 .day-header { background: linear-gradient(135deg, #FF9800, #e65100); }
+    .day5 .day-header { background: linear-gradient(135deg, #e63946, #780000); }
+
+    .day-body { padding: 18px 24px 24px; }
+
+    /* ── HIGHLIGHT ── */
+    .hl { border-radius: 12px; padding: 12px 16px; margin-bottom: 18px; font-size: .9em; line-height: 1.7; font-weight: 600; }
+    .hl.blue   { background: #e3f2fd; color: #0d47a1; border-left: 4px solid var(--c-blue); }
+    .hl.purple { background: #f3e5f5; color: #4a148c; border-left: 4px solid var(--c-purple); }
+    .hl.green  { background: #e8f5e9; color: #1b5e20; border-left: 4px solid var(--c-green); }
+    .hl.orange { background: #fff3e0; color: #e65100; border-left: 4px solid var(--c-orange); }
+    .hl.red    { background: #ffebee; color: #780000; border-left: 4px solid var(--c-red); }
+
+    /* ── TIMELINE ── */
+    .tl { position: relative; padding-left: 34px; }
+    .tl::before { content: ""; position: absolute; left: 12px; top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom,var(--c-red),#ff8f8f,var(--c-red)); border-radius: 3px; }
+    .ti { position: relative; margin-bottom: 18px; }
+    .ti:last-child { margin-bottom: 0; }
+    .td { position: absolute; left: -26px; top: 5px; width: 18px; height: 18px; border-radius: 50%; background: var(--c-red); border: 3px solid white; box-shadow: 0 0 0 2px var(--c-red); }
+    .ti.sleep    .td { background: var(--c-purple); box-shadow: 0 0 0 2px var(--c-purple); }
+    .ti.meal     .td { background: var(--c-orange); box-shadow: 0 0 0 2px var(--c-orange); }
+    .ti.act      .td { background: var(--c-green); box-shadow: 0 0 0 2px var(--c-green); }
+    .ti.move     .td { background: var(--c-blue); box-shadow: 0 0 0 2px var(--c-blue); }
+    .ti.spa      .td { background: var(--c-fire); box-shadow: 0 0 0 2px var(--c-fire); }
+
+    .tt { font-size: .78em; color: #999; font-weight: 700; margin-bottom: 2px; }
+    .th { font-size: .98em; font-weight: 700; color: #222; margin-bottom: 3px; }
+    .th a { color: var(--c-blue); text-decoration: none; border-bottom: 1px dashed var(--c-blue); }
+    .th a:hover { border-bottom-style: solid; }
+    .tx { font-size: .86em; color: #666; line-height: 1.65; }
+
+    /* ── TAGS ── */
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .tag { background: #fff3e0; border: 2px solid var(--c-orange); border-radius: 30px; padding: 4px 12px; font-size: .82em; font-weight: 700; color: #e65100; }
+    .tag.shop { background: #e3f2fd; border-color: var(--c-blue); color: #0d47a1; }
+
+    /* ── TIPS ── */
+    .tips { background: #fffde7; border: 2px dashed #f9a825; border-radius: 12px; padding: 12px 16px; margin-top: 18px; font-size: .86em; line-height: 1.7; color: #555; }
+    .tips strong { color: #f57f17; }
+
+    /* ── SPLIT LABEL ── */
+    .split { background: #f5f5f5; border-radius: 10px; padding: 8px 14px; margin: 12px 0 8px; font-size: .86em; font-weight: 700; color: #555; }
+
+    /* ── CHECKLIST ── */
+    .checklist { list-style: none; padding: 0; }
+    .checklist li { padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: .9em; display: flex; align-items: center; gap: 8px; }
+    .checklist li::before { content: "☐"; font-size: 1.1em; color: var(--c-red); }
+
+    /* ── EMERGENCY ── */
+    .emer-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 12px; }
+    .emer-card { background: #ffebee; border-radius: 12px; padding: 14px; text-align: center; }
+    .emer-card .num { font-size: 1.8em; font-weight: 900; color: var(--c-red); }
+    .emer-card .label { font-size: .85em; color: #555; margin-top: 4px; }
+
+    /* ── FOOTER ── */
+    footer { background: #1a1a2e; color: #aaa; text-align: center; padding: 28px 16px; font-size: .82em; line-height: 2; }
+    footer strong { color: var(--c-red); }
+
+    /* ── PRINT ── */
+    @media print {
+      .sticky-nav, .hero::before { display: none !important; }
+      .hero { padding: 20px; background: white !important; color: #333 !important; -webkit-print-color-adjust: exact; }
+      .hero h1 { text-shadow: none; font-size: 1.6em; color: #333; }
+      .meta-strip { border: 1px solid #ccc; }
+      .day-card { break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+      .day-card.collapsed .day-body { display: block !important; }
+      .day-header::after { display: none; }
+      body { background: white; }
+      footer { background: white !important; color: #333 !important; border-top: 2px solid #ccc; }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.7em; }
+      .day-header .day-num { font-size: 1.7em; }
+      .day-body { padding: 14px 16px 20px; }
+      .tl { padding-left: 26px; }
+      .sticky-nav a { font-size: .75em; padding: 5px 10px; }
+    }
+  
+    .checklist li { cursor: pointer; }
+    .checklist input[type="checkbox"] { transform: scale(1.3); margin-right: 8px; accent-color: var(--c-red); }
+    .checklist li.checked span { text-decoration: line-through; color: #aaa; }
+    .checklist li::before { display: none; }
+</style>
+<link href="manifest.json" rel="manifest"/>
+<meta content="#e63946" name="theme-color"/>
+<link href="icons/icon-192.png" rel="apple-touch-icon"/>
+</head>
+<body>
+<!-- ═══ STICKY NAV ═══ -->
+<nav class="sticky-nav">
+<a href="#info" style="border-color:white;">📋 預訂</a>
+<a class="nav-d1" href="#day1">D1 抵達</a>
+<a class="nav-d2" href="#day2">D2 紫藤花</a>
+<a class="nav-d3" href="#day3">D3 三花+溫泉</a>
+<a class="nav-d4" href="#day4">D4 博物館</a>
+<a class="nav-d5" href="#day5">D5 返台</a>
+<a href="#pack" style="border-color:#f9a825;">🎒 打包</a>
+<a href="#jp-zone" style="border-color:#F06292;">🗣️ 日文</a>
+<a href="#sos" style="border-color:#ff5252;">🆘 緊急</a>
+<a href="行前景點導覽.html" style="border-color:#4dd0e1; background:linear-gradient(135deg,#00897b,#00acc1); border:2px solid #4dd0e1;">📖 景點導覽</a>
+<a href="2026日本黃金週關東行_雨天備案.html" style="border-color:#ff9800; background:linear-gradient(135deg,#f57f17,#ff9800); border:2px solid #ff9800;">☔ 雨天備案</a>
+</nav>
+<!-- ═══ HERO ═══ -->
+<header class="hero">
+<h1>2026 日本黃金週關東行</h1>
+<p>🗓️ 4 月 29 日 ～ 5 月 3 日　|　共 5 天 4 夜　|　自駕賞花溫泉之旅</p>
+</header>
+<div class="meta-strip">
+<div class="meta-badge"><span>👨‍👩‍👧‍👦</span> 5 大人 + 1 小孩</div>
+<div class="meta-badge"><span>✈️</span> 桃園 T1 → 成田 T2</div>
+<div class="meta-badge"><span>🚗</span> 自駕 ELGRAND</div>
+<div class="meta-badge"><span>🌸</span> 四種花季</div>
+<div class="meta-badge"><span>♨️</span> 兩次泡湯</div>
+<div class="meta-badge"><span>🦕</span> 恐龍博物館</div>
+<div class="meta-badge"><span>📞</span> 日本門號 080-3573-6079</div>
+</div>
+<!-- ═══ INFO SECTION ═══ -->
+<div class="section-title">🛬 入境卡填寫資訊</div>
+<div class="info-grid">
+<div class="info-card" style="border-color:#e63946;">
+<h3>📱 線上填寫：Visit Japan Web (VJW)</h3>
+<p style="margin-bottom:8px;">建議入境時統一只填寫「Hotel JAL City Tsukuba」作為聯繫地址。直接複製以下內容填入：</p>
+<ul style="list-style-type:none; font-size:0.9em; color:#555;">
+<li><strong>郵遞區號</strong>：305-0032</li>
+<li><strong>都道府縣</strong>：茨城県</li>
+<li><strong>市區町村</strong>：つくば市</li>
+<li><strong>町字、番地</strong>：竹園2-20-1</li>
+<li><strong>飯店名稱</strong>：ホテルJALシティつくば</li>
+<li><strong>聯絡電話</strong>：029-860-7700</li>
+</ul>
+</div>
+<div class="info-card" style="border-color:#ff9800;">
+<h3>📝 紙本填寫：入境卡 / 申報單</h3>
+<p style="margin-bottom:8px;">若在機上拿實體紙本填寫，無須寫細膩，確保以下重點：</p>
+<ul style="list-style-type:none; font-size:0.9em; color:#555;">
+<li><strong>您的基本資料</strong>：英文姓名同護照、出生日期、護照號碼</li>
+<li><strong>航班與天數</strong>：去程JX800，滯留 5 Days</li>
+<li><strong>日本聯絡處</strong>：Hotel JAL City Tsukuba, Ibaraki</li>
+<li><strong>日本電話</strong>：029-860-7700</li>
+<li><em>*(背面犯罪紀錄與違禁品聲明全勾 NO)*</em></li>
+</ul>
+</div>
+</div>
+<div class="section" id="info">
+<div class="section-title">📋 重要預訂資訊</div>
+<div class="info-grid">
+<div class="info-card flight">
+<h3>✈️ 航班</h3>
+<p><strong>去程</strong>：桃園 T1 08:30 → 成田 T2 12:55 (JX800)<br>
+<strong>回程</strong>：成田 T2 14:10 → 桃園 T1 16:50 (JX801)</p>
+</div>
+<div class="info-card car">
+<h3>🚗 租車</h3>
+<p><strong>車型</strong>：ELGRAND（W6）<br/>
+<strong>取車</strong>：4/29 16:00 <a href="https://maps.google.com/?q=成田機場第2候機樓" target="_blank">成田 T2 📍</a><br>
+<strong>還車</strong>：5/03 10:30 成田 T2<br>
+<strong>費用</strong>：¥120,120（含 ETC 卡 + 幼兒加高座位 x1）<br>
+<strong>預約</strong>：HUANG POYU / 26010100518<br/>
+<strong>櫃台電話</strong>：0476-33-8623</p>
+</div>
+<div class="info-card hotel1">
+<h3>🏠 4/29–5/01 太田市民宿</h3>
+<p><strong>類型</strong>：整棟一軒家 106m² <a href="https://maps.google.com/?q=群馬県太田市藪塚町" target="_blank">📍地圖</a><br/>
+<strong>停車</strong>：3 台免費<br/>
+<strong>密碼</strong>：<strong style="color:var(--c-red);font-size:1.15em">186696</strong><br/>
+<strong>確認碼</strong>：HMHWJJR5B8<br/>
+<strong>費用</strong>：¥96,452</p>
+</div>
+<div class="info-card hotel2">
+<h3>🏨 5/01–5/03 筑波日航酒店</h3>
+<p><strong>飯店</strong>：Hotel JAL City Tsukuba<br/>
+<a href="https://maps.google.com/?q=Hotel+JAL+City+Tsukuba" target="_blank">📍地圖</a><br/>
+<strong>房間</strong>：3間 (單人/雙人/家庭房)<br/>
+<strong>確認</strong>：79753SF002406 / 407 / 408<br/>
+<strong>行程</strong>：9542B4603693<br/>
+<strong>費用</strong>：¥98,323 (含早餐)</p>
+</div>
+</div>
+<!-- ── BUDGET ── -->
+<div class="section-title">💰 費用總覽</div>
+<table class="budget-table">
+<tr><th>項目</th><th>金額（日幣）</th><th>備注</th></tr>
+<tr><td>🚗 租車（含保險+ETC+幼兒椅）</td><td>¥120,120</td><td>4/29–5/03，含稅</td></tr>
+<tr><td>🏠 太田民宿（2晚）</td><td>¥96,452</td><td>4/29–5/01</td></tr>
+<tr><td>🏨 筑波日航酒店（2晚×3房）</td><td>¥98,323</td><td>5/01–5/03 含早餐 (單人房 ¥27,645 / 雙人房 ¥34,294 / 三人家庭房 ¥36,384)</td></tr>
+<tr><td>✈️ 機票（去程/回程）</td><td>NT$104,234</td><td>已結清 (大人 NT$17,886×5 + 小孩 NT$14,804×1)</td></tr>
+<tr><td>🌸 足利花卉公園門票 (白天)</td><td>~NT$2,400</td><td>預估 (5大1小)</td></tr>
+<tr><td>🌸 足利花卉公園門票 (夜間)</td><td>~NT$2,200</td><td>預估 (5大1小)</td></tr>
+<tr><td>🌳 森林公園入園+單車</td><td>¥10,200</td><td>門票(¥450×5人)+電動車5小時(¥1800×3)+一般車5小時(¥1000×2)+童車5小時(¥550)</td></tr>
+<tr><td>♨️ 桐生溫泉 (ゆらぶ)</td><td>¥5,720</td><td>假日門票(5大1小) + 吹風機(¥100×6)</td></tr>
+<tr><td>♨️ きぬの湯（含晚餐）</td><td>¥24,800</td><td>假日門票(¥9,800) + 晚餐估算(¥15,000)</td></tr>
+<tr><td>🦕 自然博物館</td><td>¥4,250</td><td>門票已先付費</td></tr>
+<tr><td>🍽️ 餐點：Vivre sa vie</td><td>¥23,070</td><td>Day 2 法式午餐 (已點餐)</td></tr>
+<tr><td>🍽️ 餐點：もんどころ</td><td>~¥25,000</td><td>Day 4 晚餐 (預約未結，粗估常陸牛與鮟鱇魚)</td></tr>
+<tr><td>🍽️ 餐飲：其餘三餐</td><td>~¥40,000</td><td>休息站晚餐/超商早餐/公園餐廳/珈琲廳/外帶麵包/超市自煮/機場午餐</td></tr>
+<tr><td>🚃 區間交通與雜支</td><td>~¥3,000</td><td>Day 2 轉乘 JR 車資、足利學校等小型門票</td></tr>
+<tr><td>⛽ 預估油資</td><td>~¥10,000</td><td>預估總里程 550km 取車到還車</td></tr>
+<tr><td>🚕 台灣機場接送</td><td>~NT$3,000</td><td>預估去回程 (9人座包車)</td></tr>
+<tr><td>🛡️ 旅遊保險 (東京海上日動)</td><td>¥11,700</td><td>4天方案 (¥1,950×6) / 抵達隔日起算</td></tr>
+<tr class="total"><td>💳 合計約（含機票）</td><td>¥472,635<br>+ ~NT$111,834</td><td>機加酒、台日交通、三餐餐費全包估值</td></tr>
+</table>
+<div style="background:#fff3e0;border-left:4px solid var(--c-orange);padding:14px;border-radius:8px;font-size:0.9em;margin-bottom:24px;line-height:1.6;">
+  <strong>👤 單一大人花費估算：</strong><br>機加酒自駕與大餐全包，住雙人房每名大人總開銷約 <strong>NT$ 37,000</strong>！獨睡單人房約 <strong>NT$ 39,500</strong>，極具 CP 值！
+</div>
+</div>
+<!-- ═══ DAYS ═══ -->
+<div class="section"><div class="section-title">🗺️ 每日詳細行程</div></div>
+<div class="days-wrapper">
+<!-- ════ DAY 1 ════ -->
+<div class="day-card day1" id="day1">
+<div class="day-header" onclick="this.parentElement.classList.toggle('collapsed')">
+<div class="day-num">D1</div>
+<div class="day-info">
+<h2>✈️ 抵達日本 &amp; 溫泉放鬆</h2>
+<div class="sub">📅 4/29（三）｜🏠 今晚住太田市民宿</div>
+</div>
+</div>
+<div class="day-body">
+<div class="hl blue">🛬 從台灣飛往東京！通關、買 Suica、租車，途中享受溫泉浴，入住整棟獨享民宿。</div>
+<div class="tips" style="margin-bottom:16px; border-color:#e63946; background:#ffebee;">
+  <strong style="color:#c1121f;">🎒 首日出發前必備確認</strong><br>
+  🚨 <strong>租車三寶（駕駛必帶）</strong>：護照正本、台灣駕照「正本」、台灣駕照「日文譯本」（缺一不可）<br>
+  🩳 小毛巾與換洗內衣褲（🚨請放在拉開行李箱就能一秒拿到的位置，首日晚間直接去洗澡）<br>
+  💰 100 日幣零錢（溫泉吹頭髮用）<br>
+  🔌 手機充電線（接車上 USB 孔連 Apple CarPlay 導航必備）
+</div>
+<div class="tl">
+<div class="ti move"><div class="td"></div>
+<div class="tt">08:30~12:55</div>
+<div class="th">✈️ 桃園機場 (T1) ➔ 成田機場 (T2)</div>
+<div class="tx">🚨 <strong>降落前 40 分鐘務必全員在機上先上廁所 (前30分會亮燈)！</strong>落地後直衝海關不逗留。</div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">13:00~14:20</div>
+<div class="th">🛬 通關領行李</div>
+<div class="tx">若未遇嚴重塞車，目標 80 分鐘內出關！領完行李後切換「分頭行動戰術」。</div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">14:20~15:30</div>
+<div class="th">🚗 租車辦手續 (獨自前往)</div>
+<div class="tx">由 HUANG POYU 攜帶<strong>租車三寶</strong>，至 T2 櫃檯報到並搭接駁車赴外圍取車。取車後設定導航（桐生溫泉電話：0277-46-9967，選有料優先），再開回 T2 一樓最外側<strong>第3車道</strong>等候。<br>⚠️ <strong>【極度重要】絕對不能把「小孩的護照」帶走！</strong>留守組買 Suica 必須用到！</div>
+</div>
+<div class="ti act"><div class="td"></div>
+<div class="tt">14:30~15:00</div>
+<div class="th">💳 B1 購買 Welcome Suica</div>
+<div class="tx"><strong>繞過「JR 旅行服務中心」人潮，直接找紅色「Welcome Suica 自動售票機」</strong>（B1 JR 改札口附近）。<br>👧 小孩版需在機台輸入生年月日並出示護照驗證年齡。<br>💡 <strong>省時選項</strong>：若想跳過護照驗證手續，可幫小孩買大人版。<strong>全家每張卡都只需買 ¥1,000 最低面額，整趟免加值！</strong>（全程自駕，唯一搭 JR 只有 Day 2 足利花園，大人總車資 ¥649，即使小孩扣大人票價都有剩，完全不用為了儲值去排隊）。<br>🎥 <a href="https://www.youtube.com/results?search_query=Navigating+Narita+Airport:+How+to+get+the+Welcome+Suica+Card" target="_blank">教學影片：Navigating Narita Airport: How to get the Welcome Suica Card</a></div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">15:30~15:45</div>
+<div class="th">🚘 接機車道會合、出發</div>
+<div class="tx">買完後搭中央電梯回 1 樓入境大廳，在<strong>中央口室內座位區</strong>吹冷氣等 LINE 通知。<br>▸ 接到通知後，推行李走出大廳，穿越斑馬線到<strong>最外側第3車道（一般車レーン）安全島</strong>上車。<br>⚠️ 第1、2車道為巴士計程車專用，絕對不能在那裡等候！</div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">16:45~17:00</div>
+<div class="th">🛣️ <a href="https://maps.google.com/?q=坂東パーキングエリア" target="_blank">坂東 PA 內回 (上廁所)</a></div>
+<div class="tx">此處有 2024年4月全新完工、非常乾淨的廁所。</div>
+</div>
+<div class="ti meal"><div class="td"></div>
+<div class="tt">17:50~18:50</div>
+<div class="th">🍜 <a href="https://maps.google.com/?q=羽生パーキングエリア" target="_blank">羽生 PA 下り / Pasar 羽生 (晚餐)</a><br><a href="行前景點導覽.html#s6" style="display:inline-block;margin-top:6px;padding:3px 10px;border-radius:12px;background:#e3f2fd;color:#0d47a1;text-decoration:none;font-weight:700;font-size:0.85em;border:1px solid #2196F3;">📖 看導覽介紹</a></br></div>
+<div class="tx">從坂東 PA 前往，維持 60 分鐘戰鬥用餐時間，吃飽即出發！</div>
+</div>
+<div class="ti spa"><div class="td"></div>
+<div class="tt">19:50~20:50</div>
+<div class="th">♨️ <a href="https://maps.google.com/?q=天然温泉ゆらぶ桐生" target="_blank">天然温泉ゆらぶ桐生店 (洗澡)</a><br><a href="行前景點導覽.html#s4" style="display:inline-block;margin-top:6px;padding:3px 10px;border-radius:12px;background:#e3f2fd;color:#0d47a1;text-decoration:none;font-weight:700;font-size:0.85em;border:1px solid #2196F3;">📖 看導覽介紹</a></br></div>
+<div class="tx">羽生出發近 1 小時。<br>💡<strong>必備 100円硬幣 (吹風機每人需投幣 ¥100)！</strong>另外請在容易取得的行李放擦身體毛巾與換洗內衣褲。*(門票假日：大人 ¥950 / 小孩 ¥370)*</div>
+</div>
+<div class="ti sleep"><div class="td"></div>
+<div class="tt">21:10</div>
+<div class="th">🏠 抵達民宿 (太田市)</div>
+<div class="tx">ゆらぶ出發約 20 分鐘。盡早抵達並火速就寢，隔日 05:30 起床。</div>
+</div>
+</div>
+<div class="tips">
+  ✈️ <strong>成田 T2 落地分流指南</strong><br>
+  <strong>🚗 駕駛</strong>：辦完租車後設定桐生溫泉導航 → 開回 T2 一樓 → 切入<strong>最外側第3車道（一般車レーン）</strong>等候 → 快到前 3 分鐘 LINE 通知家人 → 看到家人出來立刻搬行李出發，不可熄火久停<br>
+  <strong>💳 留守組</strong>：出關後直下 B1 → 找<strong>紅色 Welcome Suica 自動售票機</strong>（繞開人工服務中心）→ 小孩版須驗護照（省時買大人版，不須再排隊加值） → 搭中央電梯回 1 樓中央口室內等候 LINE → 穿越斑馬線到第3車道安全島上車<br>
+  💡 <strong>導航</strong>：第一段用車機輸入桐生溫泉電話 0277-46-9967，之後搭配 CarPlay / Android Auto<br>
+  🅿️ <strong>其他 PA</strong>：菖蒲 PA（頑者拉麵）、羽生 PA（規模最大，主題休息站）
+</div>
+</div>
+</div>
+<!-- ════ DAY 2 ════ -->
+<div class="day-card day2" id="day2">
+<div class="day-header" onclick="this.parentElement.classList.toggle('collapsed')">
+<div class="day-num">D2</div>
+<div class="day-info">
+<h2>🌸 足利花卉公園 紫藤花季</h2>
+<div class="sub">📅 4/30（四）｜🏠 今晚住太田市民宿</div>
+</div>
+</div>
+<div class="day-body">
+<div class="hl purple">🌺 世界夢幻景點！紫藤花瀑布超壯觀，早去人少景色最美，晚上還有夢幻夜間點燈！</div>
+<div class="tl">
+<div class="ti sleep"><div class="td"></div>
+<div class="tt">05:30</div>
+<div class="th">⏰ 起床</div><div class="tx"></div>
+</div>
+<div class="ti meal"><div class="td"></div>
+<div class="tt">06:20</div>
+<div class="th">🥐 超商買早餐</div>
+<div class="tx">附近超商：<a href="https://maps.google.com/?q=7-Eleven+Yabuzuka+Sports+Park" target="_blank">7-Eleven</a> / <a href="https://maps.google.com/?q=FamilyMart+藪塚" target="_blank">FamilyMart</a> / <a href="https://maps.google.com/?q=Lawson+Yabuzuka+Inter" target="_blank">Lawson</a></div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">06:40</div>
+<div class="th">🚗 太田市民宿 出發</div>
+<div class="tx">提早出發避開塞車 (黃金週預估 60 分鐘)，最佳為直接停放<a href="https://www.ashikaga.co.jp/access.html" target="_blank">公園停車場</a>。</div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">07:40</div>
+<div class="th">🌸 抵達足利花卉公園</div>
+<div class="tx">趁人潮爆滿前拍攝大藤與白藤，出示事先買好的 <a href="https://www.kkday.com/zh-tw/product/132105-ashikaga-flower-park-illuminated-garden-admission-ticket-tochigi-japan?srsltid=AfmBOoqOnN2un4c1TblsrvWKOUOlpke7jweTnadybgjLBes79znog4Gg" target="_blank"><strong>KKday 白天票 QR Code</strong></a> 入園。<br>♿ <strong>奶奶備用</strong>：入口處可<strong>免費借用輪椅</strong>（先到先得、無法預約、數量有限），園內步道全部鋪設平坦，輪椅可通行。☎ 0284-91-4939</div>
+</div>
+<div class="ti act"><div class="td"></div>
+<div class="tt">08:00~11:45</div>
+<div class="th">🌺 園內觀賞 (白天場) / 11:00 園內小食</div>
+<div class="tx">
+黃金週 10 點後人潮湧現，這段時間為最舒適觀賞期。<br/>
+<div class="tags">
+<span class="tag">🍦 紫藤霜淇淋</span>
+<span class="tag">🍢 炸番薯串</span>
+<span class="tag">🥟 宇都宮餃子</span>
+<span class="tag">🍜 炒麵</span>
+</div>
+</div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">11:45~12:00</div>
+<div class="th">🚶 離開公園</div><div class="tx"></div>
+</div>
+<div class="ti meal"><div class="td"></div>
+<div class="tt">13:15~15:00</div>
+<div class="th">🍽️ 午餐 — <a href="https://maps.google.com/?q=Restaurant+Vivre+sa+vie" target="_blank">Restaurant Vivre sa vie</a> ✅ 已訂位</div>
+<div class="tx">🍽️ <strong>已確認餐點</strong>：¥6,110×1 (一大人一小孩共餐)，¥4,240×4 (四位大人)</div>
+</div>
+<div class="ti act"><div class="td"></div>
+<div class="tt">下午</div>
+<div class="th">👥 分組活動</div>
+<div class="tx">
+<div class="split">🌟 賞花組</div>
+15:30~16:30 足利景點觀光（<a href="https://maps.google.com/?q=太平記館" target="_blank">太平記館</a>、<a href="https://maps.google.com/?q=カフェ・モンタン" target="_blank">咖啡店 montemps</a>、<a href="https://maps.google.com/?q=史跡足利学校" target="_blank">足利學校</a>）<br/>
+16:50~17:20 搭乘 JR 返回公園 <a href="https://transit.yahoo.co.jp/search/result?from=%E8%B6%B3%E5%88%A9&to=%E3%81%82%E3%81%97%E3%81%8B%E3%81%8C%E3%83%95%E3%83%A9%E3%83%AF%E3%83%BC%E3%83%91%E3%83%BC%E3%82%AF" target="_blank">🔍一鍵查去程班次</a><br/>
+17:30~18:30 <strong>二次入園 (夜間點燈場)</strong> 出示 <a href="https://www.kkday.com/zh-tw/product/132105-ashikaga-flower-park-illuminated-garden-admission-ticket-tochigi-japan?srsltid=AfmBOoqOnN2un4c1TblsrvWKOUOlpke7jweTnadybgjLBes79znog4Gg" target="_blank"><strong>KKday 夜間票 QR Code</strong></a><br/>
+19:00 離開公園 (返回太田市 JR 坐到桐生站) <a href="https://transit.yahoo.co.jp/search/result?from=%E3%81%82%E3%81%97%E3%81%8B%E3%81%8C%E3%83%95%E3%83%A9%E3%83%AF%E3%83%BC%E3%83%91%E3%83%BC%E3%82%AF&to=%E6%A1%90%E7%94%9F" target="_blank">🔍一鍵查回程班次</a>
+<div class="split">🏠 休息組</div>
+16:00~17:00 超市採買晚餐食材（推薦：<a href="https://maps.google.com/?q=ツルヤ+みどり店" target="_blank">Tsuruya Midori ツルヤ</a>，備案：<a href="https://maps.google.com/?q=アバンセ+大正店" target="_blank">Avance</a> 或 <a href="https://maps.google.com/?q=JA+ファーマーズ+太田藪塚" target="_blank">JA Famazuotayabuzuka</a>）<br/>
+17:00 回民宿輪流洗澡休息
+</div>
+</div>
+<div class="tips" style="margin-top:14px; border-color:#2196F3; background:#e3f2fd;">
+  <strong style="color:#0d47a1;">💡 全員皆參加「賞花組」的備案策略（皆不先進民宿）</strong><br>
+  若全員決定下午共同行動不分組，傍晚車子會停放在「JR 足利站」周邊。<br>
+  • <strong>19:00 離開公園</strong>：從「足利花卉公園站」搭 JR 返回「足利站」取車 (僅 1 站)。<br>
+  • <strong>晚餐外帶</strong>：取車後回太田市民宿路上順路買牛丼外帶。<br>
+  • <strong>順路餐廳導航</strong>：<a href="https://maps.google.com/?q=吉野家+50号線バイパス太田店" target="_blank">吉野家 50號線Bypass太田店</a>
+</div>
+<div class="ti meal"><div class="td"></div>
+<div class="tt">18:00~19:30</div>
+<div class="th">🍲 晚餐 — 大鍋烏龍麵</div>
+<div class="tx">超市採買日文對照：冷凍うどん x3、鶏もも肉或豚しゃぶしゃぶ用 500g、鍋用カット野菜 x2、鍋つゆ x2</div>
+</div>
+<div class="ti sleep"><div class="td"></div>
+<div class="tt">21:00</div>
+<div class="th">😴 睡覺</div>
+<div class="tx">小兔子 20:30 就寢</div>
+</div>
+</div>
+<div class="tips">
+      🎫 <strong>門票</strong>：提前在 <a href="https://www.kkday.com/zh-tw/product/132105-ashikaga-flower-park-illuminated-garden-admission-ticket-tochigi-japan?srsltid=AfmBOoqOnN2un4c1TblsrvWKOUOlpke7jweTnadybgjLBes79znog4Gg" target="_blank">KKday / Klook 買 QR Code 電子票</a>省去排隊！<br>
+      🚌 <strong>備案</strong>：停車難找可停 JR 太田站搭電車前往<br>
+      🧥 <strong>天氣準備</strong>：早晚溫差大，夜間點燈時強風較多，請備妥<strong>防風外套與薄長袖</strong>洋蔥式穿搭。
+    </div>
+</div>
+</div>
+<!-- ════ DAY 3 ════ -->
+<div class="day-card day3" id="day3">
+<div class="day-header" onclick="this.parentElement.classList.toggle('collapsed')">
+<div class="day-num">D3</div>
+<div class="day-info">
+<h2>🌼 森林公園三花 &amp; 溫泉之旅</h2>
+<div class="sub">📅 5/01（五）｜🏨 今晚住筑波日航酒店</div>
+</div>
+</div>
+<div class="day-body">
+<div class="hl green">🌸🌺🌼 一天攻略：粉蝶花 + 罌粟花 + 魯冰花 + 日本最大彈跳床，最後天然溫泉完美收尾！</div>
+<div class="tl">
+<div class="ti sleep"><div class="td"></div>
+<div class="tt">05:50</div><div class="th">⏰ 起床與退房</div>
+<div class="tx">🚨 <strong>注意退房事項：毛巾集中、關燈、鎖門。</strong></div>
+</div>
+<div class="ti meal"><div class="td"></div>
+<div class="tt">06:40</div>
+<div class="th">🥐 買早餐與水</div>
+<div class="tx">附近超商：<a href="https://maps.google.com/?q=7-Eleven+Yabuzuka+Sports+Park" target="_blank">7-Eleven</a> / <a href="https://maps.google.com/?q=FamilyMart+藪塚" target="_blank">FamilyMart</a> / <a href="https://maps.google.com/?q=Lawson+Yabuzuka+Inter" target="_blank">Lawson</a></div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">06:50</div>
+<div class="th">🚗 出發上交流道</div>
+<div class="tx">路線：太田藪塚 IC ➔ 北關東自動車道 ➔ 高崎 JCT ➔ 關越自動車道 ➔ 東松山 IC。</div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">07:35</div>
+<div class="th">🛣️ 高速公路休息站</div>
+<div class="tx">👑 <strong>首選：<a href="https://maps.google.com/?q=寄居PA+上り" target="_blank">寄居 PA (小王子主題)</a></strong><br><em>(通過高崎 JCT 後極佳的中繼站，特色建築非常值得一看，預計停靠 15 分鐘)</em><br><br>🆘 <strong>備案：<a href="https://maps.google.com/?q=駒寄PA+上り" target="_blank">駒寄 PA</a></strong><br><em>(位在高崎 JCT 之前，車位好找且廁所免排隊)</em></div>
+</div>
+<div class="ti act"><div class="td"></div>
+<div class="tt">08:50</div>
+<div class="th">🌳 <a href="https://maps.google.com/?q=国営武蔵丘陵森林公園+西口" target="_blank">國營武藏丘陵森林公園（西口）</a><br/><a href="行前景點導覽.html#s2" style="display:inline-block;margin-top:6px;padding:3px 10px;border-radius:12px;background:#e3f2fd;color:#0d47a1;text-decoration:none;font-weight:700;font-size:0.85em;border:1px solid #2196F3;">📖 看導覽介紹</a></div>
+<div class="tx">📍<strong>導航務必搜尋「国営武蔵丘陵森林公園 西口駐車場」</strong> (切勿去中央口)。<br><br>📝 <strong>重要資訊：</strong><a href="https://www.shinrinkoen.jp/?p=we-page-entry&amp;spot=605270&amp;type=spot" target="_blank">黃金週期間各設施的營業時間資訊</a><br>🗺️ <strong>園內地圖：</strong><a href="https://www.shinrinkoen.jp/?p=we-page-entrylist&amp;spotlist=26488&amp;nav=none" target="_blank">點此查看</a><br>♿ <strong>奶奶備用</strong>：西口入口處可<strong>免費借用輪椅</strong>（先到先得、無法預約）。☎ 0493-57-2111</div>
+</div>
+<div class="ti act"><div class="td"></div>
+<div class="tt">09:30</div>
+<div class="th">🚲 開園 & 租腳踏車</div>
+<div class="tx">⚠️ <strong>入園門票僅收「現金」！</strong> (大人 ¥450 / 中學生以下免費)。<br><strong>西サイクリングセンター</strong> (西口單車中心) 位於右手邊。務必第一時間搶租腳踏車：<br>・大人 3小時 600日圓（每 30 分鐘 100 日圓）<br>・中學生以下 3小時 350日圓（每 30 分鐘 50 日圓）<br>・電動腳踏車 3小時 1,000日圓（每 30 分鐘 200 日圓）<br>全程行駛 <strong>森林サイクリングコース</strong> (森林單車徑)，騎乘串聯各景點。</div>
+</div>
+<div class="ti act"><div class="td"></div>
+<div class="tt">09:50~10:05</div>
+<div class="th">💜 第一站：粉蝶花</div>
+<div class="tx">於西口廣場拍攝著名藍色粉蝶花海。<strong>全員（含奶奶）一起拍照！</strong></div>
+</div>
+<div class="tips" style="margin:16px 0; border-color:#9C27B0; background:linear-gradient(135deg,#f3e5f5,#ede7f6); border-left:6px solid #9C27B0;">
+  <strong style="color:#6A1B9A; font-size:1.05em;">🧓 奶奶專屬路線（膝蓋友善 · 園內巴士版）</strong><br><br>
+  粉蝶花拍完後，奶奶與騎車組分開行動：<br><br>
+  <table style="width:100%; border-collapse:collapse; font-size:0.92em; background:white; border-radius:8px; overflow:hidden;">
+    <tr style="background:#9C27B0; color:white;"><th style="padding:8px; text-align:left;">時間</th><th style="padding:8px; text-align:left;">行動</th><th style="padding:8px; text-align:left;">備註</th></tr>
+    <tr><td style="padding:8px; border-bottom:1px solid #eee; white-space:nowrap;">10:05~11:15</td><td style="padding:8px; border-bottom:1px solid #eee;">☕ 西口區域散步休息</td><td style="padding:8px; border-bottom:1px solid #eee;">賣店、長椅、廁所齊全。可免費借用輪椅（入口處先到先得）</td></tr>
+    <tr><td style="padding:8px; border-bottom:1px solid #eee; white-space:nowrap;"><strong>11:17</strong></td><td style="padding:8px; border-bottom:1px solid #eee;"><strong>🚌 搭園內巴士（西口上車）</strong></td><td style="padding:8px; border-bottom:1px solid #eee;">車資 ¥400/次（現金），約 12 分鐘到達</td></tr>
+    <tr><td style="padding:8px; border-bottom:1px solid #eee; white-space:nowrap;">11:29</td><td style="padding:8px; border-bottom:1px solid #eee;">🚌 「展望広場下」下車</td><td style="padding:8px; border-bottom:1px solid #eee;">步行上坡約 5~10 分鐘至展望餐廳</td></tr>
+    <tr><td style="padding:8px; border-bottom:1px solid #eee; white-space:nowrap;">11:40~13:10</td><td style="padding:8px; border-bottom:1px solid #eee;">🍛 展望餐廳午餐 + 展望廣場散步</td><td style="padding:8px; border-bottom:1px solid #eee;">與騎車組會合用餐，飯後可在附近慢慢散步拍照</td></tr>
+    <tr><td style="padding:8px; border-bottom:1px solid #eee; white-space:nowrap;">13:15</td><td style="padding:8px; border-bottom:1px solid #eee;">🚶 走下坡回巴士站</td><td style="padding:8px; border-bottom:1px solid #eee;">下坡比上坡輕鬆</td></tr>
+    <tr><td style="padding:8px; border-bottom:1px solid #eee; white-space:nowrap;"><strong>13:21</strong></td><td style="padding:8px; border-bottom:1px solid #eee;"><strong>🚌 搭回程巴士（展望広場下上車）</strong></td><td style="padding:8px; border-bottom:1px solid #eee;">車資 ¥400（現金）</td></tr>
+    <tr><td style="padding:8px; white-space:nowrap;">13:38</td><td style="padding:8px;">🚌 「西口」下車</td><td style="padding:8px;">在西口賣店休息等騎車組 ~14:15 回來</td></tr>
+  </table>
+  <br>
+  <em style="color:#6A1B9A;">💰 巴士費用：去回共 ¥800（大人）｜⚠️ 黃金週巴士可能客滿，若搭不上請在西口等候。</em>
+</div>
+<div class="ti act"><div class="td"></div>
+<div class="tt">10:05~10:45</div>
+<div class="th">👥 雙軌分組活動</div>
+<div class="tx"><strong>【小孩組】</strong>：<strong>むさしキッズドーム</strong> (武藏兒童圓頂：含50種彩色遊具，安全遮陽)、<strong>冒険コース</strong> (冒險賽道：24種木製設施，7歲推薦終點24號「ローラーすべりだい」滾輪溜滑梯)。<br><strong>【賞花組】</strong>：西口區域 <strong>ボーダー花壇</strong> (帶狀花壇) 或 <strong>カラーリーフガーデン</strong> (彩葉花園) 散步散心。<em>(單車皆停於 P12)</em></div>
+</div>
+<div class="ti meal"><div class="td"></div>
+<div class="tt">11:15~12:00</div>
+<div class="th">🍛 展望餐廳</div>
+<div class="tx">目的地：<strong>展望レストラン</strong> (展望餐廳)，從 P12 向南騎至 P1。餐廳環境安靜、有冷氣，供咖哩及拉麵。</div>
+</div>
+<div class="ti act"><div class="td"></div>
+<div class="tt">12:30~13:15</div>
+<div class="th">🎪 大彈跳床與罌粟花</div>
+<div class="tx">吃飽休息後，騎車 2 分鐘或步行至隔壁區域。<em>(單車改停 P2 駐輪場)</em><br><strong>ぽんぽこマウンテン</strong> (波可波可山)：日本最大的白色空氣彈跳床 (需脫鞋)。<br><strong>運動広場 / ポピー</strong> (運動廣場 / 虞美人草)：位於彈跳床旁，有 30 萬株紅粉色罌粟花海。</div>
+</div>
+<div class="ti act"><div class="td"></div>
+<div class="tt">13:15~13:45</div>
+<div class="th">🌼 第三站：魯冰花</div>
+<div class="tx"><strong>こもれび花畑</strong> (木漏日花畑)，中央口區域地圖編號 <strong>(5)</strong>。<br>單車移動：從 P2 出發往北騎，朝「植物園」方向前進，停在 P8 駐輪場（騎行約 10 分鐘）。花田隱藏在林間避暑，非常適合飯後消食。</div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">13:45~14:15</div>
+<div class="th">🚴 最後騎行與折返</div>
+<div class="tx">路線：從 P8 沿著綠色 <strong>森林サイクリングコース</strong> (森林單車徑) 往「西口」方向慢慢騎回，綠意盎然，預留 30 分鐘。</div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">14:15~14:45</div>
+<div class="th">🚴 歸還單車與撤離</div>
+<div class="tx">地點：<strong>西サイクリングセンター</strong> (西口單車中心)。歸還電動車，在西口賣店最後如廁或買飲水。⚠️ 爭取在 14:30~14:45 之間正式開車離開，避開傍晚 16:00 湧入的高速公路返家車潮。</div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">14:45</div>
+<div class="th">🚗 開車離開</div>
+<div class="tx">路線：坂戸IC ➔ 圈央道 ➔ 常総IC，前往<a href="https://maps.google.com/?q=天然温泉+きぬの湯" target="_blank">天然溫泉 きぬの湯</a>，黃金週預抓 2 小時車程。<br>🛑 <strong>中間停留點</strong>：優先選擇 <strong>菖蒲 PA (Shobu PA)</strong>，若該處太擠則下交流道找超商。</div>
+</div>
+<div class="ti spa"><div class="td"></div>
+<div class="tt">16:45</div>
+<div class="th">♨️ <a href="https://maps.google.com/?q=天然温泉きぬの湯" target="_blank">抵達溫泉 (きぬの湯)</a><br/><a href="行前景點導覽.html#s5" style="display:inline-block;margin-top:6px;padding:3px 10px;border-radius:12px;background:#e3f2fd;color:#0d47a1;text-decoration:none;font-weight:700;font-size:0.85em;border:1px solid #2196F3;">📖 看導覽介紹</a></div>
+<div class="tx">🅿️ 本館提供約 <strong>150 個免費停車位</strong>；若車位已滿，配合工作人員導引至臨時停車區。<br>⚠️ <strong>請果斷執行「飯店備案」的情況</strong>：① 停車場門口有長龍（排隊 30 分鐘以上）；② 門口告示牌顯示「<strong>入場限制中</strong>」。直接前往<a href="https://maps.google.com/?q=Hotel+JAL+City+Tsukuba" target="_blank">Hotel JAL City Tsukuba</a>！</div>
+</div>
+<div class="ti meal"><div class="td"></div>
+<div class="tt">17:00</div>
+<div class="th">🍲 辦理入館與用餐</div>
+<div class="tx">⚠️ <strong>入館費說明</strong>：5/1 採「假日收費（休日料金）」。進入本館（含餐廳與休息區）<strong>必須支付入館料</strong> <em>(門票參考：大人 ¥1,800 / 小孩 ¥800)</em>。<br>和食處「<strong>米のはな</strong>」(館內 1 樓)：推薦常陸牛、生魚片及自家農園蔬菜。<em>(策略：先吃飯後泡湯，避開 19:00 用餐巔峰)</em></div>
+</div>
+<div class="ti spa"><div class="td"></div>
+<div class="tt">18:30</div>
+<div class="th">🧖‍♀️ 泡湯放鬆 vs 躺椅</div>
+<div class="tx"><strong>【泡湯組】</strong>：1 樓浴場，享受源泉掛流天然溫泉。<br><strong>【休息組】</strong>：2 樓「<strong>お休み処</strong>」，提供 <strong>30</strong> 個配備電視的可調整式躺椅，每個座位均有 USB 充電插座，館內提供免費毛毯。<br>📵 <em>(休息區與浴場嚴禁攝影，僅限 1 樓大廳與餐廳可拍照)</em></div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">20:00~20:40</div>
+<div class="th">🚗 離開抵達飯店</div>
+<div class="tx">返回筑波市區約 30-40 分鐘。辦理入住 <a href="https://maps.google.com/?q=Hotel+JAL+City+Tsukuba" target="_blank"><strong>Hotel JAL City Tsukuba</strong></a>。</div>
+</div>
+</div>
+<div class="tips">
+      🎒 <strong>必帶</strong>：野餐墊、防曬帽、水壺、好穿脫的鞋（彈跳床）、毛巾換洗衣物（溫泉）<br/>
+      🔄 <strong>備案</strong>：若放棄溫泉 → 16:45 直接去筑波 → 17:30 Check-in → 18:30 車站附近用餐
+    </div>
+<div class="tips" style="margin-top:18px; border-color:#e63946; background:#ffebee;">
+<strong style="color:#c1121f;">🏨 飯店備案行程（放棄溫泉時執行）</strong><br/>
+      • <strong>16:45</strong> 若停車場管制，直接前往筑波（車程 30-40 分鐘）。<br/>
+      • <strong>17:30</strong> Hotel JAL City Tsukuba Check-in。<br/>
+      • <strong>18:30</strong> 筑波車站周邊用餐：<a href="https://maps.google.com/?q=BiVi+つくば" target="_blank">BiVi Tsukuba</a> (餐廳居酒屋) 或 <a href="https://maps.google.com/?q=つくばクレオスクエア" target="_blank">Tsukuba Q't / Creo</a> (美食街定食)。<br/>
+      • <strong>戶外用品</strong>：<a href="https://maps.google.com/?q=モンベル+つくばQ't店" target="_blank">Montbell Tsukuba Q't店</a> (位於 Q't 3 樓)。
+    </div>
+</div>
+</div>
+<!-- ════ DAY 4 ════ -->
+<div class="day-card day4" id="day4">
+<div class="day-header" onclick="this.parentElement.classList.toggle('collapsed')">
+<div class="day-num">D4</div>
+<div class="day-info">
+<h2>🦕 博物館 &amp; 書店 &amp; 購物 &amp; 大餐</h2>
+<div class="sub">📅 5/02（六）｜🏨 今晚住筑波日航酒店</div>
+</div>
+</div>
+<div class="day-body">
+<div class="hl orange">🦕 暴龍超震撼！書店文具控必逛，Uniqlo 大豐收，晚上包廂享用常陸牛！</div>
+<div class="tl">
+<div class="ti meal"><div class="td"></div>
+<div class="tt">06:30</div>
+<div class="th">☕ 早餐</div>
+<div class="tx">於飯店或附近享用 (<a href="https://maps.google.com/?q=高倉町珈琲+つくば店" target="_blank">高倉町珈琲</a> 07:00~，<a href="https://maps.google.com/?q=コメダ珈琲店+つくば店" target="_blank">客美多</a> 06:00~)。</div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">08:00</div>
+<div class="th">🚗 飯店出發</div>
+<div class="tx">檢查隨身物品，水壺補滿。</div>
+</div><div class="ti meal"><div class="td"></div>
+<div class="tt">08:10</div>
+<div class="th">🥐 <a href="https://maps.google.com/?q=クーロンヌつくば" target="_blank">Couronne Tsukuba</a> 買麵包當午餐</div>
+<div class="tx">⚠️ <strong>重要！</strong>黃金週博物館餐廳大排長龍，野餐麵包最省時！<br/><em>*(營業時間 06:30~18:00，⚠️ 注意定休日)*</em></div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">08:40</div>
+<div class="th">🚗 前往茨城縣自然博物館</div>
+<div class="tx"><strong>路徑建議</strong>：若導航顯示高速公路擁塞，請手動選擇走「縣道123號」等平面道路，避開前往東京方向車流。</div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">09:20</div>
+<div class="th">🦕 抵達博物館</div>
+<div class="tx">聽從工作人員指派停車位。<br>♿ <strong>奶奶備用</strong>：入口櫃台可<strong>免費借用輪椅</strong>（共 10 台，先到先得、無法預約），館內有電梯與斜坡道，完全無障礙。</div>
+</div>
+<div class="ti act"><div class="td"></div>
+<div class="tt">09:30~11:00</div>
+<div class="th">🏛️ 博物館遊玩 (室內探索)<br/><a href="行前景點導覽.html#s3" style="display:inline-block;margin-top:6px;padding:3px 10px;border-radius:12px;background:#e3f2fd;color:#0d47a1;text-decoration:none;font-weight:700;font-size:0.85em;border:1px solid #2196F3;">📖 看導覽介紹</a></div>
+<div class="tx">📍<strong>已付費預約 09:30 開放入場，憑 Email QR Code 掃描</strong>。*(門票 ¥4,250 已付)*<br/>亮點：會動的大暴龍、各項生態標本。</div>
+</div>
+<div class="ti meal"><div class="td"></div>
+<div class="tt">11:00</div>
+<div class="th">🍽️ 野餐或餐廳午餐</div>
+<div class="tx">① 首選（排隊趁早）：若能趕在 10:50 前去排隊「<a href="https://maps.google.com/?q=レストラン+ル・サンク+ミュージアムパーク" target="_blank">Le Cinq</a>」餐廳，可嘗恐龍主題餐。<br/>② 備案（激推）：直接在戶外廣場草地野餐，吃早上買好的 Couronne 麵包，免排隊！</div>
+</div>
+<div class="ti act"><div class="td"></div>
+<div class="tt">11:45~13:00</div>
+<div class="th">🎪 戶外設施遊玩</div>
+<div class="tx">飽餐後前往戶外超大草皮，讓小孩玩大型空氣跳床等遊樂設施。</div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">13:00</div>
+<div class="th">🚗 離開返回筑波</div>
+<div class="tx">從博物館返回市區，黃金週抓 60 分鐘車程。</div>
+</div>
+<div class="ti act"><div class="td"></div>
+<div class="tt">14:00~15:00</div>
+<div class="th">📚 <a href="https://maps.google.com/?q=コーチャンフォーつくば店" target="_blank">Coach &amp; Four Tsukuba</a><br/><a href="行前景點導覽.html#s7" style="display:inline-block;margin-top:6px;padding:3px 10px;border-radius:12px;background:#e3f2fd;color:#0d47a1;text-decoration:none;font-weight:700;font-size:0.85em;border:1px solid #2196F3;">📖 看導覽介紹</a></div>
+<div class="tx">全日本最大級複合書店！精緻文具、繪本、雜貨
+          <div class="tags">
+<span class="tag shop">📖 繪本區</span>
+<span class="tag shop">✏️ 文具控</span>
+<span class="tag shop">🎁 雜貨區</span>
+</div>
+</div>
+</div>
+<div class="ti act"><div class="td"></div>
+<div class="tt">15:10~17:40</div>
+<div class="th">🛍️ <a href="https://maps.google.com/?q=iias+つくば" target="_blank">iias 筑波</a></div>
+<div class="tx"><div class="tags">
+<span class="tag shop">👕 Uniqlo</span>
+<span class="tag shop">🎨 LoFt</span>
+<span class="tag shop">🛒 1F 超市</span>
+</div><br/>建議直開「<strong>頂樓停車場</strong>」或「<strong>立體停車場高樓層</strong>」較易有車位。<br/>逛累了可至美食街喝飲料休息，離開前可去 1 樓超市買零食。</div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">17:40</div>
+<div class="th">🚗 前往餐廳</div>
+<div class="tx">約 10-15 分鐘車程抵達 <a href="https://maps.google.com/?q=つくばデイズタウン" target="_blank"><strong>Days Town</strong></a>。</div>
+</div>
+<div class="ti meal"><div class="td"></div>
+<div class="tt">18:00~20:00</div>
+<div class="th">🥩 <a href="https://maps.google.com/?q=常陸の国もんどころ+つくばデイズタウン店" target="_blank">常陸之國もんどころ</a> 包廂晚餐</div>
+<div class="tx">📍<strong>已預約 18:00 六人位</strong>。推薦鮟鱇魚鍋、常陸牛、納豆料理。<em>(⚠️ 當日取消不聯絡罰 4000円)</em></div>
+</div>
+<div class="ti sleep"><div class="td"></div>
+<div class="tt">20:15</div>
+<div class="th">🏨 返回筑波日航酒店</div>
+<div class="tx">📦 <strong>晚間任務</strong>：<br/>① 打包行李，易碎品包好，戰利品裝箱。<br/>② 設定好去機場的導航。<br/>③ 確認 ETC 卡是否在車內。</div>
+</div>
+</div>
+<div class="tips">
+      🔔 <strong>出發前待辦</strong><br/>
+      ● 2/2 設鬧鐘：預約晚餐 18:00<br/>
+      ● 4/2 設鬧鐘：預約自然博物館門票（30天前開放）<br/>
+      ● 早上買麵包多買 1–2 個備用
+    </div>
+</div>
+</div>
+<!-- ════ DAY 5 ════ -->
+<div class="day-card day5" id="day5">
+<div class="day-header" onclick="this.parentElement.classList.toggle('collapsed')">
+<div class="day-num">D5</div>
+<div class="day-info">
+<h2>🏠 還車 & 平安返台</h2>
+<div class="sub">📅 5/03（日）</div>
+</div>
+</div>
+<div class="day-body">
+<div class="hl red">🎌 黃金週圓滿結束！提早出發避開車潮，機場逛街掃貨後滿載而歸！</div>
+<div class="tl">
+<div class="ti meal"><div class="td"></div>
+<div class="tt">07:30</div>
+<div class="th">☕ 早餐與最後確認</div>
+<div class="tx">於 Hotel JAL City Tsukuba 或周邊享用早餐，並做最後的行李清點。</div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">08:30</div>
+<div class="th">🚗 飯店出發</div>
+<div class="tx">離開筑波市。預留 1.5~2 小時確保避開黃金週不可預測之車流。</div>
+</div>
+<div class="ti act"><div class="td"></div>
+<div class="tt">10:15</div>
+<div class="th">⛽ 機場周邊加油</div>
+<div class="tx">租車滿油規定，請至成田機場周圍加油站加滿油，<strong>務必保留收據</strong>。</div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">10:30</div>
+<div class="th">🏁 抵達成田 & 還車</div>
+<div class="tx">還車地點：成田機場 T2 服務櫃檯。💡 記得：結算 ETC、出示加油收據，帶走車內所有私人物品。</div>
+</div>
+<div class="ti act"><div class="td"></div>
+<div class="tt">10:30~11:40</div>
+<div class="th">🛍️ 機場 4F 商店街逛街</div>
+<div class="tx">趁報到櫃台未開，推行李至 T2 4F 吃午餐或逛街（Pokémon Store、無印等）。</div>
+</div>
+<div class="ti act"><div class="td"></div>
+<div class="tt">11:40</div>
+<div class="th">📋 航廈報到掛行李</div>
+<div class="tx">星宇航空開櫃，至出境大廳櫃台辦理報到並卸下大型行李。</div>
+</div>
+<div class="ti act"><div class="td"></div>
+<div class="tt">12:00~13:30</div>
+<div class="th">🛒 出關免稅店爆買！</div>
+<div class="tx">輕鬆通過安檢後，在 FaSoLa 等免稅店大掃貨，把東京伴手禮全部買齊。</div>
+</div>
+<div class="ti move"><div class="td"></div>
+<div class="tt">14:10</div>
+<div class="th">✈️ 星宇航空 JX801 起飛</div>
+<div class="tx">成田 T2 (14:10) → 桃園 T1 (16:50)，滿載而歸！🎉</div>
+</div>
+</div>
+<div class="tips">
+      💝 <strong>旅行精彩回顧</strong>：🌸 四種花全制霸 ｜ ♨️ 兩次天然溫泉 ｜ 🦕 暴龍博物館 + 彈跳床 ｜ 🥩 常陸牛晚餐 ｜ 📚 最大書店
+    </div>
+</div>
+</div>
+</div>
+<!-- ═══ PACKING ═══ -->
+<div class="section" id="pack">
+<div class="section-title">🎒 打包清單（出發前打勾！）</div>
+<div class="info-grid">
+<div class="info-card" style="border-color:#FF9800;">
+<h3>📄 證件 &amp; 金融</h3>
+<ul class="checklist">
+<li><input class="chk-item" type="checkbox"/> <span>護照（全員）</span></li>
+<li><input class="chk-item" type="checkbox"/> <span>駕照（國際駕照 / 日文譯本）</span></li>
+<li><input class="chk-item" type="checkbox"/> <span>信用卡 / 現金日幣</span></li>
+<li><input class="chk-item" type="checkbox"/> <span>租車預約確認單（編號 26010100518）</span></li>
+<li><input class="chk-item" type="checkbox"/> <span>住宿確認信（HMHWJJR5B8 / 筑波 9542B4603693）</span></li>
+<li><input class="chk-item" type="checkbox"/> <span>機票（電子票）</span></li>
+</ul>
+</div>
+<div class="info-card" style="border-color:#4CAF50;">
+<h3>👕 衣物 &amp; 日用</h3>
+<ul class="checklist">
+<li><input class="chk-item" type="checkbox"/> <span>舒適步行鞋（好穿脫，彈跳床用）</span></li>
+<li><input class="chk-item" type="checkbox"/> <span>防曬帽 / 太陽眼鏡</span></li>
+<li><input class="chk-item" type="checkbox"/> <span>防風外套與薄長袖（足利夜間點燈溫差極大）</span></li>
+<li><input class="chk-item" type="checkbox"/> <span>換洗衣物（5天份）</span></li>
+<li><input class="chk-item" type="checkbox"/> <span>小毛巾與換洗內衣褲（🚨請放在拉開行李箱就能一秒拿到的位置，首日晚間直接去洗澡）</span></li>
+<li><input class="chk-item" type="checkbox"/> <span>雨具（折疊傘 / 輕便雨衣）</span></li>
+</ul>
+</div>
+<div class="info-card" style="border-color:#2196F3;">
+<h3>🎒 實用物品</h3>
+<ul class="checklist">
+<li><input class="chk-item" type="checkbox"/> <span>手機充電線 &amp; 行動電源</span></li>
+<li><input class="chk-item" type="checkbox"/> <span>車用手機架（CarPlay 導航用）</span></li>
+<li><input class="chk-item" type="checkbox"/> <span>野餐墊</span></li>
+<li><input class="chk-item" type="checkbox"/> <span>水壺 / 保溫瓶</span></li>
+<li><input class="chk-item" type="checkbox"/> <span>防曬乳</span></li>
+<li><input class="chk-item" type="checkbox"/> <span>100 日幣零錢（溫泉吹頭髮）</span></li>
+<li><input class="chk-item" type="checkbox"/> <span>兒童用品（備用零食、濕紙巾）</span></li>
+<li><input class="chk-item" type="checkbox"/> <span>塑膠袋（裝髒衣服）</span></li>
+</ul>
+</div>
+</div>
+</div>
+<!-- ═══ JAPANESE ZONE ═══ -->
+<div class="section" id="jp-zone">
+<div class="section-title">🗣️ 實用日文專區</div>
+<div class="info-grid">
+<div class="info-card" style="border-color:#F06292;">
+<h3 style="font-size: 1.1em; margin-bottom: 12px;">💳 1. 如何把 Suica 用完剩下用現金付</h3>
+<p style="margin-bottom: 15px; color: #555; line-height: 1.6;">在超商或超市結帳時，拿出 Suica 與現金，對店員說：</p>
+
+<div style="background: #fff8f0; border-left: 4px solid var(--c-orange); padding: 12px; border-radius: 8px; margin-bottom: 15px;">
+  <p style="font-size: 0.85em; color: #666; margin-bottom: 6px;"><strong>🙋 輕鬆開口小短句：</strong></p>
+  <p style="font-size: 1.25em; font-weight: bold; color: var(--c-darkred); letter-spacing: 1px; margin-bottom: 4px;">Suica と 現金 で</p>
+  <p style="font-size: 0.9em; color: #e65100;">🗣️ 發音：<em style="font-style: normal;">Suica 偷 Gen-kin 爹 (ㄊㄡ Gen-kin ㄉㄧㄝ)</em></p>
+</div>
+
+<div style="background: #e3f2fd; border-left: 4px solid var(--c-blue); padding: 12px; border-radius: 8px;">
+  <p style="font-size: 0.85em; color: #666; margin-bottom: 6px;"><strong>👩‍🏫 完整得體日文會話：</strong></p>
+  <p style="font-size: 1.05em; font-weight: bold; color: #0d47a1; margin-bottom: 4px; line-height: 1.4;">Suicaの残高を全部使って、残りは現金でお願いします。</p>
+  <p style="font-size: 0.85em; color: #1565c0;">🗣️ 平假名：<em style="font-style: normal;">すいかの ざんだかを ぜんぶつかって、のこりは げんきんで おねがいします</em></p>
+</div>
+</div>
+
+<div class="info-card" style="border-color:#ff5252;">
+<h3 style="font-size: 1.1em; margin-bottom: 12px;">🆘 2. 與家人走散時請人幫忙打電話</h3>
+<p style="margin-bottom: 15px; color: #555; line-height: 1.6;">如果不小心走散，請家人直接把以下畫面指給站務員、店員或路人看：</p>
+
+<div style="background: #fff8f0; border-left: 4px solid var(--c-orange); padding: 12px; border-radius: 8px;">
+  <p style="font-size: 0.85em; color: #666; margin-bottom: 6px;"><strong>🙋 給家人的求救小抄（直接指給對方看）：</strong></p>
+  <p style="font-size: 1.1em; font-weight: bold; color: var(--c-darkred); letter-spacing: 1px; margin-bottom: 8px; line-height: 1.5;">迷子になりました。<br>家族に連絡してもらえませんか？<br>電話番号は 080-3573-6079 です。</p>
+  <p style="font-size: 0.9em; color: #e65100;">🗣️ 配合短句發音：<br><em style="font-style: normal;">Mai-go de-su. (我迷路了)<br>Ko-ko ni den-wa shi-te ku-da-sai. (請打電話到這裡)</em></p>
+</div>
+</div>
+
+<div class="info-card" style="border-color:#4CAF50;">
+<h3 style="font-size: 1.1em; margin-bottom: 12px;">🍽️ 3. 餐廳日常會話</h3>
+<div style="background: #fff8f0; border-left: 4px solid var(--c-orange); padding: 12px; border-radius: 8px; margin-bottom: 15px;">
+  <p style="font-size: 0.85em; color: #666; margin-bottom: 10px;"><strong>🙋 輕鬆開口小短句：</strong></p>
+  <div style="color: #555; line-height: 1.6; font-size: 0.95em;">
+    <div style="margin-bottom: 10px;">🔸 <strong style="color:var(--c-darkred);">不好意思 / 借過 / 點餐叫人：</strong> すみません<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em style="color:#e65100;font-size:0.9em;">(蘇咪媽線)</em></div>
+    <div style="margin-bottom: 10px;">🔸 <strong style="color:var(--c-darkred);">請給我水：</strong> お水をお願いします<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em style="color:#e65100;font-size:0.9em;">(歐咪租 歐捏該一西媽斯)</em></div>
+    <div>🔸 <strong style="color:var(--c-darkred);">廁所在哪裡：</strong> トイレはどこですか<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em style="color:#e65100;font-size:0.9em;">(偷伊勒 哇 豆摳爹斯卡)</em></div>
+  </div>
+</div>
+<div style="background: #e3f2fd; border-left: 4px solid var(--c-blue); padding: 12px; border-radius: 8px;">
+  <p style="font-size: 0.85em; color: #666; margin-bottom: 10px;"><strong>👩‍🏫 完整得體日文會話：</strong></p>
+  <div style="color: #0d47a1; line-height: 1.6; font-size: 0.95em;">
+    <div style="margin-bottom: 8px;">🔹 <strong style="color:#1565c0;">請給我水：</strong> お水（みず）をお願（ねが）いします。</div>
+    <div style="margin-bottom: 8px;">🔹 <strong style="color:#1565c0;">請問有 筷子/湯匙/空碗/空盤 嗎：</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;お箸（はし）/ スプーン / お椀（わん）/ 取（と）り皿（ざら） をもらえますか。</div>
+    <div>🔹 <strong style="color:#1565c0;">請幫我結帳：</strong> お会計（かいけい）をお願（ねが）いします。</div>
+  </div>
+</div>
+</div>
+
+<div class="info-card" style="border-color:#FF9800;">
+<h3 style="font-size: 1.1em; margin-bottom: 12px;">🛒 4. 商店與景點會話</h3>
+<div style="background: #fff8f0; border-left: 4px solid var(--c-orange); padding: 12px; border-radius: 8px; margin-bottom: 15px;">
+  <p style="font-size: 0.85em; color: #666; margin-bottom: 10px;"><strong>🙋 輕鬆開口小短句 (商店)：</strong></p>
+  <div style="color: #555; line-height: 1.6; font-size: 0.95em;">
+    <div style="margin-bottom: 8px;">🔸 <strong style="color:var(--c-darkred);">用現金（結帳）：</strong> 現金で <em style="color:#e65100;font-size:0.9em;">(Gen-kin 爹)</em></div>
+    <div style="margin-bottom: 8px;">🔸 <strong style="color:var(--c-darkred);">用信用卡（結帳）：</strong> クレジットカードで <em style="color:#e65100;font-size:0.9em;">(可雷基多卡豆 爹)</em></div>
+    <div style="margin-bottom: 15px;">🔸 <strong style="color:var(--c-darkred);">用 Suica（結帳）：</strong> Suicaで <em style="color:#e65100;font-size:0.9em;">(Suica 爹)</em></div>
+    <div style="margin-bottom: 8px;">🔸 <strong style="color:var(--c-darkred);">需要袋子：</strong> 袋 いります <em style="color:#e65100;font-size:0.9em;">(夫哭肉 依哩媽斯)</em></div>
+    <div style="margin-bottom: 15px;">🔸 <strong style="color:var(--c-darkred);">不用袋子：</strong> 袋 いりません <em style="color:#e65100;font-size:0.9em;">(夫哭肉 依哩媽線)</em></div>
+    <div style="margin-bottom: 15px;">🔸 <strong style="color:var(--c-darkred);">要加熱：</strong> 温めてください <em style="color:#e65100;font-size:0.9em;">(阿塔塔咩鐵 哭搭賽)</em></div>
+    <div style="margin-bottom: 8px;">🔸 <strong style="color:var(--c-darkred);">我要 1 個這個：</strong> これを 1つ ください <em style="color:#e65100;font-size:0.9em;">(摳勒歐 ㄏㄧ偷此 哭搭賽)</em></div>
+    <div style="margin-bottom: 8px;">🔸 <strong style="color:var(--c-darkred);">我要 2 個這個：</strong> これを 2つ ください <em style="color:#e65100;font-size:0.9em;">(摳勒歐 夫搭此 哭搭賽)</em></div>
+    <div>🔸 <strong style="color:var(--c-darkred);">我要 3 個這個：</strong> これを 3つ ください <em style="color:#e65100;font-size:0.9em;">(摳勒歐 密此 哭搭賽)</em></div>
+  </div>
+</div>
+<div style="background: #e3f2fd; border-left: 4px solid var(--c-blue); padding: 12px; border-radius: 8px;">
+  <p style="font-size: 0.85em; color: #666; margin-bottom: 10px;"><strong>👩‍🏫 完整得體日文會話 (景點)：</strong></p>
+  <div style="color: #0d47a1; line-height: 1.6; font-size: 0.95em;">
+    <div>🔹 <strong style="color:#1565c0;">可以請你幫我們拍照嗎？</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;写真（しゃしん）を撮（と）ってもらえませんか。</div>
+  </div>
+</div>
+</div>
+
+</div>
+</div>
+<!-- ═══ EMERGENCY ═══ -->
+<div class="section" id="sos">
+<div class="section-title">🆘 緊急資訊</div>
+<div class="emer-grid">
+<div class="emer-card">
+<div class="num">110</div>
+<div class="label">🚔 日本報警電話</div>
+</div>
+<div class="emer-card">
+<div class="num">119</div>
+<div class="label">🚑 救護車 / 消防</div>
+</div>
+<div class="emer-card">
+<div class="num">03-2874-7008</div>
+<div class="label">🏛️ 台北駐日代表處</div>
+</div>
+<div class="emer-card">
+<div class="num">#7119</div>
+<div class="label">📞 醫療諮詢專線</div>
+</div>
+</div>
+<div class="tips" style="margin-top:16px;">
+    🏥 <strong>看病</strong>：帶護照去醫院掛號，先付費後回台申請健保核退<br/>
+    📱 <strong>翻譯</strong>：撥打 <strong>050-3816-2787</strong>（多語言醫療口譯）
+  </div>
+</div>
+<!-- ═══ FOOTER ═══ -->
+<footer>
+<strong>🗼 2026 日本黃金週關東行行程表</strong><br/>
+  ✈️ 桃園 → 東京 ｜ 🚗 自駕 ELGRAND ｜ 👨‍👩‍👧‍👦 5大1小 ｜ 🌸 花季 &amp; 溫泉 &amp; 美食<br/><br/>
+  祝旅途順利，玩得開心！ 🎉✨
+</footer>
+<script>
+  // smooth scroll for nav
+  document.querySelectorAll('.sticky-nav a').forEach(a=>{
+    a.addEventListener('click',e=>{
+      const id=a.getAttribute('href');
+      if(id.startsWith('#')){
+        e.preventDefault();
+        const el=document.querySelector(id);
+        if(el){
+          // if collapsed, expand it first
+          if(el.classList.contains('collapsed')) el.classList.remove('collapsed');
+          el.scrollIntoView({behavior:'smooth',block:'start'});
+        }
+      }
+    });
+  });
+
+  const chks = document.querySelectorAll('.checklist input[type="checkbox"]');
+  chks.forEach((chk, i) => {
+    chk.id = 'chk-' + i;
+    const saved = localStorage.getItem(chk.id);
+    if(saved === 'true') {
+      chk.checked = true;
+      chk.parentElement.classList.add('checked');
+    }
+    chk.addEventListener('change', function() {
+      localStorage.setItem(this.id, this.checked);
+      if(this.checked) this.parentElement.classList.add('checked');
+      else this.parentElement.classList.remove('checked');
+    });
+  });
+</script><div class="checklist-interactive" style="display:none"></div>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js');
+    });
+  }
+
+  const chks = document.querySelectorAll('.checklist input[type="checkbox"]');
+  chks.forEach((chk, i) => {
+    chk.id = 'chk-' + i;
+    const saved = localStorage.getItem(chk.id);
+    if(saved === 'true') {
+      chk.checked = true;
+      chk.parentElement.classList.add('checked');
+    }
+    chk.addEventListener('change', function() {
+      localStorage.setItem(this.id, this.checked);
+      if(this.checked) this.parentElement.classList.add('checked');
+      else this.parentElement.classList.remove('checked');
+    });
+  });
+</script><div class="checklist-interactive" style="display:none"></div>
+</body>
+</html>

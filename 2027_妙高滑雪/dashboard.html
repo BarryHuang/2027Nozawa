@@ -150,7 +150,7 @@
     <!-- Summary bar -->
     <div class="card" style="padding:20px 32px;">
         <div class="progress-bar" style="margin-bottom:0">
-            📊 目前蒐集 <strong>17 間</strong>飯店型住宿（含 Ski-in/out 為主）• 尚未發送詢問信 • 所有資訊待確認
+            📊 目前蒐集 <strong>32 間</strong>住宿（飯店/公寓/民宿型）• 尚未發送詢問信 • 所有資訊待確認
         </div>
     </div>
 
@@ -178,10 +178,24 @@ const hotels = [
   // ── 池の平温泉 ────────────────────────────────────────────────
   {n:"池の平温泉 アルペンブリックリゾート", r:"4.0",a:"池の平",k:0,o:1,d:"Ski-in/out (池の平)",s:"🆕 需查官網 (硫黄泥湯+透明湯)",u:"https://www.google.com/maps/search/?api=1&query=アルペンブリックリゾート+妙高池の平"},
   {n:"Legend Inn Myoko",             r:"4.2",a:"池の平",k:0,o:1,d:"車 3 分 (池の平)",s:"🆕 需查官網",u:"https://www.google.com/maps/search/?api=1&query=Legend+Inn+Myoko"},
-  // ── 妙高杉ノ原 ────────────────────────────────────────────────
-  {n:"Sora Tobu Usagi (空飛ぶうさぎ)", r:"4.0",a:"杉ノ原",k:1,o:0,d:"Ski-in/out (杉ノ原)",s:"🆕 需查官網 (含早晚餐可選/家庭房)",u:"https://www.google.com/maps/search/?api=1&query=空飛ぶうさぎ+妙高杉ノ原"},
-  {n:"Red Fox Lodge",                r:"4.1",a:"杉ノ原",k:1,o:0,d:"Ski-in/out (杉ノ原)",s:"🆕 需查官網 (新裝家庭小屋)",u:"https://www.google.com/maps/search/?api=1&query=Red+Fox+Lodge+Myoko+Suginohara"},
-  {n:"Lodge Puruku",                 r:"4.0",a:"杉ノ原",k:0,o:1,d:"步行 1 分 (杉ノ原)",s:"🆕 需查官網 (森林溫泉小屋)",u:"https://www.google.com/maps/search/?api=1&query=Lodge+Puruku+Myoko"},
+  // ── 妙高杉ノ原 直近 ───────────────────────────────────────────
+  {n:"Sora Tobu Usagi (空飛ぶうさぎ)", r:"4.0",a:"杉ノ原",k:1,o:0,d:"Ski-in/out",s:"🆕 需查官網 (含早晚餐可選/家庭房)",u:"https://www.google.com/maps/search/?api=1&query=空飛ぶうさぎ+妙高杉ノ原"},
+  {n:"Red Fox Lodge",                r:"4.1",a:"杉ノ原",k:1,o:0,d:"步行 1 分",s:"🆕 需查官網 (新裝家庭小屋)",u:"https://www.google.com/maps/search/?api=1&query=Red+Fox+Lodge+Myoko+Suginohara"},
+  {n:"Pension Puruku",               r:"4.0",a:"杉ノ原",k:0,o:1,d:"Ski-in/out",s:"🆕 需查官網 (暖爐/溫泉/器材租借)",u:"https://www.google.com/maps/search/?api=1&query=Pension+Puruku+Myoko"},
+  {n:"Gozan Lodge Myoko",            r:"4.7",a:"杉ノ原",k:0,o:0,d:"步行 2 分",s:"🆕 需查官網 (TripAdvisor 5/5)",u:"https://www.google.com/maps/search/?api=1&query=Gozan+Lodge+Myoko+Suginohara"},
+  {n:"四季の宿 アルファイン秀雲荘",  r:"4.2",a:"杉ノ原",k:0,o:1,d:"步行 2 分",s:"🆕 需查官網 (旁有苗名の湯溫泉)",u:"https://www.google.com/maps/search/?api=1&query=アルファイン秀雲荘+妙高"},
+  {n:"Yamakiya (やまきや)",          r:"4.0",a:"杉ノ原",k:0,o:1,d:"步行 1 分",s:"🆕 需查官網 (家常料理/大浴場)",u:"https://www.google.com/maps/search/?api=1&query=やまきや+妙高杉ノ原"},
+  {n:"Sunvillage Machida (サンヴィレッジ)", r:"4.1",a:"杉ノ原",k:0,o:1,d:"步行 3 分",s:"🆕 需查官網 (鄰苗名の湯/農場蔬菜)",u:"https://www.google.com/maps/search/?api=1&query=サンヴィレッジまちだ+妙高"},
+  {n:"Tabataya (田畑屋)",            r:"4.2",a:"杉ノ原",k:0,o:1,d:"步行 5 分",s:"🆕 需查官網 (115年老店/免費接駁/家庭榻榻米房)",u:"https://www.google.com/maps/search/?api=1&query=田畑屋+妙高杉ノ原"},
+  {n:"Sugi Crossroads",             r:"4.2",a:"杉ノ原",k:1,o:0,d:"近雪場",s:"🆕 需查官網 (全棟可租/最多16人/全配廚房)",u:"https://www.google.com/maps/search/?api=1&query=Sugi+Crossroads+Myoko+Suginohara"},
+  {n:"Sugi Chalet",                 r:"4.2",a:"杉ノ原",k:1,o:0,d:"Ski-in/out",s:"🆕 需查官網 (6間房/最多16人/自炊)",u:"https://www.google.com/maps/search/?api=1&query=Sugi+Chalet+Myoko+Suginohara"},
+  // ── 杉ノ原 車程10分（赤倉/池の平方向）────────────────────────
+  {n:"The Address Akakura ⭐",       r:"4.7",a:"杉ノ原10分圈",k:1,o:1,d:"車 10 分 (赤倉温泉)",s:"🆕 需查官網 (Booking 9.5/全廚含烤箱/私人溫泉包湯/家庭房5人)",u:"https://www.google.com/maps/search/?api=1&query=The+Address+Akakura+Myoko"},
+  {n:"Refre Hotel Akakura",         r:"4.3",a:"杉ノ原10分圈",k:0,o:1,d:"車 10 分 (赤倉温泉)",s:"🆕 需查官網 (大型日式家庭房/私人包湯)",u:"https://www.google.com/maps/search/?api=1&query=Refre+Hotel+Akakura+Myoko"},
+  {n:"Hotel Myosen",                r:"4.1",a:"杉ノ原10分圈",k:0,o:1,d:"車 10 分 (赤倉温泉)",s:"🆕 需查官網 (家庭房2大2小/溫泉)",u:"https://www.google.com/maps/search/?api=1&query=Hotel+Myosen+Myoko"},
+  {n:"Kitsune Lodge",               r:"4.2",a:"杉ノ原10分圈",k:1,o:0,d:"車 8 分 (池の平)",s:"🆕 需查官網 (現代家庭風格/廚房)",u:"https://www.google.com/maps/search/?api=1&query=Kitsune+Lodge+Myoko+Ikenotaira"},
+  {n:"Yuki Lodge Myoko",            r:"4.2",a:"杉ノ原10分圈",k:1,o:0,d:"車 8 分 (池の平)",s:"🆕 需查官網 (全配廚房/最多10人)",u:"https://www.google.com/maps/search/?api=1&query=Yuki+Lodge+Myoko+Ikenotaira"},
+  {n:"Koguma Chalet Myoko",         r:"4.0",a:"杉ノ原10分圈",k:1,o:0,d:"車 10 分 (妙高山麓)",s:"🆕 需查官網 (全配廚房/最多8人)",u:"https://www.google.com/maps/search/?api=1&query=Koguma+Chalet+Myoko"},
   // ── Lotte Arai Resort ─────────────────────────────────────────
   {n:"Lotte Arai Resort",            r:"4.2",a:"Arai",k:0,o:1,d:"Ski-in/out (Arai Resort)",s:"🆕 需查官網 (5星/Spa/泳池/距赤倉20分)",u:"https://www.google.com/maps/search/?api=1&query=Lotte+Arai+Resort+Myoko"},
   // ── 斑尾高原 ──────────────────────────────────────────────────
@@ -189,22 +203,24 @@ const hotels = [
   {n:"Madarao Kogen Hotel",          r:"3.9",a:"斑尾",k:0,o:1,d:"Ski-in/out (斑尾高原)",s:"🆕 需查官網",u:"https://www.google.com/maps/search/?api=1&query=Madarao+Kogen+Hotel"},
 ];
 
-const areaOrder = ["赤倉温泉","赤倉観光","池の平","杉ノ原","Arai","斑尾"];
+const areaOrder = ["赤倉温泉","赤倉観光","池の平","杉ノ原","杉ノ原10分圈","Arai","斑尾"];
 const areaLabels = {
-    "赤倉温泉": "🏘️ 赤倉温泉 (Akakura Onsen) — 溫泉街核心，最多飯店",
-    "赤倉観光": "🏨 赤倉観光リゾート (Akakura Kanko) — 旅館直結纜車",
-    "池の平":   "⭐ 池の平温泉 アルペンブリック — 小孩首選，寬廣緩坡",
-    "杉ノ原":   "🎿 妙高杉ノ原 (Suginohara) — 日本最長路線 8.5km",
-    "Arai":     "🌟 Lotte Arai Resort — 頂級5星獨立雪場",
-    "斑尾":     "🌲 斑尾高原 (Madarao Kogen) — 粉雪森林樂園",
+    "赤倉温泉":    "🏘️ 赤倉温泉 (Akakura Onsen) — 溫泉街核心，最多飯店",
+    "赤倉観光":    "🏨 赤倉観光リゾート (Akakura Kanko) — 旅館直結纜車",
+    "池の平":      "⭐ 池の平温泉 アルペンブリック — 小孩首選，寬廣緩坡",
+    "杉ノ原":      "🎿 妙高杉ノ原 (Suginohara) — 步行圈直近住宿",
+    "杉ノ原10分圈":"🚗 杉ノ原 車程 10 分圈 — 赤倉 / 池の平方向",
+    "Arai":        "🌟 Lotte Arai Resort — 頂級5星獨立雪場",
+    "斑尾":        "🌲 斑尾高原 (Madarao Kogen) — 粉雪森林樂園",
 };
 const areaDesc = {
-    "赤倉温泉": "妙高最熱鬧的區域，溫泉街步行即可逛，外國遊客英文溝通無礙。多數住宿集中在此，前往各雪場接駁方便。",
-    "赤倉観光": "1937年創業的赤倉観光ホテル是妙高地標，直結雪場纜車口，粉雪品質絕佳，適合追求高品質溫泉飯店體驗的家庭。",
-    "池の平":   "適合攜帶小孩的初學者家庭！寬廣緩坡、Kids Garden 圍欄區、雪橇場，加上罕見的硫磺泥湯溫泉。",
-    "杉ノ原":   "Prince Hotels 管理，設施現代，海拔最高，粉雪最輕盈。Ski-in/out 住宿選擇相對少，但滑行體驗一流。",
-    "Arai":     "Lotte 集團旗艦，距赤倉溫泉村約 20 分鐘，適合想要奢華體驗又不在乎隔絕感的家庭。",
-    "斑尾":     "Distance from Akakura ~40 min car. 以深林粉雪路線著稱，可配合赤倉 1-2 天日歸計畫。",
+    "赤倉温泉":    "妙高最熱鬧的區域，溫泉街步行即可逛，外國遊客英文溝通無礙。多數住宿集中在此，前往各雪場接駁方便。",
+    "赤倉観光":    "1937年創業的赤倉観光ホテル是妙高地標，直結雪場纜車口，粉雪品質絕佳，適合追求高品質溫泉飯店體驗的家庭。",
+    "池の平":      "適合攜帶小孩的初學者家庭！寬廣緩坡、Kids Garden 圍欄區、雪橇場，加上罕見的硫磺泥湯溫泉。",
+    "杉ノ原":      "日本最長路線 8.5km，粉雪品質一流。步行圈住宿多為民宿/小屋型，Ski-in/out 選擇豐富，適合想沉浸在山中的家庭。",
+    "杉ノ原10分圈":"開車約 10 分可抵杉ノ原，含赤倉温泉街方向（飯店選擇多）與池の平方向（公寓型為主）。其中 The Address Akakura 評分最高（Booking 9.5），是該區最強推薦。",
+    "Arai":        "Lotte 集團旗艦，距赤倉溫泉村約 20 分鐘，適合想要奢華體驗又不在乎隔絕感的家庭。",
+    "斑尾":        "距赤倉約 40 分鐘車程。以深林粉雪路線著稱，可配合赤倉 1-2 天日歸計畫。",
 };
 
 function badgeClass(s) {

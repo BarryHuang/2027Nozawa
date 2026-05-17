@@ -2100,7 +2100,7 @@
   var h2s = document.querySelectorAll('h2');
   h2s.forEach(function(h2,i){
     h2.style.borderLeftColor = palette[i % palette.length];
-    h2.id = 'sec-' + i;
+    if (!h2.id) h2.id = 'sec-' + i;
   });
 
   // 3. Build sticky nav from h2 headings

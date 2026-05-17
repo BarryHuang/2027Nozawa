@@ -212,6 +212,89 @@
     .checklist li input[type="checkbox"] { margin-top: 3px; flex-shrink: 0; width: 15px; height: 15px; accent-color: var(--c-sage); cursor: pointer; }
     .checklist li input:checked + span, .checklist li label:has(input:checked) { opacity: .55; text-decoration: line-through; }
 
+    /* ── TRIP OVERVIEW ── */
+    .trip-overview {
+      background: white;
+      border-bottom: 3px solid var(--c-border);
+      padding: 24px 16px 28px;
+    }
+    .trip-overview-title {
+      text-align: center;
+      font-size: 1.05em;
+      font-weight: 800;
+      color: var(--c-forest);
+      margin-bottom: 18px;
+      letter-spacing: .5px;
+    }
+    .trip-overview-title span {
+      display: inline-block;
+      background: var(--c-forest);
+      color: white;
+      padding: 4px 16px;
+      border-radius: 20px;
+      font-size: .88em;
+    }
+    .trip-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(148px, 1fr));
+      gap: 8px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .trip-card {
+      background: #f7f5f0;
+      border-radius: 10px;
+      padding: 10px 11px 9px;
+      border-left: 4px solid var(--c-sage);
+      text-decoration: none;
+      color: var(--c-text);
+      transition: all .2s;
+      display: block;
+      position: relative;
+      overflow: hidden;
+    }
+    .trip-card:hover {
+      background: #eef6f1;
+      border-left-color: var(--c-forest);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 14px rgba(42,74,60,.13);
+      color: var(--c-text);
+      text-decoration: none;
+    }
+    .trip-card.moving { border-left-color: var(--c-sky); background: #edf3f8; }
+    .trip-card.moving:hover { background: #ddeaf4; border-left-color: #3a6a8a; }
+    .trip-card.special { border-left-color: var(--c-gold); background: #fdf7ec; }
+    .trip-card.special:hover { background: #faefd6; border-left-color: #8a6a20; }
+    .trip-card-date {
+      font-size: .72em; font-weight: 800;
+      color: var(--c-muted);
+      letter-spacing: .3px;
+      margin-bottom: 3px;
+    }
+    .trip-card-emoji { font-size: 1.3em; line-height: 1; margin-bottom: 3px; display: block; }
+    .trip-card-title {
+      font-size: .82em; font-weight: 700;
+      color: var(--c-forest);
+      line-height: 1.35;
+      margin-bottom: 2px;
+    }
+    .trip-card-sub {
+      font-size: .73em;
+      color: var(--c-muted);
+      line-height: 1.4;
+    }
+    .trip-card-tag {
+      display: inline-block;
+      font-size: .65em; font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 8px;
+      margin-top: 4px;
+      background: rgba(77,126,104,.12);
+      color: var(--c-sage);
+    }
+    .trip-card.moving .trip-card-tag { background: rgba(94,143,170,.12); color: var(--c-sky); }
+    .trip-card.special .trip-card-tag { background: rgba(184,146,58,.15); color: var(--c-gold); }
+
     /* ── PRINT ── */
     @media print {
       .sticky-nav { display: none !important; }
@@ -254,6 +337,124 @@
   <div class="meta-badge">👨‍👩‍👧‍👦 4人同行</div>
   <div class="meta-badge">📅 7/17 – 8/1 共 16天</div>
   <div class="meta-badge">🗺️ <a href="Wanderkarte步道解析表.html" target="_blank">步道解析表</a></div>
+</div>
+<!-- ═══ TRIP OVERVIEW ═══ -->
+<div class="trip-overview">
+  <div class="trip-overview-title"><span>📅 16天行程一目了然</span></div>
+  <div class="trip-grid">
+    <a class="trip-card moving" href="#sec-3">
+      <div class="trip-card-date">Day 1 · 7/17 (六)</div>
+      <span class="trip-card-emoji">✈️</span>
+      <div class="trip-card-title">出發 · 台北飛慕尼黑</div>
+      <div class="trip-card-sub">CX479 → CX301</div>
+      <span class="trip-card-tag">移動日</span>
+    </a>
+    <a class="trip-card moving" href="#sec-3">
+      <div class="trip-card-date">Day 2 · 7/18 (六)</div>
+      <span class="trip-card-emoji">🚗</span>
+      <div class="trip-card-title">入境 · 長征義大利</div>
+      <div class="trip-card-sub">慕尼黑機場 → Ortisei</div>
+      <span class="trip-card-tag">入住 Ciastel</span>
+    </a>
+    <a class="trip-card" href="#sec-4">
+      <div class="trip-card-date">Day 3 · 7/19 (日)</div>
+      <span class="trip-card-emoji">🌻</span>
+      <div class="trip-card-title">休斯高原</div>
+      <div class="trip-card-sub">Alpe di Siusi · 輕鬆暖身</div>
+      <span class="trip-card-tag">步行 6A→6→6B</span>
+    </a>
+    <a class="trip-card" href="#sec-5">
+      <div class="trip-card-date">Day 4 · 7/20 (一)</div>
+      <span class="trip-card-emoji">⛰️</span>
+      <div class="trip-card-title">刀背山 Seceda</div>
+      <div class="trip-card-sub">Trail 1→2B→13→4 縱走</div>
+      <span class="trip-card-tag">需預約纜車</span>
+    </a>
+    <a class="trip-card" href="#sec-6">
+      <div class="trip-card-date">Day 5 · 7/21 (二)</div>
+      <span class="trip-card-emoji">🌲</span>
+      <div class="trip-card-title">富內斯山谷</div>
+      <div class="trip-card-sub">Val di Funes · Munkel Weg</div>
+      <span class="trip-card-tag">Pitzock 晚餐</span>
+    </a>
+    <a class="trip-card" href="#sec-7">
+      <div class="trip-card-date">Day 6 · 7/22 (三)</div>
+      <span class="trip-card-emoji">🪨</span>
+      <div class="trip-card-title">棺材纜車 · 巨石城</div>
+      <div class="trip-card-sub">Passo Sella · Trail 526</div>
+      <span class="trip-card-tag">Comici 午餐</span>
+    </a>
+    <a class="trip-card" href="#sec-8">
+      <div class="trip-card-date">Day 7 · 7/23 (四)</div>
+      <span class="trip-card-emoji">🚂</span>
+      <div class="trip-card-title">森林小火車 · 溫泉</div>
+      <div class="trip-card-sub">Resciesa + Mar Dolomit</div>
+      <span class="trip-card-tag">鎮上放鬆</span>
+    </a>
+    <a class="trip-card" href="#sec-9">
+      <div class="trip-card-date">Day 8 · 7/24 (五)</div>
+      <span class="trip-card-emoji">🚡</span>
+      <div class="trip-card-title">纜車大滿貫 · 峽谷瀑布</div>
+      <div class="trip-card-sub">Selva → Colfosco</div>
+      <span class="trip-card-tag">最後晚在 Ciastel</span>
+    </a>
+    <a class="trip-card moving" href="#sec-10">
+      <div class="trip-card-date">Day 9 · 7/25 (六)</div>
+      <span class="trip-card-emoji">🚗</span>
+      <div class="trip-card-title">移動日 · 山口遠征</div>
+      <div class="trip-card-sub">Corvara → Falzarego → Misurina</div>
+      <span class="trip-card-tag">入住 Misurina</span>
+    </a>
+    <a class="trip-card special" href="#sec-11">
+      <div class="trip-card-date">Day 10 · 7/26 (日)</div>
+      <span class="trip-card-emoji">🏔️</span>
+      <div class="trip-card-title">三尖峰 Tre Cime</div>
+      <div class="trip-card-sub">Auronzo 環線 · 世界級步道</div>
+      <span class="trip-card-tag">🔥 需強制預約</span>
+    </a>
+    <a class="trip-card moving" href="#sec-12">
+      <div class="trip-card-date">Day 11 · 7/27 (一)</div>
+      <span class="trip-card-emoji">🏔️</span>
+      <div class="trip-card-title">大鐘山冰川公路</div>
+      <div class="trip-card-sub">Braies → Grossglockner → Kaprun</div>
+      <span class="trip-card-tag">入住 Kaprun</span>
+    </a>
+    <a class="trip-card" href="#sec-13">
+      <div class="trip-card-date">Day 12 · 7/28 (二)</div>
+      <span class="trip-card-emoji">🎢</span>
+      <div class="trip-card-title">奧地利衝刺 · 魔法森林</div>
+      <div class="trip-card-sub">Flitzer + Hintersee · Zauberwald</div>
+      <span class="trip-card-tag">入住 Berchtesgaden</span>
+    </a>
+    <a class="trip-card special" href="#sec-14">
+      <div class="trip-card-date">Day 13 · 7/29 (三)</div>
+      <span class="trip-card-emoji">🚢</span>
+      <div class="trip-card-title">國王湖深度慢遊</div>
+      <div class="trip-card-sub">Obersee + St. Bartholomä + 迴音</div>
+      <span class="trip-card-tag">🔥 船票提前買</span>
+    </a>
+    <a class="trip-card moving" href="#sec-15">
+      <div class="trip-card-date">Day 14 · 7/30 (四)</div>
+      <span class="trip-card-emoji">🏙️</span>
+      <div class="trip-card-title">耶拿峰 · 慕尼黑逛街</div>
+      <div class="trip-card-sub">Jennerbahn → 瑪利亞廣場</div>
+      <span class="trip-card-tag">入住 慕尼黑</span>
+    </a>
+    <a class="trip-card special" href="#sec-16">
+      <div class="trip-card-date">Day 15 · 7/31 (五)</div>
+      <span class="trip-card-emoji">🏛️</span>
+      <div class="trip-card-title">德意志博物館 · 購物</div>
+      <div class="trip-card-sub">Deutsches Museum + 卡爾廣場</div>
+      <span class="trip-card-tag">🔥 票需提前買</span>
+    </a>
+    <a class="trip-card moving" href="#sec-17">
+      <div class="trip-card-date">Day 16 · 8/1 (六)</div>
+      <span class="trip-card-emoji">✈️</span>
+      <div class="trip-card-title">賦歸 · 退稅作戰</div>
+      <div class="trip-card-sub">MUC → HKG (CX300)</div>
+      <span class="trip-card-tag">回家囉！</span>
+    </a>
+  </div>
 </div>
 <div class="container">
         <div class="nav-links">

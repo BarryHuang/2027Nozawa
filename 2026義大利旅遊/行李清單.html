@@ -1,570 +1,536 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026 義大利行李清單</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:'Noto Sans TC',-apple-system,sans-serif;background:#f8fafc;color:#1e293b;min-height:100vh}
-
-        /* NAV */
-        nav{background:#134e4a;color:#fff;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 8px rgba(0,0,0,.2);position:sticky;top:0;z-index:100}
-        .nav-brand{font-weight:700;font-size:18px;letter-spacing:1px}
-        .nav-actions{display:flex;gap:8px}
-        .nav-btn{background:rgba(255,255,255,.15);border:none;color:#fff;padding:6px 14px;border-radius:8px;cursor:pointer;font-family:inherit;font-size:13px;transition:.15s}
-        .nav-btn:hover{background:rgba(255,255,255,.25)}
-        .nav-btn.danger{background:rgba(239,68,68,.3)}
-        .nav-btn.danger:hover{background:rgba(239,68,68,.5)}
-
-        /* HERO */
-        .hero{background:linear-gradient(135deg,#134e4a 0%,#0f766e 100%);color:#fff;padding:32px 24px 24px;text-align:center}
-        .hero h1{font-size:26px;font-weight:700;margin-bottom:4px}
-        .hero .subtitle{font-size:13px;opacity:.75;margin-bottom:20px}
-        .overall-progress{background:rgba(0,0,0,.2);border-radius:999px;height:10px;max-width:400px;margin:0 auto 8px}
-        .overall-bar{background:#5eead4;height:100%;border-radius:999px;transition:.3s}
-        .overall-label{font-size:13px;opacity:.85}
-
-        /* TOOLBAR */
-        .toolbar{max-width:1100px;margin:20px auto 0;padding:0 20px;display:flex;gap:10px;flex-wrap:wrap}
-        .tool-btn{background:#fff;border:1px solid #e2e8f0;color:#334155;padding:8px 18px;border-radius:8px;cursor:pointer;font-family:inherit;font-size:13px;font-weight:500;transition:.15s;display:flex;align-items:center;gap:6px}
-        .tool-btn:hover{background:#f1f5f9;border-color:#cbd5e1}
-        .tool-btn.primary{background:#0d9488;color:#fff;border-color:#0d9488}
-        .tool-btn.primary:hover{background:#0f766e}
-
-        /* GRID */
-        .grid{max-width:1100px;margin:20px auto 60px;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
-
-        /* CARD */
-        .card{background:#fff;border-radius:14px;border:1px solid #e2e8f0;box-shadow:0 1px 4px rgba(0,0,0,.06);overflow:hidden;display:flex;flex-direction:column}
-        .card-header{padding:16px 18px 12px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #f1f5f9}
-        .card-icon{font-size:22px;line-height:1}
-        .card-title{font-size:15px;font-weight:700;color:#0f766e;flex:1;cursor:pointer}
-        .card-title:focus{outline:2px solid #0d9488;border-radius:4px;padding:0 2px}
-        .card-badge{background:#f0fdf4;color:#166534;font-size:11px;font-weight:600;padding:3px 9px;border-radius:999px;white-space:nowrap}
-        .card-badge.done{background:#0d9488;color:#fff}
-        .card-delete{background:none;border:none;cursor:pointer;color:#94a3b8;font-size:16px;padding:2px 6px;border-radius:6px;line-height:1}
-        .card-delete:hover{color:#ef4444;background:#fef2f2}
-
-        /* ITEMS */
-        .item-list{list-style:none;padding:8px 0;flex:1}
-        .item{display:flex;align-items:center;gap:10px;padding:7px 18px;transition:.1s}
-        .item:hover{background:#f8fafc}
-        .item input[type=checkbox]{width:17px;height:17px;accent-color:#0d9488;cursor:pointer;flex-shrink:0}
-        .item-label{flex:1;font-size:13.5px;line-height:1.4;cursor:pointer;transition:.2s}
-        .item.checked .item-label{text-decoration:line-through;color:#94a3b8}
-        .item-del{background:none;border:none;cursor:pointer;color:#cbd5e1;font-size:15px;padding:2px 5px;border-radius:5px;opacity:0;transition:.15s;line-height:1}
-        .item:hover .item-del{opacity:1}
-        .item-del:hover{color:#ef4444;background:#fef2f2}
-
-        /* NOTE tag */
-        .item-note{font-size:11px;color:#64748b;display:block;margin-top:1px}
-
-        /* ADD ITEM */
-        .add-item-row{display:flex;gap:6px;padding:10px 14px 14px}
-        .add-item-input{flex:1;border:1px solid #e2e8f0;border-radius:8px;padding:7px 12px;font-family:inherit;font-size:13px;outline:none;transition:.15s}
-        .add-item-input:focus{border-color:#0d9488;box-shadow:0 0 0 2px rgba(13,148,136,.15)}
-        .add-item-btn{background:#0d9488;color:#fff;border:none;border-radius:8px;padding:7px 14px;cursor:pointer;font-size:16px;line-height:1;transition:.15s}
-        .add-item-btn:hover{background:#0f766e}
-
-        /* ADD CATEGORY */
-        .add-cat-card{background:transparent;border:2px dashed #cbd5e1;border-radius:14px;display:flex;align-items:center;justify-content:center;min-height:120px;cursor:pointer;color:#94a3b8;font-size:14px;font-weight:500;gap:8px;transition:.15s}
-        .add-cat-card:hover{border-color:#0d9488;color:#0d9488;background:#f0fdfa}
-
-        /* PRINT */
-        @media print{
-            nav,.toolbar,.add-item-row,.card-delete,.item-del,.add-cat-card,.nav-actions{display:none!important}
-            body{background:#fff}
-            .hero{background:#134e4a!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-            .grid{grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
-            .card{break-inside:avoid;box-shadow:none;border:1px solid #e2e8f0}
-        }
-
-        /* MODAL */
-        .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:200;display:flex;align-items:center;justify-content:center;padding:20px}
-        .modal{background:#fff;border-radius:14px;padding:28px;max-width:380px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.2)}
-        .modal h3{font-size:17px;font-weight:700;margin-bottom:8px;color:#0f766e}
-        .modal p{font-size:13px;color:#64748b;margin-bottom:20px}
-        .modal-input{width:100%;border:1px solid #e2e8f0;border-radius:8px;padding:10px 14px;font-family:inherit;font-size:14px;outline:none;margin-bottom:16px}
-        .modal-input:focus{border-color:#0d9488}
-        .modal-emoji-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
-        .emoji-btn{background:#f1f5f9;border:2px solid transparent;border-radius:8px;padding:4px 8px;cursor:pointer;font-size:18px;transition:.1s}
-        .emoji-btn.selected{border-color:#0d9488;background:#f0fdfa}
-        .modal-actions{display:flex;gap:8px;justify-content:flex-end}
-        .modal-cancel{background:#f1f5f9;border:none;color:#64748b;padding:9px 18px;border-radius:8px;cursor:pointer;font-family:inherit;font-size:13px}
-        .modal-ok{background:#0d9488;border:none;color:#fff;padding:9px 18px;border-radius:8px;cursor:pointer;font-family:inherit;font-size:13px;font-weight:600}
-        .modal-ok:hover{background:#0f766e}
-
-        @media(max-width:520px){
-            .hero h1{font-size:20px}
-            .grid{grid-template-columns:1fr;margin-bottom:40px}
-            nav{padding:12px 16px}
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 義大利行李清單</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans TC',-apple-system,sans-serif;background:#f8fafc;color:#1e293b;min-height:100vh}
+nav{background:#134e4a;color:#fff;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 8px rgba(0,0,0,.2);position:sticky;top:0;z-index:100}
+.nav-brand{font-weight:700;font-size:18px;letter-spacing:1px}
+.nav-actions{display:flex;gap:8px}
+.nav-btn{background:rgba(255,255,255,.15);border:none;color:#fff;padding:6px 14px;border-radius:8px;cursor:pointer;font-family:inherit;font-size:13px;transition:.15s}
+.nav-btn:hover{background:rgba(255,255,255,.25)}
+.nav-btn.danger{background:rgba(239,68,68,.3)}
+.nav-btn.danger:hover{background:rgba(239,68,68,.5)}
+.hero{background:linear-gradient(135deg,#134e4a 0%,#0f766e 100%);color:#fff;padding:32px 24px 24px;text-align:center}
+.hero h1{font-size:26px;font-weight:700;margin-bottom:4px}
+.hero .subtitle{font-size:13px;opacity:.75;margin-bottom:20px}
+.overall-progress{background:rgba(0,0,0,.2);border-radius:999px;height:10px;max-width:400px;margin:0 auto 8px}
+.overall-bar{background:#5eead4;height:100%;border-radius:999px;transition:.3s}
+.overall-label{font-size:13px;opacity:.85}
+.toolbar{max-width:1140px;margin:20px auto 0;padding:0 20px;display:flex;gap:10px;flex-wrap:wrap}
+.tool-btn{background:#fff;border:1px solid #e2e8f0;color:#334155;padding:8px 18px;border-radius:8px;cursor:pointer;font-family:inherit;font-size:13px;font-weight:500;transition:.15s;display:flex;align-items:center;gap:6px}
+.tool-btn:hover{background:#f1f5f9;border-color:#cbd5e1}
+.tool-btn.primary{background:#0d9488;color:#fff;border-color:#0d9488}
+.tool-btn.primary:hover{background:#0f766e}
+.grid{max-width:1140px;margin:20px auto 60px;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.card{background:#fff;border-radius:14px;border:1px solid #e2e8f0;box-shadow:0 1px 4px rgba(0,0,0,.06);overflow:hidden;display:flex;flex-direction:column}
+.card-header{padding:14px 16px 10px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #f1f5f9}
+.card-icon{font-size:20px;line-height:1}
+.card-title{font-size:14px;font-weight:700;color:#0f766e;flex:1;cursor:pointer;outline:none}
+.card-title:focus{outline:2px solid #0d9488;border-radius:4px;padding:0 2px}
+.card-badge{background:#f0fdf4;color:#166534;font-size:11px;font-weight:600;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.card-badge.done{background:#0d9488;color:#fff}
+.card-delete{background:none;border:none;cursor:pointer;color:#94a3b8;font-size:15px;padding:2px 5px;border-radius:6px;line-height:1}
+.card-delete:hover{color:#ef4444;background:#fef2f2}
+.item-list{list-style:none;padding:6px 0;flex:1}
+.item{display:flex;align-items:flex-start;gap:8px;padding:5px 16px;transition:.1s}
+.item:hover{background:#f8fafc}
+.item input[type=checkbox]{width:15px;height:15px;accent-color:#0d9488;cursor:pointer;flex-shrink:0;margin-top:3px}
+.item-label{flex:1;font-size:13px;line-height:1.5;cursor:pointer;transition:.2s}
+.item.checked .item-label{text-decoration:line-through;color:#94a3b8}
+.item-note{font-size:11px;color:#64748b;display:block}
+.item-del{background:none;border:none;cursor:pointer;color:#cbd5e1;font-size:13px;padding:2px 4px;border-radius:4px;opacity:0;transition:.15s;line-height:1;flex-shrink:0}
+.item:hover .item-del{opacity:1}
+.item-del:hover{color:#ef4444;background:#fef2f2}
+.add-item-row{display:flex;gap:6px;padding:8px 12px 12px}
+.add-item-input{flex:1;border:1px solid #e2e8f0;border-radius:8px;padding:6px 10px;font-family:inherit;font-size:12px;outline:none;transition:.15s}
+.add-item-input:focus{border-color:#0d9488;box-shadow:0 0 0 2px rgba(13,148,136,.15)}
+.add-item-btn{background:#0d9488;color:#fff;border:none;border-radius:8px;padding:6px 12px;cursor:pointer;font-size:15px;line-height:1;transition:.15s}
+.add-item-btn:hover{background:#0f766e}
+.add-cat-card{background:transparent;border:2px dashed #cbd5e1;border-radius:14px;display:flex;align-items:center;justify-content:center;min-height:100px;cursor:pointer;color:#94a3b8;font-size:14px;font-weight:500;gap:6px;transition:.15s}
+.add-cat-card:hover{border-color:#0d9488;color:#0d9488;background:#f0fdfa}
+.pair-header{grid-column:1/-1;display:flex;align-items:center;gap:12px;padding:8px 4px 2px;border-bottom:2px solid #e2e8f0;margin-bottom:4px}
+.pair-header span{font-size:13px;font-weight:700;color:#475569;letter-spacing:.5px;text-transform:uppercase}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:200;display:flex;align-items:center;justify-content:center;padding:20px}
+.modal{background:#fff;border-radius:14px;padding:26px;max-width:360px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.2)}
+.modal h3{font-size:16px;font-weight:700;margin-bottom:6px;color:#0f766e}
+.modal p{font-size:12px;color:#64748b;margin-bottom:14px}
+.modal-input{width:100%;border:1px solid #e2e8f0;border-radius:8px;padding:9px 12px;font-family:inherit;font-size:13px;outline:none;margin-bottom:14px}
+.modal-input:focus{border-color:#0d9488}
+.modal-emoji-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.emoji-btn{background:#f1f5f9;border:2px solid transparent;border-radius:8px;padding:3px 7px;cursor:pointer;font-size:17px;transition:.1s}
+.emoji-btn.selected{border-color:#0d9488;background:#f0fdfa}
+.modal-actions{display:flex;gap:8px;justify-content:flex-end}
+.modal-cancel{background:#f1f5f9;border:none;color:#64748b;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:inherit;font-size:13px}
+.modal-ok{background:#0d9488;border:none;color:#fff;padding:8px 16px;border-radius:8px;cursor:pointer;font-family:inherit;font-size:13px;font-weight:600}
+.modal-ok:hover{background:#0f766e}
+@media print{
+nav,.toolbar,.add-item-row,.card-delete,.item-del,.add-cat-card,.nav-actions,.pair-header{display:none!important}
+body{background:#fff}
+.hero{background:#134e4a!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.grid{grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+.card{break-inside:avoid;box-shadow:none;border:1px solid #e2e8f0}
+}
+@media(max-width:520px){
+.hero h1{font-size:20px}
+.grid{grid-template-columns:1fr;margin-bottom:40px}
+nav{padding:12px 16px}
+}
+</style>
 </head>
 <body>
-
 <nav>
-    <span class="nav-brand">🧳 家庭旅遊計劃</span>
-    <div class="nav-actions">
-        <button class="nav-btn" onclick="window.print()">🖨️ 列印</button>
-        <button class="nav-btn danger" onclick="confirmReset()">🔄 重置</button>
-    </div>
+  <span class="nav-brand">🧳 家庭旅遊計劃</span>
+  <div class="nav-actions">
+    <button class="nav-btn" onclick="window.print()">🖨️ 列印</button>
+    <button class="nav-btn danger" onclick="confirmReset()">🔄 重置</button>
+  </div>
 </nav>
-
 <div class="hero">
-    <h1>🇮🇹 2026 義大利行李清單</h1>
-    <p class="subtitle">勾選項目表示已放入行李・資料自動儲存於瀏覽器</p>
-    <div class="overall-progress"><div class="overall-bar" id="overallBar" style="width:0%"></div></div>
-    <p class="overall-label" id="overallLabel">載入中…</p>
+  <h1>🇮🇹 2026 義大利行李清單</h1>
+  <p class="subtitle">勾選項目表示已放入行李・資料自動儲存於瀏覽器</p>
+  <div class="overall-progress"><div class="overall-bar" id="overallBar" style="width:0%"></div></div>
+  <p class="overall-label" id="overallLabel">載入中…</p>
 </div>
-
 <div class="toolbar">
-    <button class="tool-btn primary" onclick="openAddCategoryModal()">＋ 新增分類</button>
-    <button class="tool-btn" onclick="uncheckAll()">☐ 全部取消勾選</button>
-    <button class="tool-btn" onclick="checkAll()">☑ 全部勾選</button>
+  <button class="tool-btn primary" onclick="openAddCategoryModal()">＋ 新增分類</button>
+  <button class="tool-btn" onclick="uncheckAll()">☐ 全部取消勾選</button>
+  <button class="tool-btn" onclick="checkAll()">☑ 全部勾選</button>
 </div>
-
 <div class="grid" id="grid"></div>
-
-<!-- MODAL -->
 <div class="modal-overlay" id="modalOverlay" style="display:none" onclick="closeModal(event)">
-    <div class="modal" id="modal">
-        <h3 id="modalTitle">新增分類</h3>
-        <p id="modalDesc">輸入新分類的名稱</p>
-        <div class="modal-emoji-row" id="emojiRow"></div>
-        <input class="modal-input" id="modalInput" type="text" placeholder="分類名稱" maxlength="20">
-        <div class="modal-actions">
-            <button class="modal-cancel" onclick="closeModalDirect()">取消</button>
-            <button class="modal-ok" id="modalOk">確定</button>
-        </div>
+  <div class="modal">
+    <h3 id="modalTitle">新增分類</h3>
+    <p id="modalDesc">選擇圖示並輸入分類名稱</p>
+    <div class="modal-emoji-row" id="emojiRow"></div>
+    <input class="modal-input" id="modalInput" type="text" placeholder="分類名稱" maxlength="20">
+    <div class="modal-actions">
+      <button class="modal-cancel" onclick="closeModalDirect()">取消</button>
+      <button class="modal-ok" id="modalOk">確定</button>
     </div>
+  </div>
 </div>
-
 <script>
-const STORAGE_KEY = 'italy2026-packing-v2';
-const EMOJIS = ['📋','👕','🥾','💊','📷','💻','🧴','🎒','🍜','👧','🚗','☀️','💰','🗂️','🛁','🔌','📦','🏔️','🌍','🎿'];
+const STORAGE_KEY='italy2026-v3';
+const EMOJIS=['📋','👕','🎒','🪥','💊','💻','📷','🧴','🚗','🌍','📦','🍜','👧','☀️','🏔️','🛒','💰','🗺️','🩺','📱'];
 
-const DEFAULT_DATA = {
-  categories: [
-    {
-      id:'documents', name:'證件 & 金融', icon:'📋',
-      items:[
-        {id:'d1',text:'護照（正本）',note:''},
-        {id:'d2',text:'護照影本 ×2',note:''},
-        {id:'d3',text:'身分證影本',note:''},
-        {id:'d4',text:'信用卡（VISA 108 結尾）',note:'租車取車保證金必備'},
-        {id:'d5',text:'備用信用卡',note:''},
-        {id:'d6',text:'現金（歐元）',note:''},
-        {id:'d7',text:'零錢硬幣包',note:'山屋廁所/私人停車場'},
-        {id:'d8',text:'旅遊保險單（印出）',note:''},
-        {id:'d9',text:'訂房確認單（印出）',note:''},
-        {id:'d10',text:'機票電子票（截圖）',note:''},
-        {id:'d11',text:'景點票券 / 纜車票',note:'Seceda 纜車等'}
-      ]
-    },
-    {
-      id:'car', name:'自駕文件 & 配件', icon:'🚗',
-      items:[
-        {id:'c1',text:'國際駕照',note:''},
-        {id:'c2',text:'台灣駕照正本',note:'義大利租車常要求正本'},
-        {id:'c3',text:'租車確認信（印出）',note:''},
-        {id:'c4',text:'Zanser Alm 停車場通行證',note:'印出'},
-        {id:'c5',text:'手機車用磁吸架',note:'山路髮夾彎必備'},
-        {id:'c6',text:'傳輸線（支援 CarPlay 數據）',note:'原廠或可傳輸資料的線'},
-        {id:'c7',text:'行程表 & 確認信合集（紙本）',note:'山區訊號差時備用'}
-      ]
-    },
-    {
-      id:'bag', name:'平常隨身包', icon:'🎒',
-      items:[
-        {id:'b1',text:'RFID 錢包 / 護照套',note:''},
-        {id:'b2',text:'小零錢包',note:''},
-        {id:'b3',text:'耳機',note:''},
-        {id:'b4',text:'行動電源',note:''},
-        {id:'b5',text:'充電線',note:''},
-        {id:'b6',text:'口罩',note:''},
-        {id:'b7',text:'面紙',note:''},
-        {id:'b8',text:'濕紙巾',note:''},
-        {id:'b9',text:'原子筆',note:''},
-        {id:'b10',text:'眼藥水',note:''},
-        {id:'b11',text:'護唇膏（含防曬）',note:''},
-        {id:'b12',text:'太陽眼鏡（UV400）',note:''},
-        {id:'b13',text:'折疊傘',note:''},
-        {id:'b14',text:'保溫水壺',note:''}
-      ]
-    },
-    {
-      id:'clothes', name:'衣物', icon:'👕',
-      items:[
-        {id:'cl1',text:'短袖 T 恤 ×4',note:''},
-        {id:'cl2',text:'長袖上衣 ×2',note:''},
-        {id:'cl3',text:'防風防水薄外套',note:'Gore-Tex 或同級，山上必備'},
-        {id:'cl4',text:'羽絨背心 / 保暖層',note:''},
-        {id:'cl5',text:'正式上衣（餐廳用）×1',note:''},
-        {id:'cl6',text:'牛仔褲 ×1',note:''},
-        {id:'cl7',text:'休閒褲 ×1',note:''},
-        {id:'cl8',text:'短褲 ×1',note:''},
-        {id:'cl9',text:'內褲 ×6',note:''},
-        {id:'cl10',text:'一般襪 ×3',note:''},
-        {id:'cl11',text:'登山襪 ×3',note:''},
-        {id:'cl12',text:'睡衣 ×1',note:''},
-        {id:'cl13',text:'泳衣',note:'飯店泳池 / Mar Dolomit 水上樂園'},
-        {id:'cl14',text:'遮陽帽（附綁帶）',note:'山上風大，需有帽繩'},
-        {id:'cl15',text:'圍巾 / 薄圍巾',note:''}
-      ]
-    },
-    {
-      id:'shoes', name:'鞋類', icon:'🥾',
-      items:[
-        {id:'sh1',text:'防水健行鞋 / 輕量登山鞋',note:'強烈建議！禁止穿小白鞋上山'},
-        {id:'sh2',text:'防水噴劑（鞋用）',note:''},
-        {id:'sh3',text:'休閒鞋 ×1',note:''},
-        {id:'sh4',text:'拖鞋（旅館用）',note:''}
-      ]
-    },
-    {
-      id:'hiking', name:'健行裝備', icon:'🏔️',
-      items:[
-        {id:'h1',text:'登山杖（可折疊）×2',note:'大人必備，Seceda 連續下坡護膝'},
-        {id:'h2',text:'輕量小雙肩包（Daypack）',note:'裝水、零食、防曬'},
-        {id:'h3',text:'輕便雨衣 / Poncho',note:'高山午後雷陣雨備用'},
-        {id:'h4',text:'手套（薄款）',note:'山頂溫差大'}
-      ]
-    },
-    {
-      id:'sun', name:'防曬 & 高海拔', icon:'☀️',
-      items:[
-        {id:'s1',text:'高係數防曬乳（隨身小罐）',note:'SPF50+ 山上隨時補擦'},
-        {id:'s2',text:'防紫外線墨鏡（UV400）',note:'白色岩壁強烈反光'},
-        {id:'s3',text:'護唇膏（含防曬）',note:'高山乾燥'},
-        {id:'s4',text:'寬簷遮陽帽（綁帶）',note:''}
-      ]
-    },
-    {
-      id:'toiletries', name:'盥洗保養', icon:'🧴',
-      items:[
-        {id:'t1',text:'牙刷 + 牙膏（旅行裝）',note:''},
-        {id:'t2',text:'洗面乳',note:''},
-        {id:'t3',text:'洗髮精（旅行裝）',note:''},
-        {id:'t4',text:'潤髮乳（旅行裝）',note:''},
-        {id:'t5',text:'沐浴乳（旅行裝）',note:''},
-        {id:'t6',text:'刮鬍刀 + 刮鬍泡',note:''},
-        {id:'t7',text:'梳子',note:''},
-        {id:'t8',text:'棉花棒',note:''},
-        {id:'t9',text:'化妝水',note:''},
-        {id:'t10',text:'乳液',note:''},
-        {id:'t11',text:'防曬乳（一般用）',note:''},
-        {id:'t12',text:'護手霜',note:''},
-        {id:'t13',text:'眼霜 / 精華液',note:''},
-        {id:'t14',text:'卸妝水 / 棉片',note:''}
-      ]
-    },
-    {
-      id:'medicine', name:'醫藥急救', icon:'💊',
-      items:[
-        {id:'m1',text:'感冒藥',note:''},
-        {id:'m2',text:'止痛退燒藥（普拿疼）',note:''},
-        {id:'m3',text:'腸胃藥',note:''},
-        {id:'m4',text:'腹瀉藥',note:''},
-        {id:'m5',text:'暈車藥',note:'山路多，提前備妥'},
-        {id:'m6',text:'過敏藥（抗組織胺）',note:''},
-        {id:'m7',text:'OK繃 / 透氣膠帶',note:''},
-        {id:'m8',text:'優碘棉片',note:''},
-        {id:'m9',text:'防蚊液',note:'草甸區域蚊蟲多'},
-        {id:'m10',text:'蚊蟲咬傷藥膏',note:''},
-        {id:'m11',text:'備用眼鏡 / 隱形眼鏡',note:''},
-        {id:'m12',text:'隱形眼鏡藥水',note:''}
-      ]
-    },
-    {
-      id:'electronics', name:'電子設備', icon:'💻',
-      items:[
-        {id:'e1',text:'手機',note:''},
-        {id:'e2',text:'iPad / Kindle',note:''},
-        {id:'e3',text:'筆電',note:''},
-        {id:'e4',text:'手機充電器',note:''},
-        {id:'e5',text:'iPad 充電器',note:''},
-        {id:'e6',text:'行動電源',note:''},
-        {id:'e7',text:'多孔 USB 充電器（GaN）',note:''},
-        {id:'e8',text:'歐規轉接頭（Type C/A）',note:''},
-        {id:'e9',text:'耳機（降噪）',note:''},
-        {id:'e10',text:'智慧手錶',note:''},
-        {id:'e11',text:'eSIM 已設定 / SIM 卡工具',note:'歐洲網路方案'}
-      ]
-    },
-    {
-      id:'camera', name:'相機攝影', icon:'📷',
-      items:[
-        {id:'cam1',text:'相機本體',note:''},
-        {id:'cam2',text:'備用電池 ×2',note:''},
-        {id:'cam3',text:'相機充電器',note:''},
-        {id:'cam4',text:'記憶卡 ×2',note:''},
-        {id:'cam5',text:'相機包',note:''},
-        {id:'cam6',text:'小腳架 / GorillaPod',note:''},
-        {id:'cam7',text:'鏡頭清潔組',note:''}
-      ]
-    },
-    {
-      id:'packing', name:'行李打包輔具', icon:'📦',
-      items:[
-        {id:'pk1',text:'壓縮袋（衣物用）',note:''},
-        {id:'pk2',text:'分類收納袋',note:''},
-        {id:'pk3',text:'鞋袋',note:''},
-        {id:'pk4',text:'行李秤',note:''},
-        {id:'pk5',text:'行李牌',note:''},
-        {id:'pk6',text:'TSA 認可掛鎖',note:''},
-        {id:'pk7',text:'束帶',note:''}
-      ]
-    },
-    {
-      id:'food', name:'食物零嘴', icon:'🍜',
-      items:[
-        {id:'f1',text:'台灣零食（小孩步道獎勵用）',note:''},
-        {id:'f2',text:'泡麵 ×2（備用）',note:''},
-        {id:'f3',text:'茶包',note:''},
-        {id:'f4',text:'能量棒 ×4',note:''},
-        {id:'f5',text:'調味料包',note:''}
-      ]
-    },
-    {
-      id:'kids', name:'小孩 & 家庭', icon:'👧',
-      items:[
-        {id:'k1',text:'小孩衣物（依天數）',note:''},
-        {id:'k2',text:'小孩泳衣',note:'飯店泳池 / Mar Dolomit 水上樂園'},
-        {id:'k3',text:'小孩健行鞋（防滑）',note:''},
-        {id:'k4',text:'小孩輕便雨衣 / Poncho',note:''},
-        {id:'k5',text:'防蚊液（小孩用）',note:''},
-        {id:'k6',text:'步道零食補給',note:'走不動時的獎勵'},
-        {id:'k7',text:'輕巧保溫瓶',note:'山頂熱飲'},
-        {id:'k8',text:'兒童增高墊',note:'⚠️ 已含在 SIXT 訂單，不需帶'}
-      ]
-    }
-  ]
+const DD={
+ categories:[
+  {id:'clothes_me',name:'衣物（我）',icon:'👔',items:[
+    {id:'cm1',text:'內衣褲（7套）'},
+    {id:'cm2',text:'上衣（7件）'},
+    {id:'cm3',text:'長褲/短褲'},
+    {id:'cm4',text:'牛仔褲'},
+    {id:'cm5',text:'正式服裝（高級餐廳備用）'},
+    {id:'cm6',text:'睡衣'},
+    {id:'cm7',text:'薄外套/風衣'},
+    {id:'cm8',text:'厚外套（山區用）'},
+    {id:'cm9',text:'泳衣（飯店泳池用）'},
+    {id:'cm10',text:'腰帶'},
+    {id:'cm11',text:'帽子'},
+    {id:'cm12',text:'圍巾'},
+    {id:'cm13',text:'手套（登山用）'},
+    {id:'cm14',text:'短襪（7雙）'},
+    {id:'cm15',text:'厚襪（登山用）'},
+    {id:'cm16',text:'運動鞋'},
+    {id:'cm17',text:'休閒鞋'},
+    {id:'cm18',text:'涼鞋/拖鞋'},
+    {id:'cm19',text:'登山鞋/健行鞋',note:'強烈建議！禁止穿小白鞋上山'}
+  ]},
+  {id:'clothes_xb',name:'衣物（小貝）',icon:'👗',items:[
+    {id:'xc1',text:'內衣褲（7套）'},
+    {id:'xc2',text:'上衣（7件）'},
+    {id:'xc3',text:'長褲/短褲'},
+    {id:'xc4',text:'連身裙/洋裝'},
+    {id:'xc5',text:'睡衣'},
+    {id:'xc6',text:'薄外套/風衣'},
+    {id:'xc7',text:'厚外套（山區用）'},
+    {id:'xc8',text:'泳衣（Mar Dolomit 水上樂園）'},
+    {id:'xc9',text:'帽子（遮陽、附帽繩）'},
+    {id:'xc10',text:'短襪（7雙）'},
+    {id:'xc11',text:'防滑健行鞋',note:'必備！Seceda 下坡需要抓地力'},
+    {id:'xc12',text:'休閒鞋'},
+    {id:'xc13',text:'涼鞋/拖鞋'}
+  ]},
+  {id:'bag_me',name:'隨身包（我）',icon:'🎒',items:[
+    {id:'bm1',text:'RFID 錢包/護照套'},
+    {id:'bm2',text:'小零錢包'},
+    {id:'bm3',text:'耳機'},
+    {id:'bm4',text:'行動電源'},
+    {id:'bm5',text:'充電線'},
+    {id:'bm6',text:'充電豆腐頭'},
+    {id:'bm7',text:'口罩'},
+    {id:'bm8',text:'面紙'},
+    {id:'bm9',text:'濕紙巾'},
+    {id:'bm10',text:'原子筆'},
+    {id:'bm11',text:'眼藥水'},
+    {id:'bm12',text:'護唇膏'},
+    {id:'bm13',text:'太陽眼鏡（UV400）'},
+    {id:'bm14',text:'折疊帽'},
+    {id:'bm15',text:'折疊雨傘'},
+    {id:'bm16',text:'墨鏡袋'},
+    {id:'bm17',text:'保溫水壺'},
+    {id:'bm18',text:'地圖（城市/地鐵圖）'}
+  ]},
+  {id:'bag_xb',name:'隨身包（小貝）',icon:'🎒',items:[
+    {id:'xb1',text:'小零錢包'},
+    {id:'xb2',text:'耳機'},
+    {id:'xb3',text:'面紙'},
+    {id:'xb4',text:'濕紙巾'},
+    {id:'xb5',text:'護唇膏'},
+    {id:'xb6',text:'太陽眼鏡'},
+    {id:'xb7',text:'折疊帽（遮陽）'},
+    {id:'xb8',text:'折疊雨傘'},
+    {id:'xb9',text:'保溫水壺'},
+    {id:'xb10',text:'零食（步道獎勵用）'},
+    {id:'xb11',text:'防蚊液（隨身）'},
+    {id:'xb12',text:'輕便雨衣/Poncho'}
+  ]},
+  {id:'toiletries',name:'盥洗用品',icon:'🪥',items:[
+    {id:'t1',text:'牙刷'},
+    {id:'t2',text:'牙膏'},
+    {id:'t3',text:'牙線'},
+    {id:'t4',text:'漱口水'},
+    {id:'t5',text:'洗髮精（旅行裝）'},
+    {id:'t6',text:'潤髮乳（旅行裝）'},
+    {id:'t7',text:'沐浴乳/香皂（旅行裝）'},
+    {id:'t8',text:'洗面乳'},
+    {id:'t9',text:'化妝水/乳液'},
+    {id:'t10',text:'防曬乳（SPF50+）'},
+    {id:'t11',text:'保濕面膜'},
+    {id:'t12',text:'刮鬍刀'},
+    {id:'t13',text:'棉花棒'},
+    {id:'t14',text:'棉片'},
+    {id:'t15',text:'髮圈/髮夾'},
+    {id:'t16',text:'梳子'},
+    {id:'t17',text:'吹風機（確認飯店有無）'},
+    {id:'t18',text:'香水/古龍水'},
+    {id:'t19',text:'生理用品（備用）'},
+    {id:'t20',text:'乾洗手'}
+  ]},
+  {id:'medicine',name:'平常備藥',icon:'💊',items:[
+    {id:'med1',text:'腸胃藥（正露丸）'},
+    {id:'med2',text:'止瀉藥'},
+    {id:'med3',text:'感冒藥'},
+    {id:'med4',text:'退燒藥'},
+    {id:'med5',text:'止痛藥'},
+    {id:'med6',text:'暈車藥',note:'山路髮夾彎多，務必備妥'},
+    {id:'med7',text:'消炎藥'},
+    {id:'med8',text:'眼藥水'},
+    {id:'med9',text:'OK繃'},
+    {id:'med10',text:'綜合維他命'}
+  ]},
+  {id:'health',name:'健康醫療',icon:'🩺',items:[
+    {id:'h1',text:'個人藥物（慢性病藥）'},
+    {id:'h2',text:'英文版診斷書/病歷摘要'},
+    {id:'h3',text:'醫療保險卡影本'},
+    {id:'h4',text:'OK繃（各尺寸）'},
+    {id:'h5',text:'消毒棉片'},
+    {id:'h6',text:'碘伏棉棒'},
+    {id:'h7',text:'彈性繃帶'},
+    {id:'h8',text:'三角巾'},
+    {id:'h9',text:'防蚊液',note:'草甸區域蚊蟲多'},
+    {id:'h10',text:'曬後修復乳'},
+    {id:'h11',text:'暈機/暈車貼片'},
+    {id:'h12',text:'體溫計'},
+    {id:'h13',text:'備用眼鏡/隱形眼鏡'},
+    {id:'h14',text:'隱形眼鏡藥水'}
+  ]},
+  {id:'docs',name:'行程文件',icon:'📋',items:[
+    {id:'doc1',text:'護照（正本）'},
+    {id:'doc2',text:'護照影本（備份）×2'},
+    {id:'doc3',text:'身分證影本'},
+    {id:'doc4',text:'機票（列印/電子截圖）'},
+    {id:'doc5',text:'訂房確認單（印出）'},
+    {id:'doc6',text:'旅遊保險單（印出）'},
+    {id:'doc7',text:'國際駕照'},
+    {id:'doc8',text:'台灣駕照正本',note:'義大利租車常要求看正本'},
+    {id:'doc9',text:'租車確認信（印出）'},
+    {id:'doc10',text:'景點票券/纜車預約確認'},
+    {id:'doc11',text:'行程表（列印版）'},
+    {id:'doc12',text:'緊急聯絡資訊'}
+  ]},
+  {id:'finance',name:'財務金融',icon:'💰',items:[
+    {id:'f1',text:'歐元現金（EUR）'},
+    {id:'f2',text:'零錢硬幣包',note:'山屋廁所/私人停車場只收現金'},
+    {id:'f3',text:'現金（台幣備用）'},
+    {id:'f4',text:'信用卡（VISA 108 結尾）',note:'租車保證金 500 歐元必備此卡'},
+    {id:'f5',text:'備用信用卡（Master）'},
+    {id:'f6',text:'金融卡（海外提款用）'},
+    {id:'f7',text:'緊急備用金（分開存放）'}
+  ]},
+  {id:'car',name:'自駕配件',icon:'🚗',items:[
+    {id:'car1',text:'手機車用磁吸架',note:'山路髮夾彎，穩固導航很重要'},
+    {id:'car2',text:'傳輸線（支援 CarPlay 數據）',note:'投射到車機螢幕最安全'},
+    {id:'car3',text:'Zanser Alm 停車場通行證（印出）'},
+    {id:'car4',text:'行程確認信合集（紙本）',note:'山裡訊號差，紙本保險'}
+  ]},
+  {id:'electronics',name:'電子設備（3C）',icon:'💻',items:[
+    {id:'e1',text:'手機'},
+    {id:'e2',text:'手機充電線'},
+    {id:'e3',text:'手機充電頭'},
+    {id:'e4',text:'行動電源（10000mAh）'},
+    {id:'e5',text:'筆電'},
+    {id:'e6',text:'筆電充電器'},
+    {id:'e7',text:'iPad / 平板'},
+    {id:'e8',text:'平板充電線'},
+    {id:'e9',text:'耳機（有線）'},
+    {id:'e10',text:'耳機（無線/藍芽）'},
+    {id:'e11',text:'耳機充電盒＋線'},
+    {id:'e12',text:'電子書閱讀器'},
+    {id:'e13',text:'歐規轉接頭（Type C/USB-A）'},
+    {id:'e14',text:'旅行萬用插座'},
+    {id:'e15',text:'延長線（1孔以上）'},
+    {id:'e16',text:'USB HUB'},
+    {id:'e17',text:'Apple Watch / 智慧手錶'},
+    {id:'e18',text:'手錶充電線'}
+  ]},
+  {id:'network',name:'行動網路設備',icon:'📱',items:[
+    {id:'net1',text:'eSIM（歐洲方案）',note:'出發前確認已設定'},
+    {id:'net2',text:'備用 SIM 卡工具（退針）'}
+  ]},
+  {id:'camera',name:'相機攝影',icon:'📷',items:[
+    {id:'cam1',text:'相機本體'},
+    {id:'cam2',text:'相機充電器'},
+    {id:'cam3',text:'備用電池 ×2'},
+    {id:'cam4',text:'記憶卡（備用）×2'},
+    {id:'cam5',text:'相機包'},
+    {id:'cam6',text:'相機腳架/自拍棒'},
+    {id:'cam7',text:'鏡頭清潔布組'}
+  ]},
+  {id:'luggage',name:'行李箱/背包',icon:'📦',items:[
+    {id:'lg1',text:'托運行李箱（確認尺寸/重量）'},
+    {id:'lg2',text:'登機行李箱或背包'},
+    {id:'lg3',text:'隨身小包/腰包'},
+    {id:'lg4',text:'行李秤'},
+    {id:'lg5',text:'行李束帶'},
+    {id:'lg6',text:'行李牌（名字/電話）'},
+    {id:'lg7',text:'壓縮袋（整理衣物）'},
+    {id:'lg8',text:'防水袋/乾濕分離袋'},
+    {id:'lg9',text:'可折疊購物袋'},
+    {id:'lg10',text:'雨傘（折疊式）'},
+    {id:'lg11',text:'雨衣（輕便型）'},
+    {id:'lg12',text:'TSA 認可掛鎖'}
+  ]},
+  {id:'food',name:'食物零嘴',icon:'🍜',items:[
+    {id:'fd1',text:'泡麵 ×2（備用）'},
+    {id:'fd2',text:'台灣零食',note:'步道里程碑獎勵小孩用'},
+    {id:'fd3',text:'能量棒/餅乾 ×4'},
+    {id:'fd4',text:'沖泡飲品（咖啡/茶包）'},
+    {id:'fd5',text:'保溫瓶/水壺'},
+    {id:'fd6',text:'筷子/湯匙組（環保）'},
+    {id:'fd7',text:'食物密封袋'}
+  ]},
+  {id:'misc',name:'旅遊雜項',icon:'🗺️',items:[
+    {id:'ms1',text:'旅遊書/地圖（Dolomites）'},
+    {id:'ms2',text:'小筆記本＋筆'},
+    {id:'ms3',text:'眼罩'},
+    {id:'ms4',text:'耳塞'},
+    {id:'ms5',text:'頸枕'},
+    {id:'ms6',text:'腳踏墊（長途飛機用）'},
+    {id:'ms7',text:'保鮮袋（大小各數個）'},
+    {id:'ms8',text:'衣物夾（晾衣用）'},
+    {id:'ms9',text:'小鎖頭（行李箱/置物櫃）'},
+    {id:'ms10',text:'哨子（安全備用）'},
+    {id:'ms11',text:'緊急求生毯'}
+  ]},
+  {id:'swiss',name:'瑞士特別準備',icon:'🏔️',items:[
+    {id:'sw1',text:'健行地圖（Zermatt / Grindelwald）'},
+    {id:'sw2',text:'瑞士旅遊通行證（Swiss Travel Pass）'},
+    {id:'sw3',text:'登山杖（可折疊）×2'},
+    {id:'sw4',text:'防風外套'},
+    {id:'sw5',text:'護唇膏（高山用）'},
+    {id:'sw6',text:'高山症預防藥（Diamox，請先問醫生）'},
+    {id:'sw7',text:'太陽眼鏡（抗UV400）'},
+    {id:'sw8',text:'防水登山鞋（已確認）'},
+    {id:'sw9',text:'快乾毛巾'},
+    {id:'sw10',text:'雪地防滑套（冰爪）'}
+  ]},
+  {id:'paris',name:'巴黎特別備品',icon:'🗼',items:[
+    {id:'pa1',text:'法語基本會話卡/App'},
+    {id:'pa2',text:'博物館預約確認單（羅浮宮/奧塞等）'},
+    {id:'pa3',text:'Navigo 交通卡或地鐵票'},
+    {id:'pa4',text:'防扒包（斜背，拉鍊朝內）'},
+    {id:'pa5',text:'正式穿搭（高級餐廳備用）'},
+    {id:'pa6',text:'艾菲爾鐵塔預約確認'},
+    {id:'pa7',text:'Seine 河遊船票'},
+    {id:'pa8',text:'巴黎精品/伴手禮清單'}
+  ]},
+  {id:'shopping',name:'購物清單（備忘）',icon:'🛒',items:[
+    {id:'sh1',text:'指定購買品牌/品項清單'},
+    {id:'sh2',text:'退稅單據整理袋'},
+    {id:'sh3',text:'大購物袋'}
+  ]}
+ ]
 };
 
-// ─── STATE ─────────────────────────────────────────────
 let data;
-
-function loadData() {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (raw) {
-      data = JSON.parse(raw);
-      // migrate: ensure every item has a note field
-      data.categories.forEach(cat => cat.items.forEach(item => { if (!('note' in item)) item.note = ''; }));
-    } else {
-      data = JSON.parse(JSON.stringify(DEFAULT_DATA));
-    }
-  } catch(e) {
-    data = JSON.parse(JSON.stringify(DEFAULT_DATA));
-  }
+function loadData(){
+  try{
+    const raw=localStorage.getItem(STORAGE_KEY);
+    if(raw){
+      data=JSON.parse(raw);
+      data.categories.forEach(c=>c.items.forEach(i=>{if(!('note'in i))i.note='';if(!('checked'in i))i.checked=false;}));
+    }else{data=JSON.parse(JSON.stringify(DD));}
+  }catch(e){data=JSON.parse(JSON.stringify(DD));}
 }
+function saveData(){localStorage.setItem(STORAGE_KEY,JSON.stringify(data));}
 
-function saveData() {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-}
-
-// ─── RENDER ────────────────────────────────────────────
-function render() {
-  const grid = document.getElementById('grid');
-  grid.innerHTML = '';
-  data.categories.forEach(cat => grid.appendChild(buildCard(cat)));
-
-  // add category button
-  const addCard = document.createElement('div');
-  addCard.className = 'add-cat-card';
-  addCard.innerHTML = '＋ 新增分類';
-  addCard.onclick = openAddCategoryModal;
+function render(){
+  const grid=document.getElementById('grid');
+  grid.innerHTML='';
+  data.categories.forEach(cat=>grid.appendChild(buildCard(cat)));
+  const addCard=document.createElement('div');
+  addCard.className='add-cat-card';
+  addCard.innerHTML='＋ 新增分類';
+  addCard.onclick=openAddCategoryModal;
   grid.appendChild(addCard);
-
   updateOverall();
 }
 
-function buildCard(cat) {
-  const checked = cat.items.filter(i => i.checked).length;
-  const total = cat.items.length;
-  const done = total > 0 && checked === total;
-
-  const card = document.createElement('div');
-  card.className = 'card';
-  card.id = 'cat-' + cat.id;
-
-  // header
-  card.innerHTML = `
+function buildCard(cat){
+  const checked=cat.items.filter(i=>i.checked).length;
+  const total=cat.items.length;
+  const done=total>0&&checked===total;
+  const card=document.createElement('div');
+  card.className='card';
+  card.id='cat-'+cat.id;
+  card.innerHTML=`
     <div class="card-header">
       <span class="card-icon">${cat.icon}</span>
-      <span class="card-title" contenteditable="true" onblur="renameCategory('${cat.id}', this)" title="點擊編輯名稱">${cat.name}</span>
-      <span class="card-badge${done ? ' done' : ''}">${checked}/${total}</span>
-      <button class="card-delete" title="刪除此分類" onclick="deleteCategory('${cat.id}')">✕</button>
+      <span class="card-title" contenteditable="true" onblur="renameCategory('${cat.id}',this)">${cat.name}</span>
+      <span class="card-badge${done?' done':''}">${checked}/${total}</span>
+      <button class="card-delete" onclick="deleteCategory('${cat.id}')">✕</button>
     </div>
     <ul class="item-list" id="list-${cat.id}"></ul>
     <div class="add-item-row">
       <input class="add-item-input" id="input-${cat.id}" type="text" placeholder="新增項目…" maxlength="60"
         onkeydown="if(event.key==='Enter')addItem('${cat.id}')">
       <button class="add-item-btn" onclick="addItem('${cat.id}')">＋</button>
-    </div>
-  `;
-
-  const list = card.querySelector('#list-' + cat.id);
-  cat.items.forEach(item => list.appendChild(buildItem(cat.id, item)));
+    </div>`;
+  const list=card.querySelector('#list-'+cat.id);
+  cat.items.forEach(item=>list.appendChild(buildItem(cat.id,item)));
   return card;
 }
 
-function buildItem(catId, item) {
-  const li = document.createElement('li');
-  li.className = 'item' + (item.checked ? ' checked' : '');
-  li.id = 'item-' + item.id;
-  li.innerHTML = `
-    <input type="checkbox" id="chk-${item.id}" ${item.checked ? 'checked' : ''}
-      onchange="toggleItem('${catId}','${item.id}')">
-    <label for="chk-${item.id}" class="item-label">
-      ${item.text}
-      ${item.note ? `<span class="item-note">📌 ${item.note}</span>` : ''}
-    </label>
-    <button class="item-del" title="刪除" onclick="deleteItem('${catId}','${item.id}')">✕</button>
-  `;
+function buildItem(catId,item){
+  const li=document.createElement('li');
+  li.className='item'+(item.checked?' checked':'');
+  li.id='item-'+item.id;
+  li.innerHTML=`
+    <input type="checkbox" id="chk-${item.id}" ${item.checked?'checked':''} onchange="toggleItem('${catId}','${item.id}')">
+    <label for="chk-${item.id}" class="item-label">${item.text}${item.note?`<span class="item-note">📌 ${item.note}</span>`:''}</label>
+    <button class="item-del" onclick="deleteItem('${catId}','${item.id}')">✕</button>`;
   return li;
 }
 
-function updateOverall() {
-  let totalItems = 0, checkedItems = 0;
-  data.categories.forEach(cat => {
-    totalItems += cat.items.length;
-    checkedItems += cat.items.filter(i => i.checked).length;
-  });
-  const pct = totalItems > 0 ? Math.round(checkedItems / totalItems * 100) : 0;
-  document.getElementById('overallBar').style.width = pct + '%';
-  document.getElementById('overallLabel').textContent =
-    `已確認 ${checkedItems} / ${totalItems} 項（${pct}%）`;
+function updateOverall(){
+  let total=0,chk=0;
+  data.categories.forEach(c=>{total+=c.items.length;chk+=c.items.filter(i=>i.checked).length;});
+  const pct=total>0?Math.round(chk/total*100):0;
+  document.getElementById('overallBar').style.width=pct+'%';
+  document.getElementById('overallLabel').textContent=`已確認 ${chk} / ${total} 項（${pct}%）`;
 }
 
-// ─── ACTIONS ───────────────────────────────────────────
-function toggleItem(catId, itemId) {
-  const cat = data.categories.find(c => c.id === catId);
-  const item = cat.items.find(i => i.id === itemId);
-  item.checked = !item.checked;
+function toggleItem(catId,itemId){
+  const cat=data.categories.find(c=>c.id===catId);
+  const item=cat.items.find(i=>i.id===itemId);
+  item.checked=!item.checked;
   saveData();
-  // update just the item and badge
-  const li = document.getElementById('item-' + itemId);
-  li.className = 'item' + (item.checked ? ' checked' : '');
-  const checked = cat.items.filter(i => i.checked).length;
-  const total = cat.items.length;
-  const badge = document.querySelector('#cat-' + catId + ' .card-badge');
-  badge.textContent = checked + '/' + total;
-  badge.className = 'card-badge' + (checked === total && total > 0 ? ' done' : '');
+  document.getElementById('item-'+itemId).className='item'+(item.checked?' checked':'');
+  const chk=cat.items.filter(i=>i.checked).length;
+  const badge=document.querySelector('#cat-'+catId+' .card-badge');
+  badge.textContent=chk+'/'+cat.items.length;
+  badge.className='card-badge'+(chk===cat.items.length&&cat.items.length>0?' done':'');
   updateOverall();
 }
 
-function addItem(catId) {
-  const input = document.getElementById('input-' + catId);
-  const text = input.value.trim();
-  if (!text) return;
-  const cat = data.categories.find(c => c.id === catId);
-  const item = { id: catId + '_' + Date.now(), text, note: '', checked: false };
+function addItem(catId){
+  const input=document.getElementById('input-'+catId);
+  const text=input.value.trim();
+  if(!text)return;
+  const cat=data.categories.find(c=>c.id===catId);
+  const item={id:catId+'_'+Date.now(),text,note:'',checked:false};
   cat.items.push(item);
   saveData();
-  const list = document.getElementById('list-' + catId);
-  list.appendChild(buildItem(catId, item));
-  input.value = '';
-  // update badge
-  const badge = document.querySelector('#cat-' + catId + ' .card-badge');
-  const checked = cat.items.filter(i => i.checked).length;
-  badge.textContent = checked + '/' + cat.items.length;
-  badge.className = 'card-badge';
+  document.getElementById('list-'+catId).appendChild(buildItem(catId,item));
+  input.value='';
+  const badge=document.querySelector('#cat-'+catId+' .card-badge');
+  const chk=cat.items.filter(i=>i.checked).length;
+  badge.textContent=chk+'/'+cat.items.length;
+  badge.className='card-badge';
   updateOverall();
 }
 
-function deleteItem(catId, itemId) {
-  const cat = data.categories.find(c => c.id === catId);
-  cat.items = cat.items.filter(i => i.id !== itemId);
+function deleteItem(catId,itemId){
+  const cat=data.categories.find(c=>c.id===catId);
+  cat.items=cat.items.filter(i=>i.id!==itemId);
   saveData();
-  document.getElementById('item-' + itemId).remove();
-  const checked = cat.items.filter(i => i.checked).length;
-  const total = cat.items.length;
-  const badge = document.querySelector('#cat-' + catId + ' .card-badge');
-  badge.textContent = checked + '/' + total;
-  badge.className = 'card-badge' + (checked === total && total > 0 ? ' done' : '');
+  document.getElementById('item-'+itemId).remove();
+  const chk=cat.items.filter(i=>i.checked).length;
+  const badge=document.querySelector('#cat-'+catId+' .card-badge');
+  badge.textContent=chk+'/'+cat.items.length;
+  badge.className='card-badge'+(chk===cat.items.length&&cat.items.length>0?' done':'');
   updateOverall();
 }
 
-function deleteCategory(catId) {
-  const cat = data.categories.find(c => c.id === catId);
-  if (!confirm(`確定要刪除「${cat.name}」整個分類？`)) return;
-  data.categories = data.categories.filter(c => c.id !== catId);
+function deleteCategory(catId){
+  const cat=data.categories.find(c=>c.id===catId);
+  if(!confirm(`確定要刪除「${cat.name}」整個分類？`))return;
+  data.categories=data.categories.filter(c=>c.id!==catId);
   saveData();
-  document.getElementById('cat-' + catId).remove();
+  document.getElementById('cat-'+catId).remove();
   updateOverall();
 }
 
-function renameCategory(catId, el) {
-  const cat = data.categories.find(c => c.id === catId);
-  const newName = el.textContent.trim();
-  if (newName) { cat.name = newName; saveData(); }
-  else el.textContent = cat.name;
+function renameCategory(catId,el){
+  const cat=data.categories.find(c=>c.id===catId);
+  const n=el.textContent.trim();
+  if(n){cat.name=n;saveData();}else el.textContent=cat.name;
 }
 
-function checkAll() {
-  data.categories.forEach(cat => cat.items.forEach(i => i.checked = true));
-  saveData(); render();
-}
-
-function uncheckAll() {
-  data.categories.forEach(cat => cat.items.forEach(i => i.checked = false));
-  saveData(); render();
-}
-
-function confirmReset() {
-  if (confirm('確定要重置所有項目（清除自訂內容並恢復預設清單）？')) {
+function checkAll(){data.categories.forEach(c=>c.items.forEach(i=>i.checked=true));saveData();render();}
+function uncheckAll(){data.categories.forEach(c=>c.items.forEach(i=>i.checked=false));saveData();render();}
+function confirmReset(){
+  if(confirm('確定要重置所有項目（清除自訂內容並恢復預設清單）？')){
     localStorage.removeItem(STORAGE_KEY);
-    data = JSON.parse(JSON.stringify(DEFAULT_DATA));
-    saveData(); render();
+    data=JSON.parse(JSON.stringify(DD));
+    saveData();render();
   }
 }
 
-// ─── MODAL ─────────────────────────────────────────────
-let selectedEmoji = '📋';
-
-function openAddCategoryModal() {
-  selectedEmoji = '📋';
-  document.getElementById('modalTitle').textContent = '新增分類';
-  document.getElementById('modalDesc').textContent = '選擇圖示並輸入分類名稱';
-  document.getElementById('modalInput').value = '';
-
-  const row = document.getElementById('emojiRow');
-  row.innerHTML = '';
-  EMOJIS.forEach(e => {
-    const btn = document.createElement('button');
-    btn.className = 'emoji-btn' + (e === selectedEmoji ? ' selected' : '');
-    btn.textContent = e;
-    btn.onclick = () => { selectedEmoji = e; row.querySelectorAll('.emoji-btn').forEach(b => b.classList.remove('selected')); btn.classList.add('selected'); };
+let selectedEmoji='📋';
+function openAddCategoryModal(){
+  selectedEmoji='📋';
+  const row=document.getElementById('emojiRow');
+  row.innerHTML='';
+  EMOJIS.forEach(e=>{
+    const btn=document.createElement('button');
+    btn.className='emoji-btn'+(e===selectedEmoji?' selected':'');
+    btn.textContent=e;
+    btn.onclick=()=>{selectedEmoji=e;row.querySelectorAll('.emoji-btn').forEach(b=>b.classList.remove('selected'));btn.classList.add('selected');};
     row.appendChild(btn);
   });
-
-  document.getElementById('modalOk').onclick = doAddCategory;
-  document.getElementById('modalOverlay').style.display = 'flex';
-  setTimeout(() => document.getElementById('modalInput').focus(), 50);
+  document.getElementById('modalInput').value='';
+  document.getElementById('modalOk').onclick=doAddCategory;
+  document.getElementById('modalOverlay').style.display='flex';
+  setTimeout(()=>document.getElementById('modalInput').focus(),50);
 }
-
-function doAddCategory() {
-  const name = document.getElementById('modalInput').value.trim();
-  if (!name) return;
-  const id = 'cat_' + Date.now();
-  data.categories.push({ id, name, icon: selectedEmoji, items: [] });
-  saveData();
-  closeModalDirect();
-  render();
+function doAddCategory(){
+  const name=document.getElementById('modalInput').value.trim();
+  if(!name)return;
+  data.categories.push({id:'cat_'+Date.now(),name,icon:selectedEmoji,items:[]});
+  saveData();closeModalDirect();render();
 }
+function closeModal(e){if(e.target===document.getElementById('modalOverlay'))closeModalDirect();}
+function closeModalDirect(){document.getElementById('modalOverlay').style.display='none';}
+document.getElementById('modalInput').addEventListener('keydown',e=>{if(e.key==='Enter')doAddCategory();});
 
-function closeModal(e) { if (e.target === document.getElementById('modalOverlay')) closeModalDirect(); }
-function closeModalDirect() { document.getElementById('modalOverlay').style.display = 'none'; }
-
-document.getElementById('modalInput').addEventListener('keydown', e => { if (e.key === 'Enter') doAddCategory(); });
-
-// ─── INIT ──────────────────────────────────────────────
-loadData();
-render();
+loadData();render();
 </script>
 </body>
 </html>

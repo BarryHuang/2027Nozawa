@@ -476,10 +476,10 @@
   > | :--- | :--- |
   > | `15:40` - `16:30` | 🚗 **繞過 Cortina 直奔湖區**。不要跟著導航進入 Centro (市中心)。<br>**導航設定**：直接設定目的地為 **[Passo Tre Croci](https://www.google.com/maps/search/?api=1&query=Passo+Tre+Croci)**，接著再導向 Misurina。<br>**走外環道**：沿著 SR48 道路順著走，這條大路會從 Cortina 小鎮北緣切過去（外環繞行），直接銜接上往 Passo Tre Croci 的山路，完美避開市區紅綠燈與找車位地獄。 |
   > | `16:30` - `17:00` | 📸 提前抵達 **[Lago Antorno (安托諾湖)](https://www.google.com/maps/search/?api=1&query=Lago+Antorno)**，趁著午後柔和的光線拍攝最美的森林湖面倒影。 |
-  > | `17:10` | 🏠 提早抵達飯店 **[Hotel Dolomiti des Alpes](https://www.google.com/maps/search/?api=1&query=Hotel+Dolomiti+des+Alpes+Misurina)** 辦理入住，在米蘇里納湖畔悠閒吃晚餐。 |
+  | `17:10` | 🏠 提早抵達飯店 **[Hotel Dolomiti des Alpes](https://www.google.com/maps/search/?api=1&query=Hotel+Dolomiti+des+Alpes+Misurina)** 辦理入住，並於飯店用晚餐（辦理 check-in 時可決定要 normal menu 或 half board，不需事先訂位）。 |
 
-* **🍽️ 晚餐：待決定（已加入上方待辦事項）**
-  今晚住進 **Hotel Dolomiti des Alpes**，是飯店非公寓，**無法自炊**。建議直接在 [Misurina 湖畔](https://www.google.com/maps/search/?api=1&query=Lago+di+Misurina+restaurants) 附近找一間餐廳輕鬆解決，不需要長途開車。抵達後可先去超市買隔天早餐備品，再散步找晚餐。
+* **🍽️ 晚餐：** 將於入住飯店用餐（辦理 check-in 時可決定要 normal menu 或 half board，不需事先訂位）。
+  今晚住進 **Hotel Dolomiti des Alpes**（飯店不在湖畔），**無法自炊**。
 
 * **⚠️ July 25 行程與健行注意事項必讀**
   * **🚗 停車提醒**：週六 Passo Falzarego 山口人潮極多，若纜車站主停車場滿位，請繼續沿路往 Rifugio Col Gallina 的方向尋找合法停車位，切勿違停。
@@ -492,6 +492,8 @@
 ---
 
 ## 📅 Day 9 | 7/26 (日) 拉瓦雷多三尖峰 Tre Cime di Lavaredo
+
+* **早餐**：飯店提供早餐（包含），且可選 early breakfast（可於 07:00 前用餐）。
 
 > [!CAUTION]
 > **🅿️ Auronzo 停車場預約 — 進場唯一方式，請立即行動！**
@@ -581,6 +583,8 @@
 ---
 
 ## 📅 Day 10 | 7/27 (一) 大鐘山冰川公路 Grossglockner High Alpine Road
+
+* **早餐**：飯店提供早餐（包含），且可選 early breakfast（可於 07:00 前用餐）。
 
 * **🌅 早晨：最美湖景與跨國移動**
 

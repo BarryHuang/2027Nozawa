@@ -189,6 +189,9 @@
     * **登頂與玩法**：搭上 Fermeda 雙人吊椅只需大概 5 分鐘，就能把您直接空投到名氣最大的 **Seceda 山頂 (2500m)** 刀背山斷崖旁！接著您只要完全照著上面的「主路線 (大下坡縱走)」，一路往下吃喝玩樂走回 Col Raiser。完美破解 Ortisei 主纜車的限流噩夢！
   * **【備案 2：Wanderkarte Trail 35 (Resciesa 森林鐵路)】**：改搭同在 Ortisei 鎮上的 **Resciesa 斜坡小火車**。出站後沿著平坦的直線步道走 40 分鐘抵達漂亮小教堂。
 
+* **`約 17:00` 🧺 啟動洗衣機（回飯店後）**
+  * Residence Ciastel 房內備有洗衣機 + 烘衣機，趁晚餐前把第一批衣服丟進去洗，睡前烘好。旅程第一次清洗。
+
 ---
 
 ## 🌲 July 21 (二) 童話村莊：富內斯山谷 (Val di Funes)
@@ -332,6 +335,9 @@
     * **木雕工藝品**：Ortisei 是南蒂羅爾木雕重鎮，可以買到精緻的手工雕刻動物、聖誕擺飾當紀念品。
     * **在地食材店**：挑一瓶南蒂羅爾蘋果酒 (Apfelsaft)、Speck 風乾火腿或當地起司帶回飯店當宵夜。
     * **冰淇淋 & 甜品**：義大利手工 Gelato 是鎮上下午必買，讓小孩拿著 Ice Cream 邊走邊看櫥窗。
+
+* **`約 13:45` 🧺 出門前啟動洗衣機**
+  * 回飯店放下購物袋後，把要洗的衣物塞進房內洗衣機按下去再出門。接下來 Mar Dolomit / SPA 的 2–3 小時讓機器代勞，回來直接換烘衣機，明天 7/24 帶乾淨衣服出發。
 
 * **`約 14:00` 🏊 下午：完美分流放電方案（全部免費！）**
 
@@ -649,10 +655,9 @@
   * 進房稍作休息，把要洗的衣服分類好。飯店位置：[Hotel AlpinaRos](https://maps.app.goo.gl/1FRiVCjSPCTEbRjS7)。
   * ⚠️ **記得請飯店將隔天早餐改成 Lunch Box 形式**（已加入待辦事項）。
 
-* **`17:00 - 19:30` 🧺 洗衣 + 晚餐 (Gasthof Neuhaus)**
-  * 前往 SB-Waschsalon 投幣洗衣。請準備足夠的 **1 歐元、50 分硬幣**。
-  * 等待時間去隔壁餐廳吃飯，吃完剛好烘衣完成。
-  * 🍽️ **晚餐推薦**：[Gasthof Neuhaus](https://www.google.com/maps/search/?api=1&query=Gasthof+Neuhaus+Berchtesgaden)
+* **`17:00 - 19:30` 🍽️ 晚餐**
+  * 🍽️ **晚餐**：[Gasthof Neuhaus](https://www.google.com/maps/search/?api=1&query=Gasthof+Neuhaus+Berchtesgaden)（Marktplatz 1，步行約 5 分鐘）
+  * 🧺 **少量洗衣（可選）**：若有需要補洗，可前往 [SB-Waschsalon](https://www.google.com/maps/search/?api=1&query=SB-Waschsalon+Berchtesgaden)（Maximilianstraße 20）投幣洗，準備 **1 歐元、50 分硬幣**。⚠️ 出發前請先確認仍在營業（近期有關閉疑慮）。
 
 ---
 

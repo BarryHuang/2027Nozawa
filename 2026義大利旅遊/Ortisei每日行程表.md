@@ -646,7 +646,7 @@
     * [📍 Parkplatz Seeklause](https://www.google.com/maps/search/?api=1&query=Parkplatz+Seeklause+Ramsau) 停車 → 順著指標走進 **[Zauberwald (魔法森林)](https://www.google.com/maps/search/?api=1&query=Zauberwald+Ramsau)**（路徑沿著溪流穿梭在巨石與樹根間）→ 接回 **[Hintersee (後湖) 環湖步道](https://www.google.com/maps/search/?api=1&query=Hintersee+Ramsau+Berchtesgaden)** → 繞行半圈回停車場。全程平緩好走，適合慢慢拍照。
 
 * **`16:30 - 17:00` 🏨 返回飯店 Check-in & 整理衣物**
-  * 進房稍作休息，把要洗的衣服分類好。
+  * 進房稍作休息，把要洗的衣服分類好。飯店位置：[Hotel AlpinaRos](https://maps.app.goo.gl/1FRiVCjSPCTEbRjS7)。
   * ⚠️ **記得請飯店將隔天早餐改成 Lunch Box 形式**（已加入待辦事項）。
 
 * **`17:00 - 19:30` 🧺 洗衣 + 晚餐 (Gasthof Neuhaus)**

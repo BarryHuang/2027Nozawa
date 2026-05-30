@@ -189,8 +189,8 @@
     * **登頂與玩法**：搭上 Fermeda 雙人吊椅只需大概 5 分鐘，就能把您直接空投到名氣最大的 **Seceda 山頂 (2500m)** 刀背山斷崖旁！接著您只要完全照著上面的「主路線 (大下坡縱走)」，一路往下吃喝玩樂走回 Col Raiser。完美破解 Ortisei 主纜車的限流噩夢！
   * **【備案 2：Wanderkarte Trail 35 (Resciesa 森林鐵路)】**：改搭同在 Ortisei 鎮上的 **Resciesa 斜坡小火車**。出站後沿著平坦的直線步道走 40 分鐘抵達漂亮小教堂。
 
-* **`約 17:00` 🧺 第一批洗衣（Dolomiti Wash）**
-  * 前往鎮上自助洗衣店 [Dolomiti Wash](https://www.google.com/maps/search/?api=1&query=Dolomiti+Wash+Ortisei)（Strada Johann Baptist Purger 30，步行約 10 分鐘）。洗衣約 €8.50、烘衣 €3.50/15 分。旅程第一次清洗。
+* **`約 17:00` 🧺 第一批洗衣（飯店內洗衣機）**
+  * 直接使用 Residence Ciastel 飯店內的洗衣機＋烘衣機，費用**可能約 €4**。不需外出，旅程第一次清洗，洗完烘完直接放回房間。
 
 ---
 
@@ -336,8 +336,8 @@
     * **在地食材店**：挑一瓶南蒂羅爾蘋果酒 (Apfelsaft)、Speck 風乾火腿或當地起司帶回飯店當宵夜。
     * **冰淇淋 & 甜品**：義大利手工 Gelato 是鎮上下午必買，讓小孩拿著 Ice Cream 邊走邊看櫥窗。
 
-* **`約 13:30` 🧺 第一批洗衣（Dolomiti Wash）**
-  * 午餐後前往 [Dolomiti Wash](https://www.google.com/maps/search/?api=1&query=Dolomiti+Wash+Ortisei)（Strada Johann Baptist Purger 30，步行約 10 分鐘）投幣洗衣。等待期間順路回去 Mar Dolomit 或 SPA，洗完烘完再取回。
+* **`約 13:30` 🧺 第一批洗衣（飯店內洗衣機）**
+  * 午餐後直接使用 Residence Ciastel 飯店內的洗衣機＋烘衣機，費用**可能約 €4**。啟動後放著去 Mar Dolomit 或 SPA 放鬆，洗完烘完回房取回即可。
 
 * **`約 14:00` 🏊 下午：完美分流放電方案（全部免費！）**
 
@@ -400,7 +400,7 @@
 * **`約 16:00`** 🏠 **回到 Ortisei 飯店！** 剩餘下午時間完全自由。
 
 * **`約 16:00 – 17:30` 🧺 第二批洗衣 ＋ 整理收行李**
-  * 返回 Ortisei 後前往 [Dolomiti Wash](https://www.google.com/maps/search/?api=1&query=Dolomiti+Wash+Ortisei) 洗剩下的第二批衣物，等待時間回飯店整理行李。7/25 早上 07:30 出發，今晚盡量把行李收齊，衣服取回直接入箱。
+  * 返回飯店後直接使用 Residence Ciastel 飯店內洗衣機＋烘衣機（費用**可能約 €4**）洗剩下的第二批衣物，等待時間整理行李。7/25 早上 07:30 出發，今晚盡量把行李收齊，衣服烘好直接入箱。
 
 * **🍽️ 晚餐建議：7/24 是最後一晚住在 Residence Ciastel（公寓式住宿），也是整趟旅程最後一次有廚房可以自己煮！7/25 起換飯店就無法自炊了。**
 

@@ -660,7 +660,7 @@
   * ⚠️ **記得請飯店將隔天早餐改成 Lunch Box 形式**（已加入待辦事項）。
 
 * **`17:00 - 19:30` 🍽️ 晚餐**
-  * 🍽️ **晚餐**：[Gasthof Neuhaus](https://www.google.com/maps/search/?api=1&query=Gasthof+Neuhaus+Berchtesgaden)（Marktplatz 1，步行約 5 分鐘）⭐ 4.5，自 1576 年，傳統巴伐利亞料理
+  * 🍽️ **晚餐建議**：[Gasthof Neuhaus](https://www.google.com/maps/search/?api=1&query=Gasthof+Neuhaus+Berchtesgaden)（Marktplatz 1，步行約 5 分鐘）⭐ 4.5，自 1576 年，傳統巴伐利亞料理
   * 📞 **建議提前電話訂位**（旺季）：+49 8652 9799-280（僅接受電話預約）
   * 🧺 **少量洗衣（可選）**：若有需要補洗，可前往 [SB-Waschsalon](https://www.google.com/maps/search/?api=1&query=SB-Waschsalon+Berchtesgaden)（Maximilianstraße 20）投幣洗，準備 **1 歐元、50 分硬幣**。⚠️ 出發前請先確認仍在營業（近期有關閉疑慮）。
 

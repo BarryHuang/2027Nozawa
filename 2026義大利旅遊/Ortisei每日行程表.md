@@ -723,7 +723,8 @@
 
 * **`17:30 - 19:00` 🍽️ 晚餐 & 休息**
   * 🍽️ **晚餐首選**：[Jenner-Kaser, Franz Graßl](https://www.google.com/maps/search/?api=1&query=Jenner-Kaser+Franz+Graßl+Schönau+am+Königssee)（Jennerbahnstraße 14，國王湖停車場旁步行 5 分鐘）⭐ 4.5（Google，1,642 則）｜傳統巴伐利亞｜週三 12:00–22:00
-  * ⚠️ **無法預訂，先到先得**。若客滿，沿回飯店路上隨機找備案（Schönau 或 Berchtesgaden 市區皆有選擇）。
+  * 🔁 **備案 1**：[Gasthof Bodner](https://www.google.com/maps/search/?api=1&query=Gasthof+Bodner+Schönau+am+Königssee)（Oberschönauer Str. 10，Schönau 途中）⭐ 4.7｜巴伐利亞｜11:00–20:30
+  * 🔁 **備案 2**：[Gasthaus Schusterstein](https://www.google.com/maps/search/?api=1&query=Gasthaus+Schusterstein+Schönau+am+Königssee)（Königsseer Str. 71，Schönau 途中）⭐ 4.6｜巴伐利亞｜全天
 
 ### 🎒 出發前準備清單
 

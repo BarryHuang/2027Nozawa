@@ -54,7 +54,6 @@
 > - [ ] **7/28**：**Ramsau 午餐地點尚未決定**。需提前尋找 Ramsau / Berchtesgaden 附近適合的午餐餐廳。
 > - [ ] **7/28**：**晚上 Check-in 時請飯店將隔天早餐改成 Lunch Box 形式**（方便隔天早出發）。
 > - [ ] **7/29** 🔥：**國王湖船票預購**，現在就買可省去現場排隊！至 **[shop-ks.seenschifffahrt.de](https://shop-ks.seenschifffahrt.de/?lang=en)** 選 **7/29 日期**，票種選「**Seelände → Salet 全程來回**」，出發時間選最早班 **08:15**。⚠️ 票券**不可退款、不可換日期**，確認天氣與行程後再下單。買完務必將 PDF 存到手機**離線資料夾**（國王湖附近手機訊號極差）。
-> - [ ] **7/29**：**晚餐地點尚未決定**。需提前尋找 Schönau am Königssee 附近適合的晚餐餐廳（或確認能否在 St. Bartholomä 的 Fischerstüberl 餐廳下午就解決晚餐）。
 > - [ ] **7/30**：**慕尼黑晚餐方式待決定**。選項 A：出外吃，推薦 **[Augustiner Klosterwirt](https://www.google.com/maps/search/?api=1&query=Augustiner+Klosterwirt+München)** 或 **[Ratskeller München（市政廳地窖）](https://www.google.com/maps/search/?api=1&query=Ratskeller+München)**（旺季建議提前確認是否需訂位）。選項 B：回飯店自己煮（Harry's Home 是公寓式酒店，房內有廚房設備，可在 Check-in 後順路至對面 Kaufland 超市採買食材）。
 > - [ ] **7/30**：**耶拿峰纜車票**，可以考慮提前在 [官網](https://www.jennerbahn.de) 購票，到時候再決定。
 > - [ ] **7/31** 🔥：**德意志博物館電子票預購**，於 **7月10日左右** (提前三週) 至 [官網售票頁面](https://tickets.deutsches-museum.de/) 購買指定時段門票 (Time-slot Ticket)，並備妥 1 歐元或 2 歐元硬幣供寄物櫃使用。
@@ -723,7 +722,8 @@
   * **景色**：這是一個俯瞰點，可以看到整個國王湖像峽灣一樣延伸進山谷，船隻像玩具一樣在湖面劃出波紋。這是和在船上完全不同的視角，也是完美的句點。
 
 * **`17:30 - 19:00` 🍽️ 晚餐 & 休息**
-  * ⚠️ **晚餐地點尚未決定（已加入上方待辦事項）**。
+  * 🍽️ **晚餐首選**：[Jenner-Kaser, Franz Graßl](https://www.google.com/maps/search/?api=1&query=Jenner-Kaser+Franz+Graßl+Schönau+am+Königssee)（Jennerbahnstraße 14，國王湖停車場旁步行 5 分鐘）⭐ 4.5（Google，1,642 則）｜傳統巴伐利亞｜週三 12:00–22:00
+  * ⚠️ **無法預訂，先到先得**。若客滿，沿回飯店路上隨機找備案（Schönau 或 Berchtesgaden 市區皆有選擇）。
 
 ### 🎒 出發前準備清單
 

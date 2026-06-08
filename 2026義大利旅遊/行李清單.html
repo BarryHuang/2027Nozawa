@@ -34,10 +34,16 @@
         .tool-btn.primary:hover{background:#0f766e}
 
         /* GRID */
-        .grid{max-width:1100px;margin:20px auto 60px;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+        .grid{max-width:1500px;margin:20px auto 60px;padding:0 20px;display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+        @media(max-width:1180px){.grid{grid-template-columns:repeat(3,1fr)}}
+        @media(max-width:760px){.grid{grid-template-columns:repeat(2,1fr)}}
 
         /* CARD */
-        .card{background:#fff;border-radius:14px;border:1px solid #e2e8f0;box-shadow:0 1px 4px rgba(0,0,0,.06);overflow:hidden;display:flex;flex-direction:column}
+        .card{background:#fff;border-radius:14px;border:1px solid #e2e8f0;box-shadow:0 1px 4px rgba(0,0,0,.06);overflow:hidden;display:flex;flex-direction:column;transition:opacity .15s,outline .1s}
+        .card.dragging{opacity:.4}
+        .card.drag-over{outline:2px dashed #0d9488;outline-offset:-2px}
+        .card-drag{cursor:grab;color:#cbd5e1;font-size:15px;line-height:1;padding:2px 2px;user-select:none;touch-action:none}
+        .card-drag:active{cursor:grabbing}
         .card-header{padding:16px 18px 12px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #f1f5f9}
         .card-icon{font-size:22px;line-height:1}
         .card-title{font-size:15px;font-weight:700;color:#0f766e;flex:1;cursor:pointer}
@@ -74,7 +80,7 @@
 
         /* PRINT */
         @media print{
-            nav,.toolbar,.add-item-row,.card-delete,.item-del,.add-cat-card,.nav-actions{display:none!important}
+            nav,.toolbar,.add-item-row,.card-delete,.item-del,.add-cat-card,.nav-actions,.card-drag{display:none!important}
             body{background:#fff}
             .hero{background:#134e4a!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
             .grid{grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
@@ -431,10 +437,12 @@ function buildCard(cat) {
   const card = document.createElement('div');
   card.className = 'card';
   card.id = 'cat-' + cat.id;
+  card.dataset.catId = cat.id;
 
   // header
   card.innerHTML = `
     <div class="card-header">
+      <span class="card-drag" title="拖曳調整順序">⠿</span>
       <span class="card-icon">${cat.icon}</span>
       <span class="card-title" contenteditable="true" onblur="renameCategory('${cat.id}', this)" title="點擊編輯名稱">${cat.name}</span>
       <span class="card-badge${done ? ' done' : ''}">${checked}/${total}</span>
@@ -450,7 +458,53 @@ function buildCard(cat) {
 
   const list = card.querySelector('#list-' + cat.id);
   cat.items.forEach(item => list.appendChild(buildItem(cat.id, item)));
+
+  setupCardDrag(card);
   return card;
+}
+
+// ─── DRAG & DROP REORDER ───────────────────────────────
+function setupCardDrag(card) {
+  const handle = card.querySelector('.card-drag');
+  handle.addEventListener('mousedown', () => card.draggable = true);
+  handle.addEventListener('mouseup', () => card.draggable = false);
+  handle.addEventListener('touchstart', () => card.draggable = true, {passive:true});
+  handle.addEventListener('touchend', () => card.draggable = false);
+
+  card.addEventListener('dragstart', e => {
+    e.dataTransfer.setData('text/plain', card.dataset.catId);
+    e.dataTransfer.effectAllowed = 'move';
+    card.classList.add('dragging');
+  });
+  card.addEventListener('dragend', () => {
+    card.classList.remove('dragging');
+    card.draggable = false;
+    document.querySelectorAll('.card.drag-over').forEach(c => c.classList.remove('drag-over'));
+  });
+  card.addEventListener('dragover', e => {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'move';
+    card.classList.add('drag-over');
+  });
+  card.addEventListener('dragleave', () => card.classList.remove('drag-over'));
+  card.addEventListener('drop', e => {
+    e.preventDefault();
+    card.classList.remove('drag-over');
+    const draggedId = e.dataTransfer.getData('text/plain');
+    const targetId = card.dataset.catId;
+    if (!draggedId || draggedId === targetId) return;
+    reorderCategories(draggedId, targetId);
+  });
+}
+
+function reorderCategories(draggedId, targetId) {
+  const fromIndex = data.categories.findIndex(c => c.id === draggedId);
+  const toIndex = data.categories.findIndex(c => c.id === targetId);
+  if (fromIndex === -1 || toIndex === -1) return;
+  const [moved] = data.categories.splice(fromIndex, 1);
+  data.categories.splice(toIndex, 0, moved);
+  saveData();
+  render();
 }
 
 function buildItem(catId, item) {

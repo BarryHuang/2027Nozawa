@@ -55,6 +55,8 @@
 
         /* ITEMS */
         .item-list{list-style:none;padding:8px 0;flex:1}
+        .item-group{padding:10px 18px 4px;font-size:11px;font-weight:700;color:#0d9488;letter-spacing:.4px}
+        .item-group:not(:first-child){margin-top:6px;border-top:1px dashed #e2e8f0;padding-top:12px}
         .item{display:flex;align-items:center;gap:10px;padding:7px 18px;transition:.1s}
         .item:hover{background:#f8fafc}
         .item input[type=checkbox]{width:17px;height:17px;accent-color:#0d9488;cursor:pointer;flex-shrink:0}
@@ -224,42 +226,42 @@ const DEFAULT_DATA = {
     {
       id:'qianqian_clothes', name:'芊芊衣服', icon:'👚',
       items:[
-        {id:'qq1',text:'【07/05 移動日】無鋼圈內衣 ×1',note:''},
-        {id:'qq2',text:'【07/05 移動日】內褲 ×1',note:''},
-        {id:'qq3',text:'【07/05 移動日】薄襪 ×1',note:''},
-        {id:'qq4',text:'【07/05 移動日】短袖 ×1',note:''},
-        {id:'qq5',text:'【07/05 移動日】薄襯衫 ×1',note:''},
-        {id:'qq6',text:'【07/05 移動日】運動鞋',note:''},
-        {id:'qq7',text:'【07/05 移動日】一般薄褲 ×1',note:''},
-        {id:'qq8',text:'【07/05 移動日】紫色薄外套 ×1',note:'隨身包裡'},
-        {id:'qq9',text:'【07/05 移動日】涼鞋',note:'背著'},
-        {id:'qq10',text:'【07/06–07/20】內衣褲：無鋼圈內衣 ×1',note:''},
-        {id:'qq11',text:'【07/06–07/20】內衣褲：內衣 ×4',note:''},
-        {id:'qq12',text:'【07/06–07/20】內衣褲：內褲 ×5',note:''},
-        {id:'qq13',text:'【07/06–07/20】襪子：薄襪 ×4',note:''},
-        {id:'qq14',text:'【07/06–07/20】襪子：登山羊毛襪 ×2',note:''},
-        {id:'qq15',text:'【07/06–07/20】上衣：登山短袖 ×1',note:''},
-        {id:'qq16',text:'【07/06–07/20】上衣：一般短袖 ×3',note:''},
-        {id:'qq17',text:'【07/06–07/20】上衣：薄長袖（登山）×3',note:''},
-        {id:'qq18',text:'【07/06–07/20】褲子：一般薄褲 ×1',note:''},
-        {id:'qq19',text:'【07/06–07/20】褲子：薄登山褲 ×2',note:''},
-        {id:'qq20',text:'【07/06–07/20】褲子：厚登山褲 ×2',note:''},
-        {id:'qq21',text:'【07/06–07/20】褲子：短褲 ×1',note:''},
-        {id:'qq22',text:'【睡衣】休閒短袖上衣',note:''},
-        {id:'qq23',text:'【睡衣】睡褲－長',note:''},
-        {id:'qq24',text:'【睡衣】睡褲－短',note:''},
-        {id:'qq25',text:'【保暖衣服】長排汗衣褲',note:''},
-        {id:'qq26',text:'【保暖衣服】Extra warm 發熱衣',note:''},
-        {id:'qq27',text:'【保暖衣服】薄發熱衣',note:''},
-        {id:'qq28',text:'【保暖衣服】Extra warm 發熱褲',note:''},
-        {id:'qq29',text:'【外套】輕羽絨外套',note:''},
-        {id:'qq30',text:'【外套】Gore-Tex 外套',note:''},
-        {id:'qq31',text:'【外套】薄防曬外套',note:''},
-        {id:'qq32',text:'【配件】輕便帽',note:''},
-        {id:'qq33',text:'【配件】遮陽帽',note:''},
-        {id:'qq34',text:'【配件】保暖帽',note:''},
-        {id:'qq35',text:'【配件】脖圍',note:''},
-        {id:'qq36',text:'【配件】保暖手套',note:''}
+        {id:'qq1',text:'無鋼圈內衣 ×1',note:'',group:'07/05 搭機移動日'},
+        {id:'qq2',text:'內褲 ×1',note:'',group:'07/05 搭機移動日'},
+        {id:'qq3',text:'薄襪 ×1',note:'',group:'07/05 搭機移動日'},
+        {id:'qq4',text:'短袖 ×1',note:'',group:'07/05 搭機移動日'},
+        {id:'qq5',text:'薄襯衫 ×1',note:'',group:'07/05 搭機移動日'},
+        {id:'qq6',text:'運動鞋',note:'',group:'07/05 搭機移動日'},
+        {id:'qq7',text:'一般薄褲 ×1',note:'',group:'07/05 搭機移動日'},
+        {id:'qq8',text:'紫色薄外套 ×1',note:'隨身包裡',group:'07/05 搭機移動日'},
+        {id:'qq9',text:'涼鞋',note:'背著',group:'07/05 搭機移動日'},
+        {id:'qq10',text:'無鋼圈內衣 ×1',note:'',group:'07/06–07/20．內衣褲'},
+        {id:'qq11',text:'內衣 ×4',note:'',group:'07/06–07/20．內衣褲'},
+        {id:'qq12',text:'內褲 ×5',note:'',group:'07/06–07/20．內衣褲'},
+        {id:'qq13',text:'薄襪 ×4',note:'',group:'07/06–07/20．襪子'},
+        {id:'qq14',text:'登山羊毛襪 ×2',note:'',group:'07/06–07/20．襪子'},
+        {id:'qq15',text:'登山短袖 ×1',note:'',group:'07/06–07/20．上衣'},
+        {id:'qq16',text:'一般短袖 ×3',note:'',group:'07/06–07/20．上衣'},
+        {id:'qq17',text:'薄長袖（登山）×3',note:'',group:'07/06–07/20．上衣'},
+        {id:'qq18',text:'一般薄褲 ×1',note:'',group:'07/06–07/20．褲子'},
+        {id:'qq19',text:'薄登山褲 ×2',note:'',group:'07/06–07/20．褲子'},
+        {id:'qq20',text:'厚登山褲 ×2',note:'',group:'07/06–07/20．褲子'},
+        {id:'qq21',text:'短褲 ×1',note:'',group:'07/06–07/20．褲子'},
+        {id:'qq22',text:'休閒短袖上衣',note:'',group:'睡衣'},
+        {id:'qq23',text:'睡褲－長',note:'',group:'睡衣'},
+        {id:'qq24',text:'睡褲－短',note:'',group:'睡衣'},
+        {id:'qq25',text:'長排汗衣褲',note:'',group:'保暖衣服'},
+        {id:'qq26',text:'Extra warm 發熱衣',note:'',group:'保暖衣服'},
+        {id:'qq27',text:'薄發熱衣',note:'',group:'保暖衣服'},
+        {id:'qq28',text:'Extra warm 發熱褲',note:'',group:'保暖衣服'},
+        {id:'qq29',text:'輕羽絨外套',note:'',group:'外套'},
+        {id:'qq30',text:'Gore-Tex 外套',note:'',group:'外套'},
+        {id:'qq31',text:'薄防曬外套',note:'',group:'外套'},
+        {id:'qq32',text:'輕便帽',note:'',group:'配件'},
+        {id:'qq33',text:'遮陽帽',note:'',group:'配件'},
+        {id:'qq34',text:'保暖帽',note:'',group:'配件'},
+        {id:'qq35',text:'脖圍',note:'',group:'配件'},
+        {id:'qq36',text:'保暖手套',note:'',group:'配件'}
       ]
     },
     {
@@ -400,7 +402,10 @@ function loadData() {
     if (raw) {
       data = JSON.parse(raw);
       // migrate: ensure every item has a note field
-      data.categories.forEach(cat => cat.items.forEach(item => { if (!('note' in item)) item.note = ''; }));
+      data.categories.forEach(cat => cat.items.forEach(item => {
+        if (!('note' in item)) item.note = '';
+        if (!('group' in item)) item.group = '';
+      }));
     } else {
       data = JSON.parse(JSON.stringify(DEFAULT_DATA));
     }
@@ -457,7 +462,18 @@ function buildCard(cat) {
   `;
 
   const list = card.querySelector('#list-' + cat.id);
-  cat.items.forEach(item => list.appendChild(buildItem(cat.id, item)));
+  let lastGroup = null;
+  cat.items.forEach(item => {
+    const group = item.group || '';
+    if (group && group !== lastGroup) {
+      const label = document.createElement('li');
+      label.className = 'item-group';
+      label.textContent = group;
+      list.appendChild(label);
+    }
+    lastGroup = group;
+    list.appendChild(buildItem(cat.id, item));
+  });
 
   setupCardDrag(card);
   return card;
@@ -557,7 +573,7 @@ function addItem(catId) {
   const text = input.value.trim();
   if (!text) return;
   const cat = data.categories.find(c => c.id === catId);
-  const item = { id: catId + '_' + Date.now(), text, note: '', checked: false };
+  const item = { id: catId + '_' + Date.now(), text, note: '', group: '', checked: false };
   cat.items.push(item);
   saveData();
   const list = document.getElementById('list-' + catId);

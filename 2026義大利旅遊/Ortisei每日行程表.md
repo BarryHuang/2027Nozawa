@@ -43,6 +43,7 @@
 > - [ ] **7/18**：**抵達 Ortisei 飯店 Check-in 時，務必向櫃檯預約隔天早上的麵包配送 (Bread Delivery) 服務**，確保隔天一早有早餐可吃。
 > - [ ] **7/18**：Val di Funes 停車場寄信給車牌（取車後務必在 **7/20 中午 12:00 前**發 email 至 `info@odlesdolomites.com` 更新真實車牌）。
 > - [ ] **7/21**：Val di Funes [Parking Zans 停車場](https://www.odlesdolomites.com/en/parking-reservation/)預約（選 `Parking Zans` → `Car` → `7/21` → 最早時段 → 車牌先填 `AB000CD`）。最晚取車當天完成預約。
+> - [ ] **7/18-19 抵達後**：辦好當地 SIM/eSIM 拿到歐洲門號後，下載並註冊 **easypark app**（台灣門號無法註冊），7/21 在 Santa Maddalena Bergerplatz 停車繳費用，€4 比現場投幣 €10-15 划算。
 > - [x] **7/22**：**Rifugio Comici 午餐** ✅ 已訂位（12:00，4人）。
 > - [ ] **7/15**：**Rifugio Comici 天氣確認** — 出發前一週查看 7/22 天氣預報，若預報下雨則提前寫信取消訂位（info@rifugiocomici.com），改執行 B 計畫（Rifugio Salei）。
 > - [ ] **7/24**：晚餐地點尋找與安排（或確認自己煮）。

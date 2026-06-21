@@ -42,6 +42,7 @@
 >     * **飯店電話 (Phone Number)**：`+39 0471 798288` (若 App 需填寫聯絡電話)
 > - [ ] **7/18**：**抵達 Ortisei 飯店 Check-in 時，務必向櫃檯預約隔天早上的麵包配送 (Bread Delivery) 服務**，確保隔天一早有早餐可吃。
 > - [ ] **7/18**：Val di Funes 停車場寄信給車牌（取車後務必在 **7/20 中午 12:00 前**發 email 至 `info@odlesdolomites.com` 更新真實車牌）。
+> - [ ] **7/18 拿到租車、確認車牌後**：上 [ASFINAG 官網](https://shop.asfinag.at) 用手機買兩張數位通行證（選 `Car` → 國家填 `Germany` → 填車牌與 Email）：① **`1-Day Vignette`**（奧地利高速公路通行證，約 €10，立即生效）② **`Digital Section Toll`**（布倫納山口 A13 過路費，路線選 `A13 Brenner motorway`、買單程 `1 trip`）。⚠️ 務必選 1 日票，選錯成年票/2 個月票會被強制延後 18 天才生效。
 > - [ ] **7/21**：Val di Funes [Parking Zans 停車場](https://www.odlesdolomites.com/en/parking-reservation/)預約（選 `Parking Zans` → `Car` → `7/21` → 最早時段 → 車牌先填 `AB000CD`）。最晚取車當天完成預約。
 > - [ ] **7/18-19 抵達後**：辦好當地 SIM/eSIM 拿到歐洲門號後，下載並註冊 **easypark app**（台灣門號無法註冊），7/21 在 Santa Maddalena Bergerplatz 停車繳費用，€4 比現場投幣 €10-15 划算。
 > - [x] **7/22**：**Rifugio Comici 午餐** ✅ 已訂位（12:00，4人）。

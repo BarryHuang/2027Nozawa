@@ -233,7 +233,7 @@
   > | `09:15` | 抵達 **Zanser Alm / Malga Zannes** 停車場，先上廁所，在 [📍 Malga Zannes 小屋](https://www.google.com/maps/search/?api=1&query=Malga+Zannes) 補充能量，開始健行。 |
   > | `11:00` | 🍽️ 抵達 **[Geisleralm](https://www.google.com/maps/search/?api=1&query=Geisleralm+Val+di+Funes)** 午餐（上廁所），約 1-1.5 小時。 |
   > | `12:30` | 走 **Trail #35 精華段**（逆時鐘環狀，沿山峰底部，最美風景留最後）下山回停車場。 |
-  > | `14:00` | 回到停車場，開車前往 Santa Maddalena（約 20 分鐘）。 |
+  > | `14:00` | 回到停車場，開車前往 Santa Maddalena（約 20 分鐘），停在村莊中心 **[Parkplatz Bergerplatz](https://www.google.com/maps/search/?api=1&query=Parkplatz+Bergerplatz+Santa+Maddalena+Val+di+Funes)**（義文 Parcheggio Piazza centrale，現場付費、免預約）。 |
   > | `14:20` | 🏛️ **[Puez-Geisler 自然公園遊客中心](https://www.google.com/maps/search/?api=1&query=Naturparkhaus+Puez+Geisler+Santa+Maddalena)** 參觀（30-45 分鐘，內有廁所，週二開放 ✅，含 Reinhold Messner 影片）。 |
   > | `15:00` | ☕ **[Hotel Fines 露台咖啡廳](https://www.google.com/maps/search/?api=1&query=Hotel+Fines+Santa+Maddalena+Val+di+Funes)** 喝飲料休息（約 30 分鐘，有廁所）。 |
   > | `15:30` | 📸 **[St. Magdalena 教堂](https://maps.app.goo.gl/FvE3M7ZBRZEigdsb7)** 正面拍攝，再步行上 **[Panorama Sitzbank](https://maps.app.goo.gl/rNQp4SVFEuQ8Hgbv6)** 俯拍（2026 起禁止開車，步行 5-10 分鐘）。 |
@@ -249,6 +249,8 @@
   * **導航提示：** 步道分岔多，沿指標往 **Geisleralm** 或 **Gschnagenhardt Alm** 方向走即可，不會迷路。
   * **休息：** **Geisleralm**（多洛米蒂電影院）— 木製躺椅正對蓋斯勒岩峰，被稱為「全多洛米蒂最美觀景台」；餐廳外有兒童遊樂場。⚠️ **週一公休**（您排週二 ✅）
   * **資料來源：** [Travel with Erin](https://www.travelwitherin.co.uk/travel-to-italy/val-di-funes-dolomites)（中文）・[Throne & Vine](https://throneandvine.com/val-di-funes/) ⚠️（英文）
+
+* **🅿️ Santa Maddalena 停車資訊：** 停 **[Parkplatz Bergerplatz](https://www.google.com/maps/search/?api=1&query=Parkplatz+Bergerplatz+Santa+Maddalena+Val+di+Funes)**（村莊中心，免預約、現場付費），2026 年現場費用約 **€10–15/次**。因為這趟會買當地 **SIM/eSIM**（有國外門號），建議直接註冊 **easypark app** 付款，只需 **€4/次**，現場別傻傻付現金。
 
 
 * **🛡️ 彈性備案 (若 Zanser Alm / Malga Zannes 亮紅燈且無預約)：**

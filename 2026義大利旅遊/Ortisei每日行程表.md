@@ -88,7 +88,7 @@
   * **💡 必備文件 (不可放行李箱)**：抵達櫃台時主駕駛必須出示：① 預訂信用卡(VISA 108) ② 護照 ③ 台灣駕照正本 ④ 國際駕照。
   * **🏃 戰術建議**：抵達大廳後，主駕駛拿齊上述 4 樣文件「先空手衝去 SIXT 櫃台排隊抽號碼牌」，另一人帶小孩悠哉等行李再推車過去會合。
 * **`12:45 - 17:45`** **【塞車長征與跨國收費】**：離開慕尼黑，行經奧地利，直達義大利 Ortisei。
-  * **🗺️ 今日導航路線**：**[點此開啟含有 4 個推薦休息站的 Google Maps 路線](https://www.google.com/maps/dir/?api=1&origin=Munich+Airport+Terminal+1&destination=Residence+Ciastel,+Ortisei,+Italy&waypoints=Rastst%C3%A4tte+Irschenberg%7CInntal+Rastst%C3%A4tte%7CRaststation+Europabr%C3%BCcke%7CArea+di+servizio+Plose+Ovest)** (機場 -> 德國 A8 -> 奧地利 A12/A13 -> 義大利 A22 -> Ortisei)
+  * **🗺️ 今日導航路線**：**[點此開啟含有 5 個推薦休息站的 Google Maps 路線](https://www.google.com/maps/dir/?api=1&origin=Munich+Airport+Terminal+1&destination=Residence+Ciastel,+Ortisei,+Italy&waypoints=Rastst%C3%A4tte+Holzkirchen+S%C3%BCd%7CRastst%C3%A4tte+Irschenberg%7CInntal+Rastst%C3%A4tte%7CRaststation+Europabr%C3%BCcke%7CArea+di+servizio+Plose+Ovest)** (機場 -> 德國 A8 -> 奧地利 A12/A13 -> 義大利 A22 -> Ortisei)
   * **🚗 奧地利高速公路通行證 (Vignette)**：租車通常不含此證。離開德國邊境前，務必停靠休息站加油站（如 Irschenberg），購買「實體貼紙」貼在擋風玻璃左上角（約 10 歐元）。或拿到租車知道車牌後，立刻用手機上 [ASFINAG 官網](https://shop.asfinag.at) 買「1 日數位通行證 (1-Day Digital Vignette)」，立即生效免貼紙！
   * **💳 布倫納山口過路費 (Brenner Pass / A13)**：這是「不包含在 Vignette 內」的額外高山過路費！遇到收費站時排一般車道刷卡付費即可。**🔥 進階戰略**：知道車牌後，提前在 ASFINAG 官網加買「數位過路費 (Digital Section Toll)」。**購買路徑**：首頁選 `Digital Section Toll` ➔ 路線務必選 `A13 Brenner motorway` ➔ 買單程 `1 trip` ➔ 輸入車牌與國家 (德國)。過收費站時直接走綠色車道 (Video Toll / PKW Digital)，攝影機會掃車牌自動開柵欄，秒殺長長車陣！
   * **🇮🇹 義大利高速公路收費 (Autostrada)**：進入義大利 Vipiteno 收費站時，走白色通道「按鈕取票 (Biglietto)」。下 Chiusa 交流道時插入票卡，刷信用卡付費。
@@ -102,13 +102,15 @@
 * **🔥 戰略隱藏優勢：維持台灣時差！** 這樣不僅讓司機徹底得到休息，隔天全家人更能精神百倍地在歐洲時間 **清晨 06:00** 輕鬆自然醒。這將直接成為您未來 5 天完美執行「早上出門包場步道、下午回飯店避開大雷雨」的**無敵外掛武器**！
 
 **⛽ 沿途休息站推薦 (依照疲憊程度，可任選 1-2 處停靠)：**
-1. **【開車 40 分鐘的絕美觀景台】Irschenberg (德國 A8)**
+1. **【開車 25-30 分鐘的緊急備用站】Holzkirchen Süd (德國 A8，注意是 Süd 不是 Nord！)**
+   * **特色：** 離機場最近，純功能性現代化服務區（2015 年新建），無特殊景觀，餐飲是 Burger King + Lavazza 咖啡吧。Sanifair 廁所評價穩定乾淨（4.0/5，4491 則評論）。**若領完行李、辦完租車後小孩已經等不及，這站可以插隊先解決，不用硬撐到 Irschenberg。**
+2. **【開車 40 分鐘的絕美觀景台】Irschenberg (德國 A8)**
    * **特色：** 您聽說的完全正確！這個休息站位在半山腰上，擁有**毫無遮蔽的巴伐利亞阿爾卑斯山全景 (Panoramic View)**，被譽為德國最美的高速公路休息站之一。裡面有知名的 Dinzler 咖啡烘焙坊與麥當勞，非常適合一邊看山景、一邊喝杯頂級 Espresso 提神再上路。
-2. **【開車 1.5 小時的必停站】Kufstein Süd / Inntal (德奧交界)**
+3. **【開車 1.5 小時的必停站】Kufstein Süd / Inntal (德奧交界)**
    * **特色：** 剛進入奧地利境內。如果您租車時尚未購買**奧地利高速公路通行證 (Vignette)**，這是必停站！可以去加油站買貼紙，順便讓小孩下來走跳放風。
-3. **【開車 2.5 小時的絕景中繼站】Europabrücke 歐洲橋休息站 (奧地利 A13)**
+4. **【開車 2.5 小時的絕景中繼站】Europabrücke 歐洲橋休息站 (奧地利 A13)**
    * **特色：** 位於因斯布魯克 (Innsbruck) 附近，就在準備翻越阿爾卑斯山的最險要處。休息站旁邊就是壯觀的「歐洲大橋」，可以直接在那邊的餐廳看風景吃午餐，順便欣賞深谷。
-4. **【開車 3.5 小時的首發義式體驗】Area di Servizio Plose Ovest (義大利 A22)**
+5. **【開車 3.5 小時的首發義式體驗】Area di Servizio Plose Ovest (義大利 A22)**
    * **特色：** 這是下交流道前最後一個完美順向 (南下車道) 的義大利大型休息站。司機可以在這裡站著喝第一杯 1.5 歐元的超道地義大利 Espresso，點一份現烤的 帕尼尼 (Panini) 三明治當晚餐。
 
 ---

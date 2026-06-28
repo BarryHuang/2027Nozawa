@@ -331,6 +331,11 @@
 | **③ 下山** | 步行 or 斜坡小火車 | 原路走回或搭車下山 | ✅ Gardena Card |
 | **④ 下午** | [Mar Dolomit 水上樂園](https://www.google.com/maps/search/?api=1&query=Mar+Dolomit+Ortisei) | 鎮上溫水游泳池與滑水道，步行可達 | 🏨 飯店免費資格 |
 
+* **🚻 廁所情報（帶小孩必看）：**
+  * **`Resciesa 山下站`**：✅ 有無障礙廁所（設於女廁內）
+  * **`Rifugio Resciesa 山屋`**（Trail 35 終點）：✅ 顧客廁所，評價佳（Tripadvisor 4/5，房間與環境評論皆稱乾淨）
+  * **`鎮上午餐／逛街`**：✅ 各餐廳皆有廁所，選擇多
+  * **`Mar Dolomit 泳池`**：✅ 更衣室＋廁所，免費入場，這天最不用擔心的時段
 
 * **`09:00` 🚞 上午：[Resciesa 森林斜坡小火車](https://www.google.com/maps/search/?api=1&query=Funicolare+Resciesa)**
   * 從飯店步行 5 分鐘至底站，搭小火車上山。出站後沿 **Trail 35** 走到 **Santnerspass 石頭小教堂** 拍照俯瞰全鎮（全程超平坦，不會喘）。中途山屋咖啡廳喝可可吃蘋果捲。回程搭小火車下山（Gardena Card 免費）。
@@ -386,6 +391,12 @@
 
 > [!NOTE]
 > **💳 費用總結：** 三台纜車（15號、13號、14號）全部含蓋在 **Gardena Card** 內，**不需另外付費**！連倒搭取車也完全免費刷。唯一需要另外付費的是 Colfosco 瀑布步道的停車場費用（約 €2-3/小時）。若您家裡沒有 Gardena Card，三台纜車的現場單程票每人約需 €10-15 左右。
+
+* **🚻 廁所情報（帶小孩必看）：**
+  * **`Dantercëpies 纜車底站`**（Selva）：✅ 地下一樓設有廁所
+  * **`Rifugio Jimmi 山屋`**（頂站）：✅ 顧客廁所，但有評論提到「較簡陋」，堪用但別期待太高級
+  * **`Trail 12A 步行段`**：❌ 純步道，無設施
+  * **`Cascate del Pisciadù 瀑布步道`**：✅ 步道入口空地＋第一段瀑布下方**各有一座公廁**，多篇評論稱維護良好，是這天最乾淨確定的選擇
 
 
 * **🌄 上午：[15號 Costabella] ➡️ [13號 Dantercëpies] ➡️ 步行 (Trail 12A) ➡️ [14號 Cir]**

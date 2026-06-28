@@ -165,6 +165,8 @@
 **為何排在這天：** 週一平日，搭乘熱門纜車的人潮稍減。
 **🚗 交通 (從 Residence Ciastel 出發)：** 步行約 12-15 分鐘（或搭鎮上電扶梯）至 Ortisei-Furnes-Seceda 纜車站。**(不用開車，但須先網購指定時段票)**。
 
+* **🛗 電扶梯「La Curta」走法（比馬路走法快，5-7 分鐘）：** Google 地圖導航不會自動帶路走這條室內隧道，需要自己用眼睛找入口。從鎮中心 **Piazza S. Antonio** 廣場找「Seceda」方向指標，走進 **Sparkasse Ortisei 銀行** 與 **Calzature Rabanser Di Senoner Emilia 鞋店** 之間的小巷，巷口就是電扶梯入口。搭乘有遮頂的電扶梯往上，結束後直走會接上隧道內的電動步道，走到底即抵達 Seceda 纜車站。⚠️ 隧道 24 小時開放通行，但電扶梯僅日間運作。若懶得找，直接照導航走馬路（12-15 分鐘）一樣可以抵達。
+
 **🥾 今日與鎮上可能行經步道總覽：** 
 
 | 路線屬性 | 實際步道編號 (Trail) | 路線重點與終結點 |
@@ -317,6 +319,7 @@
 
 ## 🚂 July 23 (四) Resciesa 森林小火車與鎮上溫泉水上樂園
 **為何排在這天：** 經過前面連續四天的高山健行與開車（特別是連兩天遠征富內斯與塞拉山口），這天司機與小孩的體力與耐性都會達到臨界點。**這天絕對不要開長途車！全程 Ortisei 鎮上解決，零壓力。**
+**🚗 交通 (從 Residence Ciastel 出發)：** 步行約 5 分鐘至 Resciesa 纜車站，搭斜坡小火車上山。**(不用開車)**。
 
 > [!NOTE]
 > **📋 排程備忘：** 休斯高原 (7/19) 與刀背山 Seceda (7/20) 均已安排完畢，第一優先條件已滿足！
@@ -1002,6 +1005,7 @@
 * [Travel with Erin：Ortisei 三大纜車路線與健行攻略](https://www.travelwitherin.co.uk/travel-to-italy/what-to-do-in-ortisei-dolomites)（中文，含 Seceda / Alpe di Siusi / Resciesa 全攻略）
 * [Travel with Erin：Val Gardena 交通 & 18 條纜車搭乘攻略](https://www.travelwitherin.co.uk/travel-to-italy/val-gardena-dolomites-18-cable-cars)（中文，含 Gardena Card 回本分析與實戰動線圖）
 * [Ting's 旅行筆記：Val Gardena 纜車連乘實戰](https://tings.tw/val-gardena-cable-car/) ⚠️（中文，詳細介紹 Monte Pana → Mont Sëura → Tramans 三段連乘）
+* [人類怎麼只有一個胃：奧爾蒂塞伊纜車攻略](https://neneft.com/ortisei-cable-car-seceda-siusi-resciesa/)（中文，刀鋒山 Seceda、休斯高原 Alpe di Siusi、雷斯切薩高原 Resciesa 三大纜車總覽）
 
 ---
 
@@ -1015,6 +1019,7 @@
 
 ### 🏔️ 刀背山 Seceda（對應：7/20 主線 & 各日備案）
 * [Moon & Honey Travel：Seceda 刀背山縱走](https://www.moonhoneytravel.com/hiking-seceda-regensburger-hutte-val-gardena/)（英文，頂點視角照片 + 2026 纜車預約最新情報）
+* [一直玩的馬摩：2026 Seceda 纜車攻略](https://massi.tw/dolomiti-seceda/)（中文，預約制教學＋票價＋新手健行路線）
 * [Mom In Italy：帶小孩走 Seceda](https://mominitaly.com/seceda-dolomites-with-kids/)（英文，Pieralongia 看驢子詳解）
 * [🔍 Google 搜尋：Throne & Vine Seceda 縱走圖文](https://www.google.com/search?q=Throne+and+Vine+Seceda+Dolomites+hike)（Trail 2B 具體拍照位置）
 * [🔍 Google 搜尋：Outdooractive Seceda → Col Raiser GPS](https://www.google.com/search?q=outdooractive+Seceda+Pieralongia+Col+Raiser+hike+route)（路線 GPS + 路人實測時間）

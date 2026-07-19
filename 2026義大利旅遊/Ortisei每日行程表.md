@@ -219,26 +219,28 @@
   * **`Santa Maddalena 村莊`**：✅ 遊客中心內有廁所；Hotel Fines 消費顧客可使用
 
 * **主路線：[Adolf Munkel Weg / Trail #35-36 / Via delle Odle](https://www.google.com/maps/search/?api=1&query=Adolf+Munkel+Weg+Val+di+Funes)**
+
   > **⏱️ 預估時間軸（`07:15` 從 Ortisei 提早出發）**
   > | 時間 | 事項 |
   > | :--- | :--- |
-  > | `08:00` | 抵達 **Zanser Alm / Malga Zannes** 停車場，現場付費進場（趁燈號可能仍是 🟢 綠燈），先上廁所，在 [📍 Malga Zannes 小屋](https://www.google.com/maps/search/?api=1&query=Malga+Zannes) 補充能量，開始健行。停車場搶到後再說，**Ranui 拍照留到下午回程順路停**。 |
-  > | `11:00` | 🍽️ 抵達 **[Geisleralm](https://www.google.com/maps/search/?api=1&query=Geisleralm+Val+di+Funes)** 午餐（上廁所），約 1.5 小時。 |
-  > | `12:30` | 走 **Trail #35 精華段**（逆時鐘環狀，沿山峰底部，最美風景留最後）下山回停車場。 |
-  > | `14:00` | 回到停車場，開車前往 Santa Maddalena（約 20 分鐘）。**途中順路停 [📍 Ranui 聖約翰禮拜堂](https://www.google.com/maps/search/?api=1&query=Cappella+San+Giovanni+in+Ranui+Val+di+Funes)** 拍照（約 15 分鐘，下午光線同樣漂亮），再停在村莊中心 **[Parkplatz Bergerplatz](https://www.google.com/maps/search/?api=1&query=Parkplatz+Bergerplatz+Santa+Maddalena+Val+di+Funes)**（義文 Parcheggio Piazza centrale，現場付費、免預約）。 |
-  > | `14:20` | 🏛️ **[Puez-Geisler 自然公園遊客中心](https://www.google.com/maps/search/?api=1&query=Naturparkhaus+Puez+Geisler+Santa+Maddalena)** 參觀（30-45 分鐘，內有廁所，週二開放 ✅，含 Reinhold Messner 影片）。 |
-  > | `15:00` | ☕ **[Hotel Fines 露台咖啡廳](https://www.google.com/maps/search/?api=1&query=Hotel+Fines+Santa+Maddalena+Val+di+Funes)** 喝飲料休息（約 30 分鐘，有廁所）。 |
-  > | `15:30` | 📸 **[St. Magdalena 教堂](https://maps.app.goo.gl/FvE3M7ZBRZEigdsb7)** 正面拍攝，再步行上 **[Panorama Sitzbank](https://maps.app.goo.gl/rNQp4SVFEuQ8Hgbv6)** 俯拍（2026 起禁止開車，步行 5-10 分鐘）。 |
+  > | `08:00` | 抵達 **Zanser Alm / Malga Zannes** 停車場，現場付費進場（趁燈號可能仍是 🟢 綠燈），先上廁所，在 [📍 Malga Zannes 小屋](https://www.google.com/maps/search/?api=1&query=Malga+Zannes) 補充能量，**全員一起**開始健行。**Ranui 拍照留到下午回程順路停**。 |
+  > | `11:00` | 🍽️ **全員抵達 [Geisleralm](https://www.google.com/maps/search/?api=1&query=Geisleralm+Val+di+Funes)** 午餐（上廁所），約 1.5 小時。**👉 吃完在此分組，視小朋友當天狀況決定。** |
+  > | `12:30` | **🅰️ A 組（體力好的大人）**：繼續走 Gschnagenhardt Alm → **Trail #35 精華段**（沿山峰底部，最美風景）→ 回 Zanser Alm 停車場。約 1.5–2 小時，`14:00–14:30` 抵達停車場。 |
+  > | `12:30` | **🅱️ B 組（小朋友 + 一位大人）**：讓小朋友在 Geisleralm **遊樂場多玩一會兒**，再沿原路 Trail #36 輕鬆下山。約 1 小時，`13:30` 抵達停車場，在車上等 A 組。 |
+  > | `14:30` | **全員集合 Zanser Alm 停車場**，開車前往 Santa Maddalena（約 20 分鐘）。**途中順路停 [📍 Ranui 聖約翰禮拜堂](https://www.google.com/maps/search/?api=1&query=Cappella+San+Giovanni+in+Ranui+Val+di+Funes)** 拍照（約 15 分鐘）。 |
+  > | `15:00` | 停在村莊中心 **[Parkplatz Bergerplatz](https://www.google.com/maps/search/?api=1&query=Parkplatz+Bergerplatz+Santa+Maddalena+Val+di+Funes)**（現場付費、免預約）。🏛️ **[Puez-Geisler 自然公園遊客中心](https://www.google.com/maps/search/?api=1&query=Naturparkhaus+Puez+Geisler+Santa+Maddalena)** 參觀（30-45 分鐘，內有廁所，週二開放 ✅）。 |
+  > | `15:45` | ☕ **[Hotel Fines 露台咖啡廳](https://www.google.com/maps/search/?api=1&query=Hotel+Fines+Santa+Maddalena+Val+di+Funes)** 喝飲料休息（約 30 分鐘）。 |
+  > | `16:15` | 📸 **[St. Magdalena 教堂](https://maps.app.goo.gl/FvE3M7ZBRZEigdsb7)** 正面拍攝，步行上 **[Panorama Sitzbank](https://maps.app.goo.gl/rNQp4SVFEuQ8Hgbv6)** 俯拍（步行 5-10 分鐘）。 |
   > | `18:00` | 🍽️ 前往 **[Pitzock](https://www.google.com/maps/search/?api=1&query=Pitzock+Essen+Trinken+San+Pietro+Val+di+Funes)** 吃晚餐（⚠️ 已寄信預定，富內斯眼鏡羊 Slow Food 認證）。 |
   > | `19:30` | 用餐完畢離開餐廳，此時天還是全亮的（甚至運氣好能看到黃金光線）。 |
-  > | `19:40` | 🚗 開車回 Ortisei（約 45 分鐘，夏季此時路面明亮、路況好開）。 |
-  > | `20:25` | 🏠 回到 Ortisei 飯店休息（此時天色才剛準備變暗）。 |
+  > | `19:40` | 🚗 開車回 Ortisei（約 45 分鐘）。 |
+  > | `20:25` | 🏠 回到 Ortisei 飯店休息。 |
 
-  * **關於這條步道：** 難度**簡單到中等**，非常適合帶小孩。大部分時間在樹林間穿梭，不時與牛群相遇，氛圍悠閒療癒，壯麗感相對收斂（比起 Seceda 或休斯高原）。
-  * **💡 走法建議（Throne & Vine 推薦）：逆時鐘環狀** — 去程 Trail #36（較寬林道）上山，回程 **Trail #35**（沿山峰底部精華段）下山，最美風景留到最後。
-  * **路況：** 約 9 km 環狀，爬升 ~380m，來回含休息約 **4-5 小時**（親子腳程）。
-  * **動線：** [📍 停車場](https://www.google.com/maps/search/?api=1&query=Parcheggio+Malga+Zannes+Funes) → [📍 Malga Zannes 小屋](https://www.google.com/maps/search/?api=1&query=Malga+Zannes)（出發前補充能量）→ Trail #36 → [📍 Geisleralm](https://www.google.com/maps/search/?api=1&query=Geisleralm+Val+di+Funes) + [📍 Gschnagenhardt Alm](https://www.google.com/maps/search/?api=1&query=Gschnagenhardt+Alm+Val+di+Funes) → **Trail #35** → 回停車場
-  * **導航提示：** 步道分岔多，沿指標往 **Geisleralm** 或 **Gschnagenhardt Alm** 方向走即可，不會迷路。
+  * **關於這條步道：** 難度**簡單到中等**，非常適合帶小孩。大部分時間在樹林間穿梭，不時與牛群相遇，氛圍悠閒療癒。
+  * **路況（A 組完整環線）：** 約 9 km，爬升 ~380m，約 4–5 小時（含午餐）。
+  * **路況（B 組 Geisleralm 折返）：** 約 4–5 km，爬升 ~180m，約 3 小時（含午餐）。
+  * **動線 A 組：** [📍 停車場](https://www.google.com/maps/search/?api=1&query=Parcheggio+Malga+Zannes+Funes) → Malga Zannes 小屋 → Trail #36 → [📍 Geisleralm](https://www.google.com/maps/search/?api=1&query=Geisleralm+Val+di+Funes)（午餐分組）→ [📍 Gschnagenhardt Alm](https://www.google.com/maps/search/?api=1&query=Gschnagenhardt+Alm+Val+di+Funes) → **Trail #35** → 回停車場
+  * **動線 B 組：** 停車場 → Malga Zannes → Trail #36 → Geisleralm（午餐 + 遊樂場）→ **原路 #36** → 回停車場
   * **休息：** **Geisleralm**（多洛米蒂電影院）— 木製躺椅正對蓋斯勒岩峰，被稱為「全多洛米蒂最美觀景台」；餐廳外有兒童遊樂場。⚠️ **週一公休**（您排週二 ✅）
   * **資料來源：** [Travel with Erin](https://www.travelwitherin.co.uk/travel-to-italy/val-di-funes-dolomites)（中文）・[Throne & Vine](https://throneandvine.com/val-di-funes/) ⚠️（英文）
 

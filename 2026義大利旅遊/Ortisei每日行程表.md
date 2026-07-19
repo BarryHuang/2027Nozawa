@@ -237,8 +237,8 @@
   > | `20:25` | 🏠 回到 Ortisei 飯店休息。 |
 
   * **關於這條步道：** 難度**簡單到中等**，非常適合帶小孩。大部分時間在樹林間穿梭，不時與牛群相遇，氛圍悠閒療癒。
-  * **路況（A 組完整環線）：** 約 9 km，爬升 ~380m，約 4–5 小時（含午餐）。
-  * **路況（B 組 Geisleralm 折返）：** 約 4–5 km，爬升 ~180m，約 3 小時（含午餐）。
+  * **路況（A 組完整環線）：** 9.2 km，爬升 350m，約 4–5 小時（含午餐）。（來源：[Komoot](https://www.komoot.com/it-it/tour/32315269)）
+  * **路況（B 組 Geisleralm 折返）：** 約 7.5 km（Trail #36 上下來回各 3.8 km），爬升 ~175m，約 3–3.5 小時（含午餐 + 遊樂場）。
   * **動線 A 組：** [📍 停車場](https://www.google.com/maps/search/?api=1&query=Parcheggio+Malga+Zannes+Funes) → Malga Zannes 小屋 → Trail #36 → [📍 Geisleralm](https://www.google.com/maps/search/?api=1&query=Geisleralm+Val+di+Funes)（午餐分組）→ [📍 Gschnagenhardt Alm](https://www.google.com/maps/search/?api=1&query=Gschnagenhardt+Alm+Val+di+Funes) → **Trail #35** → 回停車場
   * **動線 B 組：** 停車場 → Malga Zannes → Trail #36 → Geisleralm（午餐 + 遊樂場）→ **原路 #36** → 回停車場
   * **休息：** **Geisleralm**（多洛米蒂電影院）— 木製躺椅正對蓋斯勒岩峰，被稱為「全多洛米蒂最美觀景台」；餐廳外有兒童遊樂場。⚠️ **週一公休**（您排週二 ✅）

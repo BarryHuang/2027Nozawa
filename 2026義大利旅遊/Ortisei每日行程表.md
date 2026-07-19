@@ -223,7 +223,7 @@
   > | 時間 | 事項 |
   > | :--- | :--- |
   > | `08:20` | 抵達 **Zanser Alm / Malga Zannes** 停車場，現場付費進場（趁燈號可能仍是 🟢 綠燈），先上廁所，在 [📍 Malga Zannes 小屋](https://www.google.com/maps/search/?api=1&query=Malga+Zannes) 補充能量，開始健行。停車場搶到後再說，**Ranui 拍照留到下午回程順路停**。 |
-  > | `11:00` | 🍽️ 抵達 **[Geisleralm](https://www.google.com/maps/search/?api=1&query=Geisleralm+Val+di+Funes)** 午餐（上廁所），約 1-1.5 小時。 |
+  > | `11:00` | 🍽️ 抵達 **[Geisleralm](https://www.google.com/maps/search/?api=1&query=Geisleralm+Val+di+Funes)** 午餐（上廁所），約 1.5 小時。 |
   > | `12:30` | 走 **Trail #35 精華段**（逆時鐘環狀，沿山峰底部，最美風景留最後）下山回停車場。 |
   > | `14:00` | 回到停車場，開車前往 Santa Maddalena（約 20 分鐘）。**途中順路停 [📍 Ranui 聖約翰禮拜堂](https://www.google.com/maps/search/?api=1&query=Cappella+San+Giovanni+in+Ranui+Val+di+Funes)** 拍照（約 15 分鐘，下午光線同樣漂亮），再停在村莊中心 **[Parkplatz Bergerplatz](https://www.google.com/maps/search/?api=1&query=Parkplatz+Bergerplatz+Santa+Maddalena+Val+di+Funes)**（義文 Parcheggio Piazza centrale，現場付費、免預約）。 |
   > | `14:20` | 🏛️ **[Puez-Geisler 自然公園遊客中心](https://www.google.com/maps/search/?api=1&query=Naturparkhaus+Puez+Geisler+Santa+Maddalena)** 參觀（30-45 分鐘，內有廁所，週二開放 ✅，含 Reinhold Messner 影片）。 |

@@ -178,11 +178,11 @@
 * **`08:00` 🌟 主路線：神級大下坡縱走 (不走回頭路、純放電吃喝)**
   * **`08:30`** 搭指定時段纜車上山。**`約 08:50`** 抵達頂站。
   * **🎯 起點分流戰術：** 一位大人陪小孩在頂站 Playground 玩耍，另外兩位大人快步衝上 **[觀景台 (Panorama Seceda)](https://www.google.com/maps/search/?api=1&query=Panorama+Seceda)** 拍刀背山斷崖 📸，拍完走回遊樂場會合。（約 30 分鐘）
-  * **`約 09:20`** 🥾 全家出發，走 **Trail 1 👉 2B 👉 13 👉 4**：
+  * **`約 09:20`** 🥾 全家出發，走 **Trail 1 👉 2B 👉 13 👉 4**（全程單程 **5.6 km**，下降 430m、上升 62m）：
     1. 沿 **Trail 1** 順著懸崖邊緣往下走（最平緩舒適的起點）。
-    2. 切入 **Trail 2B** 穿過大草坡，抵達 **[Malga Pieralongia 山屋](https://www.google.com/maps/search/?api=1&query=Malga+Pieralongia)**。雙子星奇石 + 驢子牛群 + 沙坑鞦韆。**`約 10:45`** 抵達，停留 30 分鐘。
-    3. 繼續 **Trail 2B 轉 Trail 13** 全景大下坡，抵達 **[Rifugio Firenze](https://www.google.com/maps/search/?api=1&query=Rifugio+Firenze+Seceda)**。**`約 12:15`** 🍽️ 午餐（約 1.5 小時）。
-    4. 走 **Trail 4** 散步抵達 **Col Raiser 纜車站**。**`約 13:45`** 出發，**`約 14:25`** 到站。
+    2. 切入 **Trail 2B** 穿過大草坡，抵達 **[Malga Pieralongia 山屋](https://www.google.com/maps/search/?api=1&query=Malga+Pieralongia)**（**2.1 km**，海拔 2297m）。雙子星奇石 + 驢子牛群 + 沙坑鞦韆。**`約 10:45`** 抵達，停留 30 分鐘。
+    3. 繼續 **Trail 2B 轉 Trail 13** 全景大下坡，抵達 **[Rifugio Firenze](https://www.google.com/maps/search/?api=1&query=Rifugio+Firenze+Seceda)**（海拔 2040m）。**`約 12:15`** 🍽️ 午餐（約 1.5 小時）。
+    4. 走 **Trail 4** 散步抵達 **Col Raiser 纜車站**（海拔 2107m，此段為唯一小上坡）。**`約 13:45`** 出發，**`約 14:25`** 到站。
     * 💡 **【近路備案】** 在 Pieralongia 若小孩累了，直接切 **Trail 4A** 斜線回 Col Raiser，跳過 Firenze 山屋。
   * 搭 Col Raiser 纜車下山至 S. Cristina，轉 350/352 公車（憑 Val Gardena Mobil Card **完全免費**）。**`約 15:15`** 🏠 **回到 Ortisei！**
 

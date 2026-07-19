@@ -216,7 +216,7 @@
   * **`步道中途（林道段）`**：❌ 完全無廁所，出發前請先上好
   * **`Geisleralm 蓋斯勒山屋`**：✅ 顧客廁所（點餐即可使用，山屋禮儀）
   * **`Gschnagenhardt Alm`**：✅ 顧客廁所
-  * **`Santa Maddalena 村莊`**：✅ 遊客中心內有廁所；Hotel Fines 消費顧客可使用
+  * **`Santa Maddalena 村莊`**：✅ 遊客中心內有廁所
 
 * **主路線：[Adolf Munkel Weg / Trail #35-36 / Via delle Odle](https://www.google.com/maps/search/?api=1&query=Adolf+Munkel+Weg+Val+di+Funes)**
 
@@ -229,8 +229,7 @@
   > | `12:30` | **🅱️ B 組（小朋友 + 一位大人）**：讓小朋友在 Geisleralm **遊樂場多玩一會兒**，再沿原路 Trail #36 輕鬆下山。約 1 小時，`13:30` 抵達停車場，在車上等 A 組。 |
   > | `14:30` | **全員集合 Zanser Alm 停車場**，開車前往 Santa Maddalena（約 20 分鐘）。**途中順路停 [📍 Ranui 聖約翰禮拜堂](https://www.google.com/maps/search/?api=1&query=Cappella+San+Giovanni+in+Ranui+Val+di+Funes)** 拍照（約 15 分鐘）。 |
   > | `15:00` | 停在村莊中心 **[Parkplatz Bergerplatz](https://www.google.com/maps/search/?api=1&query=Parkplatz+Bergerplatz+Santa+Maddalena+Val+di+Funes)**（現場付費、免預約）。🏛️ **[Puez-Geisler 自然公園遊客中心](https://www.google.com/maps/search/?api=1&query=Naturparkhaus+Puez+Geisler+Santa+Maddalena)** 參觀（30-45 分鐘，內有廁所，週二開放 ✅）。 |
-  > | `15:45` | ☕ **[Hotel Fines 露台咖啡廳](https://www.google.com/maps/search/?api=1&query=Hotel+Fines+Santa+Maddalena+Val+di+Funes)** 喝飲料休息（約 30 分鐘）。 |
-  > | `16:15` | 📸 **[St. Magdalena 教堂](https://maps.app.goo.gl/FvE3M7ZBRZEigdsb7)** 正面拍攝，步行上 **[Panorama Sitzbank](https://maps.app.goo.gl/rNQp4SVFEuQ8Hgbv6)** 俯拍（步行 5-10 分鐘）。 |
+  > | `15:45` | 📸 **[St. Magdalena 教堂](https://maps.app.goo.gl/FvE3M7ZBRZEigdsb7)** 正面拍攝，步行上 **[Panorama Sitzbank](https://maps.app.goo.gl/rNQp4SVFEuQ8Hgbv6)** 俯拍（步行 5-10 分鐘）。 |
   > | `18:00` | 🍽️ 前往 **[Pitzock](https://www.google.com/maps/search/?api=1&query=Pitzock+Essen+Trinken+San+Pietro+Val+di+Funes)** 吃晚餐（⚠️ 已寄信預定，富內斯眼鏡羊 Slow Food 認證）。 |
   > | `19:30` | 用餐完畢離開餐廳，此時天還是全亮的（甚至運氣好能看到黃金光線）。 |
   > | `19:40` | 🚗 開車回 Ortisei（約 45 分鐘）。 |

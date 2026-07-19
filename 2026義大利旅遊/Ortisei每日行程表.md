@@ -201,14 +201,14 @@
 
 ## 🌲 July 21 (二) 童話村莊：富內斯山谷 (Val di Funes)
 **為何排在這天：** 平日前往，人潮相對少，現場搶位成功率高。雖未訂到 Parking Zans，**提早出發趁管制燈號尚未啟動前現場付費進場**仍是可行方案。
-**🚗 交通 (從 Residence Ciastel 出發)：** **07:30 提早出發**，開車約 45 分鐘，目標 **08:30 前抵達 Zanser Alm / Malga Zannes 停車場**（趁早，停車場尚未滿位、管制燈號尚未轉紅，直接現場付費進場，約 €10–12）。
+**🚗 交通 (從 Residence Ciastel 出發)：** **07:15 提早出發**，開車約 45 分鐘，目標 **08:00 前抵達 Zanser Alm / Malga Zannes 停車場**（趁早，停車場尚未滿位、管制燈號尚未轉紅，直接現場付費進場，約 €10–12）。
 
   > 💡 Ranui 燈號系統：🟢 **綠燈** = 現場付費直接進場；🔴 **紅燈** = 僅持預約車輛通行。**越早到越大機率是綠燈。**
 
 > [!CAUTION]
 > **🚦 2026 年 5-11 月 富內斯谷新交通管制（對您的影響分析）**
 > 1. **St. Magdalena 觀景點設閘門路障**：開車無法直上教堂上方觀景點。✅ **對您無影響** — 您本就計畫在村莊停車後步行 5-10 分鐘上去，本來就不開車進去。
-> 2. **Zanser Alm (德) / Malga Zannes (義) 停車場限額預約 + Ranui 紅綠燈**：🟢 綠燈 = 現場付費進場；🔴 紅燈 = 僅持預約證明的車輛通行。⚠️ **因未能訂到停車位** — 提早出發（07:30）爭取在燈號轉紅前現場進場。若遇紅燈，請執行下方備案（Santa Maddalena 停車 + 330 號巴士上山）。
+> 2. **Zanser Alm (德) / Malga Zannes (義) 停車場限額預約 + Ranui 紅綠燈**：🟢 綠燈 = 現場付費進場；🔴 紅燈 = 僅持預約證明的車輛通行。⚠️ **因未能訂到停車位** — 提早出發（07:15）爭取在燈號轉紅前現場進場。若遇紅燈，請執行下方備案（Santa Maddalena 停車 + 330 號巴士上山）。
 
 * **🚻 廁所情報（帶小孩必看）：**
   * **`Zanser Alm / Malga Zannes 停車場`**：✅ 有公共廁所（停車場旁）
@@ -219,10 +219,10 @@
   * **`Santa Maddalena 村莊`**：✅ 遊客中心內有廁所；Hotel Fines 消費顧客可使用
 
 * **主路線：[Adolf Munkel Weg / Trail #35-36 / Via delle Odle](https://www.google.com/maps/search/?api=1&query=Adolf+Munkel+Weg+Val+di+Funes)**
-  > **⏱️ 預估時間軸（`07:30` 從 Ortisei 提早出發）**
+  > **⏱️ 預估時間軸（`07:15` 從 Ortisei 提早出發）**
   > | 時間 | 事項 |
   > | :--- | :--- |
-  > | `08:20` | 抵達 **Zanser Alm / Malga Zannes** 停車場，現場付費進場（趁燈號可能仍是 🟢 綠燈），先上廁所，在 [📍 Malga Zannes 小屋](https://www.google.com/maps/search/?api=1&query=Malga+Zannes) 補充能量，開始健行。停車場搶到後再說，**Ranui 拍照留到下午回程順路停**。 |
+  > | `08:00` | 抵達 **Zanser Alm / Malga Zannes** 停車場，現場付費進場（趁燈號可能仍是 🟢 綠燈），先上廁所，在 [📍 Malga Zannes 小屋](https://www.google.com/maps/search/?api=1&query=Malga+Zannes) 補充能量，開始健行。停車場搶到後再說，**Ranui 拍照留到下午回程順路停**。 |
   > | `11:00` | 🍽️ 抵達 **[Geisleralm](https://www.google.com/maps/search/?api=1&query=Geisleralm+Val+di+Funes)** 午餐（上廁所），約 1.5 小時。 |
   > | `12:30` | 走 **Trail #35 精華段**（逆時鐘環狀，沿山峰底部，最美風景留最後）下山回停車場。 |
   > | `14:00` | 回到停車場，開車前往 Santa Maddalena（約 20 分鐘）。**途中順路停 [📍 Ranui 聖約翰禮拜堂](https://www.google.com/maps/search/?api=1&query=Cappella+San+Giovanni+in+Ranui+Val+di+Funes)** 拍照（約 15 分鐘，下午光線同樣漂亮），再停在村莊中心 **[Parkplatz Bergerplatz](https://www.google.com/maps/search/?api=1&query=Parkplatz+Bergerplatz+Santa+Maddalena+Val+di+Funes)**（義文 Parcheggio Piazza centrale，現場付費、免預約）。 |

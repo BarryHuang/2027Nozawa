@@ -41,9 +41,8 @@
 >     * **首晚住宿地址 (Address)**：`Str. Minert 2, I-39046 Ortisei in Val Gardena, Italy`
 >     * **飯店電話 (Phone Number)**：`+39 0471 798288` (若 App 需填寫聯絡電話)
 > - [ ] **7/18**：**抵達 Ortisei 飯店 Check-in 時，務必向櫃檯預約隔天早上的麵包配送 (Bread Delivery) 服務**，確保隔天一早有早餐可吃。
-> - [ ] **7/18**：Val di Funes 停車場寄信給車牌（取車後務必在 **7/20 中午 12:00 前**發 email 至 `info@odlesdolomites.com` 更新真實車牌）。
 > - [ ] **7/18 拿到租車、確認車牌後**：上 [ASFINAG 官網](https://shop.asfinag.at) 用手機買兩張數位通行證（選 `Car` → 國家填 `Germany` → 填車牌與 Email）：① **`1-Day Vignette`**（奧地利高速公路通行證，約 €10，立即生效）② **`Digital Section Toll`**（布倫納山口 A13 過路費，路線選 `A13 Brenner motorway`、買單程 `1 trip`）。⚠️ 務必選 1 日票，選錯成年票/2 個月票會被強制延後 18 天才生效。
-> - [ ] **7/21**：Val di Funes [Parking Zans 停車場](https://www.odlesdolomites.com/en/parking-reservation/)預約（選 `Parking Zans` → `Car` → `7/21` → 最早時段 → 車牌先填 `AB000CD`）。最晚取車當天完成預約。
+> - [x] **7/21**：~~Val di Funes Parking Zans 停車場預約~~ ❌ **停車位未訂到**，改為**提早出發搶現場位**：7:30 前出發，目標 08:30 前抵達 Zanser Alm，趁紅燈尚未啟動前現場付費進場。若遇紅燈則改停 Santa Maddalena，搭 330 號巴士上山。
 > - [ ] **7/18-19 抵達後**：辦好當地 SIM/eSIM 拿到歐洲門號後，下載並註冊 **easypark app**（台灣門號無法註冊），7/21 在 Santa Maddalena Bergerplatz 停車繳費用，€4 比現場投幣 €10-15 划算。
 > - [ ] **7/20**：**判斷 Seceda 順光補拍計畫** — 看 7/22、7/23 天氣預報，挑一天晴朗的下午，自己一人用 Gardena Card 卡號上 [seceda.it](https://www.seceda.it) 預約時段（建議訂 **15:30 上山**，纜車 17:00 收班，來回約需 1.5-2 小時，這是兼顧光線與收班時間的最後合理時段）。若兩天都不適合天氣，就放棄不訂。
 > - [x] **7/22**：**Rifugio Comici 午餐** ✅ 已訂位（12:00，4人）。
@@ -201,28 +200,15 @@
 ---
 
 ## 🌲 July 21 (二) 童話村莊：富內斯山谷 (Val di Funes)
-**為何排在這天：** 平日前往，大幅增加搶到 Zanser Alm (德) / Malga Zannes (義) 停車格的機率。
-**🚗 交通 (從 Residence Ciastel 出發)：** 開車約 45 分鐘抵達 **Zanser Alm (德) / Malga Zannes (義)** 停車場（同一個地方，兩種語言叫法）。**(⚠️ 目前已開放預約，請盡速上 [官方預訂系統 odlesdolomites.com](https://www.odlesdolomites.com/en/parking-reservation/) 搶下車位)**。
+**為何排在這天：** 平日前往，人潮相對少，現場搶位成功率高。雖未訂到 Parking Zans，**提早出發趁管制燈號尚未啟動前現場付費進場**仍是可行方案。
+**🚗 交通 (從 Residence Ciastel 出發)：** **07:30 提早出發**，開車約 45 分鐘，目標 **08:30 前抵達 Zanser Alm / Malga Zannes 停車場**（趁早，停車場尚未滿位、管制燈號尚未轉紅，直接現場付費進場，約 €10–12）。
 
-  **📋 預約操作步驟（進入網站後照順序選）：**
-
-  | 步驟 | 欄位 | 選什麼 |
-  | :--- | :--- | :--- |
-  | ① | **停車場選擇** | 點開 **`Parking Zans`**（第一個選項），再點 "Parking Zans online reservation" 連結（實際訂票系統在 `portal.funes.guest.net`，若出現憑證警告可忽略繼續）|
-  | ② | **車型** | `Car（Autovettura）` |
-  | ③ | **日期** | `2026年7月21日` |
-  | ④ | **抵達時間段** | 選最早的早上時段 |
-  | ⑤ | **車牌號碼** | 先填 **`AB000CD`**（官方租車替代代碼，取車後再寄信更新） |
-  | ⑥ | **費用** | 約 **€10–12**（現場也可，但有預約才保證能進場） |
-
-  * 📧 取車後（7/18-19），務必在 **7/20 中午 12:00 前** 發 email 至 `info@odlesdolomites.com` 更新真實車牌，否則當天可能被拒絕進場
-  * 🎟️ 預約完成後會收到含 **QR Code** 的確認信，當天進場掃碼即可
-  * 🧾 7/21 出發時攜帶訂位確認單（或手機截圖）備查
+  > 💡 Ranui 燈號系統：🟢 **綠燈** = 現場付費直接進場；🔴 **紅燈** = 僅持預約車輛通行。**越早到越大機率是綠燈。**
 
 > [!CAUTION]
 > **🚦 2026 年 5-11 月 富內斯谷新交通管制（對您的影響分析）**
 > 1. **St. Magdalena 觀景點設閘門路障**：開車無法直上教堂上方觀景點。✅ **對您無影響** — 您本就計畫在村莊停車後步行 5-10 分鐘上去，本來就不開車進去。
-> 2. **Zanser Alm (德) / Malga Zannes (義) 停車場限額預約 + Ranui 紅綠燈**：🟢 綠燈 = 現場付費進場；🔴 紅燈 = 僅持預約證明的車輛通行。✅ **對您無影響** — 只要提前在 odlesdolomites.com 完成預約，亮紅燈仍可通行。若萬一沒有預約遇到紅燈，請見下方備案。
+> 2. **Zanser Alm (德) / Malga Zannes (義) 停車場限額預約 + Ranui 紅綠燈**：🟢 綠燈 = 現場付費進場；🔴 紅燈 = 僅持預約證明的車輛通行。⚠️ **因未能訂到停車位** — 提早出發（07:30）爭取在燈號轉紅前現場進場。若遇紅燈，請執行下方備案（Santa Maddalena 停車 + 330 號巴士上山）。
 
 * **🚻 廁所情報（帶小孩必看）：**
   * **`Zanser Alm / Malga Zannes 停車場`**：✅ 有公共廁所（停車場旁）
@@ -233,14 +219,13 @@
   * **`Santa Maddalena 村莊`**：✅ 遊客中心內有廁所；Hotel Fines 消費顧客可使用
 
 * **主路線：[Adolf Munkel Weg / Trail #35-36 / Via delle Odle](https://www.google.com/maps/search/?api=1&query=Adolf+Munkel+Weg+Val+di+Funes)**
-  > **⏱️ 預估時間軸（`08:00` 從 Ortisei 出發）**
+  > **⏱️ 預估時間軸（`07:30` 從 Ortisei 提早出發）**
   > | 時間 | 事項 |
   > | :--- | :--- |
-  > | `08:40` | 📍 途中停靠 **[Ranui 聖約翰禮拜堂](https://www.google.com/maps/search/?api=1&query=Cappella+San+Giovanni+in+Ranui+Val+di+Funes)** 拍照（約 20 分鐘，富內斯必拍景點之一）。 |
-  > | `09:15` | 抵達 **Zanser Alm / Malga Zannes** 停車場，先上廁所，在 [📍 Malga Zannes 小屋](https://www.google.com/maps/search/?api=1&query=Malga+Zannes) 補充能量，開始健行。 |
+  > | `08:20` | 抵達 **Zanser Alm / Malga Zannes** 停車場，現場付費進場（趁燈號可能仍是 🟢 綠燈），先上廁所，在 [📍 Malga Zannes 小屋](https://www.google.com/maps/search/?api=1&query=Malga+Zannes) 補充能量，開始健行。停車場搶到後再說，**Ranui 拍照留到下午回程順路停**。 |
   > | `11:00` | 🍽️ 抵達 **[Geisleralm](https://www.google.com/maps/search/?api=1&query=Geisleralm+Val+di+Funes)** 午餐（上廁所），約 1-1.5 小時。 |
   > | `12:30` | 走 **Trail #35 精華段**（逆時鐘環狀，沿山峰底部，最美風景留最後）下山回停車場。 |
-  > | `14:00` | 回到停車場，開車前往 Santa Maddalena（約 20 分鐘），停在村莊中心 **[Parkplatz Bergerplatz](https://www.google.com/maps/search/?api=1&query=Parkplatz+Bergerplatz+Santa+Maddalena+Val+di+Funes)**（義文 Parcheggio Piazza centrale，現場付費、免預約）。 |
+  > | `14:00` | 回到停車場，開車前往 Santa Maddalena（約 20 分鐘）。**途中順路停 [📍 Ranui 聖約翰禮拜堂](https://www.google.com/maps/search/?api=1&query=Cappella+San+Giovanni+in+Ranui+Val+di+Funes)** 拍照（約 15 分鐘，下午光線同樣漂亮），再停在村莊中心 **[Parkplatz Bergerplatz](https://www.google.com/maps/search/?api=1&query=Parkplatz+Bergerplatz+Santa+Maddalena+Val+di+Funes)**（義文 Parcheggio Piazza centrale，現場付費、免預約）。 |
   > | `14:20` | 🏛️ **[Puez-Geisler 自然公園遊客中心](https://www.google.com/maps/search/?api=1&query=Naturparkhaus+Puez+Geisler+Santa+Maddalena)** 參觀（30-45 分鐘，內有廁所，週二開放 ✅，含 Reinhold Messner 影片）。 |
   > | `15:00` | ☕ **[Hotel Fines 露台咖啡廳](https://www.google.com/maps/search/?api=1&query=Hotel+Fines+Santa+Maddalena+Val+di+Funes)** 喝飲料休息（約 30 分鐘，有廁所）。 |
   > | `15:30` | 📸 **[St. Magdalena 教堂](https://maps.app.goo.gl/FvE3M7ZBRZEigdsb7)** 正面拍攝，再步行上 **[Panorama Sitzbank](https://maps.app.goo.gl/rNQp4SVFEuQ8Hgbv6)** 俯拍（2026 起禁止開車，步行 5-10 分鐘）。 |
@@ -260,8 +245,8 @@
 * **🅿️ Santa Maddalena 停車資訊：** 停 **[Parkplatz Bergerplatz](https://www.google.com/maps/search/?api=1&query=Parkplatz+Bergerplatz+Santa+Maddalena+Val+di+Funes)**（村莊中心，免預約、現場付費），2026 年現場費用約 **€10–15/次**。因為這趟會買當地 **SIM/eSIM**（有國外門號），建議直接註冊 **easypark app** 付款，只需 **€4/次**，現場別傻傻付現金。
 
 
-* **🛡️ 彈性備案 (若 Zanser Alm / Malga Zannes 亮紅燈且無預約)：**
-  * **備案 1（推薦）**：把車停在 Santa Maddalena 的替代停車場（[📍 Ranui](https://www.google.com/maps/search/?api=1&query=Ranui+Parking+Santa+Maddalena+Val+di+Funes) / Putzen / Filler），搭 **330 號接駁巴士**（每小時一班）上 Zanser Alm / Malga Zannes，一樣可以走步道。
+* **🛡️ 彈性備案 (若 Ranui 燈號 🔴 紅燈、無法進入 Zanser Alm)：**
+  * **備案 1（推薦）**：把車停在 Santa Maddalena 的替代停車場（[📍 Ranui](https://www.google.com/maps/search/?api=1&query=Ranui+Parking+Santa+Maddalena+Val+di+Funes) / Putzen / Filler，現場付費），搭 **330 號接駁巴士**（每小時一班，車程約 20–30 分鐘）上 Zanser Alm / Malga Zannes，一樣可以完整走步道。
   * **備案 2**：直接在 St. Magdalena 村莊周圍走輕鬆的 **Panorama Trail（全景步道）**，遠望山峰與教堂即可，適合體力較差或時間不足時。
 
 

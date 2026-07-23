@@ -390,6 +390,10 @@
   * **`PanaRaida 步道`**：✅ 水上遊樂區附近有廁所設施
 
 
+* **🗺️ Dantercëpies 步道地圖**（[官方步道說明](https://www.dantercepies.it/en/summer-walks.asp)）
+
+  ![Dantercepies 步道地圖](https://www.dantercepies.it/img/layout/hike-map.jpg)
+
 * **🌄 上午：[15號 Costabella] ➡️ [13號 Dantercëpies] ➡️ 步行 (Trail 12A) ➡️ [14號 Cir]**
   * **`08:30`** 從飯店出發 → 開車 15 分鐘 → Selva 停車，開始連乘三台纜車。
   * **`約 09:20`** 🏔️ **13號頂站 (2300m)！** 含等車、買票、小孩慢走的 buffer，預計此時抵達山頂。出站無敵景。開始沿 Trail 12A 步行往 Jimmi 山屋（緩坡下行，小孩腳程預留 30 分鐘）。

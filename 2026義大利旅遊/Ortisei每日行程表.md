@@ -396,21 +396,21 @@
   ![Dantercepies 步道地圖](https://www.dantercepies.it/img/layout/hike-map.jpg)
 
 * **🌄 上午：[15號 Costabella] ➡️ [13號 Dantercëpies] ➡️ CIR PROMENADE 來回 ➡️ 原路下山**
-  * **`08:30`** 從飯店出發 → 開車 15 分鐘 → Selva 停車，開始連乘兩台纜車。
-  * **`約 09:20`** 🏔️ **13號頂站（2,295m）！** 出站即 Cir 峰群＋Sella 群峰全景震撼。
-  * **`約 09:40`** 沿 **CIR PROMENADE（Trail 12A）** 步行前往 Rifugio Jimmi。步道緩平（推嬰兒車也能走），單程 0.75km、約 20 分鐘。走在 Cir 峰群岩塔群下方的高山草坡，兩側分別是 Sella 群峰與薩索倫戈。
-  * **`約 10:00`** 抵達 **Rifugio Jimmi（2,222m）**，停留約 **45 分鐘**。露台視角：薩索倫戈、Sella 群峰、Grande Cir 峰群正面——多洛米蒂最具代表性的兩組岩塔同時入鏡。
-  * **`約 10:45`** 沿原路步行回 Dantercëpies 頂站（20 分鐘）。
-  * **`約 11:05`** 搭 **13號 Dantercëpies ↓ → 15號 Costabella ↓** 回 Selva 取車。（Gardena Card 含蓋）
+  * **`08:10`** 從飯店出發 → 開車 15 分鐘 → Selva 停車，開始連乘兩台纜車。
+  * **`約 09:00`** 🏔️ **13號頂站（2,295m）！** 出站即 Cir 峰群＋Sella 群峰全景震撼。
+  * **`約 09:20`** 沿 **CIR PROMENADE（Trail 12A）** 步行前往 Rifugio Jimmi。步道緩平（推嬰兒車也能走），單程 0.75km、約 20 分鐘。走在 Cir 峰群岩塔群下方的高山草坡，兩側分別是 Sella 群峰與薩索倫戈。
+  * **`約 09:40`** 抵達 **Rifugio Jimmi（2,222m）**，停留約 **45 分鐘**。露台視角：薩索倫戈、Sella 群峰、Grande Cir 峰群正面——多洛米蒂最具代表性的兩組岩塔同時入鏡。
+  * **`約 10:25`** 沿原路步行回 Dantercëpies 頂站（20 分鐘）。
+  * **`約 10:45`** 搭 **13號 Dantercëpies ↓ → 15號 Costabella ↓** 回 Selva 取車。（Gardena Card 含蓋）
 
   > **🚡 選擇加碼：14號 Cir 吊椅體驗（+40 分鐘）**
   > 想多搭一台纜車的人，可以在 Dantercëpies 頂站改搭 **[14號 Cir 吊椅](https://www.google.com/maps/search/?api=1&query=Seggiovia+Cir+Selva)** 下到 Passo Gardena（2,136m），換個視角看山谷，再倒搭 14號回頂站，接著照常搭 13號 + 15號 下 Selva 取車。純粹是纜車體驗，不去任何目的地。Gardena Card 含蓋，來回約 40 分鐘。
 
-* **`約 11:30`（加碼版 `約 12:10`）🚗 開車前往 Monte Pana（10 分鐘）**
+* **`約 11:10`（加碼版 `約 11:50`）🚗 開車前往 Monte Pana（10 分鐘）**
   * 停在 [📍 Monte Pana P1 停車場](https://www.google.com/maps/search/?api=1&query=Parcheggio+Monte+Pana+Santa+Cristina)（339 個車位，€2/小時，無搶位壓力）。
 
-* **`約 12:00` 🍽️ [Rifugio Monte Pana](https://www.google.com/maps/search/?api=1&query=Rifugio+Monte+Pana+Santa+Cristina) 午餐**
-  * 就在 8號纜車底站旁，有露台、薩索倫戈正面全景。午餐預計 **1 小時**。任何山屋有開就好，不必特地去特定餐廳。
+* **`約 11:20` 🍽️ [Rifugio Monte Pana](https://www.google.com/maps/search/?api=1&query=Rifugio+Monte+Pana+Santa+Cristina) 午餐**
+  * 就在 8號纜車底站旁，有露台、薩索倫戈正面全景。午餐預計 **1.5 小時**（比原計畫多 20 分鐘，從容用餐）。任何山屋有開就好，不必特地去特定餐廳。
 
 * **`約 13:00` 🎪 [PanaRaida 冒險步道](https://www.valgardena.it/en/outdoor/base/outdoor/adventure-trail-panaraida/64155423/)**
   * 2.5km 環形，10 個互動關卡：巨型鞦韆、迷你纜車、樹屋、水上遊樂區（可踩水）、迷宮。多次獲評奧地利「年度最佳家庭景點」。走完預計 **1–1.5 小時**。

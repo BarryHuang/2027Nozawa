@@ -373,9 +373,10 @@
 | :--- | :--- | :--- | :---: |
 | **① Selva → 上升** | [15號 Costabella 吊椅](https://www.google.com/maps/search/?api=1&query=Seggiovia+Costabella+Selva) | 從 Selva 鎮上出發，省去走坡路 | ✅ 含蓋 |
 | **② → 2300m 頂站** | [13號 Dantercëpies 大纜車](https://www.google.com/maps/search/?api=1&query=Funivia+Dantercepies+Selva) | 直升山頂，出站即 Cir 峰全景震撼 | ✅ 含蓋 |
-| **③ 步行段** | 步行 Trail 12A（約 30 分鐘） | 頂站 → Rifugio Jimmi 山屋，純緩坡下行 | — |
-| **④ → Passo Gardena** | [14號 Cir 吊椅](https://www.google.com/maps/search/?api=1&query=Seggiovia+Cir+Selva) | 由上往下「坐著降落」至山口 | ✅ 含蓋 |
-| **⑤ 取車（倒搭）** | 14號 ↑ → 13號 ↓ 回 Selva | 原路倒坐回 Selva 取車 | ✅ 含蓋 |
+| **③ 步行往** | 步行 CIR PROMENADE（20 分鐘） | 頂站 → Rifugio Jimmi（2,222m），Cir 峰群下方高山草坡 | — |
+| **④ 步行回** | 同路返回（20 分鐘） | Rifugio Jimmi → 頂站 | — |
+| **⑤ 下山取車** | 13號 ↓ → 15號 ↓ 回 Selva | 原路下 Selva 取車 | ✅ 含蓋 |
+| **⑤ᵃ 加碼選項** | [14號 Cir 吊椅](https://www.google.com/maps/search/?api=1&query=Seggiovia+Cir+Selva) ↓ 再 ↑ | 從頂站搭到 Passo Gardena 再倒搭回（+40 分鐘，Gardena Card 含蓋） | ✅ 含蓋 |
 | **⑥ PanaRaida 步道** | 步行（環形 2.5km，1–1.5 小時） | [PanaRaida 冒險步道](https://www.valgardena.it/en/outdoor/base/outdoor/adventure-trail-panaraida/64155423/)，10 個互動關卡 | — |
 | **⑦ Mont Sëura 纜車** | [9號 Mont Sëura 纜車](https://www.gardena-card.com/en/lifts.asp?id=10) | Monte Pana → 2,025m 頂站，薩索倫戈全景 | ✅ 含蓋 |
 
@@ -394,13 +395,18 @@
 
   ![Dantercepies 步道地圖](https://www.dantercepies.it/img/layout/hike-map.jpg)
 
-* **🌄 上午：[15號 Costabella] ➡️ [13號 Dantercëpies] ➡️ 步行 (Trail 12A) ➡️ [14號 Cir]**
-  * **`08:30`** 從飯店出發 → 開車 15 分鐘 → Selva 停車，開始連乘三台纜車。
-  * **`約 09:20`** 🏔️ **13號頂站 (2300m)！** 含等車、買票、小孩慢走的 buffer，預計此時抵達山頂。出站無敵景。開始沿 Trail 12A 步行往 Jimmi 山屋（緩坡下行，小孩腳程預留 30 分鐘）。
-  * **`約 10:00`** 抵達 **Rifugio Jimmi (吉米山屋)**，停留約 **1 小時**（含喝可可、拍照、上廁所、讓小孩在草坪跑跑）。
-  * **`約 11:00`** 搭 **[14號 Cir]** 降落 Passo Gardena → 倒搭纜車回 Selva 取車（含等候、換乘，預留 **40 分鐘**）。
+* **🌄 上午：[15號 Costabella] ➡️ [13號 Dantercëpies] ➡️ CIR PROMENADE 來回 ➡️ 原路下山**
+  * **`08:30`** 從飯店出發 → 開車 15 分鐘 → Selva 停車，開始連乘兩台纜車。
+  * **`約 09:20`** 🏔️ **13號頂站（2,295m）！** 出站即 Cir 峰群＋Sella 群峰全景震撼。
+  * **`約 09:40`** 沿 **CIR PROMENADE（Trail 12A）** 步行前往 Rifugio Jimmi。步道緩平（推嬰兒車也能走），單程 0.75km、約 20 分鐘。走在 Cir 峰群岩塔群下方的高山草坡，兩側分別是 Sella 群峰與薩索倫戈。
+  * **`約 10:00`** 抵達 **Rifugio Jimmi（2,222m）**，停留約 **45 分鐘**。露台視角：薩索倫戈、Sella 群峰、Grande Cir 峰群正面——多洛米蒂最具代表性的兩組岩塔同時入鏡。
+  * **`約 10:45`** 沿原路步行回 Dantercëpies 頂站（20 分鐘）。
+  * **`約 11:05`** 搭 **13號 Dantercëpies ↓ → 15號 Costabella ↓** 回 Selva 取車。（Gardena Card 含蓋）
 
-* **`約 11:40` 🚗 開車前往 Monte Pana（10 分鐘）**
+  > **🚡 選擇加碼：14號 Cir 吊椅體驗（+40 分鐘）**
+  > 想多搭一台纜車的人，可以在 Dantercëpies 頂站改搭 **[14號 Cir 吊椅](https://www.google.com/maps/search/?api=1&query=Seggiovia+Cir+Selva)** 下到 Passo Gardena（2,136m），換個視角看山谷，再倒搭 14號回頂站，接著照常搭 13號 + 15號 下 Selva 取車。純粹是纜車體驗，不去任何目的地。Gardena Card 含蓋，來回約 40 分鐘。
+
+* **`約 11:30`（加碼版 `約 12:10`）🚗 開車前往 Monte Pana（10 分鐘）**
   * 停在 [📍 Monte Pana P1 停車場](https://www.google.com/maps/search/?api=1&query=Parcheggio+Monte+Pana+Santa+Cristina)（339 個車位，€2/小時，無搶位壓力）。
 
 * **`約 12:00` 🍽️ [Rifugio Monte Pana](https://www.google.com/maps/search/?api=1&query=Rifugio+Monte+Pana+Santa+Cristina) 午餐**

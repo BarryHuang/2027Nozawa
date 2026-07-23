@@ -361,11 +361,11 @@
 
 ---
 
-## 🚡 July 24 (五) 備用空白日 (纜車大滿貫 / 峽谷瀑布)
-**概覽：** 旅程最後的「精華挑戰日」！上午在 Selva 完成三台高山纜車大滿貫，俯瞰全程最不一樣的 Sella 群峰；下午沿 Passo Gardena 山口往東，到 Alta Badia 的溪谷帶小孩踩水。**兩個地點地理上完美順路，一路往東不走回頭路！**
+## 🚡 July 24 (五) 備用空白日 (纜車大滿貫 / PanaRaida ＋ Mont Sëura)
+**概覽：** 旅程最後的「精華挑戰日」！上午在 Selva 完成三台高山纜車大滿貫，俯瞰 Sella 群峰全景；下午開 10 分鐘到 Santa Cristina，帶小孩玩 **PanaRaida 冒險步道**（10個互動關卡：巨型鞦韆、迷宮、水上遊樂區）＋ 搭 **9號 Mont Sëura 纜車**（2,025m）近距離觀賞薩索倫戈，視角與早上 Dantercëpies 完全不同。目標 **15:30 回飯店**，從容完成洗衣整理行李。
 
 > [!TIP]
-> **今天動線：Ortisei → Selva（上午纜車）→ 翻越 Passo Gardena 山口 → Colfosco（下午瀑布）**
+> **今天動線：Ortisei → Selva（上午纜車）→ Santa Cristina Monte Pana（PanaRaida ＋ 9號 Mont Sëura）→ 回 Ortisei**
 
 **🚡 今日路線總覽：**
 
@@ -376,16 +376,18 @@
 | **③ 步行段** | 步行 Trail 12A（約 30 分鐘） | 頂站 → Rifugio Jimmi 山屋，純緩坡下行 | — |
 | **④ → Passo Gardena** | [14號 Cir 吊椅](https://www.google.com/maps/search/?api=1&query=Seggiovia+Cir+Selva) | 由上往下「坐著降落」至山口 | ✅ 含蓋 |
 | **⑤ 取車（倒搭）** | 14號 ↑ → 13號 ↓ 回 Selva | 原路倒坐回 Selva 取車 | ✅ 含蓋 |
-| **⑥ 瀑布步道** | 步行（來回約 1.5~2 小時） | Colfosco → Cascate del Pisciadù 來回 | — |
+| **⑥ PanaRaida 步道** | 步行（環形 2.5km，1–1.5 小時） | [PanaRaida 冒險步道](https://www.valgardena.it/en/outdoor/base/outdoor/adventure-trail-panaraida/64155423/)，10 個互動關卡 | — |
+| **⑦ Mont Sëura 纜車** | [9號 Mont Sëura 纜車](https://www.gardena-card.com/en/lifts.asp?id=10) | Monte Pana → 2,025m 頂站，薩索倫戈全景 | ✅ 含蓋 |
 
 > [!NOTE]
-> **💳 費用總結：** 三台纜車（15號、13號、14號）全部含蓋在 **Gardena Card** 內，**不需另外付費**！連倒搭取車也完全免費刷。唯一需要另外付費的是 Colfosco 瀑布步道的停車場費用（約 €2-3/小時）。若您家裡沒有 Gardena Card，三台纜車的現場單程票每人約需 €10-15 左右。
+> **💳 費用總結：** 上午三台纜車（15號、13號、14號）＋下午 9號 Mont Sëura 纜車，全部含蓋在 **Gardena Card** 內，**不需另外付費**！停車費：Monte Pana P1 停車場 €2/小時（339 個車位，無搶位問題）。若無 Gardena Card，各纜車現場單程票每人約需 €10-15。
 
 * **🚻 廁所情報（帶小孩必看）：**
   * **`Dantercëpies 纜車底站`**（Selva）：✅ 地下一樓設有廁所
   * **`Rifugio Jimmi 山屋`**（頂站）：✅ 顧客廁所，但有評論提到「較簡陋」，堪用但別期待太高級
   * **`Trail 12A 步行段`**：❌ 純步道，無設施
-  * **`Cascate del Pisciadù 瀑布步道`**：✅ 步道入口空地＋第一段瀑布下方**各有一座公廁**，多篇評論稱維護良好，是這天最乾淨確定的選擇
+  * **`Rifugio Monte Pana`**（午餐地點）：✅ 一般餐廳廁所
+  * **`PanaRaida 步道`**：✅ 水上遊樂區附近有廁所設施
 
 
 * **🌄 上午：[15號 Costabella] ➡️ [13號 Dantercëpies] ➡️ 步行 (Trail 12A) ➡️ [14號 Cir]**
@@ -394,17 +396,23 @@
   * **`約 10:00`** 抵達 **Rifugio Jimmi (吉米山屋)**，停留約 **1 小時**（含喝可可、拍照、上廁所、讓小孩在草坪跑跑）。
   * **`約 11:00`** 搭 **[14號 Cir]** 降落 Passo Gardena → 倒搭纜車回 Selva 取車（含等候、換乘，預留 **40 分鐘**）。
 
-* **`約 11:40` 🕛 開車前往 Passo Gardena 午餐**
-  * 取車後開車 15 分鐘回到山口（含停車、找到餐廳，預留彈性）。山口山屋餐廳約 11 點開門，位子充裕。午餐預計 **1 小時至 1.5 小時**。
+* **`約 11:40` 🚗 開車前往 Monte Pana（10 分鐘）**
+  * 停在 [📍 Monte Pana P1 停車場](https://www.google.com/maps/search/?api=1&query=Parcheggio+Monte+Pana+Santa+Cristina)（339 個車位，€2/小時，無搶位壓力）。
 
-* **`約 13:15` 🌊 [Cascate del Pisciadù 瀑布步道](https://www.google.com/maps/search/?api=1&query=Cascate+del+Pisciadu+Colfosco)**
-  * 從 Passo Gardena 開車 10 分鐘抵達 Colfosco，導航至 **[Hotel Luianta](https://www.google.com/maps/search/?api=1&query=Hotel+Luianta+Colfosco)** 停車。
-  * 步道來回約 1.5 小時，含小孩踩水、拍瀑布、坐下休息，**預留 2 小時緩衝**。
-  * **`約 15:15`** 步道結束，開車 35 分鐘回 Ortisei（翻越 Passo Gardena）。
+* **`約 12:00` 🍽️ [Rifugio Monte Pana](https://www.google.com/maps/search/?api=1&query=Rifugio+Monte+Pana+Santa+Cristina) 午餐**
+  * 就在 8號纜車底站旁，有露台、薩索倫戈正面全景。午餐預計 **1 小時**。任何山屋有開就好，不必特地去特定餐廳。
 
-* **`約 16:00`** 🏠 **回到 Ortisei 飯店！** 剩餘下午時間完全自由。
+* **`約 13:00` 🎪 [PanaRaida 冒險步道](https://www.valgardena.it/en/outdoor/base/outdoor/adventure-trail-panaraida/64155423/)**
+  * 2.5km 環形，10 個互動關卡：巨型鞦韆、迷你纜車、樹屋、水上遊樂區（可踩水）、迷宮。多次獲評奧地利「年度最佳家庭景點」。走完預計 **1–1.5 小時**。
 
-* **`約 16:00 – 17:30` 🧺 第二批洗衣 ＋ 整理收行李**
+* **`約 14:30` 🚡 [9號 Mont Sëura 纜車](https://www.gardena-card.com/en/lifts.asp?id=10)（Gardena Card 含蓋）**
+  * 上 2,025m 頂站，薩索倫戈＋薩索皮亞托正面近景，與早上 Dantercëpies 方向完全不同。上下 + 頂站停留約 **45 分鐘**。
+
+* **`約 15:15`** 開車 10 分鐘直接回 Ortisei（不需翻越山口）。
+
+* **`約 15:30`** 🏠 **回到 Ortisei 飯店！比原計畫早約 30 分鐘。**
+
+* **`約 15:30 – 17:00` 🧺 第二批洗衣 ＋ 整理收行李**
   * 返回飯店後直接使用 Residence Ciastel 飯店內洗衣機＋烘衣機（費用**可能約 €4**）洗剩下的第二批衣物，等待時間整理行李。7/25 早上 07:30 出發，今晚盡量把行李收齊，衣服烘好直接入箱。
 
 * **🍽️ 晚餐建議：7/24 是最後一晚住在 Residence Ciastel（公寓式住宿），也是整趟旅程最後一次有廚房可以自己煮！7/25 起換飯店就無法自炊了。**
@@ -424,8 +432,8 @@
   | [Restaurant Tubladel](https://www.google.com/maps/search/?api=1&query=Restaurant+Tubladel+Ortisei) | 評價最高，南蒂羅爾料理精緻版，浪漫木屋氛圍，**建議提前訂位** |
   | [Mauriz Keller](https://www.google.com/maps/search/?api=1&query=Mauriz+Keller+Ortisei) | 百年老店拱頂石窟，4.4 分，在地人也愛，傳統菜 + 披薩皆有，**建議提前訂位** |
 
-* **🛡️ 彈性備案 (若想輕鬆或天氣不配合)：**
-  * **【備案：⑤ 三段纜車連乘 (Monte Pana 線)】**：放棄遠征 Selva，改從 Ortisei 開 15 分鐘到 S. Cristina，以 **[8號 Monte Pana] ➡️ [9號 Mont Sëura] ➡️ [10號 Tramans]** 連乘三台纜車，近距離觀賞巨大的薩索倫戈 (Sassolungo) 岩壁，小孩可在高山草坪奔跑放電。早上也可先讓小孩在 8 號底站的 PanaRaida 步道闖關，下午再全家一起狂搭纜車。
+* **🛡️ 彈性備案（若上午天氣不佳，放棄 Selva）：**
+  * 全天在 Monte Pana：早上 PanaRaida 步道闖關 → 9號 Mont Sëura → 10號 Tramans 三台纜車連乘，近距離觀賞薩索倫戈，中午 Rifugio Monte Pana 午餐，13:30 前即可回飯店，洗衣整理更輕鬆。
 
 ---
 
@@ -1037,7 +1045,7 @@
 
 ---
 
-### 🌊 Cascate del Pisciadù 瀑布步道（對應：7/24 下午 & 各日備案）
+### 🌊 Cascate del Pisciadù 瀑布步道（對應：各日備案）
 * [Mom In Italy：Cascate del Pisciadù 詳細圖文](https://mominitaly.com/cascate-del-pisciadu/)（英文，停車位置、步道難度、帶小孩實測記錄）
 
 ---

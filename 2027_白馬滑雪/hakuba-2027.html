@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2027 白馬滑雪 12 天</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#081520;
+    --night:#0E2333;
+    --night-2:#17334A;
+    --line:#20415C;
+    --snow:#EDF4F8;
+    --frost:#8FAEC4;
+    --sun:#F2B33D;
+    --glacier:#62B6CE;
+    --alert:#FF7361;
+    --mono:"IBM Plex Mono",ui-monospace,monospace;
+    --sans:"Noto Sans TC",system-ui,sans-serif;
+    --serif:"Noto Serif TC",serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    background:var(--ink);
+    color:var(--snow);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.7;
+    padding-bottom:64px;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+
+  /* ---------- hero ---------- */
+  .hero{
+    padding:56px 0 36px;
+    border-bottom:1px solid var(--line);
+    background:
+      radial-gradient(120% 90% at 82% 0%, rgba(242,179,61,.16), transparent 62%),
+      radial-gradient(90% 70% at 8% 12%, rgba(98,182,206,.13), transparent 60%);
+  }
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--sun);margin-bottom:18px;
+  }
+  h1{
+    font-family:var(--serif);font-weight:900;
+    font-size:clamp(46px,15vw,84px);line-height:.95;letter-spacing:.02em;
+  }
+  h1 small{display:block;font-size:clamp(15px,4.2vw,21px);font-weight:600;color:var(--frost);letter-spacing:.3em;margin-top:14px}
+  .dates{font-family:var(--mono);font-size:15px;color:var(--snow);margin-top:24px;letter-spacing:.03em}
+  .facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+  .fact{
+    font-family:var(--mono);font-size:12.5px;
+    border:1px solid var(--line);border-radius:999px;
+    padding:5px 13px;color:var(--frost);
+  }
+  .fact b{color:var(--snow);font-weight:600}
+
+  /* ---------- snow strip (signature) ---------- */
+  .strip{margin-top:32px}
+  .strip-rail{display:flex;gap:4px}
+  .cell{flex:1;height:38px;border-radius:3px;position:relative;background:var(--night);border:1px solid var(--line)}
+  .cell.ski{background:var(--sun);border-color:var(--sun)}
+  .cell.play{background:rgba(242,179,61,.32);border-color:rgba(242,179,61,.5)}
+  .cell.park{background:var(--glacier);border-color:var(--glacier)}
+  .cell span{
+    position:absolute;left:0;right:0;bottom:-19px;text-align:center;
+    font-family:var(--mono);font-size:9.5px;color:var(--frost)
+  }
+  .legend{display:flex;flex-wrap:wrap;gap:16px;margin-top:32px;font-family:var(--mono);font-size:11.5px;color:var(--frost)}
+  .legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+
+  /* ---------- sections ---------- */
+  section{padding:44px 0;border-bottom:1px solid var(--line)}
+  h2{
+    font-family:var(--mono);font-size:12px;letter-spacing:.24em;text-transform:uppercase;
+    color:var(--glacier);margin-bottom:24px;
+  }
+  .card{
+    background:var(--night);border:1px solid var(--line);border-radius:10px;
+    padding:20px;margin-bottom:12px;
+  }
+  .card h3{font-family:var(--serif);font-size:19px;font-weight:600;margin-bottom:4px}
+  .card .sub{color:var(--frost);font-size:13.5px}
+  dl{display:grid;grid-template-columns:auto 1fr;gap:7px 16px;margin-top:16px;font-size:14px}
+  dt{color:var(--frost);font-size:13px;white-space:nowrap}
+  dd{font-family:var(--mono);font-size:13.5px;word-break:break-all}
+  a{color:var(--sun);text-decoration:none;border-bottom:1px solid rgba(242,179,61,.4)}
+
+  /* flights */
+  .leg{display:flex;align-items:baseline;gap:14px;margin-top:14px}
+  .leg .t{font-family:var(--mono);font-size:26px;font-weight:600;letter-spacing:-.02em}
+  .leg .a{font-family:var(--mono);font-size:12px;color:var(--frost);letter-spacing:.1em}
+  .leg .dash{flex:1;height:1px;background:var(--line);min-width:20px}
+
+  /* ---------- timeline ---------- */
+  .day{
+    position:relative;padding:0 0 30px 34px;border-left:1px solid var(--line);
+  }
+  .day:last-child{border-left-color:transparent;padding-bottom:0}
+  .node{
+    position:absolute;left:-6.5px;top:6px;width:12px;height:12px;border-radius:50%;
+    background:var(--ink);border:1.5px solid var(--line);
+  }
+  .day.ski .node{background:var(--sun);border-color:var(--sun)}
+  .day.play .node{background:rgba(242,179,61,.45);border-color:var(--sun)}
+  .day.park .node{background:var(--glacier);border-color:var(--glacier)}
+  .day.move .node{background:var(--ink);border-color:var(--frost)}
+  .dhead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .ddate{font-family:var(--mono);font-size:15px;font-weight:600;letter-spacing:.02em}
+  .dtag{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--frost);border:1px solid var(--line);border-radius:3px;padding:1px 7px}
+  .day.ski .dtag{color:var(--sun);border-color:rgba(242,179,61,.45)}
+  .day.park .dtag{color:var(--glacier);border-color:rgba(98,182,206,.45)}
+  .dtitle{font-family:var(--serif);font-size:20px;font-weight:600;margin:6px 0 2px}
+  .drive{font-family:var(--mono);font-size:12px;color:var(--glacier);margin-bottom:8px}
+  .day ul{list-style:none;margin-top:8px}
+  .day li{position:relative;padding-left:16px;font-size:14.5px;color:#CBDCE7;margin-bottom:4px}
+  .day li::before{content:"";position:absolute;left:0;top:11px;width:5px;height:1px;background:var(--frost)}
+
+  /* ---------- alerts ---------- */
+  .alert{
+    border:1px solid rgba(255,115,97,.4);background:rgba(255,115,97,.07);
+    border-radius:10px;padding:18px 20px;margin-bottom:12px;
+  }
+  .alert h3{font-family:var(--sans);font-size:15.5px;font-weight:700;color:var(--alert);margin-bottom:6px}
+  .alert p{font-size:14.5px;color:#DCE9F0}
+
+  /* ---------- todo ---------- */
+  .todo{list-style:none}
+  .todo li{
+    display:flex;gap:12px;align-items:flex-start;
+    padding:11px 0;border-bottom:1px solid rgba(32,65,92,.55);font-size:14.5px;
+  }
+  .todo li:last-child{border-bottom:0}
+  .box{flex:0 0 15px;height:15px;margin-top:4px;border:1px solid var(--frost);border-radius:3px}
+  .todo .hot{color:var(--alert);font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;border:1px solid rgba(255,115,97,.45);border-radius:3px;padding:0 6px;margin-left:6px;white-space:nowrap}
+
+  footer{padding:36px 0;color:var(--frost);font-family:var(--mono);font-size:11.5px;letter-spacing:.06em}
+
+  /* motion */
+  .fade{opacity:0;transform:translateY(14px);animation:up .7s cubic-bezier(.2,.7,.3,1) forwards}
+  @keyframes up{to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){.fade{animation:none;opacity:1;transform:none}}
+  a:focus-visible,.card:focus-visible{outline:2px solid var(--sun);outline-offset:3px}
+  @media(max-width:520px){
+    dl{grid-template-columns:1fr;gap:2px 0}
+    dt{margin-top:8px}
+    .cell{height:30px}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap fade">
+    <div class="eyebrow">2027 冬 ・ 長野 ・ 北阿爾卑斯</div>
+    <h1>白馬<small>H A K U B A</small></h1>
+    <div class="dates">2027.01.21 (四) — 02.01 (一)</div>
+    <div class="facts">
+      <span class="fact">12 天 <b>11 夜</b></span>
+      <span class="fact">滑雪 <b>6 日</b></span>
+      <span class="fact">雪場 <b>6 座</b></span>
+      <span class="fact">同行 <b>3 人</b></span>
+      <span class="fact">自駕 <b>9 天</b></span>
+    </div>
+
+    <div class="strip">
+      <div class="strip-rail">
+        <div class="cell"><span>21</span></div>
+        <div class="cell"><span>22</span></div>
+        <div class="cell ski"><span>23</span></div>
+        <div class="cell ski"><span>24</span></div>
+        <div class="cell ski"><span>25</span></div>
+        <div class="cell play"><span>26</span></div>
+        <div class="cell ski"><span>27</span></div>
+        <div class="cell ski"><span>28</span></div>
+        <div class="cell ski"><span>29</span></div>
+        <div class="cell"><span>30</span></div>
+        <div class="cell park"><span>31</span></div>
+        <div class="cell"><span>1</span></div>
+      </div>
+      <div class="legend">
+        <span><i style="background:var(--sun)"></i>滑雪日</span>
+        <span><i style="background:rgba(242,179,61,.32)"></i>玩雪日</span>
+        <span><i style="background:var(--glacier)"></i>迪士尼</span>
+        <span><i style="background:var(--night);border:1px solid var(--line)"></i>移動日</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>需要先處理</h2>
+
+    <div class="alert">
+      <h3>Sierra 訂房只登記 2 位大人</h3>
+      <p>確認信上寫「Number of people (Total) 2 people／Adult: 2」，女兒沒有列進住宿名單。8 晚、¥871,840 已線上付款，現場才發現會很麻煩。請直接寫信給 <a href="mailto:hakuba@sierra.ne.jp">hakuba@sierra.ne.jp</a> 或撥 <a href="tel:+81261723250">0261-72-3250</a> 加人（可能產生兒童加床或餐費差額）。長野大都會那張是「Adults 2, Children 1」，登記正確。</p>
+    </div>
+
+    <div class="alert">
+      <h3>1/30 已不是自由日，是整段移動日</h3>
+      <p>白馬 10:00 退房 → 開回長野還車 → 新幹線到東京 → 京葉線到舞濱，最快也要下午三、四點才進得了迪士尼飯店。原本排的「自由滑雪／泡溫泉」放不進去，1/29 Cortina 就是最後一個雪日。</p>
+    </div>
+
+    <div class="alert">
+      <h3>迪士尼 2 晚尚未訂房</h3>
+      <p>1/30、1/31 兩晚。園區內飯店（MiraCosta、Fantasy Springs）開賣即滿，要盯開放日期。1/31 是星期日，海洋園區當天人潮最重。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>航班</h2>
+    <div class="card">
+      <h3>去程 ・ JX800</h3>
+      <div class="sub">星宇航空 ・ 經濟艙 ・ 訂位代號 DM7PRO</div>
+      <div class="leg">
+        <div><div class="t">08:25</div><div class="a">TPE 第一航廈</div></div>
+        <div class="dash"></div>
+        <div style="text-align:right"><div class="t">12:35</div><div class="a">NRT 第二航廈</div></div>
+      </div>
+      <dl>
+        <dt>日期</dt><dd>2027-01-21 (四)</dd>
+        <dt>建議到機場</dt><dd>06:20（雪具託運要留時間）</dd>
+      </dl>
+    </div>
+    <div class="card">
+      <h3>回程 ・ JX803</h3>
+      <div class="sub">星宇航空 ・ 經濟艙 ・ 飛行 4 小時 5 分</div>
+      <div class="leg">
+        <div><div class="t">15:40</div><div class="a">NRT 第二航廈</div></div>
+        <div class="dash"></div>
+        <div style="text-align:right"><div class="t">18:45</div><div class="a">TPE 第一航廈</div></div>
+      </div>
+      <dl>
+        <dt>日期</dt><dd>2027-02-01 (一)</dd>
+        <dt>建議到機場</dt><dd>12:20 前（起飛前 3 小時 20 分）</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>住宿</h2>
+
+    <div class="card">
+      <h3>Hotel Metropolitan Nagano</h3>
+      <div class="sub">1/21 (四) — 1/22 (五) ・ 1 晚 ・ 直通長野站</div>
+      <dl>
+        <dt>訂房編號</dt><dd>3865-6613-0333</dd>
+        <dt>房型</dt><dd>Deluxe King ・ 禁菸 ・ 含早餐</dd>
+        <dt>人數</dt><dd>大人 2 ・ 兒童 1 ・ 1 室</dd>
+        <dt>金額</dt><dd>¥41,020（含稅與服務費）</dd>
+        <dt>免費取消</dt><dd>2027-01-19 (二) 23:59 前</dd>
+        <dt>電話</dt><dd><a href="tel:+81262917000">026-291-7000</a></dd>
+      </dl>
+    </div>
+
+    <div class="card">
+      <h3>Hotel Sierra Resort Hakuba</h3>
+      <div class="sub">1/22 (五) — 1/30 (六) ・ 8 晚 ・ 已線上付款</div>
+      <dl>
+        <dt>訂房編號</dt><dd>3732-9419-9363</dd>
+        <dt>房型</dt><dd>East Wing 行政套房・專屬露天風呂・高階按摩椅</dd>
+        <dt>登記人數</dt><dd style="color:var(--alert)">大人 2 ／ 女兒待補</dd>
+        <dt>入住</dt><dd>15:00 — 22:00（登記到達 19:00）</dd>
+        <dt>退房</dt><dd>10:00</dd>
+        <dt>金額</dt><dd>¥871,840</dd>
+        <dt>導航電話</dt><dd><a href="tel:+81261723250">0261-72-3250</a></dd>
+        <dt>信箱</dt><dd><a href="mailto:hakuba@sierra.ne.jp">hakuba@sierra.ne.jp</a></dd>
+        <dt>備註</dt><dd>食物過敏須入住 3 天前告知（已填無）</dd>
+      </dl>
+    </div>
+
+    <div class="card" style="border-style:dashed">
+      <h3>東京迪士尼度假區</h3>
+      <div class="sub">1/30 (六) — 2/01 (一) ・ 2 晚 ・ <span style="color:var(--alert)">尚未訂房</span></div>
+      <dl>
+        <dt>目標</dt><dd>迪士尼海洋園區內 / 官方飯店</dd>
+        <dt>交通</dt><dd>JR 舞濱站 → 迪士尼度假區線</dd>
+        <dt>回程優勢</dt><dd>舞濱有利木津巴士直達成田</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>自駕</h2>
+    <div class="card">
+      <dl>
+        <dt>取車</dt><dd>1/22 (五) 長野站</dd>
+        <dt>還車</dt><dd>1/30 (六) 長野站</dd>
+        <dt>天數</dt><dd>9 天（原排 10 天，因迪士尼調整）</dd>
+        <dt>車型</dt><dd>4WD ＋ 雪胎（冬季白馬必要）</dd>
+        <dt>長野 ⇄ 白馬</dt><dd>約 60 分，大雪抓 90 分</dd>
+      </dl>
+      <ul style="list-style:none;margin-top:16px;font-size:14px;color:#CBDCE7">
+        <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0">・</span>還車前先加滿油</li>
+        <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0">・</span>確認營業所冬季營業時間與 1/30 的還車時段</li>
+        <li style="padding-left:16px;position:relative"><span style="position:absolute;left:0">・</span>確認後車廂可放得下雪具 ＋ 3 人行李</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>每日行程</h2>
+
+    <div class="day move">
+      <div class="node"></div>
+      <div class="dhead"><span class="ddate">1/21 四</span><span class="dtag">抵達</span></div>
+      <div class="dtitle">飛成田 → 長野</div>
+      <ul>
+        <li>12:35 抵成田第二航廈，入境領行李抓 1 小時</li>
+        <li>N'EX 至東京站約 60–80 分</li>
+        <li>北陸新幹線至長野約 80–100 分</li>
+        <li>預估 17:00–18:00 抵達長野，出站即入住</li>
+        <li>晚餐：長野站內 MIDORI</li>
+      </ul>
+    </div>
+
+    <div class="day move">
+      <div class="node"></div>
+      <div class="dhead"><span class="ddate">1/22 五</span><span class="dtag">進山</span></div>
+      <div class="dtitle">取車 → 白馬</div>
+      <div class="drive">🚗 長野站 → 白馬 60 分</div>
+      <ul>
+        <li>上午長野站取車（4WD ＋ 雪胎）</li>
+        <li>白馬熱身、超市採買</li>
+        <li>Sierra 15:00 起可入住</li>
+      </ul>
+    </div>
+
+    <div class="day ski">
+      <div class="node"></div>
+      <div class="dhead"><span class="ddate">1/23 六</span><span class="dtag">Ski D1</span></div>
+      <div class="dtitle">栂池高原</div>
+      <div class="drive">🚗 6 分</div>
+      <ul>
+        <li>Jasmine 上課</li>
+        <li>緩坡寬闊，適合當第一天暖身</li>
+      </ul>
+    </div>
+
+    <div class="day ski">
+      <div class="node"></div>
+      <div class="dhead"><span class="ddate">1/24 日</span><span class="dtag">Ski D2</span></div>
+      <div class="dtitle">栂池高原</div>
+      <div class="drive">🚗 6 分</div>
+      <ul><li>Barry 上課</li></ul>
+    </div>
+
+    <div class="day ski">
+      <div class="node"></div>
+      <div class="dhead"><span class="ddate">1/25 一</span><span class="dtag">Ski D3</span></div>
+      <div class="dtitle">白馬岩岳</div>
+      <div class="drive">🚗 7 分</div>
+      <ul>
+        <li>Jasmine 上課</li>
+        <li>山頂 Mountain Harbor 絕景露台，不滑雪也能搭纜車上去</li>
+      </ul>
+    </div>
+
+    <div class="day play">
+      <div class="node"></div>
+      <div class="dhead"><span class="ddate">1/26 二</span><span class="dtag">放鬆日</span></div>
+      <div class="dtitle">鹿島槍</div>
+      <div class="drive">🚗 45–50 分（大雪再加）</div>
+      <ul><li>全家輕鬆玩雪，不排課</li></ul>
+    </div>
+
+    <div class="day ski">
+      <div class="node"></div>
+      <div class="dhead"><span class="ddate">1/27 三</span><span class="dtag">Ski D4</span></div>
+      <div class="dtitle">Hakuba 47 / 五龍</div>
+      <div class="drive">🚗 18 分</div>
+      <ul>
+        <li>Barry 上課</li>
+        <li>兩山纜車互通，雪道選擇最多</li>
+      </ul>
+    </div>
+
+    <div class="day ski">
+      <div class="node"></div>
+      <div class="dhead"><span class="ddate">1/28 四</span><span class="dtag">Ski D5</span></div>
+      <div class="dtitle">白馬岩岳</div>
+      <div class="drive">🚗 7 分</div>
+      <ul>
+        <li>Jasmine 上課</li>
+        <li>彈性日：天候不佳可改休息或換場</li>
+      </ul>
+    </div>
+
+    <div class="day ski">
+      <div class="node"></div>
+      <div class="dhead"><span class="ddate">1/29 五</span><span class="dtag">Ski D6 ・ 最後雪日</span></div>
+      <div class="dtitle">Cortina</div>
+      <div class="drive">🚗 25–30 分（大雪再加）</div>
+      <ul>
+        <li>Jasmine ＋ 女兒請 Ski 教練</li>
+        <li>Barry 自由滑</li>
+        <li>Cortina 粉雪出名，深雪日首選</li>
+        <li>晚上整理行李，雪具當天收</li>
+      </ul>
+    </div>
+
+    <div class="day move">
+      <div class="node"></div>
+      <div class="dhead"><span class="ddate">1/30 六</span><span class="dtag">移動日</span></div>
+      <div class="dtitle">白馬 → 舞濱</div>
+      <div class="drive">🚗 白馬 → 長野站 60–90 分</div>
+      <ul>
+        <li>10:00 Sierra 退房</li>
+        <li>開回長野站還車，預留 30 分手續</li>
+        <li>北陸新幹線 長野 → 東京，約 1 小時 40 分</li>
+        <li>東京站轉京葉線 → 舞濱，約 15–20 分</li>
+        <li>預估傍晚入住迪士尼飯店；晚上可逛 Ikspiari</li>
+      </ul>
+    </div>
+
+    <div class="day park">
+      <div class="node"></div>
+      <div class="dhead"><span class="ddate">1/31 日</span><span class="dtag">Disney</span></div>
+      <div class="dtitle">東京迪士尼海洋</div>
+      <ul>
+        <li>全日入園</li>
+        <li>星期日人潮最重，開園前到閘口</li>
+        <li>入園票與 DPA 提早在官方 App 處理</li>
+      </ul>
+    </div>
+
+    <div class="day move">
+      <div class="node"></div>
+      <div class="dhead"><span class="ddate">2/01 一</span><span class="dtag">返台</span></div>
+      <div class="dtitle">舞濱 → 成田 → 台北</div>
+      <ul>
+        <li>早上 Ikspiari 採買，行李先寄飯店</li>
+        <li>10:45–11:00 離開飯店（雪具若已宅配寄回可再寬鬆些）</li>
+        <li>舞濱 → 成田：利木津巴士直達約 60–75 分</li>
+        <li>12:20 前抵第二航廈，預留雪具與行李託運時間</li>
+        <li>15:40 JX803 起飛，18:45 抵桃園</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>待辦</h2>
+    <ul class="todo">
+      <li><span class="box"></span><span>聯絡 Sierra 補登記女兒<span class="hot">最急</span></span></li>
+      <li><span class="box"></span><span>訂迪士尼飯店 1/30、1/31 兩晚<span class="hot">最急</span></span></li>
+      <li><span class="box"></span><span>租車改為 1/22 取、1/30 還（原本排到 1/31）</span></li>
+      <li><span class="box"></span><span>Ski 教練預約：旺季名額少，尤其中英文教練，建議提早三個月</span></li>
+      <li><span class="box"></span><span>雪票試算：六座雪場都屬 HAKUBA VALLEY 系統，共通券可能較划算</span></li>
+      <li><span class="box"></span><span>雪具處理：自帶還是白馬租？帶去迪士尼很累贅，可考慮 1/29 用宅配寄出</span></li>
+      <li><span class="box"></span><span>新幹線指定席：長野 → 東京 1/30，行李多建議劃大件行李區</span></li>
+      <li><span class="box"></span><span>迪士尼入園票 3 張</span></li>
+      <li><span class="box"></span><span>旅平險（含滑雪意外）</span></li>
+      <li><span class="box"></span><span>女兒雪衣、護目鏡、安全帽尺寸確認</span></li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">最後更新 2026-08-29 ・ 內容以各訂房確認信為準</div>
+</footer>
+
+</body>
+</html>

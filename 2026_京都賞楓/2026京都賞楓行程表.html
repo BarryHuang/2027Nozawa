@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>🍁 2026 京都賞楓行程表</title>
+<style>
+  :root {
+    --c-maple: #c1440e; --c-red: #b71c1c; --c-deepred: #7a0c0c;
+    --c-gold: #d4a017; --c-purple: #6a4c93; --c-green: #2e7d32;
+    --c-blue: #1565c0; --c-orange: #e65100;
+    --radius: 16px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: "Helvetica Neue","PingFang TC","Microsoft JhengHei",sans-serif; background: #faf3ec; color: #333; }
+
+  /* ── STICKY NAV ── */
+  .sticky-nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(38,20,12,.95); backdrop-filter: blur(8px);
+    display: flex; justify-content: center; flex-wrap: wrap; gap: 6px;
+    padding: 10px 12px; box-shadow: 0 2px 12px rgba(0,0,0,.25);
+  }
+  .sticky-nav a {
+    color: white; text-decoration: none; font-size: .85em; font-weight: 700;
+    padding: 6px 16px; border-radius: 30px; transition: .2s;
+    border: 2px solid rgba(255,255,255,.2);
+  }
+  .sticky-nav a:hover, .sticky-nav a:focus { background: var(--c-maple); border-color: var(--c-maple); }
+  .sticky-nav a.sub { font-size: .78em; font-weight: 600; padding: 4px 12px; opacity: .85; border-style: dashed; }
+  .sticky-nav .nav-sep { width: 100%; height: 0; }
+  .sticky-nav a.nav-d1 { border-color: #e63946; }
+  .sticky-nav a.nav-d2 { border-color: var(--c-purple); }
+  .sticky-nav a.nav-d3 { border-color: var(--c-green); }
+  .sticky-nav a.nav-d4 { border-color: var(--c-orange); }
+  .sticky-nav a.nav-d5 { border-color: var(--c-blue); }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, var(--c-maple) 0%, var(--c-red) 50%, var(--c-deepred) 100%);
+    color: white; text-align: center; padding: 60px 20px 50px;
+  }
+  .hero::before {
+    content: "🍁🍂🍁"; font-size: 56px; display: block; margin-bottom: 14px;
+    letter-spacing: 10px; animation: float 3s ease-in-out infinite;
+  }
+  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+  .hero h1 { font-size: 2.4em; font-weight: 900; letter-spacing: 2px; text-shadow: 2px 3px 6px rgba(0,0,0,.3); }
+  .hero p { font-size: 1.05em; margin-top: 10px; opacity: .92; }
+
+  .meta-strip {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;
+    padding: 22px 16px; background: #fff; border-bottom: 3px solid var(--c-maple);
+  }
+  .meta-badge {
+    display: flex; align-items: center; gap: 7px;
+    background: #fff8f0; border: 2px solid var(--c-maple); border-radius: 50px;
+    padding: 7px 16px; font-size: .88em; font-weight: 600; color: var(--c-deepred);
+  }
+
+  /* ── LAYOUT ── */
+  .section { max-width: 960px; margin: 28px auto 0; padding: 0 16px; }
+  .section-title {
+    text-align: center; font-size: 1.4em; font-weight: 800; color: var(--c-deepred);
+    margin: 28px 0 14px; display: flex; align-items: center; justify-content: center; gap: 10px;
+  }
+  .section-title::before, .section-title::after {
+    content: ""; flex: 1; height: 2px;
+    background: linear-gradient(to right, transparent, var(--c-maple), transparent);
+  }
+
+  /* ── INFO GRID ── */
+  .info-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%, 300px), 1fr)); gap: 16px; margin-bottom: 24px; }
+  .info-card { background: white; border-radius: var(--radius); padding: 18px; box-shadow: 0 3px 12px rgba(0,0,0,.07); border-left: 6px solid; }
+  .info-card h3 { font-size: .95em; margin-bottom: 8px; }
+  .info-card p, .info-card ul { font-size: .88em; line-height: 1.8; color: #555; }
+  .info-card ul { list-style: none; }
+  .info-card strong { color: #222; }
+  .info-card a { color: var(--c-blue); text-decoration: none; font-weight: 600; }
+  .info-card a:hover { text-decoration: underline; }
+
+  /* ── OVERVIEW TABLE ── */
+  .overview-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: .88em; background: white; border-radius: var(--radius); overflow: hidden; box-shadow: 0 3px 12px rgba(0,0,0,.07); }
+  .overview-table th { background: var(--c-maple); color: white; padding: 10px 12px; text-align: left; }
+  .overview-table td { padding: 10px 12px; border-bottom: 1px solid #f0e6da; vertical-align: top; }
+  .overview-table tr:last-child td { border-bottom: none; }
+  .overview-table tr:nth-child(even) td { background: #fdf8f4; }
+
+  /* ── DAY CARDS ── */
+  .days-wrapper { max-width: 960px; margin: 0 auto; padding: 0 16px 40px; display: flex; flex-direction: column; gap: 24px; }
+  .day-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,.1); }
+  .day-header { padding: 20px 24px; color: white; display: flex; align-items: center; gap: 14px; cursor: pointer; user-select: none; position: relative; }
+  .day-header::after { content: "▼"; position: absolute; right: 24px; top: 50%; transform: translateY(-50%); font-size: .9em; opacity: .6; transition: transform .3s; }
+  .day-card.collapsed .day-header::after { transform: translateY(-50%) rotate(-90deg); }
+  .day-card.collapsed .day-body { display: none; }
+  .day-header .day-num { font-size: 2.2em; font-weight: 900; line-height: 1; opacity: .85; }
+  .day-header .day-info h2 { font-size: 1.2em; font-weight: 800; }
+  .day-header .day-info .sub { font-size: .85em; opacity: .85; margin-top: 2px; }
+
+  .day1 .day-header { background: linear-gradient(135deg, #e63946, #7a0c0c); }
+  .day2 .day-header { background: linear-gradient(135deg, #6a4c93, #3d2b56); }
+  .day3 .day-header { background: linear-gradient(135deg, #2e7d32, #1b4d1e); }
+  .day4 .day-header { background: linear-gradient(135deg, #e65100, #a13c00); }
+  .day5 .day-header { background: linear-gradient(135deg, #1565c0, #0d3c73); }
+
+  .r-ohara .day-header    { background: linear-gradient(135deg, #00897b, #004d40); }
+  .r-sennyuji .day-header { background: linear-gradient(135deg, #ad1457, #560027); }
+  .r-takao .day-header    { background: linear-gradient(135deg, #6d4c41, #3e2723); }
+  .r-ichijoji .day-header { background: linear-gradient(135deg, #f9a825, #8d6e00); }
+
+  .day-body { padding: 18px 24px 24px; }
+
+  .hl { border-radius: 12px; padding: 12px 16px; margin-bottom: 18px; font-size: .9em; line-height: 1.7; font-weight: 600; }
+  .hl.red    { background: #ffebee; color: #7a0c0c; border-left: 4px solid #e63946; }
+  .hl.purple { background: #f3e5f5; color: #3d2b56; border-left: 4px solid var(--c-purple); }
+  .hl.green  { background: #e8f5e9; color: #1b4d1e; border-left: 4px solid var(--c-green); }
+  .hl.orange { background: #fff3e0; color: #a13c00; border-left: 4px solid var(--c-orange); }
+  .hl.blue   { background: #e3f2fd; color: #0d3c73; border-left: 4px solid var(--c-blue); }
+
+  /* ── TIMELINE ── */
+  .tl { position: relative; padding-left: 34px; }
+  .tl::before { content: ""; position: absolute; left: 12px; top: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, var(--c-maple), var(--c-gold), var(--c-maple)); border-radius: 3px; }
+  .ti { position: relative; margin-bottom: 18px; }
+  .ti:last-child { margin-bottom: 0; }
+  .td { position: absolute; left: -26px; top: 5px; width: 18px; height: 18px; border-radius: 50%; background: var(--c-maple); border: 3px solid white; box-shadow: 0 0 0 2px var(--c-maple); }
+  .ti.move  .td { background: var(--c-blue); box-shadow: 0 0 0 2px var(--c-blue); }
+  .ti.act   .td { background: var(--c-green); box-shadow: 0 0 0 2px var(--c-green); }
+  .ti.meal  .td { background: var(--c-orange); box-shadow: 0 0 0 2px var(--c-orange); }
+  .ti.night .td { background: var(--c-purple); box-shadow: 0 0 0 2px var(--c-purple); }
+  .ti.extra .td { background: var(--c-gold); box-shadow: 0 0 0 2px var(--c-gold); }
+
+  .tt { font-size: .78em; color: #999; font-weight: 700; margin-bottom: 2px; }
+  .th { font-size: .98em; font-weight: 700; color: #222; margin-bottom: 3px; }
+  .th a { color: var(--c-blue); text-decoration: none; border-bottom: 1px dashed var(--c-blue); }
+  .th a:hover { border-bottom-style: solid; }
+  .tx { font-size: .86em; color: #666; line-height: 1.65; }
+
+  .tag { display: inline-block; background: #fff3e0; border: 2px solid var(--c-orange); border-radius: 30px; padding: 2px 10px; font-size: .74em; font-weight: 700; color: var(--c-orange); margin-left: 6px; vertical-align: middle; }
+  .tag.night { background: #f3e5f5; border-color: var(--c-purple); color: var(--c-purple); }
+  .tag.alt   { background: #e3f2fd; border-color: var(--c-blue); color: var(--c-blue); }
+
+  .tips { background: #fffde7; border: 2px dashed #d4a017; border-radius: 12px; padding: 12px 16px; margin-top: 18px; font-size: .86em; line-height: 1.7; color: #555; }
+  .tips strong { color: #a17800; }
+
+  /* ── NIGHT MAPLE TABLE ── */
+  .night-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: .88em; background: white; border-radius: var(--radius); overflow: hidden; box-shadow: 0 3px 12px rgba(0,0,0,.07); }
+  .night-table th { background: var(--c-purple); color: white; padding: 10px 12px; text-align: left; }
+  .night-table td { padding: 10px 12px; border-bottom: 1px solid #f0e6da; }
+  .night-table tr:last-child td { border-bottom: none; }
+  .night-table tr:nth-child(even) td { background: #f8f5fb; }
+
+  /* ── CHECKLIST ── */
+  .checklist { list-style: none; background: white; border-radius: var(--radius); padding: 8px 18px; box-shadow: 0 3px 12px rgba(0,0,0,.07); }
+  .checklist li { padding: 10px 0; border-bottom: 1px solid #f0e6da; font-size: .9em; display: flex; align-items: center; gap: 8px; cursor: pointer; }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist input[type="checkbox"] { transform: scale(1.3); margin-right: 8px; accent-color: var(--c-maple); }
+  .checklist li.checked span { text-decoration: line-through; color: #aaa; }
+
+  footer { background: #26140c; color: #bba594; text-align: center; padding: 28px 16px; font-size: .82em; line-height: 2; }
+  footer strong { color: var(--c-gold); }
+
+  @media print {
+    .sticky-nav, .hero::before { display: none !important; }
+    .hero { padding: 20px; background: white !important; color: #333 !important; -webkit-print-color-adjust: exact; }
+    .hero h1 { text-shadow: none; font-size: 1.6em; color: #333; }
+    .day-card { break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+    .day-card.collapsed .day-body { display: block !important; }
+    .day-header::after { display: none; }
+    body { background: white; }
+    footer { background: white !important; color: #333 !important; border-top: 2px solid #ccc; }
+  }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 1.6em; }
+    .day-header .day-num { font-size: 1.7em; }
+    .day-body { padding: 14px 16px 20px; }
+    .tl { padding-left: 26px; }
+    .sticky-nav a { font-size: .75em; padding: 5px 10px; }
+    .overview-table, .night-table { font-size: .8em; }
+  }
+</style>
+</head>
+<body>
+<!-- ═══ STICKY NAV ═══ -->
+<nav class="sticky-nav">
+<a href="京都賞楓指南%202026%20二版.pdf" target="_blank" style="border-color:#2e7d32;">📖 完整指南 PDF</a>
+<a href="#reservations" style="border-color:#ff5252;">⏰ 需要預約</a>
+<a href="#crowd-legend" style="border-color:#8d6e00;">🥷 擁擠度說明</a>
+<a href="#forecast" style="border-color:#e63946;">🍁 見頃機率</a>
+<a href="#info" style="border-color:white;">📋 資訊</a>
+<a class="nav-d1" href="#day1">D1 清水寺</a>
+<a class="nav-d2" href="#day2">D2 南禪寺</a>
+<a class="nav-d3" href="#day3">D3 嵐山</a>
+<a class="sub" href="#day3-no-train" style="border-color:var(--c-green);">↳ 不搭小火車</a>
+<a class="nav-d4" href="#day4">D4 東福寺・石山寺</a>
+<a class="nav-d5" href="#day5">D5 返程</a>
+<a href="#routes" style="border-color:#00897b;">🔀 機動路線（可換 D2/D3/D4）</a>
+<a class="sub" href="#route-ohara" style="border-color:#00897b;">↳ 大原線</a>
+<a class="sub" href="#route-sennyuji" style="border-color:#ad1457;">↳ 泉涌寺線</a>
+<a class="sub" href="#route-takao" style="border-color:#6d4c41;">↳ 高雄線</a>
+<a class="sub" href="#route-ichijoji" style="border-color:#f9a825;">↳ 一乗寺線</a>
+<a href="#night" style="border-color:#d4a017;">🌙 夜楓</a><a href="#todo" style="border-color:#ff5252;">⚠️ TODO</a>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<header class="hero">
+<h1>2026 京都賞楓行</h1>
+<p>🗓️ 11 月 20 日（五）～ 11 月 24 日（二）　|　共 5 天 4 夜　|　OMO5 京都三条</p>
+</header>
+<div class="meta-strip">
+<div class="meta-badge">✈️ 長榮航空 直達</div>
+<div class="meta-badge">🏨 OMO5 京都三条</div>
+<div class="meta-badge">🚕 大行李搭計程車</div>
+<div class="meta-badge">🚌 公車要排隊就改計程車</div>
+<div class="meta-badge">🍁 依現場楓況彈性調整</div>
+<div class="meta-badge">⏰ 每天 8:00 或更早出門</div>
+</div>
+
+<!-- ═══ RESERVATIONS ═══ -->
+<div class="section" id="reservations">
+<div class="section-title">⏰ 需要預約：注意開放時間</div>
+<p style="line-height:1.8;color:#555;font-size:.92em;margin-bottom:20px;">這趟行程裡有 2 個項目<strong>一定要事先訂到才走得成</strong>，開放預約的時間點都很明確，建議直接記在手機行事曆提醒自己：</p>
+<table class="night-table">
+<tr><th>項目</th><th>對應日期</th><th>預約開放時間</th><th>預約方式</th><th>備註</th></tr>
+<tr><td>🚂 嵯峨野トロッコ列車（若選擇搭小火車版本）</td><td>Day 3・11/22</td><td><strong>10/22（乘車日前一個月）上午 10:00 起</strong></td><td>官方新版網路預約系統（經 <a href="https://www.sagano-kanko.co.jp/ticket/" target="_blank">sagano-kanko.co.jp/ticket</a> 連結）或 JR西日本 e5489</td><td>額滿後現場可候補立席券，但建議準時上網搶票。取消可到搭乘前一天 23:59 前免費，實際條款訂票時再確認一次</td></tr>
+<tr><td>⛩️ 圓光寺紅葉特別拝観</td><td>Day 2・11/21</td><td>往例約在拝観期開始前 3 週（2025 年為 10/20 上午 9:00，2026 年正確日期需另行確認）</td><td>官網 <a href="https://www.enkouji.jp/" target="_blank">enkouji.jp</a>「日時指定」網路預約</td><td>門票大人 1,500円／學生 800円，比平常拝観貴。額滿有釋出名額時可接受當日預約，但不保證有位</td></tr>
+</table>
+<div class="tips" style="margin-bottom:0;">
+📝 兩者都是「過了開放時間才搶」會很難訂到的類型，尤其圓光寺是限定日期時段的秒殺制，出發前 1 個月起最好每隔幾天查一次官網公告（2026 年正式日期可能跟 2025 年有出入）。<br>
+📝 如果最後決定 Day 3 走「不搭小火車版本」，就不需要處理嵯峨野トロッコ列車這一項。
+</div>
+</div>
+
+<!-- ═══ CROWD LEGEND ═══ -->
+<div class="section" id="crowd-legend">
+<div class="section-title">🥷 怎麼看「人潮擁擠度」表格</div>
+<p style="line-height:1.9;color:#555;font-size:.92em;">以下每天行程開頭都附一個小表格，資料來自《京都賞楓指南》裡每個景點的兩項標記：</p>
+<ul style="line-height:1.9;color:#555;font-size:.92em;padding-left:22px;margin-top:8px;">
+<li><strong>人潮擁擠度</strong>（🥷）：指南以過往經驗評估紅葉期間的人潮，分 5 級——<strong>★★★★★爆滿／★★★★擁擠／★★★適中／★★舒服／★秘境</strong>。⚠️ <strong>星星越多代表越擁擠，不是越推薦</strong>——指南原文特別註明「星星少代表遊客少，有時候更推薦」，跟一般「星星多＝評價好」的直覺相反，這點請特別留意。</li>
+<li><strong>楓葉見頃區間</strong>：指南根據經驗給出的最佳觀賞週次參考，不是官方氣象預測，實際仍需搭配出發前的即時見頃通報。</li>
+</ul>
+</div>
+
+<!-- ═══ FORECAST ═══ -->
+<div class="section" id="forecast">
+<div class="section-title">🍁 楓紅機率參考：近5年見頃日期統計</div>
+<p style="font-size:.85em;color:#777;text-align:center;margin-bottom:6px;">資料來源：京都地方氣象台官方生物季節觀測「かえでの紅葉日」（標準木大部分葉片變色的日子，非常接近實際見頃），2021-2025 年記錄</p>
+<p style="font-size:.85em;color:#777;text-align:center;margin-bottom:14px;">🔗 出發前建議搭配即時預測：<a href="https://s.n-kishou.co.jp/w/sp/koyo/koyo_top?f=corp" target="_blank">日本氣象株式會社「楓葉見頃」預測</a></p>
+<table class="overview-table">
+<tr><th>年份</th><th>京都紅葉日</th><th>距 11/22（行程中點）天數</th></tr>
+<tr><td>2021</td><td>無資料</td><td>—</td></tr>
+<tr><td>2022</td><td>12/12</td><td>早 20 天</td></tr>
+<tr><td>2023</td><td>12/13</td><td>早 21 天</td></tr>
+<tr><td>2024</td><td>12/20（史上最晚）</td><td>早 28 天</td></tr>
+<tr><td>2025</td><td>12/10</td><td>早 18 天</td></tr>
+<tr><td><strong>平年值（1991-2020 平均）</strong></td><td><strong>12/5</strong></td><td><strong>早 13 天</strong></td></tr>
+</table>
+<div class="hl orange" style="margin-top:16px;">
+<strong>這代表什麼：</strong><br>
+・近 4 年（扣掉缺資料的 2021）沒有一年在 11/22 前就達到官方「紅葉日」門檻，平均落後約 20 天，跟平年值（早 13 天）相比近年還有偏晚的趨勢。<br>
+・這是「全市標準木大部分變色」的嚴格門檻，比一般講的「見頃」更晚一點；代表完全滿開的機率偏低，但不代表看不到紅葉——變色是漸進過程，出發時通常已進入開始上色到七八分的階段，不是零。<br>
+・個別景點自己公告的「例年見頃」window 比這個官方單點寬鬆：<strong>永觀堂、南禪寺、石山寺</strong>的見頃期間本來就涵蓋 11 月中下旬，落在行程日期內，機率較高；<strong>清水寺、東福寺</strong>是京都出了名見頃偏晚的兩處，官方例年是 11 月下旬～12 月上旬，行程日期剛好卡在起點，比較可能只看到七八分色而非全紅。<br>
+・實務建議：出發前 2 週開始追蹤即時見頃通報，此表僅供行前抓大概機率參考，不是精確預測。
+</div>
+</div>
+
+<!-- ═══ INFO ═══ -->
+<div class="section" id="info">
+<div class="section-title">📋 航班與住宿</div>
+<div class="info-grid">
+<div class="info-card" style="border-color:#e63946;">
+<h3>✈️ 航班</h3>
+<ul>
+<li><strong>去程</strong>：11/20（五）08:20 桃園 → 11:55 <a href="https://maps.google.com/?q=関西国際空港" target="_blank">關西機場</a>（直達 2h35m）</li>
+<li><strong>回程</strong>：11/24（二）12:55 關西機場 → 15:05 桃園（直達 3h10m）</li>
+</ul>
+</div>
+<div class="info-card" style="border-color:var(--c-purple);">
+<h3>🏨 住宿</h3>
+<ul>
+<li><strong><a href="https://maps.google.com/?q=OMO5+京都三条" target="_blank">OMO5 京都三条</a></strong>，全程 4 晚</li>
+<li>機場↔京都：建議搭 <strong>JR HARUKA</strong> 特急至<a href="https://maps.google.com/?q=京都駅" target="_blank">京都駅</a>（約 75-80 分），大件行李再轉計程車至飯店</li>
+</ul>
+</div>
+</div>
+
+<div class="section-title">🗺️ 每日總覽</div>
+<table class="overview-table">
+<tr><th>Day</th><th>日期</th><th>主題</th><th>節奏</th></tr>
+<tr><td>1</td><td>11/20（五）</td><td>抵達 + 清水寺・二三年坂・祇園・花見小路</td><td>下午進、傍晚接夜楓，含購物晚餐</td></tr>
+<tr><td>2</td><td>11/21（六）</td><td>南禪寺・永觀堂・哲學之道・銀閣寺（一乗寺選走）</td><td>全日，晚上可接永觀堂夜楓</td></tr>
+<tr><td>3</td><td>11/22（日）</td><td>嵐山一日（天龍寺・竹林・嵯峨野・腳踏車・小火車〔可選〕）→ 市區購物夜</td><td>全日，16:00 前到四条，晚上逛街後提早回飯店。另備「不搭小火車」版本</td></tr>
+<tr><td>4</td><td>11/23（一）</td><td>東福寺（早）→光明院→舊竹林院・日吉大社→三井寺→石山寺（白天＋夜楓）</td><td>早出發，全天走京阪沿線，回飯店最晚的一天</td></tr>
+<tr><td>5</td><td>11/24（二）</td><td>返程</td><td>早餐後即出發機場，無安排景點</td></tr>
+</table>
+<p style="margin-top:14px;font-size:.88em;color:#666;line-height:1.7;">📝 Day 2、Day 3、Day 4 都可以視當下楓況彈性替換為文末「🔀 機動路線庫」的路線（大原線／泉涌寺線／高雄線／一乗寺線），出發前或行程中再依實際狀況決定要不要換。</p>
+</div>
+
+<!-- ═══ DAYS ═══ -->
+<div class="days-wrapper">
+
+<!-- DAY 1 -->
+<div class="day-card day1" id="day1">
+<div class="day-header" onclick="this.parentElement.classList.toggle('collapsed')">
+<div class="day-num">D1</div>
+<div class="day-info"><h2>🍁 抵達・清水寺・祇園</h2><div class="sub">📅 11/20（五）｜🏠 今晚住 OMO5 京都三条</div></div>
+</div>
+<div class="day-body">
+<div class="hl red">🛬 中午抵達，直接銜接清水寺→二三年坂→祇園的經典賞楓路線，白天走到傍晚自然接上夜間點燈與購物晚餐，不用早起也能兼顧日夜楓景。</div>
+<table class="night-table" style="margin-bottom:18px;">
+<tr><th>📍 景點</th><th>🥷 人潮擁擠度</th><th>🍁 楓葉見頃區間</th></tr>
+<tr><td>清水寺</td><td>★★★★★ 爆滿</td><td>11 月第 4 週-12 月第 1 週</td></tr>
+<tr><td>高台寺</td><td>★★★★ 擁擠</td><td>11 月第 4 週-12 月第 1 週</td></tr>
+<tr><td>八坂神社／圓山公園／花見小路</td><td colspan="2">指南未收錄（非主打紅葉景點）</td></tr>
+</table>
+<div class="tl">
+<div class="ti move"><div class="td"></div><div class="tt">08:20-11:55</div><div class="th">✈️ 桃園 → 關西機場</div><div class="tx">直達航班</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">11:55-13:00</div><div class="th">入境、領行李、購買 ICOCA</div><div class="tx"></div></div>
+<div class="ti move"><div class="td"></div><div class="tt">13:00-14:20</div><div class="th">JR HARUKA 至<a href="https://maps.google.com/?q=京都駅" target="_blank">京都駅</a> → 計程車至飯店</div><div class="tx">大件行李用計程車</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">14:20-14:45</div><div class="th">🏨 <a href="https://maps.google.com/?q=OMO5+京都三条" target="_blank">飯店 check-in</a>／寄放行李</div><div class="tx">若房間未整理好可先寄放行李再出門</div></div>
+<div class="ti act"><div class="td"></div><div class="tt">15:00-16:30</div><div class="th">🍁 <a href="https://maps.google.com/?q=清水寺" target="_blank">清水寺</a></div><div class="tx">清水舞台、地主神社、音羽の滝。留意閉門與夜間特別拝観切換時段</div></div>
+<div class="ti act"><div class="td"></div><div class="tt">16:30-17:30</div><div class="th"><a href="https://maps.google.com/?q=清水道" target="_blank">清水道</a> → <a href="https://maps.google.com/?q=三年坂" target="_blank">三年坂</a> → <a href="https://maps.google.com/?q=二年坂" target="_blank">二年坂</a></div><div class="tx">傍晚下坡散策，燈籠陸續點燈氛圍好</div></div>
+<div class="ti night"><div class="td"></div><div class="tt">17:30-18:15</div><div class="th"><a href="https://maps.google.com/?q=寧寧の道" target="_blank">寧寧之道</a> → <a href="https://maps.google.com/?q=高台寺" target="_blank">高台寺</a> → <a href="https://maps.google.com/?q=円山公園" target="_blank">圓山公園</a> <span class="tag night">夜楓可選</span></div><div class="tx">高台寺秋季有夜楓特別拝観可選，2025 年場次 10/24-12/14、17:00-22:00，600円，不需預約，現場買票即可</div></div>
+<div class="ti act"><div class="td"></div><div class="tt">18:15-19:00</div><div class="th"><a href="https://maps.google.com/?q=八坂神社" target="_blank">八坂神社</a></div><div class="tx"></div></div>
+<div class="ti meal"><div class="td"></div><div class="tt">19:00-20:30</div><div class="th">🛍️ <a href="https://maps.google.com/?q=祇園" target="_blank">祇園</a>・<a href="https://maps.google.com/?q=花見小路" target="_blank">花見小路</a>：晚餐＋散策</div><div class="tx">部分店家 20:00 打烊，想買東西提早</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">20:30</div><div class="th">計程車返回飯店</div><div class="tx"></div></div>
+</div>
+<div class="tips">
+⚠️ <strong>延誤備案</strong>　若通關／轉車比預期慢，優先順序是「保住清水寺本體」——它是這天唯一沒有替代時段的景點。可直接砍掉圓山公園、八坂神社的停留時間，從二年坂走完直接前往花見小路吃晚餐即可。
+</div>
+</div>
+</div>
+
+<!-- DAY 2 -->
+<div class="day-card day2" id="day2">
+<div class="day-header" onclick="this.parentElement.classList.toggle('collapsed')">
+<div class="day-num">D2</div>
+<div class="day-info"><h2>🍁 南禪寺・永觀堂・哲學之道</h2><div class="sub">📅 11/21（六）｜東山北側全日路線</div></div>
+</div>
+<div class="day-body">
+<div class="hl purple">🍁 京都紅葉名所密集區，候選點多且分散，建議依當天楓況與體力挑重點走，不必全部走完。</div>
+<table class="night-table" style="margin-bottom:18px;">
+<tr><th>📍 景點</th><th>🥷 人潮擁擠度</th><th>🍁 楓葉見頃區間</th></tr>
+<tr><td>南禪寺</td><td>★★★★★ 爆滿</td><td>11 月第 4 週-12 月第 1 週</td></tr>
+<tr><td>永觀堂</td><td>★★★★★ 爆滿</td><td>11 月第 4 週-12 月第 1 週</td></tr>
+<tr><td>銀閣寺</td><td>★★★★ 擁擠</td><td>11 月第 3 週-12 月第 1 週</td></tr>
+<tr><td>真如堂</td><td>★★★☆ 適中偏擁擠</td><td>11 月第 3 週-12 月第 1 週</td></tr>
+<tr><td>圓光寺</td><td>★★★★★ 爆滿</td><td>11 月第 4 週</td></tr>
+<tr><td>詩仙堂</td><td>★★★ 適中</td><td>11 月第 4 週</td></tr>
+<tr><td>水路閣／哲學之道／法然院／安樂寺</td><td colspan="2">指南未收錄（非主打紅葉景點）</td></tr>
+</table>
+<div class="tl">
+<div class="ti act"><div class="td"></div><div class="tt">08:30-10:00</div><div class="th"><a href="https://maps.google.com/?q=南禅寺" target="_blank">南禪寺</a></div><div class="tx">三門、方丈庭園、南禪院、天授庵。早上人潮較少</div></div>
+<div class="ti act"><div class="td"></div><div class="tt">10:00-10:20</div><div class="th"><a href="https://maps.google.com/?q=南禅寺水路閣" target="_blank">水路閣</a>拍照</div><div class="tx"></div></div>
+<div class="ti act"><div class="td"></div><div class="tt">10:20-11:00</div><div class="th"><a href="https://maps.google.com/?q=永観堂" target="_blank">永觀堂</a></div><div class="tx">みかえり阿弥陀、多寶塔眺望，京都紅葉代表名所之一</div></div>
+<div class="ti meal"><div class="td"></div><div class="tt">11:00-12:00</div><div class="th">午餐：南禪寺湯豆腐（順正／奥丹）</div><div class="tx">順正可訂位（可透過 TableCheck）；奥丹完全不接受訂位，只能現場排隊，兩間邏輯不同要分開處理</div></div>
+<div class="ti act"><div class="td"></div><div class="tt">12:00-13:00</div><div class="th"><a href="https://maps.google.com/?q=哲学の道" target="_blank">哲學之道</a>散策</div><div class="tx"><a href="https://maps.google.com/?q=法然院" target="_blank">法然院</a>、<a href="https://maps.google.com/?q=安楽寺" target="_blank">安樂寺</a>視情況入內</div></div>
+<div class="ti act"><div class="td"></div><div class="tt">13:00-14:00</div><div class="th"><a href="https://maps.google.com/?q=銀閣寺" target="_blank">銀閣寺</a></div><div class="tx"></div></div>
+<div class="ti extra"><div class="td"></div><div class="tt">14:00-14:45</div><div class="th"><a href="https://maps.google.com/?q=真如堂" target="_blank">真如堂</a> <span class="tag">選走</span></div><div class="tx">楓葉知名但人潮相對少</div></div>
+<div class="ti extra"><div class="td"></div><div class="tt">14:45-15:05（估）</div><div class="th">搭計程車至圓光寺 <span class="tag">加碼・視體力</span></div><div class="tx">一乗寺一帶跟市區有段距離，建議直接搭計程車，車程估 15-20 分</div></div>
+<div class="ti extra"><div class="td"></div><div class="tt">15:05-15:40</div><div class="th">🍁 <a href="https://maps.google.com/?q=圓光寺" target="_blank">圓光寺</a> <span class="tag">★★★★★</span></div><div class="tx">入口龍庭如噴火之龍，書院內看「十牛之庭」宛如畫框，境內高點是德川家康之墓。人潮擁擠度 ★★★★★爆滿，是這區最多人的一間，但也是名氣最大、內容最豐富的一站。11 月第 4 週最佳。⚠️ 紅葉特別拝観期間需「日時指定」網路預約，門票大人 1,500円／學生 800円（比平常拝観貴，平常不需預約）</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">15:40-15:45</div><div class="th">步行至<a href="https://maps.google.com/?q=詩仙堂" target="_blank">詩仙堂</a>（3 分）</div><div class="tx"></div></div>
+<div class="ti act"><div class="td"></div><div class="tt">15:45-16:15</div><div class="th">🍁 詩仙堂</div><div class="tx">36 位中國詩人畫像得名，白砂庭園配鹿威聲，禪意浪漫。★★★，700円，11 月第 4 週</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">16:15-16:45（估）</div><div class="th">搭計程車返回市區</div><div class="tx">車程估 15-20 分，跟後面的緩衝時間銜接</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">16:45-17:30</div><div class="th">返回飯店休息</div><div class="tx"></div></div>
+<div class="ti night"><div class="td"></div><div class="tt">17:30-19:30</div><div class="th">🌙 永觀堂夜楓特別拝観 <span class="tag night">需確認日期</span></div><div class="tx">2025 年場次 11/15-12/10，700円，不需預約，現場買票即可；2026 年日期需另確認。若不參加可改高台寺或清水寺夜楓</div></div>
+</div>
+<div class="tips">
+📝 一乗寺其實是指南裡「5 條深度一日紅葉路線」之一，完整版是曼殊院・鷺森神社・圓光寺・詩仙堂・金福寺全部走完，但曼殊院／鷺森神社在「修學院」站附近、圓光寺／詩仙堂／金福寺在「一乗寺」站附近，兩群之間還有移動時間，全部走完抓下來要 3 小時以上，會跟永觀堂夜楓撞期，所以這裡的 Day 2 加碼段只留內容最豐富、但也最多人的圓光寺＋詩仙堂（兩者步行僅 3 分鐘）。<strong>如果一乗寺是你很想仔細走的地方，不要只塞在這個加碼段裡，直接用下方「🔀 機動路線庫」新增的「一乗寺線」把某一天整個換掉，5 個點都能從容走完。</strong><br>
+📝 這天候選點多且分散，建議依當天楓況與體力挑重點走，不必全部走完。
+</div>
+</div>
+</div>
+
+<!-- DAY 3 -->
+<div class="day-card day3" id="day3">
+<div class="day-header" onclick="this.parentElement.classList.toggle('collapsed')">
+<div class="day-num">D3</div>
+<div class="day-info"><h2>🍁 嵐山一日・購物</h2><div class="sub">📅 11/22（日）</div></div>
+</div>
+<div class="day-body">
+<div class="hl green">🍁 全天留在嵐山・嵯峨野，騎腳踏車＋搭小火車，16:00 前到四条逛街。</div>
+<table class="night-table" style="margin-bottom:18px;">
+<tr><th>📍 景點</th><th>🥷 人潮擁擠度</th><th>🍁 楓葉見頃區間</th><th>🌕 銀杏見頃</th></tr>
+<tr><td>天龍寺</td><td>★★★★★ 爆滿</td><td>11 月第 3 週-12 月第 1 週</td><td>—</td></tr>
+<tr><td>常寂光寺</td><td>★★★ 適中</td><td>11 月第 4 週-12 月第 1 週</td><td>11 月上旬-11 月下旬（2025 年起始日 11/20）</td></tr>
+<tr><td>二尊院</td><td>★★★ 適中</td><td>11 月第 4 週-12 月第 1 週</td><td>—</td></tr>
+<tr><td>祇王寺</td><td>★★ 舒服</td><td>11 月第 4 週</td><td>—</td></tr>
+<tr><td>大河內山莊（不搭小火車版本選配）</td><td>★☆ 秘境偏舒服</td><td>11 月第 3 週-12 月第 1 週</td><td>—</td></tr>
+<tr><td>竹林小徑／化野念佛寺／嵯峨鳥居本</td><td colspan="3">指南未收錄</td></tr>
+<tr><td>嵯峨野トロッコ列車</td><td colspan="3">非寺院景點，無此指標</td></tr>
+</table>
+<p style="font-size:.88em;color:#666;margin-bottom:16px;">📝 常寂光寺同時也是銀杏景點，見頃比楓葉稍早（11 月上旬-11 月下旬），選它而不選二尊院的話，11/22 造訪時銀杏可能已經開始，楓葉也還在，兩者可以一起看到。</p>
+<div class="tl">
+<div class="ti move"><div class="td"></div><div class="tt">08:00-08:30</div><div class="th">前往<a href="https://maps.google.com/?q=嵐山" target="_blank">嵐山</a>，抵達<a href="https://maps.google.com/?q=渡月橋" target="_blank">渡月橋</a></div><div class="tx">計程車或阪急電車</div></div>
+<div class="ti act"><div class="td"></div><div class="tt">08:30-09:00</div><div class="th"><a href="https://maps.google.com/?q=天龍寺" target="_blank">天龍寺</a></div><div class="tx">開門即入避開人潮，庭園借景嵐山賞楓名所</div></div>
+<div class="ti act"><div class="td"></div><div class="tt">09:00-09:45</div><div class="th"><a href="https://maps.google.com/?q=嵐山竹林の小径" target="_blank">竹林小徑</a></div><div class="tx"></div></div>
+<div class="ti act"><div class="td"></div><div class="tt">09:45-11:00</div><div class="th"><a href="https://maps.google.com/?q=常寂光寺" target="_blank">常寂光寺</a> 或 <a href="https://maps.google.com/?q=二尊院" target="_blank">二尊院</a>（擇一）</div><div class="tx">常寂光寺視野較佳且同時是銀杏景點（見頃 11 月上旬-11 月下旬，比楓葉稍早），二尊院楓葉隧道知名</div></div>
+<div class="ti extra"><div class="td"></div><div class="tt">11:00-12:30</div><div class="th">🚲 租腳踏車，騎去嵯峨野深處</div><div class="tx"><a href="https://maps.google.com/?q=祇王寺" target="_blank">祇王寺</a>／<a href="https://maps.google.com/?q=化野念仏寺" target="_blank">化野念佛寺</a>／<a href="https://maps.google.com/?q=嵯峨鳥居本" target="_blank">嵯峨鳥居本</a>擇一二。租借點推薦<a href="https://maps.google.com/?q=らんぶらレンタサイクル" target="_blank">「らんぶらレンタサイクル」</a>（嵐電嵐山駅內「はんなり・ほっこりスクエア」，就在竹林旁邊、天龍寺步行約 2-3 分，不用預約，一日¥1,000）；<a href="https://maps.google.com/?q=阪急レンタサイクル嵐山" target="_blank">「阪急レンタサイクル嵐山」</a>在渡月橋對岸的阪急嵐山駅前廣場（京都市西京区嵐山西一川町3-5），距天龍寺約 580 公尺／步行 8 分，11 月不分平假日都是一日 ¥900（沒有 2 小時制），旺季建議先電話 075-882-1112 問還有沒有車。竹林小徑那段窄路人多時普遍會牽車用走的，非全程都能騎</div></div>
+<div class="ti meal"><div class="td"></div><div class="tt">12:30-13:30</div><div class="th">午餐、還車</div><div class="tx"></div></div>
+<div class="ti act"><div class="td"></div><div class="tt">13:30-15:30</div><div class="th">🚂 <a href="https://maps.google.com/?q=嵯峨野トロッコ列車" target="_blank">嵯峨野トロッコ列車</a> <span class="tag alt">可選</span></div><div class="tx">路線：トロッコ嵯峨（嵐山旁）－トロッコ嵐山－トロッコ保津峡－トロッコ亀岡，全長 7.3km，單程約 25 分。建議單程搭去（如到トロッコ保津峡或トロッコ亀岡），再搭一般 JR 山陰本線返回嵯峨嵐山駅（約 20 分），不用原地來回。⚠️ 訂票需在搭乘日前一個月開賣，取消可到前一天 23:59 前免費</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">15:30-16:00</div><div class="th">返回四条周邊</div><div class="tx"></div></div>
+<div class="ti meal"><div class="td"></div><div class="tt">16:00-19:30</div><div class="th">🛍️ 三条・河原町・新京極逛街購物＋晚餐</div><div class="tx">必逛的一晚，注意店家多 20:00 打烊，含迪士尼商店等</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">19:30</div><div class="th">返回飯店</div><div class="tx"></div></div>
+</div>
+<div class="tips">
+📝 這天不排金閣寺、北野天滿宮——地理上在嵐山北邊、回四条不順路，加上小火車和腳踏車已經把時間排滿，硬塞會趕不上 16:00 到四条的目標。金閣寺楓葉本來也不算它的強項，這次先跳過。
+</div>
+
+<div class="hl blue" id="day3-no-train" style="margin-top:18px;">🔀 備案：不搭小火車版本——省下訂票壓力，換成更從容的嵯峨野健行，景點時間拉長，15:30 才開始逛街也還很充裕</div>
+<div class="tl">
+<div class="ti move"><div class="td"></div><div class="tt">08:00-08:30</div><div class="th">前往<a href="https://maps.google.com/?q=嵐山" target="_blank">嵐山</a>，抵達<a href="https://maps.google.com/?q=渡月橋" target="_blank">渡月橋</a></div><div class="tx">計程車或阪急電車</div></div>
+<div class="ti act"><div class="td"></div><div class="tt">08:30-09:00</div><div class="th"><a href="https://maps.google.com/?q=天龍寺" target="_blank">天龍寺</a></div><div class="tx">開門即入避開人潮，庭園借景嵐山賞楓名所</div></div>
+<div class="ti act"><div class="td"></div><div class="tt">09:00-09:45</div><div class="th"><a href="https://maps.google.com/?q=嵐山竹林の小径" target="_blank">竹林小徑</a></div><div class="tx">人多時建議牽車用走的，別急著騎</div></div>
+<div class="ti extra"><div class="td"></div><div class="tt">09:45-10:15</div><div class="th"><a href="https://maps.google.com/?q=大河内山荘庭園" target="_blank">大河內山莊庭園</a> <span class="tag">選配</span></div><div class="tx">竹林小徑底端，門票含抹茶，可俯瞰嵐山山景，賞楓氣氛不輸小火車，是取代方案之一</div></div>
+<div class="ti act"><div class="td"></div><div class="tt">10:15-11:00</div><div class="th"><a href="https://maps.google.com/?q=常寂光寺" target="_blank">常寂光寺</a> 或 <a href="https://maps.google.com/?q=二尊院" target="_blank">二尊院</a>（擇一）</div><div class="tx">常寂光寺視野較佳且同時是銀杏景點（見頃 11 月上旬-11 月下旬，比楓葉稍早），二尊院楓葉隧道知名</div></div>
+<div class="ti extra"><div class="td"></div><div class="tt">11:00-11:15</div><div class="th">🚲 租腳踏車</div><div class="tx">推薦「らんぶらレンタサイクル」（嵐電嵐山駅內，就在竹林旁邊，不用預約，一日¥1,000）；「阪急レンタサイクル嵐山」要過渡月橋，11 月一日 ¥900，旺季建議先電話 075-882-1112 問還有沒有車</div></div>
+<div class="ti extra"><div class="td"></div><div class="tt">11:15-14:00</div><div class="th">騎去嵯峨野深處</div><div class="tx">比原方案多將近 3 小時，<a href="https://maps.google.com/?q=祇王寺" target="_blank">祇王寺</a>／<a href="https://maps.google.com/?q=化野念仏寺" target="_blank">化野念佛寺</a>／<a href="https://maps.google.com/?q=嵯峨鳥居本" target="_blank">嵯峨鳥居本</a>可以從容多走幾個，不用趕</div></div>
+<div class="ti meal"><div class="td"></div><div class="tt">14:00-15:00</div><div class="th">午餐、還車</div><div class="tx"></div></div>
+<div class="ti move"><div class="td"></div><div class="tt">15:00-15:30</div><div class="th">返回四条周邊</div><div class="tx"></div></div>
+<div class="ti meal"><div class="td"></div><div class="tt">15:30-19:30</div><div class="th">🛍️ 三条・河原町・新京極逛街購物＋晚餐</div><div class="tx">約 4 小時，注意店家多 20:00 打烊</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">19:30</div><div class="th">返回飯店</div><div class="tx"></div></div>
+</div>
+<div class="tips">
+📝 這版本省下小火車的訂票壓力（含單程 25 分＋接駁時間），換成更從容走完嵯峨野深處＋加一個大河內山莊庭園選項，逛街從 15:30 開始也還有近 4 小時，不用急著提早進城。<br>
+📝 這版本跟原方案的小火車時段（13:30-15:30）會衝突，兩者只能擇一——如果想臨場決定，關鍵在騎車騎到 13:00 左右時：想接原方案的小火車就準時還車去搭；想留在嵯峨野多逛就直接繼續騎，照這版本走到 14:00 才還車。
+</div>
+</div>
+</div>
+
+<!-- DAY 4 -->
+<div class="day-card day4" id="day4">
+<div class="day-header" onclick="this.parentElement.classList.toggle('collapsed')">
+<div class="day-num">D4</div>
+<div class="day-info"><h2>🍁 東福寺・坂本・三井寺・石山寺夜楓</h2><div class="sub">📅 11/23（一）｜最後一個完整日</div></div>
+</div>
+<div class="day-body">
+<div class="hl orange">🚃 早上把東福寺的「必須 8 點到」需求解決掉，之後全天走京阪沿線，一路串起坂本、三井寺、石山寺，晚上以石山寺夜楓收尾。</div>
+<table class="night-table" style="margin-bottom:18px;">
+<tr><th>📍 景點</th><th>🥷 人潮擁擠度</th><th>🍁 楓葉見頃區間</th></tr>
+<tr><td>東福寺</td><td>★★★★★ 爆滿</td><td>11 月第 4 週-12 月第 1 週</td></tr>
+<tr><td>光明院</td><td>★★★ 適中</td><td>11 月第 4 週-12 月第 1 週</td></tr>
+<tr><td>舊竹林院</td><td>★★☆ 舒服偏適中</td><td>11 月第 4 週-12 月第 1 週</td></tr>
+<tr><td>日吉大社</td><td>★★★☆ 適中偏擁擠</td><td>11 月第 4 週-12 月第 1 週</td></tr>
+<tr><td>三井寺</td><td>★★☆ 舒服偏適中</td><td>11 月第 4 週-12 月第 1 週</td></tr>
+<tr><td>石山寺</td><td>★★☆ 舒服偏適中</td><td>11 月第 4 週-12 月第 1 週</td></tr>
+</table>
+<div class="tl">
+<div class="ti act"><div class="td"></div><div class="tt">08:00-08:50</div><div class="th">🍁 <a href="https://maps.google.com/?q=東福寺" target="_blank">東福寺</a></div><div class="tx">通天橋、方丈庭園。8 點開門即到，避開排隊人潮的關鍵一站</div></div>
+<div class="ti extra"><div class="td"></div><div class="tt">08:50-09:05</div><div class="th">🍁 <a href="https://maps.google.com/?q=光明院+東福寺" target="_blank">光明院</a>（東福寺塔頭）</div><div class="tx">就在東福寺臥雲橋旁，徒步約 2 分，幾乎不用移動。「虹の苔寺」，重森三玲作庭「波心庭」，紅葉配苔庭知名但人潮少很多</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">09:05-09:45</div><div class="th">步行返回東福寺駅 → 京阪本線至三条 → 京津線直通<a href="https://maps.google.com/?q=びわ湖浜大津駅" target="_blank">びわ湖浜大津</a></div><div class="tx">東福寺駅本身就是京阪站，不用繞路。三条→浜大津最快 21 分，總車程含步行、轉乘約 40 分（估）</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">09:45-10:10</div><div class="th">轉乘京阪石山坂本線至<a href="https://maps.google.com/?q=坂本比叡山口駅" target="_blank">坂本比叡山口</a></div><div class="tx">約 15-20 分（估，出發前建議查京阪時刻表確認）</div></div>
+<div class="ti act"><div class="td"></div><div class="tt">10:10-11:30</div><div class="th">🍁 <a href="https://maps.google.com/?q=旧竹林院" target="_blank">舊竹林院</a>、<a href="https://maps.google.com/?q=日吉大社" target="_blank">日吉大社</a></div><div class="tx">車站步行約 10 分可達。日吉大社境內約 3000 株楓樹，11 月上旬-下旬有免費夜楓點燈，但白天已經很值得看</div></div>
+<div class="ti meal"><div class="td"></div><div class="tt">11:30-12:45</div><div class="th">石山坂本線南下往三井寺，途中午餐</div><div class="tx"></div></div>
+<div class="ti act"><div class="td"></div><div class="tt">12:45-14:00</div><div class="th">🍁 <a href="https://maps.google.com/?q=三井寺" target="_blank">三井寺</a>參拝</div><div class="tx">大津代表古寺，國寶建築</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">14:00-14:30</div><div class="th">石山坂本線至<a href="https://maps.google.com/?q=石山寺" target="_blank">石山寺</a></div><div class="tx"></div></div>
+<div class="ti act"><div class="td"></div><div class="tt">14:30-16:30</div><div class="th">🍁 石山寺參拝（白天賞楓）</div><div class="tx">境內約 1,000 株楓樹，紫式部寫《源氏物語》之處</div></div>
+<div class="ti meal"><div class="td"></div><div class="tt">16:30-17:30</div><div class="th">石山寺周邊晚餐</div><div class="tx"></div></div>
+<div class="ti night"><div class="td"></div><div class="tt">17:30-19:30</div><div class="th">🌙 石山寺秋季夜楓點燈「あたら夜もみじ」</div><div class="tx">17:30-21:00，¥800，國寶本堂、多寶塔同步點燈。2025 年場次為 11/14-11/30，不需預約，現場志納所買票，另有日夜套票優惠。2026 年日期需另確認</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">19:30-20:15</div><div class="th">石山寺 → 浜大津 → 三条，搭京阪返回飯店</div><div class="tx">約 35-40 分（估）</div></div>
+</div>
+<div class="tips">
+⚠️ 這天全靠京阪沿線移動，不用計程車也不用租車，但點跟點之間的分鐘數是估計值，出發前建議用京阪時刻表核對一次實際班次。<br>
+📝 這是全程回飯店最晚的一天（約 20:15），且是連續第二晚較晚回來（Day 3 晚上也到 21:30），建議這兩天中間注意體力分配，必要時可以省略三井寺或提早離開石山寺白天賞楓、直接等夜楓開燈，讓下午鬆一點。<br>
+📝 原本考慮的泉涌寺・雲龍院這天時間排不下，先不排入；若還想去，需要另外找時間。
+</div>
+</div>
+</div>
+
+<!-- DAY 5 -->
+<div class="day-card day5" id="day5">
+<div class="day-header" onclick="this.parentElement.classList.toggle('collapsed')">
+<div class="day-num">D5</div>
+<div class="day-info"><h2>✈️ 返程</h2><div class="sub">📅 11/24（二）｜無安排景點</div></div>
+</div>
+<div class="day-body">
+<div class="hl blue">✈️ 12:55 起飛，全天以交通為主，無安排景點。</div>
+<div class="tl">
+<div class="ti meal"><div class="td"></div><div class="tt">07:00</div><div class="th">起床、飯店早餐</div><div class="tx"></div></div>
+<div class="ti move"><div class="td"></div><div class="tt">08:00</div><div class="th">退房，計程車至京都駅</div><div class="tx">大件行李直達</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">08:15-09:35</div><div class="th">JR HARUKA 特急至關西機場</div><div class="tx"></div></div>
+<div class="ti move"><div class="td"></div><div class="tt">09:35-11:30</div><div class="th">辦理登機、安檢、免稅店採買</div><div class="tx">國際線建議提前 2.5 小時到機場</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">12:55-15:05</div><div class="th">關西機場 → 桃園機場</div><div class="tx"></div></div>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- ═══ ROUTE POOL ═══ -->
+<div class="section" id="routes">
+<div class="section-title">🔀 機動路線庫：依楓況決定要換哪一天</div>
+<p style="line-height:1.8;color:#555;font-size:.92em;margin-bottom:20px;">這四條都是完整、可以獨立成行的一整天，<strong>不綁定特定日期</strong>。出發前查楓葉預測，或人已經在京都發現某天排定的區域楓況不理想、人潮爆棚，都可以直接把那一天整個換成下面任一條路線——不管是 Day 2（南禪寺・永觀堂）、Day 3（嵐山）還是 Day 4（東福寺・石山寺），都可以替換。</p>
+<table class="night-table">
+<tr><th>路線</th><th>涵蓋景點</th><th>交通方式</th><th>楓期最佳週</th><th>特色與取捨</th></tr>
+<tr><td>🌾 大原線</td><td>三千院・実光院・宝泉院・來迎院・寂光院（選配：古知谷阿彌陀寺）</td><td>三条京阪前搭京都巴士 17 號到「大原」，車程約 50-60 分</td><td>11 月第 4 週（多數景點）</td><td>京都北郊較早轉紅，人潮比市區少很多，步調最悠閒，回程也最早</td></tr>
+<tr><td>🏛️ 泉涌寺線</td><td>東福寺・光明院・泉涌寺・雲龍院・來迎院（泉涌寺山內）・今熊野觀音寺</td><td>東福寺步行或轉乘巴士 202/207 到「泉湧寺道」</td><td>11 月第 4 週-12 月第 1 週</td><td>就在東福寺旁邊，等於保留東福寺早晨、整天留在同一區域，不用跑去大津</td></tr>
+<tr><td>⛰️ 高雄線</td><td>高山寺・西明寺・神護寺</td><td>巴士 8 或高雄京北線到「栂ノ尾」，車程較遠</td><td>11 月第 3-4 週</td><td>溪谷秘境＋川床料理，風景最原始，但階梯多、體力需求最高、交通時間也最長</td></tr>
+<tr><td>📚 一乗寺線</td><td>曼殊院・鷺森神社・圓光寺・詩仙堂・金福寺</td><td>叡山電鐵「修學院」站，步行 20 分到曼殊院</td><td>11 月第 4 週（多數景點）</td><td>文教區歷史寺院密集，把 Day 2 加碼段裡放不下的完整版本獨立成一整天，步調從容不用趕</td></tr>
+</table>
+<div class="tips" style="margin-bottom:24px;">
+📝 四條路線的楓期最佳週不完全相同——大原、嵐山、一乗寺都在 11 月第 4 週前後見頂，泉涌寺一帶稍晚（可以延到 12 月初），高雄則第 3-4 週都不錯，整趟行程日期都涵蓋在內、對日期最不挑。決定要換哪一天時，可以拿這點跟當週楓況預報對照。<br>
+📝 每條路線都會整個取代掉某一天原本的行程，動手前先想清楚「換掉這天等於放棄什麼」：換掉 Day 2 會失去永觀堂夜楓；換掉 Day 3 會失去嵯峨野腳踏車和竹林小徑；換掉 Day 4 會失去石山寺夜楓「あたら夜もみじ」。
+</div>
+
+<div class="days-wrapper" style="padding:0;">
+
+<!-- ROUTE: OHARA -->
+<div class="day-card r-ohara" id="route-ohara">
+<div class="day-header" onclick="this.parentElement.classList.toggle('collapsed')">
+<div class="day-num">大</div>
+<div class="day-info"><h2>🍁 大原線</h2><div class="sub">機動路線・可替換 Day 2／3／4 任一天</div></div>
+</div>
+<div class="day-body">
+<div class="hl green">🌾 京都北郊較早轉紅的賞楓區，人潮比市區少很多，步調最悠閒，回程也最早。</div>
+<table class="night-table" style="margin-bottom:18px;">
+<tr><th>📍 景點</th><th>🥷 人潮擁擠度</th><th>🍁 楓葉見頃區間</th></tr>
+<tr><td>三千院</td><td>★★★★☆ 擁擠偏爆滿</td><td>11 月第 4 週</td></tr>
+<tr><td>実光院</td><td>★★ 舒服</td><td>11 月第 4 週</td></tr>
+<tr><td>宝泉院</td><td>★★★★ 擁擠</td><td>11 月第 4 週</td></tr>
+<tr><td>來迎院</td><td>★ 秘境</td><td>11 月第 4 週</td></tr>
+<tr><td>寂光院</td><td>★★☆ 舒服偏適中</td><td>11 月第 4 週</td></tr>
+<tr><td>古知谷阿彌陀寺（選配）</td><td>★ 秘境</td><td>11 月第 2-4 週</td></tr>
+</table>
+<div class="tl">
+<div class="ti move"><div class="td"></div><div class="tt">08:00-09:00</div><div class="th">飯店步行至三条京阪前，搭京都巴士 17 號至<a href="https://maps.google.com/?q=大原" target="_blank">大原</a></div><div class="tx">車程約 50-60 分，是這天唯一長途移動</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">09:00-09:10</div><div class="th">步行至三千院</div><div class="tx">巴士站步行約 10 分</div></div>
+<div class="ti act"><div class="td"></div><div class="tt">09:10-10:20</div><div class="th">🍁 <a href="https://maps.google.com/?q=三千院" target="_blank">三千院</a></div><div class="tx">境內範圍較大，江戶庭園「有清園」、國寶阿彌陀三尊像的往生極樂院，值得多留時間。★★★★☆ 11 月第 4 週最佳，700円</div></div>
+<div class="ti act"><div class="td"></div><div class="tt">10:20-10:55</div><div class="th">🍁 <a href="https://maps.google.com/?q=実光院" target="_blank">実光院</a></div><div class="tx">三千院步行 3 分。迴游式庭園，層次分明，人潮比三千院少很多。★★ 11 月第 4 週，700円含茶點/500円不含</div></div>
+<div class="ti act"><div class="td"></div><div class="tt">10:55-11:45</div><div class="th">🍁 <a href="https://maps.google.com/?q=宝泉院" target="_blank">宝泉院</a></div><div class="tx">三千院步行 5 分。「盤桓園」如畫框庭園，含抹茶體驗，700 年五葉松。★★★★ 11 月第 4 週，900円含茶點</div></div>
+<div class="ti act"><div class="td"></div><div class="tt">11:45-12:15</div><div class="th">🍁 <a href="https://maps.google.com/?q=來迎院+大原" target="_blank">來迎院</a></div><div class="tx">三千院步行 5 分。這區最深處的秘境，幾乎沒有觀光客，本堂 1533 年重建。★ 11 月第 4 週，400円</div></div>
+<div class="ti meal"><div class="td"></div><div class="tt">12:15-13:15</div><div class="th">大原周邊午餐</div><div class="tx">當地有幾家蕎麥／里山料理店，現場依當天狀況選</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">13:15-13:35</div><div class="th">步行至寂光院</div><div class="tx">從大原巴士站方向走約 15 分，跟三千院是不同方向</div></div>
+<div class="ti act"><div class="td"></div><div class="tt">13:35-14:25</div><div class="th">🍁 <a href="https://maps.google.com/?q=寂光院" target="_blank">寂光院</a></div><div class="tx">《平家物語》舞台，本堂前有千年小松、青苔石與清池，寺院小但氣氛獨特。★★☆ 11 月第 4 週，600円</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">14:25-14:45</div><div class="th">步行返回大原巴士站</div><div class="tx"></div></div>
+<div class="ti move"><div class="td"></div><div class="tt">14:45-15:45</div><div class="th">搭巴士返回三条京阪前</div><div class="tx">車程約 50-60 分</div></div>
+</div>
+<div class="tips">
+📝 選配加碼：<a href="https://maps.google.com/?q=古知谷阿弥陀寺" target="_blank">古知谷阿彌陀寺</a>——境內近 300 棵楓樹，因地形關係轉紅較早（★ 11 月第 2-4 週）。從大原站需再搭巴士 19 號至「新田」，下車後步行 20 分，來回大約多花 70-90 分鐘，時間或體力夠的話可以排在寂光院之後、回程之前，但會讓返程延到 17:00-17:30。<br>
+📝 15:45 回到三条京阪前後，順路夜楓可以接永觀堂或南禪寺（蹴上站方向，車程約 10-15 分）或高台寺／清水寺（車程約 10-15 分），兩個方向都不算繞路。
+</div>
+</div>
+</div>
+
+<!-- ROUTE: SENNYUJI -->
+<div class="day-card r-sennyuji" id="route-sennyuji">
+<div class="day-header" onclick="this.parentElement.classList.toggle('collapsed')">
+<div class="day-num">泉</div>
+<div class="day-info"><h2>🍁 泉涌寺線</h2><div class="sub">機動路線・保留東福寺早晨，不用跑去大津</div></div>
+</div>
+<div class="day-body">
+<div class="hl purple">🏛️ 就在東福寺旁邊的小眾清幽路線，整天留在東山南側，通勤壓力比原本方案小很多。</div>
+<table class="night-table" style="margin-bottom:18px;">
+<tr><th>📍 景點</th><th>🥷 人潮擁擠度</th><th>🍁 楓葉見頃區間</th><th>🌕 銀杏見頃</th></tr>
+<tr><td>東福寺</td><td>★★★★★ 爆滿</td><td>11 月第 4 週-12 月第 1 週</td><td>—</td></tr>
+<tr><td>光明院</td><td>★★★ 適中</td><td>11 月第 4 週-12 月第 1 週</td><td>—</td></tr>
+<tr><td>龍吟庵（選配）</td><td>★☆ 秘境偏舒服</td><td>11 月第 4 週-12 月第 1 週</td><td>—</td></tr>
+<tr><td>泉涌寺</td><td>★★☆ 舒服偏適中</td><td>11 月第 4 週-12 月第 1 週</td><td>—</td></tr>
+<tr><td>雲龍院</td><td>★★☆ 舒服偏適中</td><td>11 月第 4 週-12 月第 1 週</td><td>—</td></tr>
+<tr><td>來迎院（泉涌寺山內）</td><td>★ 秘境</td><td>11 月第 4 週-12 月第 1 週</td><td>—</td></tr>
+<tr><td>今熊野觀音寺</td><td>★★★★ 擁擠</td><td>11 月第 4 週-12 月第 1 週</td><td>—</td></tr>
+<tr><td>東本願寺</td><td colspan="2">指南未收錄</td><td>11 月上旬-11 月下旬（2025 年起始日 11/20）</td></tr>
+<tr><td>西本願寺</td><td colspan="2">指南未收錄</td><td>11 月下旬-12 月中旬（2025 年起始日 11/20）</td></tr>
+<tr><td>東寺</td><td colspan="2">指南未收錄</td><td>11 月下旬-12 月中旬（2025 年起始日 11/18）</td></tr>
+</table>
+<div class="tl">
+<div class="ti act"><div class="td"></div><div class="tt">08:00-08:50</div><div class="th">🍁 <a href="https://maps.google.com/?q=東福寺" target="_blank">東福寺</a></div><div class="tx">通天橋、方丈庭園。8 點開門即到，避開排隊人潮</div></div>
+<div class="ti extra"><div class="td"></div><div class="tt">08:50-09:05</div><div class="th">🍁 <a href="https://maps.google.com/?q=光明院+東福寺" target="_blank">光明院</a>（東福寺塔頭，步行 3 分）</div><div class="tx">「虹の苔寺」，紅葉配苔庭，人潮少很多。500円，★★★ 11 月第 4 週-12 月第 1 週</div></div>
+<div class="ti extra"><div class="td"></div><div class="tt">09:05-09:35</div><div class="th">🍁 <a href="https://maps.google.com/?q=龍吟庵+東福寺" target="_blank">龍吟庵</a>（東福寺步行 4 分） <span class="tag">選配</span></div><div class="tx">春秋限定開放，境內三座枯山水庭園（無・龍・風利）。1000円，★☆ 11 月第 4 週-12 月第 1 週。2025 年秋季特別公開為 11/8-12/7，一般參觀不需預約，現場買票即可；2026 年公開期間需另確認是否涵蓋行程日期</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">09:35-10:00</div><div class="th">步行或轉乘至泉涌寺</div><div class="tx">東福寺步行約 20-25 分，或搭巴士 202/207 到「泉湧寺道」再步行 15 分</div></div>
+<div class="ti act"><div class="td"></div><div class="tt">10:00-11:00</div><div class="th">🍁 <a href="https://maps.google.com/?q=泉涌寺" target="_blank">泉涌寺</a></div><div class="tx">皇室菩提所，秋季限定御座所庭園金黃橙紅。伽藍拜觀 500円＋御座所庭園 500円，★★☆ 11 月第 4 週-12 月第 1 週</div></div>
+<div class="ti act"><div class="td"></div><div class="tt">11:00-11:30</div><div class="th">🍁 雲龍院（泉涌寺步行 3 分）</div><div class="tx">四色禪意窗、圓形頓悟之窗。400円，★★☆ 11 月第 4 週-12 月第 1 週</div></div>
+<div class="ti act"><div class="td"></div><div class="tt">11:30-12:00</div><div class="th">🍁 來迎院（泉涌寺步行 5 分）</div><div class="tx">與大原的來迎院同名但不同寺，庭園有深度、人少秘境。庭園 300円，★ 11 月第 4 週-12 月第 1 週</div></div>
+<div class="ti act"><div class="td"></div><div class="tt">12:00-12:45</div><div class="th">🍁 <a href="https://maps.google.com/?q=今熊野観音寺" target="_blank">今熊野觀音寺</a>（泉涌寺步行 7 分）</div><div class="tx">紅色鳥居橋、醫聖堂多寶塔俯瞰全寺，這條路線裡人潮最多的一站，但風景也最震撼。免費，人潮擁擠度 ★★★★擁擠，11 月第 4 週-12 月第 1 週</div></div>
+<div class="ti meal"><div class="td"></div><div class="tt">12:45-13:45</div><div class="th">周邊午餐</div><div class="tx"></div></div>
+<div class="ti move"><div class="td"></div><div class="tt">13:45-14:15（估）</div><div class="th">搭 JR 奈良線至京都駅</div><div class="tx">從泉涌寺道／東福寺駅方向搭 JR 到京都駅只要 1-2 站、約 5-10 分</div></div>
+<div class="ti act"><div class="td"></div><div class="tt">14:15-14:45</div><div class="th">🌕 <a href="https://maps.google.com/?q=東本願寺" target="_blank">東本願寺</a></div><div class="tx">京都駅步行約 7 分，金色銀杏並木是知名賞銀杏點，見頃約 11 月上旬-11 月下旬（2025 年起始日 11/20）</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">14:45-15:05（估）</div><div class="th">步行至西本願寺（約 15 分）</div><div class="tx"></div></div>
+<div class="ti act"><div class="td"></div><div class="tt">15:05-15:35</div><div class="th">🌕 <a href="https://maps.google.com/?q=西本願寺" target="_blank">西本願寺</a></div><div class="tx">世界遺產，境內兩株大銀杏，見頃約 11 月下旬-12 月中旬（2025 年起始日 11/20）</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">15:35-16:00（估）</div><div class="th">步行或搭巴士至東寺（約 20-25 分）</div><div class="tx"></div></div>
+<div class="ti act"><div class="td"></div><div class="tt">16:00-16:30</div><div class="th">🌕 <a href="https://maps.google.com/?q=東寺" target="_blank">東寺</a></div><div class="tx">世界遺產五重塔，見頃約 11 月下旬-12 月中旬（2025 年起始日 11/18）</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">16:30 以後</div><div class="th">搭巴士或近鉄＋地鐵回三条</div><div class="tx"></div></div>
+</div>
+<div class="tips">
+📝 這條路線的楓期比大原、嵐山稍晚（11 月第 4 週到 12 月第 1 週），如果出發前看到嵐山已經開始轉紅但東福寺周邊還很綠，可以考慮排在行程較後面的一天。<br>
+📝 龍吟庵不需要預約，但秋季特別公開有固定期間（2025 年是 11/8-12/7），出發前確認 2026 年公開期間是否涵蓋 11/23，若剛好休館可以直接跳過，改成在光明院多留一點時間。
+</div>
+</div>
+</div>
+
+<!-- ROUTE: TAKAO -->
+<div class="day-card r-takao" id="route-takao">
+<div class="day-header" onclick="this.parentElement.classList.toggle('collapsed')">
+<div class="day-num">高</div>
+<div class="day-info"><h2>🍁 高雄線</h2><div class="sub">機動路線・溪谷秘境＋川床料理，體力需求最高</div></div>
+</div>
+<div class="day-body">
+<div class="hl orange">⛰️ 京都西北郊的溪谷秘境，風景最原始，但階梯多、車程也最長，適合體力還夠的一天。</div>
+<table class="night-table" style="margin-bottom:18px;">
+<tr><th>📍 景點</th><th>🥷 人潮擁擠度</th><th>🍁 楓葉見頃區間</th></tr>
+<tr><td>高山寺</td><td>★★ 舒服</td><td>11 月第 3-4 週</td></tr>
+<tr><td>西明寺</td><td>★★★ 適中</td><td>11 月第 3-4 週</td></tr>
+<tr><td>神護寺</td><td>★★☆ 舒服偏適中</td><td>11 月第 3-4 週</td></tr>
+</table>
+<div class="tl">
+<div class="ti move"><div class="td"></div><div class="tt">08:00-09:00（估）</div><div class="th">搭巴士 8 號或高雄京北線至「栂ノ尾」</div><div class="tx">位在京都西北郊，車程比大原、泉涌寺都長，出發前建議查詢即時班次</div></div>
+<div class="ti act"><div class="td"></div><div class="tt">09:00-10:00</div><div class="th">🍁 <a href="https://maps.google.com/?q=高山寺" target="_blank">高山寺</a></div><div class="tx">世界遺產，國寶石水院，日本最古老茶園，境內秋色豐富。1000円，★★ 11 月第 3-4 週</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">10:00-10:10</div><div class="th">步行至西明寺（10 分）</div><div class="tx"></div></div>
+<div class="ti act"><div class="td"></div><div class="tt">10:10-11:00</div><div class="th">🍁 <a href="https://maps.google.com/?q=西明寺+京都" target="_blank">西明寺</a></div><div class="tx">數百棵高尾楓，陽光下金紅色壯觀。500円，★★★ 11 月第 3-4 週</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">11:00-12:00</div><div class="th">步行至神護寺</div><div class="tx">沿清瀧川谷地步行，最後一段要爬長石階，體力需求較高</div></div>
+<div class="ti act"><div class="td"></div><div class="tt">12:00-13:00</div><div class="th">🍁 <a href="https://maps.google.com/?q=神護寺" target="_blank">神護寺</a></div><div class="tx">金堂前紅葉台階是經典畫面，書院、鐘樓、明王堂、毘沙門堂古蹟環繞。600円，★★☆ 11 月第 3-4 週</div></div>
+<div class="ti meal"><div class="td"></div><div class="tt">13:00-14:00</div><div class="th">清瀧川沿岸川床料理午餐</div><div class="tx">秋季限定的川床用餐體驗，建議先查詢是否需要訂位</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">14:00-15:00（估）</div><div class="th">搭巴士返回市區</div><div class="tx">車程較長，回程建議預留餘裕</div></div>
+</div>
+<div class="tips">
+📝 四條路線裡體力需求最高的一條——高山寺到神護寺沿途有不少階梯和坡道，不建議跟原本安排腳踏車或長距離步行的那天（例如換掉的是嵯峨野一日）前後緊接。<br>
+📝 楓期落在 11 月第 3-4 週，整趟旅程（11/20-11/24）都在這個範圍內，是四條路線裡對日期最不挑的一條。<br>
+📝 指南沒有給出精確的巴士車程分鐘數，出發前建議用巴士時刻表再核對一次。
+</div>
+</div>
+</div>
+
+<!-- ROUTE: ICHIJOJI -->
+<div class="day-card r-ichijoji" id="route-ichijoji">
+<div class="day-header" onclick="this.parentElement.classList.toggle('collapsed')">
+<div class="day-num">寺</div>
+<div class="day-info"><h2>🍁 一乗寺線</h2><div class="sub">機動路線・Day 2 加碼段的完整版，步調最悠閒</div></div>
+</div>
+<div class="day-body">
+<div class="hl" style="background:#fff8e1;color:#8d6e00;border-left:4px solid #f9a825;">📚 Day 2 加碼段時間有限，只塞得下內容最豐富、但也最多人的圓光寺＋詩仙堂。這條路線把指南推薦的 5 個點全部排進來，步調從容很多。</div>
+<table class="night-table" style="margin-bottom:18px;">
+<tr><th>📍 景點</th><th>🥷 人潮擁擠度</th><th>🍁 楓葉見頃區間</th><th>🌕 銀杏見頃</th></tr>
+<tr><td>曼殊院</td><td>★★ 舒服</td><td>11 月第 4 週</td><td>—</td></tr>
+<tr><td>鷺森神社</td><td>★ 秘境</td><td>11 月第 4 週</td><td>—</td></tr>
+<tr><td>圓光寺</td><td>★★★★★ 爆滿</td><td>11 月第 4 週</td><td>—</td></tr>
+<tr><td>詩仙堂</td><td>★★★ 適中</td><td>11 月第 4 週</td><td>—</td></tr>
+<tr><td>金福寺</td><td>★☆ 秘境偏舒服</td><td>11 月第 3 週-12 月第 1 週</td><td>—</td></tr>
+<tr><td>京都御苑（乾御門大銀杏）</td><td colspan="2">指南未收錄</td><td>11 月下旬（2025 年起始日 11/21）</td></tr>
+<tr><td>堀川通銀杏並木</td><td colspan="2">指南未收錄</td><td>11 月上旬-11 月下旬（2025 年起始日 11/21）</td></tr>
+</table>
+<div class="tl">
+<div class="ti move"><div class="td"></div><div class="tt">08:00-08:30（估）</div><div class="th">前往叡山電鐵「修學院」站</div><div class="tx">三条搭京阪本線至出町柳，轉乘叡山電鐵至修學院，車程約 20-25 分（估）</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">08:30-08:50</div><div class="th">步行至曼殊院（20 分）</div><div class="tx"></div></div>
+<div class="ti act"><div class="td"></div><div class="tt">08:50-09:40</div><div class="th">🍁 <a href="https://maps.google.com/?q=曼殊院" target="_blank">曼殊院</a></div><div class="tx">「盲亀浮木之庭」白沙石塊多層次意境，書院庭園夢幻詩意，寺外楓紅與青苔同樣精彩。800円，★★，11 月第 4 週</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">09:40-09:48</div><div class="th">步行至鷺森神社（8 分）</div><div class="tx"></div></div>
+<div class="ti act"><div class="td"></div><div class="tt">09:48-10:15</div><div class="th">🍁 <a href="https://maps.google.com/?q=鷺森神社" target="_blank">鷺森神社</a></div><div class="tx">參道被鮮紅、橙黃、金色楓葉覆蓋，幾乎沒有觀光客的秘境。免費，★，11 月第 4 週</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">10:15-10:35（估）</div><div class="th">移動至圓光寺</div><div class="tx">兩地有一段距離，建議搭計程車，估 20 分</div></div>
+<div class="ti act"><div class="td"></div><div class="tt">10:35-11:15</div><div class="th">🍁 <a href="https://maps.google.com/?q=圓光寺" target="_blank">圓光寺</a> <span class="tag">★★★★★</span></div><div class="tx">入口龍庭如噴火之龍，書院內看「十牛之庭」宛如畫框，境內高點是德川家康之墓。人潮擁擠度 ★★★★★爆滿（這區最多人的一間），11 月第 4 週。⚠️ 紅葉特別拝観期間需網路預約，大人 1,500円／學生 800円</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">11:15-11:20</div><div class="th">步行至詩仙堂（3 分）</div><div class="tx"></div></div>
+<div class="ti act"><div class="td"></div><div class="tt">11:20-11:50</div><div class="th">🍁 詩仙堂</div><div class="tx">36 位中國詩人畫像得名，白砂庭園配鹿威聲，禪意浪漫。700円，★★★，11 月第 4 週</div></div>
+<div class="ti meal"><div class="td"></div><div class="tt">11:50-12:50</div><div class="th">一乗寺周邊午餐</div><div class="tx"></div></div>
+<div class="ti move"><div class="td"></div><div class="tt">12:50-13:05（估）</div><div class="th">移動至金福寺</div><div class="tx">從詩仙堂步行或搭車，估 10-15 分</div></div>
+<div class="ti act"><div class="td"></div><div class="tt">13:05-13:35</div><div class="th">🍁 <a href="https://maps.google.com/?q=金福寺+京都" target="_blank">金福寺</a></div><div class="tx">俳句聖地，可見松尾芭蕉、與謝蕪村足跡，本殿枯山水庭園，境內高點眺望洛北市景。500円，★☆，11 月第 3 週-12 月第 1 週</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">13:35-14:00（估）</div><div class="th">前往一乗寺站，搭叡山電鐵至出町柳</div><div class="tx"></div></div>
+<div class="ti move"><div class="td"></div><div class="tt">14:00-14:30（估）</div><div class="th">步行至京都御苑</div><div class="tx">出町柳步行到御苑東側約 10-15 分，往乾御門方向再走一段</div></div>
+<div class="ti act"><div class="td"></div><div class="tt">14:30-15:00</div><div class="th">🌕 京都御苑：乾御門大銀杏</div><div class="tx">高 19.5 公尺的百年大銀杏，京都當地人熟知的賞銀杏地標。免費，見頃約 11 月下旬（2025 年起始日 11/21）</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">15:00-15:20（估）</div><div class="th">步行或搭巴士至堀川通銀杏並木</div><div class="tx">從御苑西側往堀川通方向，步行約 20 分或搭巴士約 10 分</div></div>
+<div class="ti act"><div class="td"></div><div class="tt">15:20-15:50</div><div class="th">🌕 堀川通銀杏並木</div><div class="tx">今出川通到紫明通之間約 1.2 公里的中央分隔島銀杏並木，約 70 棵。免費，見頃約 11 月上旬-11 月下旬（2025 年起始日 11/21）</div></div>
+<div class="ti extra"><div class="td"></div><div class="tt">15:50 以後</div><div class="th">返回市區、自由活動</div><div class="tx">從堀川今出川搭巴士或步行至地鐵今出川站，轉烏丸線＋東西線回三条</div></div>
+</div>
+<div class="tips">
+📝 圓光寺預約規則跟 Day 2 版本一樣：紅葉特別拝観期間需「日時指定」網路預約，往例約在拝観期開始前 3 週開放，詳見文件最前面的「⏰ 需要預約」區塊。<br>
+📝 曼殊院／鷺森神社跟圓光寺／詩仙堂／金福寺分屬「修學院」「一乗寺」兩個不同的叡電站，中間有一段移動時間，抓寬鬆一點比較保險。<br>
+📝 15:50 回到市區後，順路夜楓可以接永觀堂或南禪寺（蹴上站方向，車程約 15-20 分）。
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- ═══ NIGHT MAPLE ═══ -->
+<div class="section" id="night">
+<div class="section-title">🌙 夜楓／夜間點燈候選清單</div>
+<table class="night-table">
+<tr><th>地點</th><th>建議搭配天</th><th>備註</th></tr>
+<tr><td><a href="https://maps.google.com/?q=清水寺" target="_blank">清水寺</a></td><td>Day 1</td><td>與白天路線自然銜接，傍晚入夜後可留晚一點</td></tr>
+<tr><td><a href="https://maps.google.com/?q=高台寺" target="_blank">高台寺</a></td><td>Day 1</td><td>位於清水寺→祇園路線上，順路</td></tr>
+<tr><td><a href="https://maps.google.com/?q=永観堂" target="_blank">永觀堂</a></td><td>Day 2</td><td>京都秋楓最著名的夜楓點之一</td></tr>
+<tr><td><a href="https://maps.google.com/?q=東寺" target="_blank">東寺</a></td><td>未排入</td><td>若想加入需另外找一晚，離市區稍遠</td></tr>
+<tr><td><a href="https://maps.google.com/?q=毘沙門堂" target="_blank">毘沙門堂</a></td><td>未排入</td><td>山科方向，較遠，需另外規劃</td></tr>
+<tr><td><a href="https://maps.google.com/?q=日吉大社" target="_blank">日吉大社</a></td><td>Day 4</td><td>免費點燈，跟舊竹林院同一站，白天已排入，晚上不特地留</td></tr>
+<tr><td><a href="https://maps.google.com/?q=石山寺" target="_blank">石山寺「あたら夜もみじ」</a></td><td>Day 4</td><td>17:30-21:00，¥800，國寶建築點燈，這天的重頭戲</td></tr>
+<tr><td><a href="https://maps.google.com/?q=二条城" target="_blank">二条城「NAKED meets 二条城」観月</a></td><td>未排入 ⚠️ 不是賞楓活動</td><td>主題是投影光雕藝術展（唐門・二之丸御殿投影、月灯りライトアップ、觀月能秀、插花藝術等），官網原文只提到「紅葉やイチョウが照らされてより綺麗に見える」，楓葉只是被燈光順帶照到。2025 年場次 10/31-12/7、18:00-22:00（最終入場 21:00）。若想體驗這種藝術光雕秀可以考慮加進某個晚上，但目前主行程沒有排入</td></tr>
+</table>
+</div>
+
+<!-- ═══ TODO ═══ -->
+<div class="section" id="todo">
+<div class="section-title">⚠️ 待確認 TODO</div>
+<ul class="checklist">
+<li><input type="checkbox"/><span>2026 年各寺院夜楓特別拝観／點燈的實際日期與時段（清水寺、高台寺、永觀堂、日吉大社、石山寺）。已查到 2025 年參考值：永觀堂 11/15-12/10、高台寺 10/24-12/14、石山寺 11/14-11/30，三者皆不需預約、現場買票即可，2026 年日期仍需另確認</span></li>
+<li><input type="checkbox"/><span>南禪寺午餐若選順正，出發前先透過 TableCheck 訂位；選奥丹則不用訂位，但現場排隊要抓時間</span></li>
+<li><input type="checkbox"/><span>光明院的參拝時間與門票（為隨喜奉納制）</span></li>
+<li><input type="checkbox"/><span>出發前用京阪時刻表核對 Day 4 東福寺→浜大津→坂本→三井寺→石山寺各段實際班次時間</span></li>
+<li><input type="checkbox"/><span>ICOCA／交通卡儲值方式</span></li>
+<li><input type="checkbox"/><span>出發前 1-2 週查詢京都楓葉最新預測，評估 Day 3 嵐山狀況</span></li>
+<li><input type="checkbox"/><span>決定 Day 3 是否搭嵯峨野トロッコ列車，或改採「不搭小火車版本」</span></li>
+<li><input type="checkbox"/><span>若決定搭小火車：訂票（搭乘日前一個月開賣，越早訂越好，秋季週末易額滿）</span></li>
+<li><input type="checkbox"/><span>出發前 1-2 週依各區楓況預測，決定 Day 2 / Day 3 / Day 4 是否要換成機動路線庫的路線（大原線／泉涌寺線／高雄線／一乗寺線），以及要換哪一天</span></li>
+<li><input type="checkbox"/><span>Day 2 圓光寺紅葉特別拝観預約：官網 <a href="https://www.enkouji.jp/" target="_blank">enkouji.jp</a> 採「日時指定」事先網路預約制，2025 年預約期間為 11/10-12/10、預約通道於 10/20 上午 9:00 開放。2026 年日期需另外確認，但往例是特別拝観開始前約 3 週開放預約，出發前建議 10 月中下旬密切關注官網公告；若額滿還有空位時可接受當日預約，但不保證有位</span></li>
+<li><input type="checkbox"/><span>若選走泉涌寺線的龍吟庵：確認 2026 年秋季特別公開期間是否涵蓋行程日期（2025 年參考值為 11/8-12/7），不需預約但要先確定當天有開</span></li>
+<li><input type="checkbox"/><span>銀杏見頃資訊（常寂光寺、京都御苑、東本願寺、西本願寺、東寺）是根據 2024-2025 年觀賞期參考值推算，2026 年還沒有預測資料，出發前 1-2 週建議另外查即時黃葉通報再確認</span></li>
+</ul>
+</div>
+
+<footer>
+🍁 <strong>2026 京都賞楓行</strong>　|　OMO5 京都三条　|　11/20 - 11/24<br>
+實際走法請依出發前楓紅進度彈性調整
+</footer>
+
+<script>
+  const chks = document.querySelectorAll('.checklist input[type="checkbox"]');
+  chks.forEach((chk, i) => {
+    chk.id = 'kyoto-momiji-chk-' + i;
+    const saved = localStorage.getItem(chk.id);
+    if (saved === 'true') {
+      chk.checked = true;
+      chk.parentElement.classList.add('checked');
+    }
+    chk.addEventListener('change', function() {
+      localStorage.setItem(this.id, this.checked);
+      this.parentElement.classList.toggle('checked', this.checked);
+    });
+    chk.parentElement.addEventListener('click', function(e) {
+      if (e.target !== chk) { chk.checked = !chk.checked; chk.dispatchEvent(new Event('change')); }
+    });
+  });
+</script>
+</body>
+</html>

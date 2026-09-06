@@ -108,8 +108,8 @@
   .r-sennyuji .day-header { background: linear-gradient(135deg, #ad1457, #560027); }
   .r-takao .day-header    { background: linear-gradient(135deg, #6d4c41, #3e2723); }
   .r-ichijoji .day-header { background: linear-gradient(135deg, #f9a825, #8d6e00); }
-  .r-komyoji .day-header  { background: linear-gradient(135deg, #3949ab, #1a237e); }
   .r-tofukuji .day-header { background: linear-gradient(135deg, #d84315, #7a0c0c); }
+  .r-arashiyama .day-header { background: linear-gradient(135deg, #6a4c93, #3d2b56); }
 
   .day-body { padding: 18px 24px 24px; }
 
@@ -191,17 +191,17 @@
 <a href="#forecast" style="border-color:#e63946;">🍁 見頃機率</a>
 <a href="#info" style="border-color:white;">📋 資訊</a>
 <a class="nav-d1" href="#day1">D1 清水寺</a>
-<a class="nav-d2" href="#day2">D2 嵐山</a>
-<a class="sub" href="#day2-no-train" style="border-color:var(--c-purple);">↳ 不搭小火車</a>
+<a class="nav-d2" href="#day2">D2 光明寺</a>
 <a class="nav-d3" href="#day3">D3 南禪寺</a>
-<a class="nav-d4" href="#day4">D4 東福寺・石山寺</a>
+<a class="nav-d4" href="#day4">D4 銀杏三寺・石山寺</a>
 <a class="nav-d5" href="#day5">D5 返程</a>
 <a href="#routes" style="border-color:#00897b;">🔀 機動路線（可換 D2/D3/D4）</a>
 <a class="sub" href="#route-ohara" style="border-color:#00897b;">↳ 大原線</a>
 <a class="sub" href="#route-sennyuji" style="border-color:#ad1457;">↳ 泉涌寺線</a>
 <a class="sub" href="#route-takao" style="border-color:#6d4c41;">↳ 高雄線</a>
 <a class="sub" href="#route-ichijoji" style="border-color:#f9a825;">↳ 一乗寺線</a>
-<a class="sub" href="#route-komyoji" style="border-color:#3949ab;">↳ 光明寺線</a>
+<a class="sub" href="#route-arashiyama" style="border-color:var(--c-purple);">↳ 嵐山線</a>
+<a class="sub" href="#route-arashiyama-no-train" style="border-color:var(--c-purple);">↳↳ 不搭小火車</a>
 <a class="sub" href="#route-tofukuji" style="border-color:#d84315;">↳ 東福寺線</a>
 <a href="#night" style="border-color:#d4a017;">🌙 夜楓</a><a href="#todo" style="border-color:#ff5252;">⚠️ TODO</a>
 </nav>
@@ -218,7 +218,7 @@
 <p style="line-height:1.8;color:#555;font-size:.92em;margin-bottom:20px;">這趟行程裡有 2 個項目<strong>一定要事先訂到才走得成</strong>，開放預約的時間點都很明確，建議直接記在手機行事曆提醒自己：</p>
 <table class="night-table">
 <tr><th>項目</th><th>對應日期</th><th>預約開放時間</th><th>預約方式</th><th>備註</th></tr>
-<tr><td>🚂 嵯峨野トロッコ列車（若選擇搭小火車版本）</td><td>Day 2・11/21</td><td><strong>10/21（乘車日前一個月）上午 10:00 起</strong></td><td>官方新版網路預約系統（經 <a href="https://www.sagano-kanko.co.jp/ticket/" target="_blank">sagano-kanko.co.jp/ticket</a> 連結）或 JR西日本 e5489</td><td>額滿後現場可候補立席券，但建議準時上網搶票。取消可到搭乘前一天 23:59 前免費，實際條款訂票時再確認一次</td></tr>
+<tr><td>🚂 嵯峨野トロッコ列車（若選走機動路線庫「嵐山線」小火車版本）</td><td>視最後排入哪一天而定（若排 11/21 則為當天）</td><td><strong>搭乘日前一個月上午 10:00 起</strong>（若排 11/21，即為 10/21）</td><td>官方新版網路預約系統（經 <a href="https://www.sagano-kanko.co.jp/ticket/" target="_blank">sagano-kanko.co.jp/ticket</a> 連結）或 JR西日本 e5489</td><td>額滿後現場可候補立席券，但建議準時上網搶票。取消可到搭乘前一天 23:59 前免費，實際條款訂票時再確認一次</td></tr>
 <tr><td>⛩️ 圓光寺紅葉特別拝観</td><td>Day 3・11/22</td><td>往例約在拝観期開始前 3 週（2025 年為 10/20 上午 9:00，2026 年正確日期需另行確認）</td><td>官網 <a href="https://www.enkouji.jp/" target="_blank">enkouji.jp</a>「日時指定」網路預約</td><td>門票大人 1,500円／學生 800円，比平常拝観貴。額滿有釋出名額時可接受當日預約，但不保證有位</td></tr>
 </table>
 <div class="tips" style="margin-bottom:0;">
@@ -284,12 +284,12 @@
 <table class="overview-table">
 <tr><th>Day</th><th>日期</th><th>主題</th><th>節奏</th></tr>
 <tr><td>1</td><td>11/20（五）</td><td>抵達 + 清水寺・二三年坂・祇園・花見小路</td><td>下午進、傍晚接夜楓，含購物晚餐</td></tr>
-<tr><td>2</td><td>11/21（六）</td><td>嵐山一日（天龍寺・竹林・嵯峨野・腳踏車・小火車〔可選〕）→ 市區購物夜</td><td>三連休第一天，全日，16:00 前到四条，晚上逛街後提早回飯店。另備「不搭小火車」版本</td></tr>
+<tr><td>2</td><td>11/21（六）</td><td>光明寺（長岡天神）→渡月橋→常寂光寺・大覚寺→市區購物夜</td><td>三連休第一天，避開天龍寺人潮風險，16:00 前到四条，晚上逛街後提早回飯店。原嵐山版本移到機動路線庫「嵐山線」</td></tr>
 <tr><td>3</td><td>11/22（日）</td><td>南禪寺・永觀堂・哲學之道・銀閣寺（一乗寺選走）</td><td>三連休中日（景點人潮可能最高峰），全日，晚上可接永觀堂夜楓</td></tr>
 <tr><td>4</td><td>11/23（一）</td><td>銀杏三寺（東本願寺・西本願寺・東寺）→三井寺→石山寺（白天＋夜楓）</td><td>連假最後一天，避開東福寺人潮風險，回飯店最晚的一天。原東福寺版本移到機動路線庫「東福寺線」</td></tr>
 <tr><td>5</td><td>11/24（二）</td><td>返程</td><td>早餐後即出發機場，無安排景點</td></tr>
 </table>
-<p style="margin-top:14px;font-size:.88em;color:#666;line-height:1.7;">📝 Day 2、Day 3、Day 4 都可以視當下楓況彈性替換為文末「🔀 機動路線庫」的路線（大原線／泉涌寺線／高雄線／一乗寺線／光明寺線／東福寺線），出發前或行程中再依實際狀況決定要不要換。</p>
+<p style="margin-top:14px;font-size:.88em;color:#666;line-height:1.7;">📝 Day 2、Day 3、Day 4 都可以視當下楓況彈性替換為文末「🔀 機動路線庫」的路線（大原線／泉涌寺線／高雄線／一乗寺線／嵐山線／東福寺線），出發前或行程中再依實際狀況決定要不要換。</p>
 </div>
 
 <!-- ═══ DAYS ═══ -->
@@ -331,54 +331,38 @@
 <div class="day-card day2" id="day2">
 <div class="day-header" onclick="this.parentElement.classList.toggle('collapsed')">
 <div class="day-num">D2</div>
-<div class="day-info"><h2>🍁 嵐山一日・購物</h2><div class="sub">📅 11/21（六）｜三連休第一天</div></div>
+<div class="day-info"><h2>🍁 光明寺・嵐山</h2><div class="sub">📅 11/21（六）｜三連休第一天</div></div>
 </div>
 <div class="day-body">
-<div class="hl purple">🍁 全天留在嵐山・嵯峨野，騎腳踏車＋搭小火車，16:00 前到四条逛街。三連休第一天，進出靠阪急/JR/嵐電、境內靠腳踏車，對路面壅塞抵抗力全程最高。</div>
+<div class="hl purple">⚠️ 11/21 是三連休第一天。天龍寺（人潮擁擠度 ★★★★★爆滿）在連假疊加賞楓季期間，很可能擠到連拍照都全是人頭、庭園步道走不動的程度；竹林小徑本身跟楓葉關聯不大，不是這趟旅程的重點。改成早上先去長岡天神的光明寺——同樣是真楓葉景點（紅葉參道＋藥医門），人潮擁擠度只有★★☆，能真正好好看楓葉，下午再銜接嵐山深處的常寂光寺、大覚寺。原本天龍寺＋竹林＋小火車的完整版本移到下方「🔀 機動路線庫」變成獨立的「嵐山線」，想要經典嵐山體驗隨時可以整個換回來。</div>
 <table class="night-table" style="margin-bottom:18px;">
 <tr><th>📍 景點</th><th>🥷 人潮擁擠度</th><th>🍁 楓葉見頃區間</th><th>🌕 銀杏見頃</th></tr>
-<tr><td>天龍寺</td><td>★★★★★ 爆滿</td><td>11 月第 3 週-12 月第 1 週</td><td>—</td></tr>
-<tr><td>常寂光寺</td><td>★★★ 適中</td><td>11 月第 4 週-12 月第 1 週</td><td>11 月上旬-11 月下旬（2025 年起始日 11/20）</td></tr>
-<tr><td>二尊院</td><td>★★★ 適中</td><td>11 月第 4 週-12 月第 1 週</td><td>—</td></tr>
-<tr><td>祇王寺</td><td>★★ 舒服</td><td>11 月第 4 週</td><td>—</td></tr>
-<tr><td>大河內山莊（不搭小火車版本選配）</td><td>★☆ 秘境偏舒服</td><td>11 月第 3 週-12 月第 1 週</td><td>—</td></tr>
-<tr><td>竹林小徑／化野念佛寺／嵯峨鳥居本</td><td colspan="3">指南未收錄</td></tr>
-<tr><td>嵯峨野トロッコ列車</td><td colspan="3">非寺院景點，無此指標</td></tr>
+<tr><td>光明寺</td><td>★★☆ 適中偏擁擠</td><td>11 月第 4 週</td><td>—</td></tr>
+<tr><td>常寂光寺</td><td>★★★ 適中</td><td>11 月第 4 週-12 月第 1 週</td><td>11 月上旬-11 月下旬</td></tr>
+<tr><td>大覚寺</td><td>★☆ 秘境</td><td>11 月第 3-4 週</td><td>—</td></tr>
+<tr><td>渡月橋</td><td colspan="3">指南未收錄</td></tr>
 </table>
-<p style="font-size:.88em;color:#666;margin-bottom:16px;">📝 常寂光寺同時也是銀杏景點，見頃比楓葉稍早（11 月上旬-11 月下旬），選它而不選二尊院的話，11/21 造訪時銀杏可能已經開始，楓葉也還在，兩者可以一起看到。</p>
 <div class="tl">
-<div class="ti move"><div class="td"></div><div class="tt">08:00-08:30</div><div class="th">前往<a href="https://maps.google.com/?q=嵐山" target="_blank">嵐山</a>，抵達<a href="https://maps.google.com/?q=渡月橋" target="_blank">渡月橋</a></div><div class="tx">計程車或阪急電車</div></div>
-<div class="ti act"><div class="td"></div><div class="tt">08:30-09:00</div><div class="th"><a href="https://maps.google.com/?q=天龍寺" target="_blank">天龍寺</a></div><div class="tx">開門即入避開人潮，庭園借景嵐山賞楓名所</div></div>
-<div class="ti act"><div class="td"></div><div class="tt">09:00-09:45</div><div class="th"><a href="https://maps.google.com/?q=嵐山竹林の小径" target="_blank">竹林小徑</a></div><div class="tx"></div></div>
-<div class="ti act"><div class="td"></div><div class="tt">09:45-11:00</div><div class="th"><a href="https://maps.google.com/?q=常寂光寺" target="_blank">常寂光寺</a> 或 <a href="https://maps.google.com/?q=二尊院" target="_blank">二尊院</a>（擇一）</div><div class="tx">常寂光寺視野較佳且同時是銀杏景點（見頃 11 月上旬-11 月下旬，比楓葉稍早），二尊院楓葉隧道知名</div></div>
-<div class="ti extra"><div class="td"></div><div class="tt">11:00-12:30</div><div class="th">🚲 租腳踏車，騎去嵯峨野深處</div><div class="tx"><a href="https://maps.google.com/?q=祇王寺" target="_blank">祇王寺</a>／<a href="https://maps.google.com/?q=化野念仏寺" target="_blank">化野念佛寺</a>／<a href="https://maps.google.com/?q=嵯峨鳥居本" target="_blank">嵯峨鳥居本</a>擇一二。租借點推薦<a href="https://maps.google.com/?q=らんぶらレンタサイクル" target="_blank">「らんぶらレンタサイクル」</a>（嵐電嵐山駅內「はんなり・ほっこりスクエア」，就在竹林旁邊、天龍寺步行約 2-3 分，不用預約，一日¥1,000）；<a href="https://maps.google.com/?q=阪急レンタサイクル嵐山" target="_blank">「阪急レンタサイクル嵐山」</a>在渡月橋對岸的阪急嵐山駅前廣場（京都市西京区嵐山西一川町3-5），距天龍寺約 580 公尺／步行 8 分，11 月不分平假日都是一日 ¥900（沒有 2 小時制），旺季建議先電話 075-882-1112 問還有沒有車。竹林小徑那段窄路人多時普遍會牽車用走的，非全程都能騎</div></div>
-<div class="ti meal"><div class="td"></div><div class="tt">12:30-13:30</div><div class="th">午餐、還車</div><div class="tx"></div></div>
-<div class="ti act"><div class="td"></div><div class="tt">13:30-15:30</div><div class="th">🚂 <a href="https://maps.google.com/?q=嵯峨野トロッコ列車" target="_blank">嵯峨野トロッコ列車</a> <span class="tag alt">可選</span></div><div class="tx">路線：トロッコ嵯峨（嵐山旁）－トロッコ嵐山－トロッコ保津峡－トロッコ亀岡，全長 7.3km，單程約 25 分。建議單程搭去（如到トロッコ保津峡或トロッコ亀岡），再搭一般 JR 山陰本線返回嵯峨嵐山駅（約 20 分），不用原地來回。⚠️ 訂票需在搭乘日前一個月開賣，取消可到前一天 23:59 前免費</div></div>
-<div class="ti move"><div class="td"></div><div class="tt">15:30-16:00</div><div class="th">返回四条周邊</div><div class="tx"></div></div>
-<div class="ti meal"><div class="td"></div><div class="tt">16:00-19:30</div><div class="th">🛍️ 三条・河原町・新京極逛街購物＋晚餐</div><div class="tx">必逛的一晚，注意店家多 20:00 打烊，含迪士尼商店等</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">07:30-07:45</div><div class="th">步行至阪急京都河原町站</div><div class="tx"></div></div>
+<div class="ti move"><div class="td"></div><div class="tt">07:45-08:00</div><div class="th">搭阪急京都線特急／準急至長岡天神</div><div class="tx">約 15 分</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">08:00-08:30（估）</div><div class="th">西口搭 20 號巴士至光明寺前</div><div class="tx">約 12 分。若候車人潮超過 25-30 人，可直接改搭計程車（車程 8-10 分，約 ¥1,400），依然能在 8:30 前抵達</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">08:30-08:35</div><div class="th">抵達光明寺總門排隊</div><div class="tx"></div></div>
+<div class="ti act"><div class="td"></div><div class="tt">09:00-10:30</div><div class="th">🍁 <a href="https://maps.google.com/?q=光明寺+長岡京" target="_blank">光明寺</a></div><div class="tx">開門即入直奔紅葉參道與藥医門，前 15 分鐘人最少。秋季門票 1000円，★★☆，11 月第 4 週。⚠️ 這類單一畫面型人氣紅葉名所，出發前需確認是否已改採預約制</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">10:30-11:15（估）</div><div class="th">搭巴士或計程車返回長岡天神站</div><div class="tx">回程一樣可能客滿，備案是叫車或沿平緩下坡步行約 35 分回站，仍能在 11:15 前抵達</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">11:15-11:45</div><div class="th">搭阪急京都線至桂站，同月台轉阪急嵐山線至嵐山</div><div class="tx">全程鐵路，不受路面連假塞車影響</div></div>
+<div class="ti meal"><div class="td"></div><div class="tt">11:45-12:45</div><div class="th">🍁 <a href="https://maps.google.com/?q=渡月橋" target="_blank">渡月橋</a>＋午餐</div><div class="tx">走過渡月橋眺望嵐山全景，找蕎麥麵或輕食，建議 12:30 前用餐避開中午人潮</div></div>
+<div class="ti extra"><div class="td"></div><div class="tt">12:45-13:00</div><div class="th">🚲 租腳踏車</div><div class="tx">推薦<a href="https://maps.google.com/?q=らんぶらレンタサイクル" target="_blank">「らんぶらレンタサイクル」</a>（嵐電嵐山駅內「はんなり・ほっこりスクエア」，不用預約，一日¥1,000）；<a href="https://maps.google.com/?q=阪急レンタサイクル嵐山" target="_blank">「阪急レンタサイクル嵐山」</a>在渡月橋對岸的阪急嵐山駅前廣場（京都市西京区嵐山西一川町3-5），11 月不分平假日都是一日 ¥900（沒有 2 小時制），旺季建議先電話 075-882-1112 問還有沒有車</div></div>
+<div class="ti act"><div class="td"></div><div class="tt">13:00-14:00</div><div class="th">🍁 騎往<a href="https://maps.google.com/?q=常寂光寺" target="_blank">常寂光寺</a></div><div class="tx">避開主街走住宅區外圍小徑，境內同時是銀杏景點（見頃 11 月上旬-11 月下旬）</div></div>
+<div class="ti act"><div class="td"></div><div class="tt">14:15-15:45</div><div class="th">🍁 騎往<a href="https://maps.google.com/?q=大覚寺" target="_blank">大覚寺</a>，參觀大澤池</div><div class="tx">約 10-12 分鐘。大澤池下午 14:30-15:30 光線最柔和，人潮少，★☆，11 月第 3-4 週，500円</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">15:45-16:15</div><div class="th">騎回車站還車</div><div class="tx"></div></div>
+<div class="ti move"><div class="td"></div><div class="tt">16:15-17:00</div><div class="th">搭阪急嵐山線經桂站轉京都線回河原町</div><div class="tx">河原町站就在四条商圈裡，不用再轉車</div></div>
+<div class="ti meal"><div class="td"></div><div class="tt">17:00-19:30</div><div class="th">🛍️ 三条・河原町・新京極逛街購物＋晚餐</div><div class="tx">比原方案少約 1 小時，注意店家多 20:00 打烊</div></div>
 <div class="ti move"><div class="td"></div><div class="tt">19:30</div><div class="th">返回飯店</div><div class="tx"></div></div>
 </div>
 <div class="tips">
-📝 這天不排金閣寺、北野天滿宮——地理上在嵐山北邊、回四条不順路，加上小火車和腳踏車已經把時間排滿，硬塞會趕不上 16:00 到四条的目標。金閣寺楓葉本來也不算它的強項，這次先跳過。
-</div>
-
-<div class="hl blue" id="day2-no-train" style="margin-top:18px;">🔀 備案：不搭小火車版本——省下訂票壓力，換成更從容的嵯峨野健行，景點時間拉長，15:30 才開始逛街也還很充裕</div>
-<div class="tl">
-<div class="ti move"><div class="td"></div><div class="tt">08:00-08:30</div><div class="th">前往<a href="https://maps.google.com/?q=嵐山" target="_blank">嵐山</a>，抵達<a href="https://maps.google.com/?q=渡月橋" target="_blank">渡月橋</a></div><div class="tx">計程車或阪急電車</div></div>
-<div class="ti act"><div class="td"></div><div class="tt">08:30-09:00</div><div class="th"><a href="https://maps.google.com/?q=天龍寺" target="_blank">天龍寺</a></div><div class="tx">開門即入避開人潮，庭園借景嵐山賞楓名所</div></div>
-<div class="ti act"><div class="td"></div><div class="tt">09:00-09:45</div><div class="th"><a href="https://maps.google.com/?q=嵐山竹林の小径" target="_blank">竹林小徑</a></div><div class="tx">人多時建議牽車用走的，別急著騎</div></div>
-<div class="ti extra"><div class="td"></div><div class="tt">09:45-10:15</div><div class="th"><a href="https://maps.google.com/?q=大河内山荘庭園" target="_blank">大河內山莊庭園</a> <span class="tag">選配</span></div><div class="tx">竹林小徑底端，門票含抹茶，可俯瞰嵐山山景，賞楓氣氛不輸小火車，是取代方案之一</div></div>
-<div class="ti act"><div class="td"></div><div class="tt">10:15-11:00</div><div class="th"><a href="https://maps.google.com/?q=常寂光寺" target="_blank">常寂光寺</a> 或 <a href="https://maps.google.com/?q=二尊院" target="_blank">二尊院</a>（擇一）</div><div class="tx">常寂光寺視野較佳且同時是銀杏景點（見頃 11 月上旬-11 月下旬，比楓葉稍早），二尊院楓葉隧道知名</div></div>
-<div class="ti extra"><div class="td"></div><div class="tt">11:00-11:15</div><div class="th">🚲 租腳踏車</div><div class="tx">推薦「らんぶらレンタサイクル」（嵐電嵐山駅內，就在竹林旁邊，不用預約，一日¥1,000）；「阪急レンタサイクル嵐山」要過渡月橋，11 月一日 ¥900，旺季建議先電話 075-882-1112 問還有沒有車</div></div>
-<div class="ti extra"><div class="td"></div><div class="tt">11:15-14:00</div><div class="th">騎去嵯峨野深處</div><div class="tx">比原方案多將近 3 小時，<a href="https://maps.google.com/?q=祇王寺" target="_blank">祇王寺</a>／<a href="https://maps.google.com/?q=化野念仏寺" target="_blank">化野念佛寺</a>／<a href="https://maps.google.com/?q=嵯峨鳥居本" target="_blank">嵯峨鳥居本</a>可以從容多走幾個，不用趕</div></div>
-<div class="ti meal"><div class="td"></div><div class="tt">14:00-15:00</div><div class="th">午餐、還車</div><div class="tx"></div></div>
-<div class="ti move"><div class="td"></div><div class="tt">15:00-15:30</div><div class="th">返回四条周邊</div><div class="tx"></div></div>
-<div class="ti meal"><div class="td"></div><div class="tt">15:30-19:30</div><div class="th">🛍️ 三条・河原町・新京極逛街購物＋晚餐</div><div class="tx">約 4 小時，注意店家多 20:00 打烊</div></div>
-<div class="ti move"><div class="td"></div><div class="tt">19:30</div><div class="th">返回飯店</div><div class="tx"></div></div>
-</div>
-<div class="tips">
-📝 這版本省下小火車的訂票壓力（含單程 25 分＋接駁時間），換成更從容走完嵯峨野深處＋加一個大河內山莊庭園選項，逛街從 15:30 開始也還有近 4 小時，不用急著提早進城。<br>
-📝 這版本跟原方案的小火車時段（13:30-15:30）會衝突，兩者只能擇一——如果想臨場決定，關鍵在騎車騎到 13:00 左右時：想接原方案的小火車就準時還車去搭；想留在嵯峨野多逛就直接繼續騎，照這版本走到 14:00 才還車。
+📝 想要天龍寺・竹林小徑・嵯峨野トロッコ列車的經典嵐山體驗，可以用文末「🔀 機動路線庫」的「嵐山線」整個換回這天，裡面也保留了不搭小火車的版本。<br>
+📝 嵐山段落落在中午到下午的人潮尖峰（11:45-15:45），跟其他路線「一早衝第一批」的邏輯不同，早上在光明寺省下來的人少優勢不會延續到下午。<br>
+📝 光明寺出發前務必確認是否需要預約，目前沒有查到明確資料。
 </div>
 </div>
 </div>
@@ -493,13 +477,13 @@
 <tr><td>🏛️ 泉涌寺線</td><td>東福寺・光明院・泉涌寺・雲龍院・來迎院（泉涌寺山內）・今熊野觀音寺・東寺（夜楓）</td><td>東福寺步行或轉乘巴士 202/207 到「泉湧寺道」</td><td>11 月第 4 週-12 月第 1 週</td><td>就在東福寺旁邊，等於保留東福寺早晨、整天留在同一區域，不用跑去大津，晚上還接東寺紅葉點燈</td></tr>
 <tr><td>⛰️ 高雄線</td><td>高山寺・西明寺・神護寺</td><td>巴士 8 或高雄京北線到「栂ノ尾」，車程較遠</td><td>11 月第 3-4 週</td><td>溪谷秘境＋川床料理，風景最原始，但階梯多、體力需求最高、交通時間也最長</td></tr>
 <tr><td>📚 一乗寺線</td><td>曼殊院・鷺森神社・圓光寺・詩仙堂・金福寺・京都御苑・堀川通銀杏並木</td><td>叡山電鐵「修學院」站，步行 20 分到曼殊院</td><td>11 月第 4 週（多數景點）</td><td>文教區歷史寺院密集，把 Day 3 加碼段裡放不下的完整版本獨立成一整天，步調從容不用趕</td></tr>
-<tr><td>🌸 光明寺線</td><td>光明寺・渡月橋・常寂光寺・大覚寺</td><td>阪急京都線至長岡天神，換巴士 20 號至光明寺</td><td>11 月第 3-4 週（多數景點）</td><td>早上獨享光明寺紅葉參道秘境，下午銜接嵐山深處，全程刻意走鐵路轉乘避開連假路面塞車，但不含天龍寺、竹林小徑</td></tr>
+<tr><td>🎋 嵐山線</td><td>天龍寺・竹林小徑・常寂光寺（或二尊院）・嵯峨野深處・嵯峨野トロッコ列車</td><td>阪急電車或 JR 至嵐山，境內靠腳踏車</td><td>11 月第 3 週-12 月第 1 週</td><td>原本 Day 2 的完整版本，含天龍寺、竹林小徑、小火車，是 Day 2 換掉光明寺線後的專屬備案</td></tr>
 <tr><td>⛩️ 東福寺線</td><td>東福寺・光明院・舊竹林院・日吉大社・三井寺・石山寺夜楓</td><td>東福寺駅（京阪）步行或轉乘至大津方向</td><td>11 月第 4 週-12 月第 1 週</td><td>原本 Day 4 的完整版本，含「楓葉之王」東福寺，是 Day 4 換掉銀杏三寺版本後的專屬備案</td></tr>
 </table>
 <div class="tips" style="margin-bottom:24px;">
-📝 六條路線的楓期最佳週不完全相同——大原、嵐山、一乗寺、光明寺都在 11 月第 3-4 週前後見頂，泉涌寺、東福寺一帶稍晚（可以延到 12 月初），整趟行程日期都涵蓋在內、對日期最不挑。決定要換哪一天時，可以拿這點跟當週楓況預報對照。<br>
-📝 每條路線都會整個取代掉某一天原本的行程，動手前先想清楚「換掉這天等於放棄什麼」：換掉 Day 2 會失去嵯峨野腳踏車和竹林小徑；換掉 Day 3 會失去永觀堂夜楓；換掉 Day 4 會失去銀杏三寺（東本願寺・西本願寺・東寺）。<br>
-📝 東福寺線是這六條裡唯一「補回」而非「取代」的路線——Day 4 主行程已經拿掉東福寺以避開連假最後一天的人潮風險，如果出發前查到當天人流其實沒那麼誇張，或覺得「楓葉之王」不去太可惜，可以用這條路線整個換回 Day 4。
+📝 六條路線的楓期最佳週不完全相同——大原、嵐山、一乗寺都在 11 月第 3-4 週前後見頂，泉涌寺、東福寺一帶稍晚（可以延到 12 月初），高雄也落在第 3-4 週，整趟行程日期都涵蓋在內、對日期最不挑。決定要換哪一天時，可以拿這點跟當週楓況預報對照。<br>
+📝 每條路線都會整個取代掉某一天原本的行程，動手前先想清楚「換掉這天等於放棄什麼」：換掉 Day 2 會失去光明寺紅葉參道；換掉 Day 3 會失去永觀堂夜楓；換掉 Day 4 會失去銀杏三寺（東本願寺・西本願寺・東寺）。<br>
+📝 嵐山線、東福寺線是這六條裡唯二「補回」而非「取代」的路線——Day 2、Day 4 主行程都已經為了避開三連休人潮風險而改道，如果出發前查到當天人流其實沒那麼誇張，或還是很想要那個經典畫面，可以用這兩條路線整個換回來。
 </div>
 
 <div class="days-wrapper" style="padding:0;">
@@ -669,40 +653,56 @@
 </div>
 
 <!-- ROUTE: KOMYOJI -->
-<div class="day-card r-komyoji" id="route-komyoji">
+<div class="day-card r-arashiyama" id="route-arashiyama">
 <div class="day-header" onclick="this.parentElement.classList.toggle('collapsed')">
-<div class="day-num">光</div>
-<div class="day-info"><h2>🍁 光明寺線</h2><div class="sub">機動路線・長岡天神紅葉參道秘境＋嵐山深處，不含天龍寺・竹林</div></div>
+<div class="day-num">嵐</div>
+<div class="day-info"><h2>🍁 嵐山線</h2><div class="sub">機動路線・原本 Day 2 完整版，含天龍寺・竹林小徑・小火車</div></div>
 </div>
 <div class="day-body">
-<div class="hl blue">🌸 用長岡天神的光明寺紅葉參道換掉天龍寺、竹林小徑，全程盡量走鐵路轉乘，避開連假路面塞車。</div>
+<div class="hl" style="background:#f3e5f5;color:#3d2b56;border-left:4px solid #6a4c93;">🎋 這是原本 Day 2 的完整版本，含天龍寺、竹林小徑跟嵯峨野トロッコ列車——如果出發前查到 11/21 天龍寺的即時人流預測沒有想像中誇張，或還是很想要這個經典嵐山體驗，可以用這條路線整個換回 Day 2。跟 Day 2 光明寺線一樣，也保留了不搭小火車的版本。</div>
 <table class="night-table" style="margin-bottom:18px;">
 <tr><th>📍 景點</th><th>🥷 人潮擁擠度</th><th>🍁 楓葉見頃區間</th><th>🌕 銀杏見頃</th></tr>
-<tr><td>光明寺</td><td>★★☆ 適中偏擁擠</td><td>11 月第 4 週</td><td>—</td></tr>
+<tr><td>天龍寺</td><td>★★★★★ 爆滿</td><td>11 月第 3 週-12 月第 1 週</td><td>—</td></tr>
 <tr><td>常寂光寺</td><td>★★★ 適中</td><td>11 月第 4 週-12 月第 1 週</td><td>11 月上旬-11 月下旬</td></tr>
-<tr><td>大覚寺</td><td>★☆ 秘境</td><td>11 月第 3-4 週</td><td>—</td></tr>
-<tr><td>渡月橋</td><td colspan="3">指南未收錄</td></tr>
+<tr><td>二尊院</td><td>★★★ 適中</td><td>11 月第 4 週-12 月第 1 週</td><td>—</td></tr>
+<tr><td>祇王寺</td><td>★★ 舒服</td><td>11 月第 4 週</td><td>—</td></tr>
+<tr><td>大河內山莊（不搭小火車版本選配）</td><td>★☆ 秘境偏舒服</td><td>11 月第 3 週-12 月第 1 週</td><td>—</td></tr>
+<tr><td>竹林小徑／化野念佛寺／嵯峨鳥居本</td><td colspan="3">指南未收錄</td></tr>
+<tr><td>嵯峨野トロッコ列車</td><td colspan="3">非寺院景點，無此指標</td></tr>
 </table>
 <div class="tl">
-<div class="ti move"><div class="td"></div><div class="tt">07:30-07:45</div><div class="th">步行至阪急京都河原町站</div><div class="tx"></div></div>
-<div class="ti move"><div class="td"></div><div class="tt">07:45-08:00</div><div class="th">搭阪急京都線特急／準急至長岡天神</div><div class="tx">約 15 分</div></div>
-<div class="ti move"><div class="td"></div><div class="tt">08:00-08:30（估）</div><div class="th">西口搭 20 號巴士至光明寺前</div><div class="tx">約 12 分。若候車人潮超過 25-30 人，可直接改搭計程車（車程 8-10 分，約 ¥1,400），依然能在 8:30 前抵達</div></div>
-<div class="ti move"><div class="td"></div><div class="tt">08:30-08:35</div><div class="th">抵達光明寺總門排隊</div><div class="tx"></div></div>
-<div class="ti act"><div class="td"></div><div class="tt">09:00-10:30</div><div class="th">🍁 <a href="https://maps.google.com/?q=光明寺+長岡京" target="_blank">光明寺</a></div><div class="tx">開門即入直奔紅葉參道與藥医門，前 15 分鐘人最少。秋季門票 1000円，★★☆，11 月第 4 週。⚠️ 這類單一畫面型人氣紅葉名所，出發前需確認是否已改採預約制</div></div>
-<div class="ti move"><div class="td"></div><div class="tt">10:30-11:15（估）</div><div class="th">搭巴士或計程車返回長岡天神站</div><div class="tx">回程一樣可能客滿，備案是叫車或沿平緩下坡步行約 35 分回站，仍能在 11:15 前抵達</div></div>
-<div class="ti move"><div class="td"></div><div class="tt">11:15-11:45</div><div class="th">搭阪急京都線至桂站，同月台轉阪急嵐山線至嵐山</div><div class="tx">全程鐵路，不受路面連假塞車影響</div></div>
-<div class="ti meal"><div class="td"></div><div class="tt">11:45-12:45</div><div class="th">🍁 <a href="https://maps.google.com/?q=渡月橋" target="_blank">渡月橋</a>＋午餐</div><div class="tx">走過渡月橋眺望嵐山全景，找蕎麥麵或輕食，建議 12:30 前用餐避開中午人潮</div></div>
-<div class="ti extra"><div class="td"></div><div class="tt">12:45-13:00</div><div class="th">🚲 租腳踏車</div><div class="tx">租借點同 Day 2（らんぶらレンタサイクル或阪急レンタサイクル嵐山，見 Day 2 章節）</div></div>
-<div class="ti act"><div class="td"></div><div class="tt">13:00-14:00</div><div class="th">🍁 騎往<a href="https://maps.google.com/?q=常寂光寺" target="_blank">常寂光寺</a></div><div class="tx">避開主街走住宅區外圍小徑，境內同時是銀杏景點（見頃 11 月上旬-11 月下旬）</div></div>
-<div class="ti act"><div class="td"></div><div class="tt">14:15-15:45</div><div class="th">🍁 騎往<a href="https://maps.google.com/?q=大覚寺" target="_blank">大覚寺</a>，參觀大澤池</div><div class="tx">約 10-12 分鐘。大澤池下午 14:30-15:30 光線最柔和，人潮少，★☆，11 月第 3-4 週，500円</div></div>
-<div class="ti move"><div class="td"></div><div class="tt">15:45-16:15</div><div class="th">騎回車站還車</div><div class="tx"></div></div>
-<div class="ti move"><div class="td"></div><div class="tt">16:15-17:00</div><div class="th">搭阪急嵐山線經桂站轉京都線回河原町</div><div class="tx"></div></div>
-<div class="ti extra"><div class="td"></div><div class="tt">17:00 以後</div><div class="th">步行返回飯店</div><div class="tx"></div></div>
+<div class="ti move"><div class="td"></div><div class="tt">08:00-08:30</div><div class="th">前往<a href="https://maps.google.com/?q=嵐山" target="_blank">嵐山</a>，抵達<a href="https://maps.google.com/?q=渡月橋" target="_blank">渡月橋</a></div><div class="tx">計程車或阪急電車</div></div>
+<div class="ti act"><div class="td"></div><div class="tt">08:30-09:00</div><div class="th"><a href="https://maps.google.com/?q=天龍寺" target="_blank">天龍寺</a></div><div class="tx">開門即入避開人潮，庭園借景嵐山賞楓名所</div></div>
+<div class="ti act"><div class="td"></div><div class="tt">09:00-09:45</div><div class="th"><a href="https://maps.google.com/?q=嵐山竹林の小径" target="_blank">竹林小徑</a></div><div class="tx"></div></div>
+<div class="ti act"><div class="td"></div><div class="tt">09:45-11:00</div><div class="th"><a href="https://maps.google.com/?q=常寂光寺" target="_blank">常寂光寺</a> 或 <a href="https://maps.google.com/?q=二尊院" target="_blank">二尊院</a>（擇一）</div><div class="tx">常寂光寺視野較佳且同時是銀杏景點（見頃 11 月上旬-11 月下旬，比楓葉稍早），二尊院楓葉隧道知名</div></div>
+<div class="ti extra"><div class="td"></div><div class="tt">11:00-12:30</div><div class="th">🚲 租腳踏車，騎去嵯峨野深處</div><div class="tx"><a href="https://maps.google.com/?q=祇王寺" target="_blank">祇王寺</a>／<a href="https://maps.google.com/?q=化野念仏寺" target="_blank">化野念佛寺</a>／<a href="https://maps.google.com/?q=嵯峨鳥居本" target="_blank">嵯峨鳥居本</a>擇一二。租借點推薦<a href="https://maps.google.com/?q=らんぶらレンタサイクル" target="_blank">「らんぶらレンタサイクル」</a>（嵐電嵐山駅內「はんなり・ほっこりスクエア」，就在竹林旁邊、天龍寺步行約 2-3 分，不用預約，一日¥1,000）；<a href="https://maps.google.com/?q=阪急レンタサイクル嵐山" target="_blank">「阪急レンタサイクル嵐山」</a>在渡月橋對岸的阪急嵐山駅前廣場（京都市西京区嵐山西一川町3-5），距天龍寺約 580 公尺／步行 8 分，11 月不分平假日都是一日 ¥900（沒有 2 小時制），旺季建議先電話 075-882-1112 問還有沒有車。竹林小徑那段窄路人多時普遍會牽車用走的，非全程都能騎</div></div>
+<div class="ti meal"><div class="td"></div><div class="tt">12:30-13:30</div><div class="th">午餐、還車</div><div class="tx"></div></div>
+<div class="ti act"><div class="td"></div><div class="tt">13:30-15:30</div><div class="th">🚂 <a href="https://maps.google.com/?q=嵯峨野トロッコ列車" target="_blank">嵯峨野トロッコ列車</a> <span class="tag alt">可選</span></div><div class="tx">路線：トロッコ嵯峨（嵐山旁）－トロッコ嵐山－トロッコ保津峡－トロッコ亀岡，全長 7.3km，單程約 25 分。建議單程搭去（如到トロッコ保津峡或トロッコ亀岡），再搭一般 JR 山陰本線返回嵯峨嵐山駅（約 20 分），不用原地來回。⚠️ 訂票需在搭乘日前一個月開賣，取消可到前一天 23:59 前免費</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">15:30-16:00</div><div class="th">返回四条周邊</div><div class="tx"></div></div>
+<div class="ti meal"><div class="td"></div><div class="tt">16:00-19:30</div><div class="th">🛍️ 三条・河原町・新京極逛街購物＋晚餐</div><div class="tx">必逛的一晚，注意店家多 20:00 打烊，含迪士尼商店等</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">19:30</div><div class="th">返回飯店</div><div class="tx"></div></div>
 </div>
 <div class="tips">
-📝 這條路線不含天龍寺、竹林小徑——這兩個是嵐山最核心的招牌景點，用這條路線前先想清楚這個取捨；如果還沒去過，建議優先保留 Day 2 原版。<br>
-📝 嵐山段落落在中午到下午的人潮尖峰（11:45-15:45），跟其他路線「一早衝第一批」的邏輯不同，早上在光明寺省下來的人少優勢不會延續到下午。<br>
-📝 光明寺出發前務必確認是否需要預約，目前沒有查到明確資料。
+📝 這天不排金閣寺、北野天滿宮——地理上在嵐山北邊、回四条不順路，加上小火車和腳踏車已經把時間排滿，硬塞會趕不上 16:00 到四条的目標。金閣寺楓葉本來也不算它的強項，這次先跳過。
+</div>
+
+<div class="hl blue" id="route-arashiyama-no-train" style="margin-top:18px;">🔀 備案：不搭小火車版本——省下訂票壓力，換成更從容的嵯峨野健行，景點時間拉長，15:30 才開始逛街也還很充裕</div>
+<div class="tl">
+<div class="ti move"><div class="td"></div><div class="tt">08:00-08:30</div><div class="th">前往<a href="https://maps.google.com/?q=嵐山" target="_blank">嵐山</a>，抵達<a href="https://maps.google.com/?q=渡月橋" target="_blank">渡月橋</a></div><div class="tx">計程車或阪急電車</div></div>
+<div class="ti act"><div class="td"></div><div class="tt">08:30-09:00</div><div class="th"><a href="https://maps.google.com/?q=天龍寺" target="_blank">天龍寺</a></div><div class="tx">開門即入避開人潮，庭園借景嵐山賞楓名所</div></div>
+<div class="ti act"><div class="td"></div><div class="tt">09:00-09:45</div><div class="th"><a href="https://maps.google.com/?q=嵐山竹林の小径" target="_blank">竹林小徑</a></div><div class="tx">人多時建議牽車用走的，別急著騎</div></div>
+<div class="ti extra"><div class="td"></div><div class="tt">09:45-10:15</div><div class="th"><a href="https://maps.google.com/?q=大河内山荘庭園" target="_blank">大河內山莊庭園</a> <span class="tag">選配</span></div><div class="tx">竹林小徑底端，門票含抹茶，可俯瞰嵐山山景，賞楓氣氛不輸小火車，是取代方案之一</div></div>
+<div class="ti act"><div class="td"></div><div class="tt">10:15-11:00</div><div class="th"><a href="https://maps.google.com/?q=常寂光寺" target="_blank">常寂光寺</a> 或 <a href="https://maps.google.com/?q=二尊院" target="_blank">二尊院</a>（擇一）</div><div class="tx">常寂光寺視野較佳且同時是銀杏景點（見頃 11 月上旬-11 月下旬，比楓葉稍早），二尊院楓葉隧道知名</div></div>
+<div class="ti extra"><div class="td"></div><div class="tt">11:00-11:15</div><div class="th">🚲 租腳踏車</div><div class="tx">推薦「らんぶらレンタサイクル」（嵐電嵐山駅內，就在竹林旁邊，不用預約，一日¥1,000）；「阪急レンタサイクル嵐山」要過渡月橋，11 月一日 ¥900，旺季建議先電話 075-882-1112 問還有沒有車</div></div>
+<div class="ti extra"><div class="td"></div><div class="tt">11:15-14:00</div><div class="th">騎去嵯峨野深處</div><div class="tx">比原方案多將近 3 小時，<a href="https://maps.google.com/?q=祇王寺" target="_blank">祇王寺</a>／<a href="https://maps.google.com/?q=化野念仏寺" target="_blank">化野念佛寺</a>／<a href="https://maps.google.com/?q=嵯峨鳥居本" target="_blank">嵯峨鳥居本</a>可以從容多走幾個，不用趕</div></div>
+<div class="ti meal"><div class="td"></div><div class="tt">14:00-15:00</div><div class="th">午餐、還車</div><div class="tx"></div></div>
+<div class="ti move"><div class="td"></div><div class="tt">15:00-15:30</div><div class="th">返回四条周邊</div><div class="tx"></div></div>
+<div class="ti meal"><div class="td"></div><div class="tt">15:30-19:30</div><div class="th">🛍️ 三条・河原町・新京極逛街購物＋晚餐</div><div class="tx">約 4 小時，注意店家多 20:00 打烊</div></div>
+<div class="ti move"><div class="td"></div><div class="tt">19:30</div><div class="th">返回飯店</div><div class="tx"></div></div>
+</div>
+<div class="tips">
+📝 這版本省下小火車的訂票壓力（含單程 25 分＋接駁時間），換成更從容走完嵯峨野深處＋加一個大河內山莊庭園選項，逛街從 15:30 開始也還有近 4 小時，不用急著提早進城。<br>
+📝 這版本跟原方案的小火車時段（13:30-15:30）會衝突，兩者只能擇一——如果想臨場決定，關鍵在騎車騎到 13:00 左右時：想接原方案的小火車就準時還車去搭；想留在嵯峨野多逛就直接繼續騎，照這版本走到 14:00 才還車。
 </div>
 </div>
 </div>
@@ -773,15 +773,15 @@
 <li><input type="checkbox"/><span>光明院的參拝時間與門票（為隨喜奉納制）</span></li>
 <li><input type="checkbox"/><span>出發前用京阪時刻表核對 Day 4 東福寺→浜大津→坂本→三井寺→石山寺各段實際班次時間</span></li>
 <li><input type="checkbox"/><span>ICOCA／交通卡儲值方式</span></li>
-<li><input type="checkbox"/><span>出發前 1-2 週查詢京都楓葉最新預測，評估 Day 2 嵐山狀況</span></li>
+<li><input type="checkbox"/><span>出發前 1-2 週查詢京都楓葉最新預測，評估 Day 2 光明寺、嵐山天龍寺的即時人流狀況，決定要不要換回嵐山線</span></li>
 <li><input type="checkbox"/><span>決定 Day 2 是否搭嵯峨野トロッコ列車，或改採「不搭小火車版本」</span></li>
 <li><input type="checkbox"/><span>若決定搭小火車：訂票（搭乘日前一個月開賣，越早訂越好，秋季週末易額滿）</span></li>
-<li><input type="checkbox"/><span>出發前 1-2 週依各區楓況預測，決定 Day 2 / Day 3 / Day 4 是否要換成機動路線庫的路線（大原線／泉涌寺線／高雄線／一乗寺線／光明寺線／東福寺線），以及要換哪一天</span></li>
+<li><input type="checkbox"/><span>出發前 1-2 週依各區楓況預測，決定 Day 2 / Day 3 / Day 4 是否要換成機動路線庫的路線（大原線／泉涌寺線／高雄線／一乗寺線／嵐山線／東福寺線），以及要換哪一天</span></li>
 <li><input type="checkbox"/><span>Day 3 圓光寺紅葉特別拝観預約：官網 <a href="https://www.enkouji.jp/" target="_blank">enkouji.jp</a> 採「日時指定」事先網路預約制，2025 年預約期間為 11/10-12/10、預約通道於 10/20 上午 9:00 開放。2026 年日期需另外確認，但往例是特別拝観開始前約 3 週開放預約，出發前建議 10 月中下旬密切關注官網公告；若額滿還有空位時可接受當日預約，但不保證有位</span></li>
 <li><input type="checkbox"/><span>若選走泉涌寺線的龍吟庵：確認 2026 年秋季特別公開期間是否涵蓋行程日期（2025 年參考值為 11/8-12/7），不需預約但要先確定當天有開</span></li>
 <li><input type="checkbox"/><span>銀杏見頃資訊（常寂光寺、京都御苑、東本願寺、西本願寺、東寺）是根據 2024-2025 年觀賞期參考值推算，2026 年還沒有預測資料，出發前 1-2 週建議另外查即時黃葉通報再確認</span></li>
 <li><input type="checkbox"/><span>若選走泉涌寺線接東寺紅葉ライトアップ：確認 2026 年場次日期（2025 年參考值為 11/1-12/14）跟是否需要預約，目前查到的資訊沒有明確提到預約制度</span></li>
-<li><input type="checkbox"/><span>若選走光明寺線：出發前確認光明寺是否已改採預約制（單一畫面型人氣紅葉名所常見做法，目前沒有查到明確資料）</span></li>
+<li><input type="checkbox"/><span>Day 2 光明寺：出發前確認是否已改採預約制（單一畫面型人氣紅葉名所常見做法，目前沒有查到明確資料）</span></li>
 </ul>
 </div>
 
